@@ -35,8 +35,8 @@
 | 🌪️ **OpenFOAM 실무** | [OpenFOAM tips](resources/openfoam-tips.md) | solver reference, OpenFOAM-dev, square-cylinder notes, `startFrom latestTime` |
 | ⚡ **JAX CFD 프로토타입** | [JAX-based CFD prototypes](resources/jax-cfd-prototypes.md) | google/jax-cfd, AeroJAX, IBM airfoil flap, GUI prototype |
 | 🎞️ **시각화** | [Visualization & post-processing](resources/visualization-postprocessing.md) · [Weather/climate visualization](resources/weather-climate-visualization.md) | PyVista, Omniverse Q-criterion, Earth2Studio, black-hole simulation visualization |
-| 🧩 **CAD / geometry AI** | [CAD, geometry & AI-assisted design](resources/cad-geometry-ai.md) | ForgeCAD, FreeCAD + Claude Code, Zero-to-CAD, FeatureFox |
-| 🧠 **Neural operator / architecture** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) · [Optimization for SciML](resources/optimization-sciml.md) | PhysicsNeMo, neuraloperator, JetSCI, MENO, CLARA |
+| 🧩 **CAD / geometry AI** | [CAD, geometry & AI-assisted design](resources/cad-geometry-ai.md) | ForgeCAD, FreeCAD + Claude Code, Zero-to-CAD, FeatureFox, FreeCAD MCP |
+| 🧠 **Neural operator / architecture** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) · [Optimization for SciML](resources/optimization-sciml.md) | PhysicsNeMo, neuraloperator, JetSCI, MENO, FNO-LBM, LESnets |
 | 🎓 **Fluid/AI 교육** | [Fluid mechanics, turbulence & AI education](resources/education-fluid-ai.md) | VinuesaLab |
 | ∑ **수학적 기반** | [Mathematical foundations](resources/math-foundations.md) | function representation notes |
 
@@ -56,7 +56,7 @@
 
 | 분야 | 먼저 볼 문서 | 대표 자료 |
 |---|---|---|
-| 🛠️ **Agent 도구** | [Agent tools & research workflow](resources/agent-tools-workflow.md) | Claude Code tips, Codex/OpenCode, Google Workspace CLI, MCP/CAD bridges, skills/harnesses |
+| 🛠️ **Agent 도구** | [Agent tools & research workflow](resources/agent-tools-workflow.md) | Claude Code tips, Codex/OpenCode, Google Workspace CLI, MCP/CAD bridges, sim-cli |
 | 🏫 **연구실 AI 도입** | [AI coding & lab adoption](resources/ai-coding-lab-adoption.md) | 공용 Claude/API 전략, 랩세미나 아이디어, Codex 지원 프로그램 |
 | 💻 **Local AI workflow** | [Local AI research workflow](resources/local-ai-workflow.md) | Ollama, llama.cpp, whatcani.run, Gemma/local LLMs |
 

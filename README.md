@@ -35,8 +35,8 @@
 | 🌪️ **OpenFOAM practice** | [OpenFOAM tips](resources/openfoam-tips.md) | solver reference, OpenFOAM-dev, square-cylinder notes, `startFrom latestTime` |
 | ⚡ **JAX CFD prototypes** | [JAX-based CFD prototypes](resources/jax-cfd-prototypes.md) | google/jax-cfd, AeroJAX, IBM airfoil flap, GUI prototype |
 | 🎞️ **Visualization** | [Visualization & post-processing](resources/visualization-postprocessing.md) · [Weather/climate visualization](resources/weather-climate-visualization.md) | PyVista, Omniverse Q-criterion, Earth2Studio, black-hole simulation visualization |
-| 🧩 **CAD / geometry AI** | [CAD, geometry & AI-assisted design](resources/cad-geometry-ai.md) | ForgeCAD, FreeCAD + Claude Code, Zero-to-CAD, FeatureFox |
-| 🧠 **Neural operators / architectures** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) · [Optimization for SciML](resources/optimization-sciml.md) | PhysicsNeMo, neuraloperator, JetSCI, MENO, CLARA |
+| 🧩 **CAD / geometry AI** | [CAD, geometry & AI-assisted design](resources/cad-geometry-ai.md) | ForgeCAD, FreeCAD + Claude Code, Zero-to-CAD, FeatureFox, FreeCAD MCP |
+| 🧠 **Neural operators / architectures** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) · [Optimization for SciML](resources/optimization-sciml.md) | PhysicsNeMo, neuraloperator, JetSCI, MENO, FNO-LBM, LESnets |
 | 🎓 **Fluid/AI education** | [Fluid mechanics, turbulence & AI education](resources/education-fluid-ai.md) | VinuesaLab |
 | ∑ **Math foundations** | [Mathematical foundations](resources/math-foundations.md) | function representation notes |
 
@@ -56,7 +56,7 @@
 
 | Category | Best starting point | Representative resources |
 |---|---|---|
-| 🛠️ **Agent tools** | [Agent tools & research workflow](resources/agent-tools-workflow.md) | Claude Code tips, Codex/OpenCode, Google Workspace CLI, MCP/CAD bridges, skills/harnesses |
+| 🛠️ **Agent tools** | [Agent tools & research workflow](resources/agent-tools-workflow.md) | Claude Code tips, Codex/OpenCode, Google Workspace CLI, MCP/CAD bridges, sim-cli |
 | 🏫 **Lab AI adoption** | [AI coding & lab adoption](resources/ai-coding-lab-adoption.md) | shared Claude/API strategy, lab seminar idea, Codex support program |
 | 💻 **Local AI workflow** | [Local AI research workflow](resources/local-ai-workflow.md) | Ollama, llama.cpp, whatcani.run, Gemma/local LLMs |
 

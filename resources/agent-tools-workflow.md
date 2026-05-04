@@ -112,3 +112,21 @@
   - Useful precedent for thinking about FreeCAD/SALOME/OpenFOAM agent tooling: expose stable operations, not only screenshots or GUI macros.
   - Windows/KOMPAS-specific, so treat as a workflow signal rather than an immediate lab dependency.
 
+
+## sim-cli
+
+- Link: https://github.com/svd-ai-lab/sim-cli
+- Type: Agent-facing runtime for CAD/CAE simulators
+- Why it matters:
+  - Aims to let LLM agents launch, drive, and observe CAD/CAE simulators through a common protocol.
+  - Directly aligned with intelligent engineering workflows: agent plans should be grounded in simulator state, logs, and artifacts.
+  - Useful precedent for OpenFOAM/FreeCAD/SALOME automation wrappers where reproducibility matters more than chatty GUI control.
+
+## Awesome AI CAE
+
+- Link: https://github.com/kimimgo/awesome-ai-cae
+- Type: Curated AI-ready CAE tool index
+- Why it matters:
+  - Tracks CFD, FEA, SPH, DEM, differentiable simulation, neural operators, PINNs, MCP servers, and optimization tools.
+  - Useful meta-index for discovering agent-readable engineering tooling without mixing it into the main repository unchecked.
+  - Pull only high-signal tools into Awosome_VA after direct evaluation or clear CFD/SciML relevance.

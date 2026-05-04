@@ -67,3 +67,21 @@
   - Relevant to complex product/system architecture, CAD assembly planning, and design-automation workflows.
   - Useful weekly-synthesis candidate for “LLMs as context-aware engineering-design heuristics.”
 
+
+## mcp-freecad
+
+- Link: https://github.com/seansackowitz/mcp-freecad
+- Type: MCP server for FreeCAD parametric modeling
+- Why it matters:
+  - Exposes many small FreeCAD operations as agent-callable MCP tools, with screenshots only when explicitly requested to keep token cost low.
+  - Good direction for CAD automation: stable parametric/document/object operations instead of brittle GUI control.
+  - Worth testing against CFD geometry workflows that need reproducible STEP/STL export and parameter sweeps.
+
+## freecad-mcp
+
+- Link: https://github.com/blwfish/freecad-mcp
+- Type: MCP server for AI-assisted FreeCAD modeling
+- Why it matters:
+  - Smaller FreeCAD MCP bridge with tool coverage for AI-assisted 3D CAD modeling.
+  - Useful comparison point for deciding what a minimal CAD-agent interface should expose.
+  - Treat as early-stage until validation on real parametric parts and downstream meshing is checked.
