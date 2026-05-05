@@ -27,6 +27,7 @@
 
 | Area | Start here | Includes |
 |---|---|---|
+| 📚 **CFD-AI papers & surveys** | [CFD-AI papers & surveys](resources/cfd-ai-papers-surveys.md) | Survey papers, literature maps, review resources, curated paper collections |
 | 🧪 **Differentiable CFD & AMR** | [Differentiable CFD & AMR](resources/differentiable-cfd-amr.md) | Differentiable solvers, adaptive discretization, ML-native PDE systems |
 | ⚡ **JAX / Python PDE solvers** | [JAX CFD prototypes](resources/jax-cfd-prototypes.md) · [JAX/Python PDE solvers](resources/jax-pde-solvers.md) | JAX-CFD, PhiFlow, FiPy-style workflows, lightweight solver prototypes |
 | 🧠 **Neural operators & tensor methods** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) | FNO, operator learning, tensor methods, QTT, spectral/operator architectures |
