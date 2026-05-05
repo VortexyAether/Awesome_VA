@@ -30,8 +30,7 @@
 | 📚 **CFD-AI papers & surveys** | [CFD-AI papers & surveys](resources/cfd-ai-papers-surveys.md) | Survey papers, literature maps, review resources, curated paper collections |
 | 🧪 **Differentiable & Python PDE Solvers** | [Differentiable & Python PDE Solvers](resources/differentiable-python-pde-solvers.md) | JAX/Python solvers, differentiable CFD, AMR, inverse/design workflows |
 | 🧠 **Neural operators & tensor methods** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) | FNO, operator learning, tensor methods, QTT, spectral/operator architectures |
-| 🌪️ **Turbulence surrogate models** | [Turbulence surrogate models](resources/turbulence-surrogate-models.md) | Turbulence prediction, super-resolution, autoregressive flow prediction |
-| 🌀 **Diffusion & generative physics** | [Diffusion & generative physics](resources/diffusion-generative-physics.md) | Diffusion models, deterministic generation, spectral consistency |
+| 🌪️ **Turbulence & generative flow models** | [Turbulence & generative flow models](resources/turbulence-generative-flow-models.md) | Turbulence surrogates, super-resolution, rollout prediction, generative physical fields |
 | 📊 **Datasets & benchmarks** | [Datasets & benchmarks](resources/datasets-benchmarks.md) | Flow datasets, benchmark suites, metrics, reproducibility references |
 
 ---
@@ -52,7 +51,7 @@
 
 | Area | Start here | Includes |
 |---|---|---|
-| 🧑‍🔬 **Research productivity agents** | [Research productivity agents](resources/research-productivity-agents.md) · [Research automation & writing](resources/research-automation-writing.md) | Literature review, experiment automation, coding agents, research workflows |
+| 🧑‍🔬 **Research automation & writing** | [Research automation & writing](resources/research-automation-writing.md) | Literature review, experiment automation, coding agents, research workflows |
 | ✍️ **Paper writing tools** | [Paper writing tools](resources/paper-writing-tools.md) | LaTeX, citation, review, figure, proposal, and writing workflows |
 | 🛠️ **Agent tools** | [Agent tools & workflow](resources/agent-tools-workflow.md) | Claude/Codex/OpenCode, MCP tools, local harnesses, automation bridges |
 | 💻 **Local AI workflow** | [Local AI workflow](resources/local-ai-workflow.md) | Ollama, llama.cpp, local LLMs, offline/low-cost research workflows |
@@ -69,7 +68,7 @@
 | 🎓 **Fluid/AI education** | [Fluid mechanics, turbulence & AI education](resources/education-fluid-ai.md) | Lectures, educational repositories, turbulence/ML learning resources |
 | 🗂️ **Presentation workflow** | [Research presentation & report workflow](resources/research-presentation-workflow.md) | Research story structure, reports, talks, visual communication |
 | 📌 **Events & opportunities** | [Events & opportunities](resources/events-opportunities.md) | Conferences, industry signals, graduate/career opportunities |
-| 🗓️ **Weekly / daily radar** | [Weekly digest](resources/weekly-digest.md) · [daily/](daily/) | Periodic research updates and short synthesis notes |
+| 🗓️ **Daily radar** | [daily/](daily/) | Periodic research updates and short synthesis notes |
 
 ---
 

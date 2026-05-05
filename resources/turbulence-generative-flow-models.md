@@ -1,6 +1,6 @@
-# Turbulence Surrogate Models
+# Turbulence & Generative Flow Models
 
-Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, and closure/surrogate modeling.
+Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
 ## Turbulence Modeling in the Age of Data
 
@@ -12,3 +12,11 @@ Resources for turbulence prediction, reduced-order modeling, super-resolution, a
 - Possible use: Use to frame turbulence-surrogate work, RANS/LES closure discussions, and the limitations of purely data-driven turbulence modeling.
 - Maturity: paper-only
 - Priority: High
+
+## Watchlist themes
+
+- Turbulent-flow super-resolution and spectral consistency metrics
+- Autoregressive flow-field prediction and rollout stability
+- Learned RANS/LES closure models
+- Generative models for physical fields
+- Sensor-to-field reconstruction and sparse observation assimilation

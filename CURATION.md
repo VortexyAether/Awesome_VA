@@ -7,11 +7,10 @@ This repository is a CFD-AI / SciML research radar, not a general archive.
 Collect, filter, summarize, and organize high-quality resources related to:
 
 1. CFD-AI and Scientific Machine Learning
-2. Turbulence prediction, surrogate modeling, super-resolution, and autoregressive flow prediction
+2. Turbulence prediction, surrogate modeling, super-resolution, autoregressive flow prediction, and generative modeling for physical fields
 3. Neural operators, Fourier neural operators, operator learning, tensor methods, QTT, AMR, and adaptive discretization
 4. Differentiable CFD solvers, JAX-based PDE solvers, and OpenFOAM-related AI workflows
-5. Diffusion models, deterministic generative models, and frequency/spectral methods for physical fields
-6. AI-assisted research workflows for graduate students: paper writing, literature review, coding, experiment automation, and productivity
+5. AI-assisted research workflows for graduate students: paper writing, literature review, coding, experiment automation, and productivity
 
 ## Sources to scan
 
@@ -75,13 +74,10 @@ Preferred files include:
 
 - `resources/differentiable-python-pde-solvers.md`
 - `resources/neural-operators-tensor-methods.md`
-- `resources/turbulence-surrogate-models.md`
-- `resources/diffusion-generative-physics.md`
+- `resources/turbulence-generative-flow-models.md`
 - `resources/openfoam-ai-workflows.md`
-- `resources/research-productivity-agents.md`
 - `resources/datasets-benchmarks.md`
 - `resources/paper-writing-tools.md`
-- `resources/weekly-digest.md`
 
 If a resource fits multiple categories, choose one primary location and add cross-reference tags in `Keywords` or `Possible use`.
 
