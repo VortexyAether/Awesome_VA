@@ -20,7 +20,6 @@
 - **CFD-AI & SciML:** differentiable CFD, JAX/Python PDE solvers, AMR, neural operators, turbulence surrogate models.
 - **Engineering AI workflows:** OpenFOAM automation, CAD/geometry AI, visualization, ParaView/PyVista, agentic research tooling.
 - **Research productivity:** literature review, paper writing, experiment automation, local AI workflows, and lab-scale AI adoption.
-- **Nuclear & digital-twin direction:** selected resources connecting AI agents, safety-code automation, and engineering simulation.
 
 ---
 
@@ -32,7 +31,7 @@
 | ⚡ **JAX / Python PDE solvers** | [JAX CFD prototypes](resources/jax-cfd-prototypes.md) · [JAX/Python PDE solvers](resources/jax-pde-solvers.md) | JAX-CFD, PhiFlow, FiPy-style workflows, lightweight solver prototypes |
 | 🧠 **Neural operators & tensor methods** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) | FNO, operator learning, tensor methods, QTT, spectral/operator architectures |
 | 🌪️ **Turbulence surrogate models** | [Turbulence surrogate models](resources/turbulence-surrogate-models.md) | Turbulence prediction, super-resolution, autoregressive flow prediction |
-| 🌀 **Diffusion & generative physics** | [Diffusion & generative physics](resources/diffusion-generative-physics.md) | Diffusion/EDM-style models, deterministic generation, spectral consistency |
+| 🌀 **Diffusion & generative physics** | [Diffusion & generative physics](resources/diffusion-generative-physics.md) | Diffusion models, deterministic generation, spectral consistency |
 | 📊 **Datasets & benchmarks** | [Datasets & benchmarks](resources/datasets-benchmarks.md) | Flow datasets, benchmark suites, metrics, reproducibility references |
 
 ---
@@ -46,7 +45,6 @@
 | 🚀 **GPU / HPC CFD** | [GPU OpenFOAM & HPC](resources/gpu-openfoam-hpc.md) | GPU acceleration, HPC workflows, scalable simulation tooling |
 | 🎞️ **Visualization & post-processing** | [Visualization & post-processing](resources/visualization-postprocessing.md) | ParaView, PyVista, VTK, scientific visualization, visual debugging |
 | 🌦️ **Weather & climate visualization** | [Weather/climate visualization](resources/weather-climate-visualization.md) | Earth-system tools, climate/atmospheric visualization, large-field analysis |
-| ⚛️ **Nuclear AI & safety-code agents** | [Nuclear AI agents](resources/nuclear-ai-agents.md) | Nuclear engineering AI, safety-code automation, digital twins, LLM agents |
 
 ---
 

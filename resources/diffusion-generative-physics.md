@@ -1,6 +1,6 @@
 # Diffusion & Generative Physics Models
 
-Diffusion, EDM-style deterministic generative models, spectral/frequency methods, and generative modeling for physical fields.
+Diffusion models, deterministic generative models, spectral/frequency methods, and generative modeling for physical fields.
 
 ## Watchlist
 

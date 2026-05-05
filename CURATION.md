@@ -11,8 +11,7 @@ Collect, filter, summarize, and organize high-quality resources related to:
 3. Neural operators, Fourier neural operators, operator learning, tensor methods, QTT, AMR, and adaptive discretization
 4. Differentiable CFD solvers, JAX-based PDE solvers, and OpenFOAM-related AI workflows
 5. Diffusion models, deterministic generative models, and frequency/spectral methods for physical fields
-6. Nuclear engineering AI, digital twins, safety-code automation, and LLM agents for engineering workflows
-7. AI-assisted research workflows for graduate students: paper writing, literature review, coding, experiment automation, and productivity
+6. AI-assisted research workflows for graduate students: paper writing, literature review, coding, experiment automation, and productivity
 
 ## Sources to scan
 
@@ -49,7 +48,7 @@ Do not add:
 - SEO blog spam
 - vague LinkedIn/social posts
 - shallow Medium posts without technical substance
-- resources with unclear relevance to CFD-AI, SciML, nuclear AI, or graduate research workflows
+- resources with unclear relevance to CFD-AI, SciML, engineering AI, or graduate research workflows
 
 ## Required entry format
 
@@ -80,7 +79,6 @@ Preferred files include:
 - `resources/diffusion-generative-physics.md`
 - `resources/jax-pde-solvers.md`
 - `resources/openfoam-ai-workflows.md`
-- `resources/nuclear-ai-agents.md`
 - `resources/research-productivity-agents.md`
 - `resources/datasets-benchmarks.md`
 - `resources/paper-writing-tools.md`
@@ -116,12 +114,11 @@ Resource title and why it was the most valuable.
 
 Research ideas should be practical and connected to VA's interests, such as:
 
-- EDM-style deterministic diffusion for flow prediction
+- deterministic diffusion/generative modeling for flow prediction
 - turbulence surrogate modeling
 - spectral energy consistency metrics
 - wafer-scale prediction with physics-inspired priors
 - neural operator comparison
-- nuclear safety-code automation with LLM agents
 - CFD workflow automation
 
 ## Quality checks before commit
