@@ -4,7 +4,7 @@
 
 - Link: https://arxiv.org/abs/2602.16167
 - Type: Optimizer for Scientific ML
-- Shared note:
+- Summary:
   - Adapts the Muon optimizer idea for scientific computing / physics-informed learning.
   - Introduces spectral-aware guidance to handle ill-conditioned gradients, multi-scale spectral behavior, and stiffness.
 - Why it matters:
@@ -18,9 +18,8 @@
 ## Attention Residuals
 
 - Link: https://github.com/MoonshotAI/Attention-Residuals/tree/master
-- Source note: `Attention_Residuals.pdf`
 - Type: Neural network architecture / residual connection method
-- Shared summary:
+- Summary:
   - Addresses information dilution in fixed residual connections.
   - Applies softmax attention over previous layer outputs to select and aggregate needed information data-dependently.
   - Introduces Block AttnRes to reduce memory overhead and support large models.

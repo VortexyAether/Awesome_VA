@@ -4,7 +4,7 @@
 
 - Link: https://www.linkedin.com/posts/sanghee-shin-9715a162_our-team-at-iwfgarahttpswwwiwfgaracom-ugcPost-7450137884336226304-OYRC?utm_source=share&utm_medium=member_ios&rcm=ACoAAD5oIrEBMTn8gvGtlY2eLkVvjVsMFaxHEgc
 - Type: AI weather model + visualization workflow
-- Shared context:
+- Summary:
   - NVIDIA Earth2Studio with FourCastNet3 produces data-driven weather/climate forecasts.
   - Generated NetCDF data is ingested and visualized in Iwfgara’s 3D engine.
 - Why it matters:

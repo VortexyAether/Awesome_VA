@@ -7,17 +7,10 @@
 - Why it matters:
   - Useful when choosing between steady/transient, laminar/turbulent, compressible/incompressible solvers.
 
-## Square cylinder force coefficient discussion notes
-
-- Source: shared Slack discussion.
-- Notes:
-  - If using RANS but seeing transient behavior, clarify whether the setup is URANS.
-  - For Re = 200, turbulence modeling may not be necessary; check whether laminar/transient vortex shedding is the intended physics.
-  - Drag/lift saturation and oscillation behavior should be interpreted with solver, mesh, timestep, and physical regime in mind.
-
 ## Restarting from latest time
 
-- Source: shared Slack discussion.
+- Link: https://doc.cfd.direct/openfoam/user-guide-v13/controldict
+- Type: OpenFOAM runtime-control tip
 - Tip:
   - In `controlDict`, set `startFrom latestTime` to continue from the latest saved field.
 - Why it matters:

@@ -2,7 +2,7 @@
 
 ## Scenario-to-application research workflow
 
-- Source: shared note from a seminar on vehicle driving safety research.
+- Type: Research presentation / ML-for-science workflow template
 - Suggested structure:
   1. Scenario definition
   2. Metric design
@@ -16,10 +16,4 @@
   10. Application and future work
 - Why it matters:
   - Useful template for structuring PPTs, technical reports, and research narratives.
-  - Generalizes well to CFD/Scientific ML projects:
-    - define the flow/design scenario
-    - define physical or engineering metrics
-    - structure simulation/experimental data
-    - impose physical constraints
-    - train model / optimize design
-    - validate with CFD and generalize.
+  - Generalizes well to CFD/Scientific ML projects: define the flow/design scenario, define physical metrics, structure data, impose constraints, train/optimize, validate, and generalize.

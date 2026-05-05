@@ -30,21 +30,11 @@
   - Could connect AI assistants directly to LaTeX writing workflows.
   - Potentially useful for collaborative paper editing, structured manuscript updates, and automated consistency checks.
 
-## Agent-written technical reports
-
-- Source: shared examples of Claude Code producing simulation code + writing + figures/report PDFs.
-- Why it matters:
-  - Demonstrates the direction of end-to-end agentic report generation.
-  - Useful as inspiration for workflows where agents create simulation scripts, run experiments, generate plots, and draft reports.
-- Caution:
-  - Treat generated reports as drafts. Numerical validation, physical interpretation, and citations must be audited.
-
 ## Towards end-to-end automation of AI research
 
 - Link: https://www.nature.com/articles/s41586-026-10265-5
-- Related Korean coverage: https://share.google/wpgQ1kOcfuI8eTUcG
-- Type: AI scientist / automated research paper generation
-- Shared context:
+- - Type: AI scientist / automated research paper generation
+- Summary:
   - AI system can produce research papers with minimal human involvement and pass an initial peer-review stage.
 - Why it matters:
   - Strong signal that agentic research workflows are becoming more credible.

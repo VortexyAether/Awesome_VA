@@ -16,7 +16,7 @@
 
 - Link: https://github.com/KoStard/ForgeCAD
 - Type: AI-assisted parametric CAD generation
-- Shared context:
+- Summary:
   - Generates CAD that can be adjusted by parameters.
   - Usable with CLI coding agents such as Claude Code or Codex.
   - Early tests looked plausible but still had errors.
@@ -29,7 +29,7 @@
 
 - Link: https://www.linkedin.com/posts/roman-likhachev-23a544174_part-1-using-claude-code-for-3d-cad-design-i-activity-7442571132618260480-GaND
 - Type: LLM-assisted CAD design workflow
-- Shared context:
+- Summary:
   - Claude Code writes Python geometry.
   - FreeCAD watches/renders the script in real time.
   - User iterates through conversation and exports printable parts.

@@ -15,7 +15,7 @@
 
 ---
 
-## Highlights
+## ✨ Highlights
 
 - **CFD-AI & SciML:** differentiable CFD, JAX/Python PDE solvers, AMR, neural operators, turbulence surrogate models.
 - **Engineering AI workflows:** OpenFOAM automation, CAD/geometry AI, visualization, ParaView/PyVista, agentic research tooling.
@@ -24,58 +24,58 @@
 
 ---
 
-## Research areas
+## 🔬 Research areas
 
 | Area | Start here | Includes |
 |---|---|---|
-| **Differentiable CFD & AMR** | [Differentiable CFD & AMR](resources/differentiable-cfd-amr.md) | Differentiable solvers, adaptive discretization, ML-native PDE systems |
-| **JAX / Python PDE solvers** | [JAX CFD prototypes](resources/jax-cfd-prototypes.md) · [JAX/Python PDE solvers](resources/jax-pde-solvers.md) | JAX-CFD, PhiFlow, FiPy-style workflows, lightweight solver prototypes |
-| **Neural operators & tensor methods** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) | FNO, operator learning, tensor methods, QTT, spectral/operator architectures |
-| **Turbulence surrogate models** | [Turbulence surrogate models](resources/turbulence-surrogate-models.md) | Turbulence prediction, super-resolution, autoregressive flow prediction |
-| **Diffusion & generative physics** | [Diffusion & generative physics](resources/diffusion-generative-physics.md) | Diffusion/EDM-style models, deterministic generation, spectral consistency |
-| **Datasets & benchmarks** | [Datasets & benchmarks](resources/datasets-benchmarks.md) | Flow datasets, benchmark suites, metrics, reproducibility references |
+| 🧪 **Differentiable CFD & AMR** | [Differentiable CFD & AMR](resources/differentiable-cfd-amr.md) | Differentiable solvers, adaptive discretization, ML-native PDE systems |
+| ⚡ **JAX / Python PDE solvers** | [JAX CFD prototypes](resources/jax-cfd-prototypes.md) · [JAX/Python PDE solvers](resources/jax-pde-solvers.md) | JAX-CFD, PhiFlow, FiPy-style workflows, lightweight solver prototypes |
+| 🧠 **Neural operators & tensor methods** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) | FNO, operator learning, tensor methods, QTT, spectral/operator architectures |
+| 🌪️ **Turbulence surrogate models** | [Turbulence surrogate models](resources/turbulence-surrogate-models.md) | Turbulence prediction, super-resolution, autoregressive flow prediction |
+| 🌀 **Diffusion & generative physics** | [Diffusion & generative physics](resources/diffusion-generative-physics.md) | Diffusion/EDM-style models, deterministic generation, spectral consistency |
+| 📊 **Datasets & benchmarks** | [Datasets & benchmarks](resources/datasets-benchmarks.md) | Flow datasets, benchmark suites, metrics, reproducibility references |
 
 ---
 
-## Engineering workflow tools
+## 🧰 Engineering workflow tools
 
 | Area | Start here | Includes |
 |---|---|---|
-| **OpenFOAM & CFD automation** | [OpenFOAM AI workflows](resources/openfoam-ai-workflows.md) · [OpenFOAM tips](resources/openfoam-tips.md) | Case setup, solver automation, post-processing, safety checks |
-| **CAD, meshing & geometry AI** | [CAD & geometry AI](resources/cad-geometry-ai.md) · [Meshing & GPU workflows](resources/meshing-gpu-workflows.md) | FreeCAD, ForgeCAD, geometry agents, SDF/voxel workflows, mesh tooling |
-| **GPU / HPC CFD** | [GPU OpenFOAM & HPC](resources/gpu-openfoam-hpc.md) | GPU acceleration, HPC workflows, scalable simulation tooling |
-| **Visualization & post-processing** | [Visualization & post-processing](resources/visualization-postprocessing.md) | ParaView, PyVista, VTK, scientific visualization, visual debugging |
-| **Weather & climate visualization** | [Weather/climate visualization](resources/weather-climate-visualization.md) | Earth-system tools, climate/atmospheric visualization, large-field analysis |
-| **Nuclear AI & safety-code agents** | [Nuclear AI agents](resources/nuclear-ai-agents.md) | Nuclear engineering AI, safety-code automation, digital twins, LLM agents |
+| 🌊 **OpenFOAM & CFD automation** | [OpenFOAM AI workflows](resources/openfoam-ai-workflows.md) · [OpenFOAM tips](resources/openfoam-tips.md) | Case setup, solver automation, post-processing, safety checks |
+| 🧩 **CAD, meshing & geometry AI** | [CAD & geometry AI](resources/cad-geometry-ai.md) · [Meshing & GPU workflows](resources/meshing-gpu-workflows.md) | FreeCAD, ForgeCAD, geometry agents, SDF/voxel workflows, mesh tooling |
+| 🚀 **GPU / HPC CFD** | [GPU OpenFOAM & HPC](resources/gpu-openfoam-hpc.md) | GPU acceleration, HPC workflows, scalable simulation tooling |
+| 🎞️ **Visualization & post-processing** | [Visualization & post-processing](resources/visualization-postprocessing.md) | ParaView, PyVista, VTK, scientific visualization, visual debugging |
+| 🌦️ **Weather & climate visualization** | [Weather/climate visualization](resources/weather-climate-visualization.md) | Earth-system tools, climate/atmospheric visualization, large-field analysis |
+| ⚛️ **Nuclear AI & safety-code agents** | [Nuclear AI agents](resources/nuclear-ai-agents.md) | Nuclear engineering AI, safety-code automation, digital twins, LLM agents |
 
 ---
 
-## Agent & workflow tools
+## 🤖 Agent & workflow tools
 
 | Area | Start here | Includes |
 |---|---|---|
-| **Research productivity agents** | [Research productivity agents](resources/research-productivity-agents.md) · [Research automation & writing](resources/research-automation-writing.md) | Literature review, experiment automation, coding agents, research workflows |
-| **Paper writing tools** | [Paper writing tools](resources/paper-writing-tools.md) | LaTeX, citation, review, figure, proposal, and writing workflows |
-| **Agent tools** | [Agent tools & workflow](resources/agent-tools-workflow.md) | Claude/Codex/OpenCode, MCP tools, local harnesses, automation bridges |
-| **Local AI workflow** | [Local AI workflow](resources/local-ai-workflow.md) | Ollama, llama.cpp, local LLMs, offline/low-cost research workflows |
-| **Lab AI adoption** | [AI coding & lab adoption](resources/ai-coding-lab-adoption.md) | Shared AI tooling, lab workflows, coding support programs |
+| 🧑‍🔬 **Research productivity agents** | [Research productivity agents](resources/research-productivity-agents.md) · [Research automation & writing](resources/research-automation-writing.md) | Literature review, experiment automation, coding agents, research workflows |
+| ✍️ **Paper writing tools** | [Paper writing tools](resources/paper-writing-tools.md) | LaTeX, citation, review, figure, proposal, and writing workflows |
+| 🛠️ **Agent tools** | [Agent tools & workflow](resources/agent-tools-workflow.md) | Claude/Codex/OpenCode, MCP tools, local harnesses, automation bridges |
+| 💻 **Local AI workflow** | [Local AI workflow](resources/local-ai-workflow.md) | Ollama, llama.cpp, local LLMs, offline/low-cost research workflows |
+| 🏫 **Lab AI adoption** | [AI coding & lab adoption](resources/ai-coding-lab-adoption.md) | Team AI tooling, lab workflows, coding support programs |
 
 ---
 
-## Research practice
+## 🧭 Research practice
 
 | Area | Start here | Includes |
 |---|---|---|
-| **Math foundations** | [Mathematical foundations](resources/math-foundations.md) | Function representation, numerical intuition, theoretical notes |
-| **Optimization for SciML** | [Optimization for SciML](resources/optimization-sciml.md) | Training dynamics, optimization methods, architecture comparisons |
-| **Fluid/AI education** | [Fluid mechanics, turbulence & AI education](resources/education-fluid-ai.md) | Lectures, educational repositories, turbulence/ML learning resources |
-| **Presentation workflow** | [Research presentation & report workflow](resources/research-presentation-workflow.md) | Research story structure, reports, talks, visual communication |
-| **Events & opportunities** | [Events & opportunities](resources/events-opportunities.md) | Conferences, industry signals, graduate/career opportunities |
-| **Weekly / daily radar** | [Weekly digest](resources/weekly-digest.md) · [daily/](daily/) | Periodic research updates and short synthesis notes |
+| ∑ **Math foundations** | [Mathematical foundations](resources/math-foundations.md) | Function representation, numerical intuition, theoretical notes |
+| 📈 **Optimization for SciML** | [Optimization for SciML](resources/optimization-sciml.md) | Training dynamics, optimization methods, architecture comparisons |
+| 🎓 **Fluid/AI education** | [Fluid mechanics, turbulence & AI education](resources/education-fluid-ai.md) | Lectures, educational repositories, turbulence/ML learning resources |
+| 🗂️ **Presentation workflow** | [Research presentation & report workflow](resources/research-presentation-workflow.md) | Research story structure, reports, talks, visual communication |
+| 📌 **Events & opportunities** | [Events & opportunities](resources/events-opportunities.md) | Conferences, industry signals, graduate/career opportunities |
+| 🗓️ **Weekly / daily radar** | [Weekly digest](resources/weekly-digest.md) · [daily/](daily/) | Periodic research updates and short synthesis notes |
 
 ---
 
-## How to use this repository
+## 🚀 How to use this repository
 
 - Start from the tables above and jump into the most relevant `resources/*.md` file.
 - Treat entries as research notes, not rankings.

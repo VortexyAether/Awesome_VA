@@ -35,30 +35,11 @@
   - Could be relevant for scientific visualization, geometry prototyping, figure generation, and animation workflows.
   - Worth tracking if CFD/CAE visualization pipelines start using agent-assisted Blender scenes.
 
-## GPT subscription ecosystem tools
-
-- Shared tools:
-  - Code agents: Codex GUI/CLI, OpenCode CLI
-  - Video/image generation: Sora
-  - LaTeX alternative: Prism
-  - macOS browser: Atlas
-  - Browser automation agent: Operator
-- Why it matters:
-  - Useful map of tools available around GPT subscriptions.
-  - Helps compare Claude Code / Codex / OpenCode workflows for research coding, writing, and automation.
-
-## Mobile coding-agent / SSH workflow idea
-
-- Source: shared note about mobile Claude Code SSH support.
-- Why it matters:
-  - If mobile coding agents support SSH robustly, remote experiment management from a phone becomes practical.
-  - Relevant for launching/checking simulations away from workstation.
-
 ## Google Workspace CLI for coding agents
 
 - Link: https://www.youtube.com/watch?v=Pq12GuQw0_c
 - Type: Google Workspace CLI / coding-agent tool interface discussion
-- Shared context:
+- Summary:
   - The interesting part is not just human CLI usability, but that the structure appears friendly for coding agents.
   - Future open-source projects may improve AI accessibility by shipping MCP servers or agent-facing interfaces.
 - Why it matters:
@@ -67,8 +48,9 @@
 
 ## Academic/research skills and harness collections
 
-- K-Dense academic Claude skills: https://github.com/K-Dense-AI/claude-scientific-skills
-- Harness-100 collection: https://github.com/revfactory/harness-100
+- Links:
+  - K-Dense academic Claude skills: https://github.com/K-Dense-AI/claude-scientific-skills
+  - Harness-100 collection: https://github.com/revfactory/harness-100
 - Type: Skills/harness collections
 - Why it matters:
   - Useful starting points for building domain-specific scientific workflows.

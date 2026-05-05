@@ -1,16 +1,5 @@
 # Visualization & Post-processing
 
-## JAX Lattice Boltzmann + NVIDIA Omniverse visualization
-
-- Source: shared Slack video/note.
-- Type: JAX LBM simulation + Omniverse post-processing
-- Shared context:
-  - Q-criterion visualization of a JAX-based Lattice Boltzmann simulation.
-  - NVIDIA Omniverse used for post-processing/visualization.
-- Why it matters:
-  - Shows a promising path for high-quality visualization of JAX-based simulation outputs.
-  - Q-criterion visualization is directly relevant to vortex-dominated CFD analysis.
-
 ## PyVista
 
 - Link: https://github.com/pyvista/pyvista
@@ -18,3 +7,19 @@
 - Why it matters:
   - Useful for quick CFD/mesh/volume visualization from Python workflows.
   - Complements ParaView rather than replacing it: good for automation, notebooks, and scripted post-processing.
+
+## ParaView
+
+- Link: https://github.com/Kitware/ParaView
+- Type: Open-source scientific visualization application
+- Why it matters:
+  - Standard tool for CFD post-processing, field visualization, slices, contours, streamlines, and large scientific datasets.
+  - Strong backend target for automated visualization pipelines and agent-controlled post-processing.
+
+## ParaView MCP
+
+- Link: https://github.com/llnl/paraview_mcp
+- Type: MCP server for natural-language/multimodal control of ParaView
+- Why it matters:
+  - Provides a public, reusable bridge between LLM agents and ParaView.
+  - Useful for CAD-to-CFD-to-visualization workflows where an agent needs to load results, inspect fields, and generate views.

@@ -11,8 +11,13 @@
 
 ## Classical mesh tools: Gmsh, SALOME, Pointwise
 
-- Shared context:
-  - Gmsh, SALOME, and Pointwise were mentioned as practical mesh tools.
+- Links:
+  - Gmsh: https://gmsh.info/
+  - SALOME: https://www.salome-platform.org/
+  - Pointwise: https://www.pointwise.com/
+- Type: Mesh generation and preprocessing tools
+- Summary:
+  - Gmsh, SALOME, and Pointwise are practical mesh tools used across CFD/CAE workflows.
   - SALOME can be powerful but often requires manual work.
   - Example context: airfoil mesh generation and OpenFOAM tutorials.
 - Why it matters:
