@@ -87,3 +87,25 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
   - Targets real-time flow simulation, control, inverse design, and neural-operator integration.
   - Relevant to aircraft/control-oriented CFD-ML ideation.
   - Experimental and young; keep as a project to watch, not a validated solver baseline.
+
+## LSTM-PINN for steady-state electrothermal transport
+
+- Link: https://arxiv.org/abs/2604.14201
+- Type: Physics-informed neural network for coupled heat/fluid/electric fields
+- Why it matters:
+  - Addresses strongly coupled heat transfer, fluid flow, and electric-potential transport where standard PINNs can struggle with multi-field scale imbalance.
+  - Relevant to electronics cooling, electrothermal devices, and multiphysics thermal workflows.
+  - Useful caution/comparison point for whether sequence-style memory helps preserve consistency in steady coupled PDE settings.
+- Maturity: paper-only
+- Priority: Medium
+
+## Physics-informed ML for pouch-cell temperature estimation
+
+- Link: https://arxiv.org/abs/2604.14566
+- Type: Battery thermal-management surrogate / temperature estimator
+- Why it matters:
+  - Directly targets temperature estimation for pouch cells with indirect liquid cooling.
+  - Practical thermal-management example where full finite-element simulation is too expensive for online use.
+  - Good application anchor for physics-informed surrogates in battery and transport electrification workflows.
+- Maturity: paper-only
+- Priority: Medium

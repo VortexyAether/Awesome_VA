@@ -44,3 +44,26 @@
   - Useful for connecting SciML/control papers to aerodynamic actuation and closed-loop CFD experiments.
   - Track as a control benchmark idea rather than only an architecture paper.
 
+
+## Graph Neural ODE Digital Twins for reactor thermal-hydraulic forecasting
+
+- Link: https://arxiv.org/abs/2604.07292
+- Type: Control-oriented thermal-hydraulic surrogate / digital twin
+- Why it matters:
+  - Targets real-time supervisory control under partial observability, not just offline field prediction.
+  - Connects graph neural dynamics, thermal-hydraulic systems, and robust forecasting for advanced reactors.
+  - Useful anchor for thinking about CFD/SciML surrogates as control components with sensor limitations.
+- Possible use: Compare against neural-operator or reduced-order baselines on sensor-to-state forecasting tasks.
+- Maturity: paper-only
+- Priority: High
+
+## Safe active learning for sensor reliability qualification
+
+- Link: https://arxiv.org/abs/2605.00868
+- Type: Autonomous experiment planning / safe active learning
+- Why it matters:
+  - Uses Gaussian-process surrogate modeling to choose experiments under coupled thermal and hydrogen stress.
+  - Relevant pattern for expensive engineering campaigns where failures, safety limits, or long test durations constrain exploration.
+  - Transfers conceptually to CFD/thermal design-space exploration: sample efficiently without stepping into invalid or unsafe regimes.
+- Maturity: paper-only
+- Priority: Medium

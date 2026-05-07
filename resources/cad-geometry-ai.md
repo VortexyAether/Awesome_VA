@@ -121,3 +121,13 @@
 - Possible use: Track for parametric CAD reconstruction and future CAD-to-mesh automation pipelines.
 - Maturity: paper-only
 - Priority: High
+
+## Text2CAD
+
+- Link: https://github.com/Toommo2/Text2CAD
+- Type: Agent-driven natural-language to CAD workflow
+- Why it matters:
+  - Attempts to turn natural language into deterministic and validated CAD artifacts rather than only visual 3D previews.
+  - Relevant to CFD/CAE automation because downstream meshing and simulation require reproducible geometry files and validation hooks.
+  - Early-stage, but the emphasis on validation is the right direction for engineering use.
+- Curation note: Evaluate generated geometry quality and export formats before using in a real CAD-to-CFD loop.

@@ -143,3 +143,22 @@
   - Useful as a concrete example of moving CFD-ML from notebook experiments toward reproducible training pipelines.
   - Shows the workflow layer needed around neural surrogates: distributed training, pipeline orchestration, and dataset/version discipline.
 - Curation note: Very new and unproven; keep as a workflow pattern rather than a recommended dependency.
+
+## FreeCAD Robust MCP server
+
+- Link: https://github.com/spkane/freecad-addon-robust-mcp-server
+- Type: FreeCAD MCP bridge / workbench addon
+- Why it matters:
+  - Exposes FreeCAD through an agent-callable MCP surface, reducing reliance on brittle GUI automation.
+  - Useful comparison point for CAD-agent workflows where operations, screenshots, object state, and exports need to be explicit.
+  - More active than many tiny FreeCAD MCP experiments, so it is worth testing first when evaluating CAD-agent infrastructure.
+- Curation note: Validate on parametric parts and downstream STEP/STL export before recommending for lab use.
+
+## CadQuery MCP server
+
+- Link: https://github.com/mikekuniavsky/mcp-cadquery-server-public
+- Type: MCP server for CadQuery artifact generation
+- Why it matters:
+  - Takes CadQuery code and returns 3MF, PNG, and GLB artifacts, which fits agentic CAD loops where code generation must be rendered and inspected.
+  - CadQuery is attractive for CFD/CAE because parametric Python geometry can be versioned, swept, and regenerated.
+  - Small early project, but the interface shape is useful for designing reproducible geometry-generation tools.
