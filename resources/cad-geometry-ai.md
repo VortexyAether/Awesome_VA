@@ -200,3 +200,29 @@
 - Possible use: Use as a reference when designing mesh/CAD graph features for CFD surrogate or CAE classification tasks.
 - Maturity: paper-only
 - Priority: High
+
+## CADTestBench / CADTests
+
+- Link: https://arxiv.org/abs/2605.07807
+- Code: https://github.com/dimitrismallis/CADTestBench
+- Dataset: https://huggingface.co/datasets/dimitrismallis/CADTestBench
+- Type: Test-based benchmark for text-to-CAD evaluation
+- Why it matters:
+  - Evaluates generated CAD with executable CadQuery tests that verify geometric and topological prompt requirements directly.
+  - Better matches engineering use than Chamfer/IoU-only scoring because multiple CAD models can satisfy the same prompt while still needing exact constraints.
+  - The mutation-analysis refinement loop is a strong pattern for CAD agents: generate geometry, run deterministic tests, repair failures.
+- Possible use: Adapt the CADTests idea to VA's CAD-to-CAE workflow: prompt/spec → executable CAD → test suite for dimensions, named features, wall thickness, exports, and meshability.
+- Maturity: paper + code + dataset
+- Priority: High
+
+## build123d-mcp
+
+- Link: https://github.com/pzfreo/build123d-mcp
+- Type: MCP server for build123d programmatic CAD
+- Why it matters:
+  - Closes the feedback loop for AI-written build123d scripts by exposing execution, rendering, measurement, clearance, cross-sections, imports/exports, snapshots, and shape comparison as tools.
+  - Particularly relevant for engineering workflows because it checks geometry incrementally instead of asking an agent to write a complete blind CAD script.
+  - STEP/STL/DXF/SVG export and persistent session state make it a practical candidate for parametric geometry sweeps before meshing or simulation.
+- Possible use: Test on a small bracket/duct/heat-sink part and require the agent to report volume, bounding box, cross-sections, clearance, and exported STEP/STL artifacts.
+- Maturity: active early tool / PyPI package
+- Priority: High

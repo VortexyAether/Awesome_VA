@@ -197,3 +197,27 @@
   - Useful precedent for lab workflows where agents should modify validated cases and report mesh/convergence/post-processing artifacts.
 - Curation note: Student/project prototype; evaluate robustness before relying on it.
 - Priority: Medium
+
+## SolidworksMCP-TS
+
+- Link: https://github.com/vespo92/SolidworksMCP-TS
+- Type: TypeScript MCP server for SolidWorks COM automation
+- Why it matters:
+  - Exposes SolidWorks modeling, sketching, drawing, export, analysis, and macro/VBA generation through MCP over stdio.
+  - The direct-COM vs generated-VBA fallback is a useful implementation pattern for CAD APIs with awkward parameter limits.
+  - Explicitly alpha/experimental, but it maps the right engineering surface: geometry creation, drawings, exports, mass/interference checks, and geometry validation.
+- Possible use: Track as a Windows/SolidWorks reference when designing deterministic CAD-agent interfaces with validation and export hooks.
+- Maturity: alpha / experimental
+- Priority: Medium
+
+## neka-nat FreeCAD MCP
+
+- Link: https://github.com/neka-nat/freecad-mcp
+- Type: FreeCAD MCP addon and server
+- Why it matters:
+  - One of the more visible FreeCAD MCP implementations, with a FreeCAD workbench/addon, RPC server, Claude Desktop setup, text-only feedback mode, and remote-connection controls.
+  - Demonstrates practical workflows such as flanges, toy cars, and CAD generation from 2D drawings.
+  - Useful comparison point against more engineering-heavy FreeCAD MCP servers when choosing between visual feedback, text feedback, and operation-level tool surfaces.
+- Possible use: Evaluate alongside build123d-mcp and FreeCAD Robust MCP on the same parametric part → STEP/STL export → meshability checklist.
+- Maturity: active open-source MCP server
+- Priority: Medium

@@ -131,3 +131,27 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
   - Relevant to intelligent engineering workflows where process planning needs a fast but physics-grounded digital twin.
 - Maturity: paper-only
 - Priority: Medium
+
+## Physics-based Digital Twins for Integrated Thermal Energy Systems
+
+- Link: https://arxiv.org/abs/2605.06756
+- Type: Active-learning digital twin for thermal energy systems
+- Why it matters:
+  - Couples Modelica system simulation with SINDyC, probabilistic MvG-SINDyC, FNN, and GRU surrogates for real-time supervisory control.
+  - Demonstrates active learning on a glycol heat-exchanger subsystem, reducing required simulation trajectories to roughly one-fifth versus random sampling while preserving key heat-transfer outputs.
+  - Strong thermal/control signal because it compares interpretable, probabilistic, and neural surrogates under data-efficiency constraints rather than only reporting black-box accuracy.
+- Possible use: Use as an application anchor for thermal digital-twin proposals and for active-learning data selection in heat-transfer/control surrogates.
+- Maturity: paper-only
+- Priority: High
+
+## Reduced-Order Modeling of Parameterized Visco-Plastic Shallow Flows
+
+- Link: https://arxiv.org/abs/2605.06526
+- Type: Non-intrusive reduced-order model for non-Newtonian shallow flows
+- Why it matters:
+  - Targets Herschel-Bulkley free-surface flows with moving fronts, yield surfaces, and nonsmooth rheology.
+  - Useful reminder that tensor/ROM approaches can still be competitive for structured parameterized flow families where neural operators are not automatically the best tool.
+  - Relevant to slurry, lava, debris-flow, coating, and other industrial non-Newtonian flow surrogates.
+- Possible use: Compare ROM-style parameter-to-field reconstruction with FNO/GNO baselines on non-Newtonian or shallow-flow datasets.
+- Maturity: paper-only
+- Priority: Medium
