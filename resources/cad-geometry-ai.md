@@ -272,3 +272,15 @@
   - Useful as an application anchor for Carnot battery / turbomachinery / energy-system design loops, with validation caveats for off-design and complex geometries.
 - Maturity: paper-only
 - Priority: Medium
+
+## CADCLAW
+
+- Link: https://github.com/sunnyday-technologies/CADCLAW
+- Type: STEP assembly validation suite / MCP-exposed CAD checks
+- Why it matters:
+  - Runs automated assembly checks for inventory, interference, adjacency, dimensional constraints, orientation, floating parts, color/material metadata, tolerance stacking, BOM-vs-CAD drift, disassembly, and rendering.
+  - Fits the missing validation layer between AI-generated CAD and downstream CAE: geometry should produce evidence before meshing or simulation.
+  - MCP exposure makes it relevant to agentic CAD workflows where assistants need callable validation tools instead of visual inspection alone.
+- Possible use: Use after CadQuery/build123d/FreeCAD generation to gate STEP artifacts before OpenFOAM meshing or thermal simulation.
+- Maturity: early open-source tool with DOI / validate before lab adoption
+- Priority: High

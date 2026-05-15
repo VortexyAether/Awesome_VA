@@ -466,3 +466,51 @@
   - Worth tracking as a pattern for thermal/fluid/control surrogates where physical structure should constrain learned dynamics.
 - Maturity: paper-only
 - Priority: Medium
+
+## Shodh-MoE for multi-physics foundation models
+
+- Link: https://arxiv.org/abs/2605.15179
+- Type: Sparse mixture-of-experts neural operator / multi-physics SciML paper
+- Why it matters:
+  - Targets negative transfer when dense neural operators are trained across incompatible PDE regimes.
+  - Relevant to CFD/thermal foundation-model claims because open-channel flow, porous media, shocks, and heat transfer may need different routing paths.
+  - Useful reference when designing benchmarks that measure whether adding more physics helps or hurts a shared surrogate.
+- Possible use: Compare dense shared FNO/Transformer baselines against routed experts on mixed thermal-fluid datasets.
+- Maturity: paper-only
+- Priority: High
+
+## Composing Neural PDE Experts in Weight Space
+
+- Link: https://arxiv.org/abs/2605.14546
+- Type: Expert composition / transfer learning for neural PDE surrogates
+- Why it matters:
+  - Interprets fine-tuned PDE experts as reusable weight-space directions aligned with physical parameters.
+  - Suggests a controllable alternative to retraining separate surrogates for each Reynolds number, boundary regime, or material parameter.
+  - Useful bridge between operator pretraining and parameter-aware adaptation for CFD/thermal model families.
+- Possible use: Test whether expert-direction interpolation gives stable predictions across Reynolds/Prandtl/geometry regimes.
+- Maturity: paper-only
+- Priority: High
+
+## U-HNO
+
+- Link: https://arxiv.org/abs/2605.12965
+- Type: Hybrid neural operator with sparse-point adaptive routing
+- Why it matters:
+  - Addresses PDE trajectories with smooth global transport plus localized shocks, interfaces, or concentrated high-frequency content.
+  - More relevant to CFD than uniform global operators when boundary layers, discontinuities, and local structures dominate error.
+  - The adaptive routing idea is worth comparing against fixed FNO/U-Net hybrid architectures.
+- Possible use: Candidate baseline for shock tube, compressible flow, and localized-source heat-transfer surrogate experiments.
+- Maturity: paper-only
+- Priority: High
+
+## Consistency-Distilled Flow Matching for Physical Fidelity Reconstruction
+
+- Link: https://arxiv.org/abs/2605.05975
+- Type: One-step generative reconstruction for dynamical systems
+- Why it matters:
+  - Compresses flow-matching reconstruction into a one-step model, reducing latency for high-fidelity field recovery.
+  - Relevant to simulation-in-the-loop workflows, sparse/low-fidelity observation upscaling, and real-time visualization.
+  - Useful comparison against iterative diffusion/flow-matching surrogates where sampling cost erases practical gains.
+- Possible use: Evaluate on low-fidelity-to-high-fidelity CFD field reconstruction with conservation and rollout diagnostics.
+- Maturity: paper-only
+- Priority: Medium

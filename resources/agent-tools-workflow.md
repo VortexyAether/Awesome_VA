@@ -255,3 +255,39 @@
   - Useful workflow signal for CAD/PDM-aware research automation even if it is not an immediate lab dependency.
 - Maturity: early community project
 - Priority: Medium
+
+## Agent-ready OpenAPI smell detection
+
+- Link: https://arxiv.org/abs/2605.14312
+- Type: Multi-agent documentation/API quality analysis for MCP-style tool exposure
+- Why it matters:
+  - Shows that stable REST APIs can still fail for agents when documentation lacks usable parameter semantics, examples, and task-planning affordances.
+  - Directly relevant to engineering automation: CAD/CAE/OpenFOAM wrappers need agent-ready contracts, not only endpoints.
+  - Useful checklist material before exposing internal lab tools through MCP or OpenAPI.
+- Possible use: Audit OpenFOAM/CAD helper APIs for ambiguous parameters, missing schemas, unsafe defaults, and absent examples.
+- Maturity: paper-only
+- Priority: High
+
+## SPIN structural planning for industrial agents
+
+- Link: https://arxiv.org/abs/2605.14051
+- Type: Validated DAG planning wrapper for industrial LLM agents
+- Why it matters:
+  - Enforces executable plan structure and repairs invalid DAGs before downstream tool execution.
+  - Prefix-based execution control is attractive for expensive engineering workflows where an agent should stop once enough evidence exists.
+  - Good pattern for CAD/mesh/solver pipelines: plan, validate, execute prefix, inspect artifacts, then continue only if needed.
+- Possible use: Adapt the DAG contract idea to CAD-to-CFD workflows with explicit gates for geometry, mesh, solver, and post-processing.
+- Maturity: paper-only
+- Priority: Medium
+
+## FermiLink
+
+- Link: https://github.com/TaoELi/FermiLink
+- Type: Agent framework for autonomous scientific simulations and HPC/workstation loops
+- Why it matters:
+  - Uses goal files, package knowledge bases, and long-running simulation loops for scientific computing workflows.
+  - Supports local or HPC execution patterns and includes a code-optimization mode with deterministic benchmark/correctness checks.
+  - Relevant as a higher-level harness pattern for multi-day CFD/thermal/SciML experiment campaigns.
+- Possible use: Inspect as a reference design for VA-style goal-driven OpenFOAM/SciML campaigns with provenance and stop conditions.
+- Maturity: early open-source / PyPI project
+- Priority: Medium
