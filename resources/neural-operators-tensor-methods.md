@@ -634,3 +634,51 @@
 - Possible use: Include uncertainty-propagation metrics in surrogate benchmarks before using models for design decisions.
 - Maturity: paper-only
 - Priority: Medium
+
+## PACE-FNO
+
+- Link: https://arxiv.org/abs/2605.18606
+- Type: Physics-aligned equivariant Fourier neural operator
+- Why it matters:
+  - Separates coordinate/frame alignment from PDE evolution by canonicalizing inputs with known continuous symmetries before applying FNO.
+  - Directly targets OOD shifts where vanilla neural operators waste capacity relearning translations/rotations or symmetry-induced coordinate changes.
+  - Useful reference for CFD/thermal surrogate benchmarks where symmetry-aware evaluation is more meaningful than random train/test splits.
+- Possible use: Compare against vanilla FNO on shifted/rotated periodic PDE fields or channel-flow slices to test symmetry-induced OOD generalization.
+- Maturity: paper-only
+- Priority: High
+
+## CTA-Swin-UNet for wall-bounded turbulence
+
+- Link: https://arxiv.org/abs/2605.17888
+- Type: Long-horizon turbulence surrogate with resolvent-based reconstruction
+- Why it matters:
+  - Targets long-horizon prediction of 3D wall-bounded turbulence, where autoregressive error accumulation is the real bottleneck.
+  - Combines channel-time attention for planar flow prediction with resolvent-based spectral linear stochastic estimation for 3D reconstruction.
+  - Useful reminder that hybrid ML + physics reconstruction can be more practical than pure field-to-field black-box rollout.
+- Possible use: Track as a comparison point for turbulence surrogate experiments that report rollout stability, spectra, and physical statistics.
+- Maturity: paper-only
+- Priority: High
+
+## In-Context Earth for subsurface temperature fields
+
+- Link: https://arxiv.org/abs/2605.16665
+- Type: Transformer model for sparse-observation thermal-field prediction
+- Why it matters:
+  - Uses sparse borehole observations as context to infer continuous temperature-at-depth fields with calibrated uncertainty.
+  - Relevant to geothermal assessment, subsurface heat transport, and sparse-sensor thermal reconstruction problems.
+  - Good applied example of in-context learning for physical fields rather than generic language or image tasks.
+- Possible use: Use as inspiration for sparse-sensor heat-transfer field reconstruction benchmarks.
+- Maturity: paper-only
+- Priority: Medium
+
+## pyforce 1.0.0
+
+- Link: https://arxiv.org/abs/2605.18082
+- Type: Python framework for data-driven reduced-order modeling of multi-physics problems
+- Why it matters:
+  - Implements ROM workflows for multi-physics applications with a VTK/PyVista-friendly data path.
+  - Solver-agnostic VTK export compatibility makes it easier to attach ROM/SciML tools to existing CFD/CAE pipelines.
+  - Useful bridge between classical reduced-order modeling and modern Python visualization/post-processing infrastructure.
+- Possible use: Evaluate on VTK-exporting CFD/thermal examples before building custom ROM tooling.
+- Maturity: released framework / paper
+- Priority: Medium

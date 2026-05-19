@@ -326,3 +326,27 @@
   - Useful scouting target alongside more mature FreeCAD MCP servers to see which operations are essential for CFD handoff.
 - Curation note: Low-star and early-stage; inspect before use, treat as a design signal rather than a dependable dependency.
 - Priority: Medium
+
+## Code as Agent Harness
+
+- Link: https://arxiv.org/abs/2605.18747
+- Type: Survey / framing paper for code-centered agent harnesses
+- Why it matters:
+  - Frames code as the operational substrate for agent reasoning, action, environment modeling, and execution-based verification.
+  - Useful for engineering agents because CAD/CAE automation needs executable harnesses that expose state, artifacts, logs, and provenance.
+  - Helps distinguish durable workflow infrastructure from chat-only prompting.
+- Possible use: Use as a design reference for OpenFOAM/FreeCAD/SALOME harnesses where agents must act through auditable code and checks.
+- Maturity: paper-only
+- Priority: Medium
+
+## PROTEA
+
+- Link: https://arxiv.org/abs/2605.18032
+- Type: Offline evaluation and iterative refinement for multi-agent LLM workflows
+- Why it matters:
+  - Scores intermediate workflow nodes and overlays failure evidence on the workflow graph instead of only judging final outputs.
+  - Relevant to CAD→mesh→solve→postprocess pipelines where failures propagate and need localization.
+  - The backward node-evaluation idea is useful when only final references or KPIs are available.
+- Possible use: Borrow the node-level evaluation pattern for multi-step engineering-agent workflows and nightly regression tests.
+- Maturity: paper-only
+- Priority: Medium

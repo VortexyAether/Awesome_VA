@@ -356,3 +356,39 @@
 - Possible use: Compare with CadQuery/build123d/FreeCAD MCP flows for simple parametric parts.
 - Maturity: early open-source MCP server
 - Priority: Medium
+
+## Text2CAD-Bench
+
+- Link: https://arxiv.org/abs/2605.18430
+- Type: Benchmark for LLM-based text-to-parametric-CAD generation
+- Why it matters:
+  - Covers 600 human-curated examples across basic geometry, complex topology, freeform surfaces, and application-diverse CAD tasks.
+  - Uses both non-expert geometric descriptions and expert-like procedural prompts, making it more realistic than primitive sketch-extrude benchmarks.
+  - Shows current models degrade sharply on advanced features, which is exactly where engineering CAD automation becomes useful.
+- Possible use: Use as an evaluation reference when building text/spec-to-CadQuery, FeatureScript, or FreeCAD agent tests.
+- Maturity: paper-only / benchmark announced
+- Priority: High
+
+## Self-Improving CAD Generation Agents with FEA Feedback
+
+- Link: https://arxiv.org/abs/2605.17448
+- Type: CAD-agent benchmark / FEA-feedback workflow
+- Why it matters:
+  - Requires agents to produce fully assembled multi-part STEP files from free-form engineering briefs, then validates them with finite element analysis.
+  - Reports that strong coding agents still fail strict first-attempt engineering requirements, exposing the gap between plausible CAD and usable CAD.
+  - Strong evidence that CAD automation needs simulation feedback, typed requirements, and repair loops.
+- Possible use: Adapt the task pattern to CAD-to-CFD/thermal workflows: generated STEP → geometry checks → mesh → solver smoke test → repair.
+- Maturity: paper-only
+- Priority: High
+
+## Jarvis Onshape MCP
+
+- Link: https://github.com/ReshefElisha/jarvis-onshape-mcp
+- Type: MCP plugin for Onshape CAD automation
+- Why it matters:
+  - Lets Claude Code-style agents drive real Onshape CAD using vision decomposition, parametric iteration, and FeatureScript-oriented workflows.
+  - Complements FreeCAD/CadQuery MCP efforts with a cloud-CAD path that may fit collaborative design and revision workflows.
+  - Useful signal for agent-readable CAD interfaces where truthfulness about current model state matters as much as command generation.
+- Curation note: Evaluate permissions, API reliability, export formats, and downstream mesh/CAE handoff before using in lab workflows.
+- Maturity: early open-source MCP tool
+- Priority: Medium
