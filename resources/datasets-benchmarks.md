@@ -25,3 +25,14 @@ Flow datasets, SciML benchmarks, reproducibility references, metrics, and evalua
 - Possible use: Use to sanity-check new surrogate or neural-operator experiments before moving to custom CFD datasets.
 - Maturity: maintained library
 - Priority: High
+
+## HiLiftAeroML
+
+- Link: https://arxiv.org/abs/2605.19565
+- Type: High-fidelity CFD dataset for aerodynamic surrogate modeling
+- Keywords: CFD dataset, high-lift aircraft, aerodynamics, surrogate modeling, design sweep
+- One-line summary: Open high-fidelity CFD dataset with 1,800 samples from 180 high-lift NASA CRM geometry variants across 10 angles of attack.
+- Why it matters: Gives CFD-AI models a more engineering-native benchmark than clean toy PDEs or overly simplified airfoils, tying surrogate learning to geometry variation and high-lift aerodynamic design.
+- Possible use: Use for neural operator/GNN/ROM surrogate comparisons, geometry-OOD evaluation, and active-learning experiments for aerodynamic design spaces.
+- Maturity: paper / dataset announced
+- Priority: High

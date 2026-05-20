@@ -392,3 +392,51 @@
 - Curation note: Evaluate permissions, API reliability, export formats, and downstream mesh/CAE handoff before using in lab workflows.
 - Maturity: early open-source MCP tool
 - Priority: Medium
+
+## Memory-Augmented RL Agent for CAD Generation
+
+- Link: https://arxiv.org/abs/2605.19748
+- Type: Memory-augmented reinforcement-learning agent for CAD generation
+- Why it matters:
+  - Targets complex CAD models with long operation sequences, diverse operation types, and strong geometric constraints.
+  - Signals a shift from one-shot LLM CAD code generation toward design-history-aware policies with persistent state.
+  - Relevant to parametric CAD/CAE workflows where edit sequences, constraints, and recoverable intermediate states matter.
+- Possible use: Compare against CadQuery/FeatureScript agent loops that use explicit memory, tests, and repair traces.
+- Maturity: paper-only
+- Priority: High
+
+## Physics-in-the-Loop CAD Engineering Design
+
+- Link: https://arxiv.org/abs/2605.19717
+- Type: Hybrid agentic architecture for validated CAD engineering design
+- Why it matters:
+  - Embeds validated engineering tools and physical checks inside the CAD-agent loop instead of expecting an LLM to infer physics implicitly.
+  - Strong pattern for CAD-to-CAE automation: generated geometry should be accepted only after deterministic validation and physics-aware feedback.
+  - Complements FEA-feedback CAD-agent work by emphasizing architecture and knowledge-based tools around the generative model.
+- Possible use: Use as a blueprint for a CAD→mesh→thermal/CFD artifact gate with dimensional checks, meshability, solver smoke tests, and repair loops.
+- Maturity: paper-only
+- Priority: High
+
+## EngiAI
+
+- Link: https://arxiv.org/abs/2605.19743
+- Type: Multi-agent framework and benchmark suite for LLM-driven engineering design
+- Why it matters:
+  - Evaluates engineering-design agents across simulation, retrieval, and manufacturing-preparation steps, not just final text or visual output.
+  - Useful for designing benchmarks where CAD, solver execution, documentation, and artifact validation are all separate failure points.
+  - Reinforces that multi-agent engineering workflows need evidence logs and node-level evaluation.
+- Possible use: Reference when structuring CAD/CAE agent benchmarks or OpenClaw workflows for engineering design automation.
+- Maturity: paper-only
+- Priority: High
+
+## BrepForge
+
+- Link: https://arxiv.org/abs/2605.19411
+- Type: Factorized B-rep synthesis for CAD generation
+- Why it matters:
+  - Separates wireframe composition from boundary-conditioned surface instantiation to handle the topology/geometry coupling in B-rep CAD.
+  - B-rep structure is critical for downstream CAE because faces, edges, topology, and feature identity drive meshing and boundary-condition assignment.
+  - Useful counterweight to mesh-only or image-like 3D generation methods that lose engineering editability.
+- Possible use: Track for parametric CAD reconstruction, named-face preservation, and CAD-to-mesh automation research.
+- Maturity: paper-only
+- Priority: High

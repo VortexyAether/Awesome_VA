@@ -682,3 +682,39 @@
 - Possible use: Evaluate on VTK-exporting CFD/thermal examples before building custom ROM tooling.
 - Maturity: released framework / paper
 - Priority: Medium
+
+## Neural operator as coarse solve replacement
+
+- Link: https://arxiv.org/abs/2605.19867
+- Type: Neural operator / numerical linear solver acceleration
+- Why it matters:
+  - Studies when a neural operator can replace the coarse solve in two-level preconditioning rather than acting as a full black-box PDE solver.
+  - Practical for CFD/SciML because trusted solvers often need acceleration components, not total replacement.
+  - Helps frame architecture choices by solver role: correction quality, stability, and interaction with the outer numerical method.
+- Possible use: Use as a reference when evaluating neural surrogates as multigrid/coarse-correction modules for parametric CFD or thermal solvers.
+- Maturity: paper-only
+- Priority: High
+
+## Smooth Piecewise Cutting for Neural Operators
+
+- Link: https://arxiv.org/abs/2605.19823
+- Type: Neural operator method for discontinuities and sharp transitions
+- Why it matters:
+  - Targets a core weakness of continuous neural-operator representations: oversmoothing discontinuities, fronts, shocks, and interfaces.
+  - Relevant to compressible CFD, phase-change heat transfer, multiphase flow, and moving-boundary problems where sharp features dominate error.
+  - Useful comparison point against shock-aware losses, adaptive meshes, graph methods, and domain-decomposition-style surrogates.
+- Possible use: Track for benchmarks with shocks, thermal fronts, wet/dry interfaces, or particle/fluid discontinuities.
+- Maturity: paper-only
+- Priority: High
+
+## Physics-informed GNN surrogates for turbulent nanoparticle dispersion
+
+- Link: https://arxiv.org/abs/2605.19589
+- Type: Physics-informed graph neural surrogate for turbulent particle dispersion
+- Why it matters:
+  - Applies mesh/geometry-aware surrogate modeling to RANS + Euler-Lagrange nanoparticle transport in indoor clinical environments.
+  - Useful applied example for aerosol, particle-laden flow, and indoor-air CFD acceleration rather than only canonical fluid benchmarks.
+  - Reinforces that surrogate validation should include transport/dispersion quantities, not only velocity-field visual similarity.
+- Possible use: Reference for particle-dispersion surrogate experiments or indoor-air/ventilation CFD acceleration ideas.
+- Maturity: paper-only
+- Priority: Medium

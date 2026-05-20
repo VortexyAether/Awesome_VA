@@ -350,3 +350,23 @@
 - Possible use: Borrow the node-level evaluation pattern for multi-step engineering-agent workflows and nightly regression tests.
 - Maturity: paper-only
 - Priority: Medium
+
+## AutoCAD MCP Server
+
+- Link: https://github.com/wade20250715/autocad-mcp-server
+- Type: MCP bridge for AutoCAD automation
+- Why it matters:
+  - Early example of exposing DWG/AutoCAD operations through an agent-callable Model Context Protocol surface.
+  - Useful signal that commercial CAD tools may become controllable through structured agent APIs rather than GUI macros alone.
+  - Relevant to engineering workflow automation where CAD edits, drawing inspection, and artifact export should be explicit and logged.
+- Curation note: Very early and low-signal repository; inspect security, API coverage, and reproducibility before any real use.
+
+## TIA Portal MCP
+
+- Link: https://github.com/Czarnak/tia-portal-mcp
+- Type: MCP bridge for Siemens SIMATIC TIA Portal automation
+- Why it matters:
+  - Extends the MCP/control-surface pattern from CAD into industrial automation software.
+  - Interesting for agentic engineering workflows where electrical/control logic, PLC projects, and mechanical/thermal design may eventually need connected automation.
+  - Useful precedent for wrapping specialized engineering applications with safe, typed operations instead of brittle screen control.
+- Curation note: Very early; treat as a workflow signal, not a dependable dependency.
