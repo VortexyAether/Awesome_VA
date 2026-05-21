@@ -370,3 +370,26 @@
   - Interesting for agentic engineering workflows where electrical/control logic, PLC projects, and mechanical/thermal design may eventually need connected automation.
   - Useful precedent for wrapping specialized engineering applications with safe, typed operations instead of brittle screen control.
 - Curation note: Very early; treat as a workflow signal, not a dependable dependency.
+
+## Firefly: verified tool-call data from real MCP servers
+
+- Link: https://arxiv.org/abs/2605.17558
+- Type: Tool-call data generation / MCP evaluation pipeline
+- Why it matters:
+  - Generates verified tool-call data by exploring real MCP servers and grounding tasks in observed API behavior.
+  - Useful for engineering agents because simulator/CAD/CAE tool use fails on concrete API details, side effects, and artifact states that synthetic tasks often miss.
+  - Suggests a practical pattern for lab tooling: first discover valid operations and outcomes, then synthesize training/evaluation tasks with checkable ground truth.
+- Possible use: Adapt the idea to FreeCAD/OpenFOAM helper tools so agent benchmarks verify produced files, logs, and KPIs instead of relying on LLM-as-judge.
+- Maturity: paper-only
+- Priority: High
+
+## mcp-cad
+
+- Link: https://github.com/PaulGregoryBaker/mcp-cad
+- Type: MCP layer for sheet-metal manufacturing orchestration
+- Why it matters:
+  - Early attempt to expose sheet-metal/manufacturing workflow operations as an agent-addressable MCP layer.
+  - Interesting because sheet metal has hard manufacturing constraints, making it a better engineering-agent testbed than unconstrained visual CAD generation.
+  - Treat as a workflow signal, not a dependency, until implementation surface, tests, and artifact validation are clearer.
+- Maturity: very early open-source project
+- Priority: Low

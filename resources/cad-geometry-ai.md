@@ -440,3 +440,15 @@
 - Possible use: Track for parametric CAD reconstruction, named-face preservation, and CAD-to-mesh automation research.
 - Maturity: paper-only
 - Priority: High
+
+## COSMO-Agent
+
+- Link: https://arxiv.org/abs/2605.20190
+- Type: Tool-augmented agent framework for CAD-CAE closed-loop optimization
+- Why it matters:
+  - Frames iterative industrial design as a CAD-CAE semantic-gap problem: simulation feedback must be translated into valid geometric edits under constraints.
+  - Combines optimization, simulation, and modeling orchestration rather than treating CAD generation as a one-shot text-to-shape task.
+  - Strongly aligned with CAD→mesh→CFD/FEA workflows where each edit must preserve parametric validity, downstream meshability, and physics intent.
+- Possible use: Use as a reference architecture for an artifact-gated CAD-CAE loop: propose edit, regenerate CAD, run mesh/solver smoke test, compare KPI, and record provenance.
+- Maturity: paper-only
+- Priority: High

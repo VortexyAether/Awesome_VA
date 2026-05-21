@@ -36,3 +36,14 @@ Flow datasets, SciML benchmarks, reproducibility references, metrics, and evalua
 - Possible use: Use for neural operator/GNN/ROM surrogate comparisons, geometry-OOD evaluation, and active-learning experiments for aerodynamic design spaces.
 - Maturity: paper / dataset announced
 - Priority: High
+
+## ShapeBench
+
+- Link: https://arxiv.org/abs/2605.20763
+- Type: Aerodynamic shape-optimization benchmark / diagnostic suite
+- Keywords: aerodynamic shape optimization, CFD verification, surrogate modeling, benchmark, fidelity gap
+- One-line summary: A scalable benchmark suite for aerodynamic shape optimization with validated fast surrogates and, where feasible, high-fidelity CFD pipelines for final verification.
+- Why it matters: Moves CFD-AI evaluation from pure prediction error toward whether surrogate-guided optimization produces designs that survive expensive CFD rechecks.
+- Possible use: Use as a template for VA-style CAD/CFD optimization audits: surrogate search, candidate selection, high-fidelity verification, and fidelity-gap reporting.
+- Maturity: paper / benchmark announced
+- Priority: High

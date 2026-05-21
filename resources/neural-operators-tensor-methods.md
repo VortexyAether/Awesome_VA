@@ -718,3 +718,26 @@
 - Possible use: Reference for particle-dispersion surrogate experiments or indoor-air/ventilation CFD acceleration ideas.
 - Maturity: paper-only
 - Priority: Medium
+
+## Data-Efficient Neural Operator Training via Physics-Based Active Learning
+
+- Link: https://arxiv.org/abs/2605.21348
+- Type: Neural operator training / active learning
+- Why it matters:
+  - Treats neural-operator dataset growth as an acquisition problem: choose the most informative PDE simulations instead of scaling data blindly.
+  - Directly relevant when CFD, heat-transfer, or multiphysics samples are expensive and simulation budget is the limiting factor.
+  - Good companion idea for engineering-grade datasets such as HiLiftAeroML, where active sampling can be evaluated against geometry/OOD splits.
+- Possible use: Compare physics-based active learning against random/LHS sampling for CFD surrogate training under a fixed simulation budget.
+- Maturity: paper-only / ICLR 2026 AI4PDE workshop
+- Priority: High
+
+## Hierarchical Multi-Fidelity Learning for 3D Flame Wrinkling and Turbulent Burning Velocity
+
+- Link: https://arxiv.org/abs/2605.08232
+- Type: Multi-fidelity SciML for combustion/turbulent flows
+- Why it matters:
+  - Uses hierarchical multi-fidelity learning for combustion quantities where high-fidelity data is expensive and low-fidelity signals are easier to obtain.
+  - Relevant to heat-transfer/fluid workflows because reacting turbulent flows expose the same data-budget and fidelity-gap problems as many industrial CFD tasks.
+  - Useful as an applied anchor for discussing when multi-fidelity learning is more practical than a single large black-box surrogate.
+- Maturity: paper-only
+- Priority: Medium
