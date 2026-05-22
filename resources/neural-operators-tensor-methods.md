@@ -64,6 +64,42 @@
   - Useful as a sanity-check citation when evaluating neural-operator CFD papers and benchmark claims.
   - Helps frame when surrogates are actually useful versus when they only exploit low-dimensional benchmark structure.
 
+## Time-Dependent PDE-Constrained Optimization via Weak-Form Latent Dynamics
+
+- Link: https://arxiv.org/abs/2605.20639
+- Type: Weak-form latent-space reduced-order model for PDE-constrained optimization
+- Why it matters:
+  - Targets repeated forward and sensitivity solves in high-dimensional, time-dependent PDE optimization.
+  - Relevant to CFD/thermal design loops where the useful question is optimum quality under a simulation budget, not only field-level prediction error.
+  - Good comparison point against neural-operator and classical ROM baselines for control/design tasks.
+- Possible use: Build a small heat-transfer or cavity-flow optimization benchmark that reports solve budget, optimum quality, and validation error.
+- Maturity: paper-only
+- Priority: High
+
+## Wavelet Flow Matching for Multi-Scale Physics Emulation
+
+- Link: https://arxiv.org/abs/2605.16573
+- Type: Generative multi-scale physics emulator
+- Why it matters:
+  - Uses wavelet/latent flow-matching ideas to preserve fine-scale structures while avoiding the cost of heavy iterative generative sampling.
+  - Relevant to turbulence, climate, and thermal-field emulation where deterministic surrogates often over-smooth small scales.
+  - Useful signal for evaluating generative surrogates on rollout stability and spectral/fine-scale diagnostics, not only visual quality.
+- Possible use: Compare against FNO/latent-diffusion-style baselines on multi-scale fluid or thermal datasets with spectral metrics.
+- Maturity: paper-only
+- Priority: Medium
+
+## Symmetry in the Wild
+
+- Link: https://arxiv.org/abs/2605.18816
+- Type: Equivariance analysis for neural fluid surrogates
+- Why it matters:
+  - Studies whether equivariance helps neural fluid surrogates under realistic CFD constraints such as large surface/volume meshes and bespoke architectures.
+  - Useful antidote to over-general claims that symmetry-aware models automatically solve engineering-scale surrogate problems.
+  - Directly relevant to aerodynamic surrogate modeling where geometry, mesh scale, and architecture interact.
+- Possible use: Use as a reading anchor when deciding whether to add equivariant layers to CAD/mesh-to-field surrogate experiments.
+- Maturity: paper-only
+- Priority: Medium
+
 
 ## Hybrid Fourier Neural Operator-Lattice Boltzmann Method
 

@@ -163,6 +163,52 @@
   - CadQuery is attractive for CFD/CAE because parametric Python geometry can be versioned, swept, and regenerated.
   - Small early project, but the interface shape is useful for designing reproducible geometry-generation tools.
 
+## sandraschi FreeCAD MCP
+
+- Link: https://github.com/sandraschi/freecad-mcp
+- Type: FreeCAD MCP server / webapp with CFD-extension ambition
+- Why it matters:
+  - Describes a FastMCP 3.2 server plus webapp for FreeCAD 3D CAD workflows, with FluidX3D/OpenFOAM CFD extensions in scope.
+  - Useful signal that CAD MCP bridges are starting to target CAD-to-CFD handoff rather than only geometry creation.
+  - Could inform a minimal FreeCAD → export → OpenFOAM/FluidX3D harness if the repo matures.
+- Curation note: Very early repository with minimal adoption; inspect implementation before relying on it.
+
+## CadGate
+
+- Link: https://github.com/vericontext/cadgate
+- Type: Verification gate for AI-generated CAD-as-code pull requests
+- Why it matters:
+  - Targets CadQuery/Build123d PR validation with geometric metric diffs, minimum-wall-thickness checks, DFM rules, and six-view rendered previews.
+  - Strong pattern for agentic CAD workflows: generated geometry should enter through reproducible checks, not screenshots or trust in a chat transcript.
+  - Relevant to CFD/CAE automation because CAD changes need dimensional, manufacturability, and export checks before meshing or simulation.
+- Possible use: Adapt the idea into a GitHub Action for VA's CAD/CFD experiments: render, metric diff, export validation, and mesh-prep smoke test.
+- Maturity: early open-source tool
+- Priority: High
+
+## TO-Agents
+
+- Link: https://arxiv.org/abs/2605.21622
+- Type: Multi-agent pipeline for preference-guided topology optimization
+- Why it matters:
+  - Converts natural-language design intent into validated topology-optimization solver inputs, renders the 3D result, then uses vision-language critique and a judge agent to revise solver parameters.
+  - Directly addresses a real engineering-agent bottleneck: translating qualitative design preferences into controllable objective/constraint settings.
+  - Useful reference for closed-loop design automation where solver artifacts, visual inspection, and parameter revision are all first-class.
+- Possible use: Borrow the loop structure for CAD/CAE optimization experiments: intent contract → solver input → artifact render → critique → parameter update.
+- Maturity: paper-only
+- Priority: Medium
+
+## Contractual Skills
+
+- Link: https://arxiv.org/abs/2605.22634
+- Type: GovernSpec-style framework for agent skill contracts
+- Why it matters:
+  - Proposes making goals, input boundaries, permissions, evidence requirements, output contracts, verification steps, approval points, and handoff rules inspectable inside skill files.
+  - Maps well to engineering agents, where solver runs and CAD edits need explicit artifact requirements and human-approval boundaries.
+  - Helpful framing for OpenClaw/ACP skill design: skills should define verifiable work contracts, not just loose instructions.
+- Possible use: Define CFD/CAD skills with required artifacts such as `case_manifest.json`, `kpi_sources.json`, rendered previews, mesh checks, and rerun commands.
+- Maturity: paper-only
+- Priority: High
+
 ## sim-benchmark
 
 - Link: https://github.com/svd-ai-lab/sim-benchmark
