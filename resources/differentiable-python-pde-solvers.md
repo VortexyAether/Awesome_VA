@@ -191,3 +191,16 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
 - Possible use: Study its Gymnasium/Ray interface pattern for future OpenFOAM or FluidX3D reinforcement-learning/control wrappers.
 - Maturity: paper/framework
 - Priority: Medium
+
+## Therm-FM
+
+- Link: https://arxiv.org/abs/2605.22663
+- Code/model repo: https://github.com/haiyangxin/Therm-FM
+- Type: PDE-foundation-model adaptation for 3D-IC thermal simulation
+- Why it matters:
+  - Adapts a pretrained PDE foundation model to steady-state and transient chip-level heat conduction instead of training a thermal predictor from scratch per design.
+  - Uses thermal-equivalent multi-fidelity training: low-cost approximate simulations for domain adaptation plus limited high-fidelity samples for calibration.
+  - Highly relevant to electronics cooling and heat-transfer surrogate workflows where cross-design reuse and sample efficiency are more important than one-off benchmark accuracy.
+- Possible use: Build a small heat-conduction adaptation benchmark that reports target-design samples required, cross-geometry error, and calibration cost.
+- Maturity: paper + GitHub repo
+- Priority: High

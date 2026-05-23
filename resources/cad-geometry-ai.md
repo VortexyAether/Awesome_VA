@@ -452,3 +452,15 @@
 - Possible use: Use as a reference architecture for an artifact-gated CAD-CAE loop: propose edit, regenerate CAD, run mesh/solver smoke test, compare KPI, and record provenance.
 - Maturity: paper-only
 - Priority: High
+
+## Component influence-driven fastener reduction
+
+- Link: https://arxiv.org/abs/2605.21026
+- Type: CAD graph / robotic disassembly feedback for design simplification
+- Why it matters:
+  - Converts CAD contact-connection-constraint graphs and robotic disassembly planning outcomes into component influence scores.
+  - Projects fastener-removal impact back onto CAD geometry as 3D heatmaps, making redesign guidance visible to engineers.
+  - Useful design-automation pattern: analysis results become actionable geometry/design-change suggestions rather than only reports.
+- Possible use: Adapt the pattern to CAD-to-CAE workflows: simulation bottleneck or failure attribution → geometry heatmap → constrained redesign suggestion → validation gate.
+- Maturity: paper-only
+- Priority: Medium
