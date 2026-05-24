@@ -464,3 +464,36 @@
 - Possible use: Adapt the pattern to CAD-to-CAE workflows: simulation bottleneck or failure attribution → geometry heatmap → constrained redesign suggestion → validation gate.
 - Maturity: paper-only
 - Priority: Medium
+
+## SDFStent
+
+- Link: https://arxiv.org/abs/2605.22009
+- Type: SDF-based geometry deformation for virtual stenting and CFD preparation
+- Why it matters:
+  - Makes patient-specific stent-induced geometry updates interactive, reducing a practical bottleneck before CFD simulation.
+  - Good example of AI/geometry tooling helping CFD by improving preprocessing rather than replacing the solver.
+  - Relevant pattern for CAD-to-CFD workflows: learned deformation field → validated geometry → downstream simulation.
+- Maturity: paper-only
+- Priority: Medium
+
+## Memory-Augmented Reinforcement Learning Agent for CAD Generation
+
+- Link: https://arxiv.org/abs/2605.19748
+- Type: Memory-augmented RL for CAD operation-sequence generation
+- Why it matters:
+  - Long CAD histories require state, constraint, and dependency tracking; one-shot generation is brittle.
+  - Reinforces that CAD agents need persistent design memory and repair loops around executable geometry.
+  - Useful reference for stress-testing FreeCAD/CadQuery agents on long parametric models.
+- Maturity: paper-only
+- Priority: Medium
+
+## pcb-designer-ai-agent
+
+- Link: https://github.com/assalas/pcb-designer-ai-agent
+- Type: Open-source AI agent for PCB design automation
+- Why it matters:
+  - Not a CFD/CAD geometry tool directly, but it is a useful EDA example of agentic placement/routing/validation workflows.
+  - Relevant as a pattern for engineering agents that must call domain tools instead of only generating text.
+  - Treat as inspiration for validation-loop architecture, not as a direct VA CFD workflow dependency.
+- Maturity: early open-source repo
+- Priority: Low

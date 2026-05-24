@@ -777,3 +777,48 @@
   - Useful as an applied anchor for discussing when multi-fidelity learning is more practical than a single large black-box surrogate.
 - Maturity: paper-only
 - Priority: Medium
+
+## Inpainting physics
+
+- Link: https://arxiv.org/abs/2605.08832
+- Type: Self-supervised fluid simulation surrogate
+- Why it matters:
+  - Reframes CFD surrogate learning as context-driven inpainting rather than fixed forward mapping from explicit problem specifications.
+  - Relevant when boundary conditions, local geometry, or observed regions shift between training and deployment.
+  - Useful idea for sensor-to-field reconstruction, missing-region completion, and simulation-in-the-loop post-processing.
+- Possible use: Build a small cavity/duct/thermal-field completion benchmark with masked fields and boundary metadata.
+- Maturity: paper-only
+- Priority: Medium
+
+## ViT-K
+
+- Link: https://arxiv.org/abs/2605.13912
+- Type: Few-shot surrogate for coupled free-flow / porous-media systems
+- Why it matters:
+  - Targets Stokes/Navier--Stokes--Darcy coupling with interface conditions, a harder class than smooth single-domain PDE benchmarks.
+  - Few-shot framing is relevant when high-fidelity coupled-flow data are expensive.
+  - Good reference for porous transport, filtration, and physiological flow settings where interface physics dominates error.
+- Maturity: paper-only
+- Priority: Medium
+
+## Compositional Neural Operators for Multi-Dimensional Fluid Dynamics
+
+- Link: https://arxiv.org/abs/2605.11691
+- Type: Compositional neural-operator architecture for fluid dynamics
+- Why it matters:
+  - Pushes against monolithic universal surrogates by composing operator/physics blocks.
+  - Relevant to multi-regime CFD foundation models where dense sharing can create negative transfer.
+  - Good comparison point for MoE routing and operator-transformation approaches.
+- Maturity: paper-only
+- Priority: High
+
+## Reduced-Order Modeling of Parameterized Visco-Plastic Shallow Flows
+
+- Link: https://arxiv.org/abs/2605.06526
+- Type: Non-intrusive ROM for visco-plastic free-surface flows
+- Why it matters:
+  - Handles Herschel--Bulkley rheology with moving fronts and yield surfaces, which are more challenging than smooth benchmark PDEs.
+  - Useful reference for surrogate evaluation under non-smooth physics and parameterized shallow-flow regimes.
+  - Complements neural-operator papers with a ROM baseline perspective.
+- Maturity: paper-only
+- Priority: Medium
