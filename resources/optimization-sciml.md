@@ -102,3 +102,15 @@
 - Possible use: Test whether spatial-correlation curricula improve convergence on thermal diffusion or incompressible-flow PINN baselines.
 - Maturity: paper-only
 - Priority: Medium
+
+## PI-SONet
+
+- Link: https://arxiv.org/abs/2605.14332
+- Type: Physics-informed symplectic neural operator for real-time optimal control
+- Why it matters:
+  - Learns a reusable solution map for parameterized Pontryagin Maximum Principle systems instead of rerunning a single-instance optimal-control solver.
+  - Preserves Hamiltonian structure through a conditional symplectic operator and reports sub-second inference / large speedups on high-dimensional multi-agent control settings.
+  - Useful for thinking about SciML surrogates as control-loop components where structure preservation matters as much as prediction speed.
+- Possible use: Compare conceptually with thermal supervisory-control surrogates and flow-control settings where repeated optimal-control queries are the bottleneck.
+- Maturity: paper-only
+- Priority: Medium

@@ -822,3 +822,27 @@
   - Complements neural-operator papers with a ROM baseline perspective.
 - Maturity: paper-only
 - Priority: Medium
+
+## Physics-informed CNNs for porous-media flow warm starts
+
+- Link: https://arxiv.org/abs/2605.20250
+- Type: Physics-informed CNN surrogate for pore-scale flow
+- Why it matters:
+  - Predicts pore-scale velocity fields directly from complex geometry while penalizing incompressibility, no-flow-in-solid regions, periodicity, and tortuosity consistency.
+  - The practical payoff is solver assistance: predicted fields are used as initial conditions for Lattice-Boltzmann simulations, reducing iterations in more than 90% of tested cases.
+  - Good example of ML helping CFD as a warm-start/preconditioner rather than trying to replace the solver entirely.
+- Possible use: Reproduce the warm-start idea on a small porous/heat-exchanger geometry set and compare convergence speed, residual history, and failure cases against zero/uniform initialization.
+- Maturity: paper + dedicated GitHub repo announced
+- Priority: High
+
+## Conditional neural fields for dynamic ditching loads
+
+- Link: https://arxiv.org/abs/2605.21499
+- Type: Mesh/discretization-flexible reduced-order model for CFD loads
+- Why it matters:
+  - Uses coordinate-based conditional neural fields plus latent-space temporal prediction to model aircraft ditching loads.
+  - The key signal is discretization flexibility: it can train/reconstruct across heterogeneous spatial discretizations, which is valuable when CFD datasets come from different meshes or geometry variants.
+  - Relevant to CAD/CAE loops where remeshing after geometry edits breaks fixed-grid surrogate assumptions.
+- Possible use: Track as a reference for mesh-independent load prediction or pressure/heat-flux field ROMs across geometry variants.
+- Maturity: paper-only
+- Priority: Medium

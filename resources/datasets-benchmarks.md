@@ -48,13 +48,13 @@ Flow datasets, SciML benchmarks, reproducibility references, metrics, and evalua
 - Maturity: paper / benchmark announced
 - Priority: High
 
-## HiLiftAeroML
+## NED3 multimodal thermal-fluid datasets and software
 
-- Link: https://arxiv.org/abs/2605.19565
-- Type: High-fidelity CFD dataset for aerodynamic surrogate modeling
-- Keywords: CFD dataset, high-lift aircraft, NASA CRM, surrogate modeling, aerodynamic design
-- One-line summary: Open high-fidelity CFD dataset with high-lift aircraft geometry variants and angle-of-attack samples for AI surrogate development.
-- Why it matters: Geometry-variant, expert-relevant CFD datasets are a bottleneck for useful aerodynamic surrogates; this is more valuable than another toy benchmark.
-- Possible use: Benchmark CAD/geometry-conditioned surrogate models using geometry-family holdout and AoA extrapolation splits.
-- Maturity: paper + dataset announcement
+- Link: https://arxiv.org/abs/2605.23037
+- Type: Multimodal thermal-fluid dataset ecosystem / open-source software map
+- Keywords: multiphase transport, thermal systems, electronics cooling, datasets, open-source software, digital twins
+- One-line summary: A curated NED3 ecosystem of public datasets and software spanning boiling images, acoustic/thermal measurements, high-speed videos, IR thermography, CFD-generated fields, design files, and diagnostic tools.
+- Why it matters: Thermal-fluid AI needs reusable raw-to-model pipelines, not just isolated CSV benchmarks; this paper connects datasets, metadata, decoders, surrogate tooling, and physically interpretable diagnostics.
+- Possible use: Use the S+TD dimensionality framework to organize VA thermal/CFD datasets and identify which modalities need decoders, baseline models, and validation metrics.
+- Maturity: paper / dataset and software ecosystem
 - Priority: High
