@@ -846,3 +846,40 @@
 - Possible use: Track as a reference for mesh-independent load prediction or pressure/heat-flux field ROMs across geometry variants.
 - Maturity: paper-only
 - Priority: Medium
+
+## Accelerating Bayesian inverse design in CFD using neural operators
+
+- Link: https://arxiv.org/abs/2605.26059
+- Type: Neural-operator surrogate for Bayesian CFD inverse design
+- Why it matters:
+  - Embeds a DeepONet surrogate directly inside a gradient-based MCMC inverse-design loop while preserving posterior geometry and uncertainty trends against a CFD reference.
+  - Shows a practical use case for neural operators beyond forward field prediction: sparse observation → aerodynamic geometry inference with uncertainty.
+  - The geometry-parameterization result is a useful caution that surrogate accuracy alone does not fix identifiability or posterior conditioning.
+- Possible use: Use as a reference for uncertainty-aware heat-transfer/aerodynamic inverse design where validation should include posterior structure, not only point estimates.
+- Maturity: paper-only
+- Priority: High
+
+## NPSolver
+
+- Link: https://arxiv.org/abs/2605.25786
+- Code: https://github.com/intell-sci-comput/NPSolver
+- Type: Neural Poisson solver with iterative physics supervision
+- Why it matters:
+  - Uses a small number of PCG refinement steps as a stable supervision signal instead of requiring converged labels or relying only on raw PDE residuals.
+  - Targets 2D/3D irregular geometries and mixed boundary conditions, which are closer to CAD-derived thermal domains than clean rectangular PDE benchmarks.
+  - Includes a downstream thermal boundary-control task, making it directly relevant to control-oriented SciML.
+- Possible use: Prototype on irregular heat-conduction cases and compare against classical solvers, PINNs, and FNO-style baselines using field error plus control objective.
+- Maturity: paper + early code repository
+- Priority: High
+
+## Transformer-based Neural Operators for 3D Wind Field Prediction over Complex Mountainous Terrain
+
+- Link: https://arxiv.org/abs/2605.25679
+- Type: Point/graph neural-operator framework for terrain-driven CFD surrogate modeling
+- Why it matters:
+  - Focuses on complex topography where meshing and steady CFD solves are expensive, not on simplified canonical geometries.
+  - Demonstrates zero-shot transfer to real mountainous sites and improvement from sparse observational inputs.
+  - Useful pattern for geometry-heavy CFD surrogates that should assimilate a few sensors rather than operate as pure offline emulators.
+- Possible use: Adapt the sparse-observation idea to duct, heat-sink, or ventilation CFD surrogates with a small number of virtual sensors.
+- Maturity: paper-only
+- Priority: High

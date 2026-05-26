@@ -114,3 +114,15 @@
 - Possible use: Compare conceptually with thermal supervisory-control surrogates and flow-control settings where repeated optimal-control queries are the bottleneck.
 - Maturity: paper-only
 - Priority: Medium
+
+## Accelerating Bayesian inverse design in CFD using neural operators
+
+- Link: https://arxiv.org/abs/2605.26059
+- Type: Bayesian inverse-design acceleration / neural operator surrogate
+- Why it matters:
+  - Keeps the Bayesian likelihood, priors, and sampler structure intact while swapping repeated CFD solves for a trained operator surrogate.
+  - Evaluates whether posterior geometry and uncertainty trends survive surrogate substitution, which is a stronger test than one-shot reconstruction accuracy.
+  - Relevant to aerodynamic and thermal design loops where sparse observations and uncertainty matter.
+- Possible use: Use posterior preservation as a validation criterion for VA-style surrogate-assisted design optimization.
+- Maturity: paper-only
+- Priority: High

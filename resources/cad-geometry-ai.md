@@ -497,3 +497,27 @@
   - Treat as inspiration for validation-loop architecture, not as a direct VA CFD workflow dependency.
 - Maturity: early open-source repo
 - Priority: Low
+
+## Hylos
+
+- Link: https://arxiv.org/abs/2605.24728
+- Type: Operability-contract architecture for spatial/CAD agents
+- Why it matters:
+  - Argues that visually plausible 3D is not enough; useful spatial AI needs entities, frames, surfaces, constraints, provenance, admissible actions, effect diffs, and validation outcomes.
+  - Introduces a transaction boundary for spatial changes with commit, review, rollback, deferral, and capability-gap outcomes.
+  - Strong conceptual fit for CAD-to-CAE agents where geometry edits must preserve invariants and remain mesh/simulation-ready.
+- Possible use: Define an “operable CAD artifact” schema for VA workflows before letting agents revise geometry.
+- Maturity: systems/position preprint
+- Priority: High
+
+## Memory-Augmented Reinforcement Learning Agent for CAD Generation
+
+- Link: https://arxiv.org/abs/2605.19748
+- Type: Memory/RL framework for tool-using CAD generation agents
+- Why it matters:
+  - Wraps a geometric kernel as a structured toolchain and adds planning, execution, verification, case memory, and skill memory.
+  - Addresses a real CAD-agent failure mode: semantically similar examples can be geometrically infeasible retrieval traps.
+  - Reinforcement learning over retrieval and policy optimization points toward CAD agents that self-correct without massive new annotated datasets.
+- Possible use: Compare against prompt-only CadQuery/FreeCAD agents on long operation sequences with deterministic geometry checks.
+- Maturity: paper-only
+- Priority: Medium

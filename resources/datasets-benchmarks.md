@@ -58,3 +58,14 @@ Flow datasets, SciML benchmarks, reproducibility references, metrics, and evalua
 - Possible use: Use the S+TD dimensionality framework to organize VA thermal/CFD datasets and identify which modalities need decoders, baseline models, and validation metrics.
 - Maturity: paper / dataset and software ecosystem
 - Priority: High
+
+## Full-scale PWR flow-field CFD dataset for ML applications
+
+- Link: https://arxiv.org/abs/2605.24763
+- Type: Domain-specific high-fidelity CFD dataset / ML reconstruction benchmark
+- Keywords: nuclear thermal-hydraulics, pressurized water reactor, CFD dataset, sparse reconstruction, ConvLSTM
+- One-line summary: Builds full lower-plenum/core-inlet PWR CFD fields from public geometry and operating conditions, then evaluates partial field reconstruction and short-term autoregressive prediction.
+- Why it matters: Shows how strongly domain physics, swirl/mixing, mesh resolution, and sensor placement shape ML surrogate performance; spatially aware ConvLSTM beats sequence-only and operator-learning baselines in this setting.
+- Possible use: Use as a reference for sparse-sensor reconstruction benchmarks where CFD data are expensive and full experimental validation is limited.
+- Maturity: paper / dataset framework
+- Priority: Medium

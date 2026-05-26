@@ -44,3 +44,15 @@ Resources for turbulence prediction, reduced-order modeling, super-resolution, a
 - Possible use: Use as a reference for closure-model validation gates: realizability, solver convergence, residual behavior, and physical stress constraints.
 - Maturity: paper-only
 - Priority: High
+
+## Physical Fidelity Reconstruction via Consistency-Distilled Flow Matching
+
+- Link: https://arxiv.org/abs/2605.05975
+- Type: Distilled generative model for coarse-to-fine fluid reconstruction
+- Why it matters:
+  - Distills an optimal-transport flow-matching teacher into a one-step consistency model for faster high-fidelity flow reconstruction.
+  - Evaluates on Smoke Buoyancy, Turbulent Channel Flow, and Kolmogorov Flow with spectrum-oriented physical fidelity checks.
+  - Relevant to simulation-in-the-loop visualization and ensemble workflows where iterative diffusion/flow-matching sampling is too slow.
+- Possible use: Benchmark distilled reconstruction against deterministic super-resolution and FNO-style baselines using spectrum, gradient, and conservation diagnostics.
+- Maturity: paper-only
+- Priority: Medium
