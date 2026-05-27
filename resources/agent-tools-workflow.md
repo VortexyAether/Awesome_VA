@@ -439,3 +439,49 @@
   - Treat as a workflow signal, not a dependency, until implementation surface, tests, and artifact validation are clearer.
 - Maturity: very early open-source project
 - Priority: Low
+
+## ChainCaps
+
+- Link: https://arxiv.org/abs/2605.26542
+- Type: MCP proxy / composition-safe tool-use architecture
+- Why it matters:
+  - Addresses permission laundering, where individually allowed tools compose into an unsafe end-to-end effect.
+  - Propagates sink-specific capability budgets by intersection so data can lose but not gain authority through tool chains.
+  - Directly relevant to engineering agents that may combine CAD files, solver logs, local scripts, web APIs, and messaging surfaces.
+- Possible use: Borrow the capability-attenuation pattern when designing CAD→CFD agents with file/export/network boundaries.
+- Maturity: paper-only / reference proxy described
+- Priority: High
+
+## Device Context Protocol
+
+- Link: https://arxiv.org/abs/2605.26159
+- Type: Safety-first protocol for LLM-driven constrained-device control
+- Why it matters:
+  - Proposes compact device frames plus manifest-level capability scoping, type/range checks, dry-run evaluation, and units-as-types.
+  - Relevant when LLM/agent workflows touch physical engineering systems such as fans, pumps, thermal rigs, sensors, or embedded controllers.
+  - Good design language for keeping hallucinated or prompt-injected calls away from hardware.
+- Possible use: Adapt the manifest/dry-run/unit-check pattern for lab automation tools before allowing real actuator control.
+- Maturity: paper-only / reference firmware described
+- Priority: Medium
+
+## FreeCAD MCP Server by JakobThiessen
+
+- Link: https://github.com/JakobThiessen/FreeCad_MCP_Server
+- Type: FreeCAD MCP bridge / Sketcher, Part, and PartDesign automation
+- Why it matters:
+  - Connects AI assistants to a live FreeCAD instance through an MCP server and XML-RPC FreeCAD addon.
+  - Useful comparison point for agent-readable parametric CAD control surfaces.
+  - Early-stage and should be validated on dimensions, constraints, STEP/STL export, and downstream meshing before real CFD use.
+- Maturity: early open-source prototype
+- Priority: Medium
+
+## ParaView-CLI
+
+- Link: https://github.com/adricortes/Paraview-CLI
+- Type: Headless ParaView / scientific visualization CLI for agents
+- Why it matters:
+  - Aims to expose VTK/VTU/OpenFOAM/Exodus/CGNS visualization through a pvpython server and lightweight client.
+  - Useful for CFD agent workflows where post-processing and figures need to be scriptable, reproducible, and verifier-friendly.
+  - Complements OpenFOAM automation: a solver run is not enough unless artifacts and visuals can be regenerated.
+- Maturity: early open-source prototype
+- Priority: Medium

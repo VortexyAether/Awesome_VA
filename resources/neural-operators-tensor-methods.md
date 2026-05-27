@@ -883,3 +883,15 @@
 - Possible use: Adapt the sparse-observation idea to duct, heat-sink, or ventilation CFD surrogates with a small number of virtual sensors.
 - Maturity: paper-only
 - Priority: High
+
+## Courant
+
+- Link: https://arxiv.org/abs/2605.25115
+- Type: State-adaptive Perceiver-based neural surrogate
+- Why it matters:
+  - Designs latent features with adaptive specialization and local support in physical space, echoing hp-refinement and reduced-basis intuition.
+  - Relevant to CFD/thermal surrogate modeling where interpretability and geometry/state locality matter as much as pointwise error.
+  - Useful evaluation anchor for asking whether a surrogate's latent structure tracks coherent flow features or only fits fields black-box.
+- Possible use: Compare against FNO/GraphNO/Transolver-style baselines on complex-geometry flow or heat-transfer datasets with locality and sensor-ablation diagnostics.
+- Maturity: paper-only
+- Priority: High

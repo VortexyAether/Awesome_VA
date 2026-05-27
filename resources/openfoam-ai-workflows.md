@@ -50,3 +50,15 @@ AI-assisted OpenFOAM setup, automation, case validation, post-processing, and en
 - Possible use: Evaluate as a reference interface for VA's OpenFOAM agent harness and compare its artifact schema with sim-benchmark.
 - Maturity: early open-source plugin
 - Priority: High
+
+## AutoFOAM
+
+- Link: https://github.com/AGN000/AutoFOAM
+- Type: Self-refining autonomous OpenFOAM case-authoring agent
+- Why it matters:
+  - Targets natural-language-to-OpenFOAM workflows, including autonomous mesh generation through the gmsh OCC API.
+  - Explicitly frames self-refinement and anti-collapse defenses, which are important for long-horizon CFD case setup agents.
+  - Useful as a reference or stress-test target when comparing OpenFOAM MCP/plugin approaches, not yet as a trusted production workflow.
+- Possible use: Evaluate generated cases against deterministic mesh/case validation gates and compare with sim-plugin-openfoam and AI CFD Scientist artifact contracts.
+- Maturity: early open-source research prototype
+- Priority: Medium

@@ -204,3 +204,26 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
 - Possible use: Build a small heat-conduction adaptation benchmark that reports target-design samples required, cross-geometry error, and calibration cost.
 - Maturity: paper + GitHub repo
 - Priority: High
+
+## PINNsur: Physics-Informed Neural Networks for PDEs on Curved Surfaces
+
+- Link: https://arxiv.org/abs/2605.27308
+- Type: PINN framework for surface PDEs / geometry processing
+- Why it matters:
+  - Uses a neural field for surface normals and projects ambient-space derivatives onto curved surfaces.
+  - Relevant to CAD/CAE geometries where surface PDEs, shell-like thermal problems, and mesh quality can dominate solver behavior.
+  - Good reminder that geometry representation is part of the SciML problem, not only the network architecture.
+- Possible use: Prototype curved-surface heat diffusion on FreeCAD-generated geometry and compare against FEM under mesh-quality perturbations.
+- Maturity: paper-only
+- Priority: Medium
+
+## Collocation-DG equivalence for SBP spectral operators
+
+- Link: https://arxiv.org/abs/2605.27327
+- Type: Numerical-methods paper / discontinuous Galerkin and collocation equivalence
+- Why it matters:
+  - Shows when a summation-by-parts spectral collocation scheme is equivalent to DG semi-discretization with the same quadrature.
+  - Useful for differentiable solver and neural-surrogate work that builds on DG/collocation operators: discretization equivalence and nullspace modes should be explicit.
+  - Reinforces that solver-assisted ML needs a clear numerical contract, not only neural architecture claims.
+- Maturity: paper-only
+- Priority: Medium
