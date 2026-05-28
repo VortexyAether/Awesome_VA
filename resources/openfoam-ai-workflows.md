@@ -62,3 +62,15 @@ AI-assisted OpenFOAM setup, automation, case validation, post-processing, and en
 - Possible use: Evaluate generated cases against deterministic mesh/case validation gates and compare with sim-plugin-openfoam and AI CFD Scientist artifact contracts.
 - Maturity: early open-source research prototype
 - Priority: Medium
+
+## CFDTwin
+
+- Link: https://arxiv.org/abs/2605.27725
+- Type: GUI and Python toolkit for POD-NN surrogate modeling of ANSYS Fluent simulations
+- Why it matters:
+  - Turns expensive Fluent CFD result sets into POD-NN surrogate assets for design optimization, uncertainty analysis, and digital-twin workflows.
+  - Important less because POD-NN is novel and more because the work packages surrogate modeling as an engineer-facing GUI/Python toolkit.
+  - Useful reference for designing similar OpenFOAM/ParaView surrogate asset workflows with metadata, validation, and operating-envelope checks.
+- Possible use: Build an OpenFOAM analogue that stores case metadata, geometry parameters, POD basis, neural network weights, and validation plots as one reproducible artifact.
+- Maturity: paper / open-source toolkit announced
+- Priority: High

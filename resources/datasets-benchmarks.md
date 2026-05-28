@@ -69,3 +69,14 @@ Flow datasets, SciML benchmarks, reproducibility references, metrics, and evalua
 - Possible use: Use as a reference for sparse-sensor reconstruction benchmarks where CFD data are expensive and full experimental validation is limited.
 - Maturity: paper / dataset framework
 - Priority: Medium
+
+## MUSE Text-to-CAD Benchmark
+
+- Link: https://arxiv.org/abs/2605.28579
+- Type: Text-to-CAD benchmark for manufacturability, functionality, and assemblability
+- Keywords: CAD, text-to-CAD, manufacturability, functionality, assemblability, design automation
+- One-line summary: A benchmark that evaluates Text-to-CAD generation beyond geometric similarity by checking whether generated CAD is manufacturable, functional, and assemblable.
+- Why it matters: CAD automation for engineering cannot stop at visually plausible single parts; downstream CAE and manufacturing need valid assemblies, functional intent, and constraint-aware geometry.
+- Possible use: Extend the evaluation idea with meshability, boundary-condition assignability, solver-run success, and KPI validity for CAD-to-CFD automation benchmarks.
+- Maturity: paper / benchmark announced
+- Priority: High

@@ -126,3 +126,37 @@
 - Possible use: Use posterior preservation as a validation criterion for VA-style surrogate-assisted design optimization.
 - Maturity: paper-only
 - Priority: High
+
+## NUCLEUS-MoE for pool boiling liquid cooling
+
+- Link: https://arxiv.org/abs/2605.27722
+- Type: Mixture-of-experts surrogate for boiling heat-transfer regimes
+- Why it matters:
+  - Targets pool boiling and liquid cooling, where phase change, turbulence, and operating conditions make one-size-fits-all surrogates fragile.
+  - Regime-aware expert routing is a practical pattern for thermal-fluid models near transitions and critical heat flux boundaries.
+  - Relevant to electronics cooling and data-center thermal design where uncertainty and safe operating envelopes matter.
+- Possible use: Prototype a thermal surrogate that routes between single-phase, nucleate-boiling, transition, and high-risk regimes with solver fallback.
+- Maturity: paper-only
+- Priority: High
+
+## ML-adapted finite-difference thermal profiling for a lunar rover
+
+- Link: https://arxiv.org/abs/2605.27651
+- Type: Physics-grid plus ML-correction thermal model
+- Why it matters:
+  - Uses a finite-difference thermal model adapted with machine learning for faster profiling under extreme radiative/environmental conditions.
+  - Useful pattern for engineering thermal twins: keep an interpretable physical grid model, then learn corrections for speed or calibration.
+  - Transfers conceptually to battery packs, electronics enclosures, and cooling subsystems where full thermal simulation is too slow for iteration.
+- Maturity: paper-only
+- Priority: Medium
+
+## Physics-informed reward shaping for building energy control
+
+- Link: https://arxiv.org/abs/2605.28232
+- Type: Physics-informed RL reward design for thermal/energy control
+- Why it matters:
+  - Addresses comfort versus energy tradeoffs in building control by shaping SAC rewards with physics-informed terms.
+  - Relevant to thermal-control agents because reward design is often the hidden failure mode, especially when comfort, grid, and equipment constraints conflict.
+  - Useful as a non-CFD but control-relevant reference for preventing reward hacking in thermal-management loops.
+- Maturity: paper-only
+- Priority: Medium

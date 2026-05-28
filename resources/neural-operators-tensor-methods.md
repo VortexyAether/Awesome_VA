@@ -895,3 +895,27 @@
 - Possible use: Compare against FNO/GraphNO/Transolver-style baselines on complex-geometry flow or heat-transfer datasets with locality and sensor-ablation diagnostics.
 - Maturity: paper-only
 - Priority: High
+
+## Adapting Automotive Aerodynamics Surrogates via Transfer Learning
+
+- Link: https://arxiv.org/abs/2605.27968
+- Type: Automotive CFD surrogate transfer-learning study
+- Why it matters:
+  - Tests whether geometry representations learned by an automotive aerodynamic surrogate transfer to topologically different vehicle families.
+  - Leave-one-family-out framing is closer to industrial deployment than random train/test splits inside one design family.
+  - Useful validation pattern for CAD/CFD surrogate projects where new geometry families appear after initial model training.
+- Possible use: Use family-level holdout and few-shot fine-tuning as standard diagnostics for VA-style geometry-to-field surrogate experiments.
+- Maturity: paper-only
+- Priority: High
+
+## CINOC: Cardinality-Invariant Neural Operator Policies
+
+- Link: https://arxiv.org/abs/2605.25867
+- Type: Neural-operator policy for scalable PDE control
+- Why it matters:
+  - Targets control policies that survive changes in sensor, actuator, or agent count.
+  - Relevant to thermal-fluid control where hardware layouts and observation grids change across prototypes.
+  - Good bridge between operator learning and deployable control, not just open-loop field prediction.
+- Possible use: Evaluate cardinality-invariant policy ideas on toy heat-transfer or flow-control problems with varying actuator layouts.
+- Maturity: paper-only
+- Priority: Medium

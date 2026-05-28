@@ -58,3 +58,14 @@ Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine L
 - Possible use: Use as a discovery index for older foundational papers, review papers, datasets, and fluid-mechanics ML toolchains that may not appear in newer CFD-AI survey lists.
 - Maturity: maintained library
 - Priority: Medium
+
+## Deep Learning-based Algebraic Reynolds Stress Closures for RANS Simulations
+
+- Link: https://arxiv.org/abs/2605.26358
+- Type: ML turbulence closure / RANS solver-coupled modeling
+- Keywords: RANS, turbulence closure, Reynolds stress, distribution shift, CFD-AI
+- One-line summary: Develops deep-learning-based algebraic Reynolds-stress closures for turbulent RANS simulations, focusing on the solver-coupled closure problem rather than only offline regression.
+- Why it matters: ML closure models often fail when inserted into a CFD solver because the state distribution shifts; this is a practical reminder that turbulence ML must be evaluated in closed-loop solver contexts.
+- Possible use: Use as a turbulence-closure reading anchor when comparing offline stress prediction, solver stability, and field-level CFD validation.
+- Maturity: paper-only
+- Priority: High
