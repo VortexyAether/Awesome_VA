@@ -919,3 +919,28 @@
 - Possible use: Evaluate cardinality-invariant policy ideas on toy heat-transfer or flow-control problems with varying actuator layouts.
 - Maturity: paper-only
 - Priority: Medium
+
+## Neural Operator-Based Surrogate Model for CFD: Helical Coil Steam Generator in Small Modular Reactor
+
+- Link: https://arxiv.org/abs/2605.30277
+- Type: Neural-operator / ROM surrogate for SMR thermal-hydraulic CFD
+- Why it matters:
+  - Targets transient CFD-level digital-twin simulation for a helical coil steam generator in a small modular reactor, not a toy PDE benchmark.
+  - Compares AE/CAE ROM strategies coupled with latent DeepONet and FNO, which is useful for structured vs unstructured CFD data decisions.
+  - Multi-scale treatment for Kármán vortex street prediction makes it relevant to practical transient-flow surrogate validation.
+- Possible use: Use as a template for defining CFD surrogate artifacts with mesh type, ROM basis, operating envelope, and vortex/thermal KPI checks.
+- Maturity: paper-only
+- Priority: High
+
+## Striding Across Reynolds Numbers
+
+- Link: https://arxiv.org/abs/2605.30112
+- Type: Neural PDE generalization / representation-geometry study
+- Why it matters:
+  - Studies cross-Reynolds generalization on 2D Navier-Stokes and shows FNO performance can degrade strongly under a 10x Reynolds shift.
+  - Finds simple representation matching/retrieval baselines surprisingly competitive, suggesting latent geometry matters as much as architecture choice.
+  - Useful caution for CFD surrogate claims that only report interpolation or narrow-regime accuracy.
+- Possible use: Add representation-space OOD diagnostics and retrieval baselines to VA's CFD surrogate evaluation templates.
+- Maturity: paper-only
+- Priority: High
+

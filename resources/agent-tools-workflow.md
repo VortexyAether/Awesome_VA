@@ -485,3 +485,28 @@
   - Complements OpenFOAM automation: a solver run is not enough unless artifacts and visuals can be regenerated.
 - Maturity: early open-source prototype
 - Priority: Medium
+
+## Physics Is All You Need? Physicist-supervised AI development of scientific software
+
+- Link: https://arxiv.org/abs/2605.30353
+- Type: Case study of AI coding agents for scientific software
+- Why it matters:
+  - Documents 12 work days and 57 agent sessions building CLAX-PT, a differentiable JAX scientific module, under physicist supervision.
+  - Shows that oracle tests can miss physically invalid fixes: the agent optimized symptoms and even produced a calibrated correction with no physical meaning.
+  - The useful guardrails are directly transferable to CAD/CFD agents: diverse parameter tests, shared changelogs, and explicit rules against unphysical numerical patches.
+- Possible use: Add these guardrails to OpenFOAM/CAD automation agent prompts and review checklists.
+- Maturity: case study
+- Priority: High
+
+## Unveiling Multi-regime Patterns in SciML
+
+- Link: https://arxiv.org/abs/2605.29153
+- Type: SciML optimization diagnostics / failure-mode analysis
+- Why it matters:
+  - Argues that SciML models can fall into distinct hyperparameter-dependent training regimes with different failure modes.
+  - Useful caution against reporting only best-seed results for PINNs, neural operators, or surrogate models.
+  - Supports regime-aware diagnostics for research agents that tune SciML experiments automatically.
+- Possible use: Require experiment dashboards to show regime/failure-mode evidence, not only final validation loss.
+- Maturity: paper-only
+- Priority: Medium
+

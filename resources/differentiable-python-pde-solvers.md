@@ -227,3 +227,28 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
   - Reinforces that solver-assisted ML needs a clear numerical contract, not only neural architecture claims.
 - Maturity: paper-only
 - Priority: Medium
+
+## BuilDyn
+
+- Link: https://arxiv.org/abs/2605.29849
+- Type: Python package for excitation-driven building thermal dynamics data generation
+- Why it matters:
+  - Targets control-oriented ML data generation for building thermal dynamics, where fixed-policy historical data under-explores the state space.
+  - Provides a useful pattern for thermal digital twins: generate data that excites the states controllers will actually visit.
+  - Relevant to transfer learning and building-specific foundation models for energy-efficient control.
+- Possible use: Borrow the excitation-driven data-generation idea for heat-exchanger, electronics-cooling, or HVAC surrogate/control benchmarks.
+- Maturity: paper/package
+- Priority: Medium
+
+## Deep Adaptive Dimension Reduction for Bayesian Inference in Inverse Problems
+
+- Link: https://arxiv.org/abs/2605.29373
+- Type: Variational-flow dimension reduction for PDE-governed Bayesian inverse problems
+- Why it matters:
+  - Addresses high-dimensional, non-Gaussian posteriors where expensive PDE forward solves make ordinary inference impractical.
+  - Useful for inverse-design and parameter-estimation workflows where preserving posterior structure matters more than point prediction.
+  - Complements neural-operator surrogates by focusing on uncertainty-aware inverse problems.
+- Possible use: Reference when designing surrogate-assisted thermal/CFD inverse problems with credible intervals, not only best-fit parameters.
+- Maturity: paper-only
+- Priority: Medium
+

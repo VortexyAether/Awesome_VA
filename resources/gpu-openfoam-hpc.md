@@ -12,3 +12,16 @@
   - Relevant when comparing GPU OpenFOAM vs JAX/native differentiable CFD paths.
 - Follow-up:
   - Verify benchmark conditions, solver compatibility, and reproducibility before relying on speedup claims.
+
+## GALÆXI
+
+- Link: https://arxiv.org/abs/2605.28627
+- Type: Open-source architecture-agnostic high-order DGSEM framework for compressible CFD
+- Why it matters:
+  - Targets complex compressible turbulent flows on unstructured hexahedral grids with GPU acceleration.
+  - Supports both NVIDIA CUDA and AMD HIP pathways, which matters as HPC systems become more heterogeneous.
+  - Strong signal for surrogate workflows because reliable high-order data generation is often the bottleneck before ML begins.
+- Possible use: Track as a high-fidelity solver/data-generation reference when comparing GPU CFD infrastructure against OpenFOAM, JAX solvers, and neural surrogates.
+- Maturity: paper / open-source toolchain claim
+- Priority: High
+
