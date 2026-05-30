@@ -509,4 +509,15 @@
 - Possible use: Require experiment dashboards to show regime/failure-mode evidence, not only final validation loss.
 - Maturity: paper-only
 - Priority: Medium
+## SchGen
+
+- Link: https://arxiv.org/abs/2605.30345
+- Type: LLM-based PCB schematic generation / semantic engineering representation
+- Why it matters:
+  - Converts natural-language hardware intent into editable PCB schematics using semantic editing primitives and pin-name-based wiring.
+  - The key lesson is representation design: complex engineering artifacts are easier for LLMs when actions, connectivity, and constraints are explicit instead of buried in verbose geometry/tool syntax.
+  - Useful analogy for CAD/CAE automation, where CadQuery/FreeCAD/OpenSCAD agents may need operation-level intermediate representations and validation hooks.
+- Possible use: Borrow the semantic-operation representation idea when designing CAD-to-CFD agent interfaces.
+- Maturity: paper-only
+- Priority: Medium
 

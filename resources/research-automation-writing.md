@@ -63,3 +63,15 @@
   - Converts PDFs, Office files, and other documents into agent-friendly Markdown/text.
   - Useful for literature triage, Drive/document ingestion, and research-note pipelines.
   - OCR, tables, and equations still need human checking.
+## SoundnessBench
+
+- Link: https://arxiv.org/abs/2605.30329
+- Type: Benchmark for AI-scientist proposal-stage soundness evaluation
+- Why it matters:
+  - Tests whether LLMs can identify methodologically weak research ideas before compute and writing effort are spent.
+  - Reports an optimism bias across frontier LLMs: weak proposals are often rated as sound under standard prompting.
+  - Relevant to CFD/SciML research agents because idea generation needs a separate, conservative feasibility and validation gate.
+- Possible use: Build a local rubric for CFD surrogate ideas covering data availability, physical validity, OOD split, metrics, compute budget, and failure modes.
+- Maturity: benchmark paper
+- Priority: High
+
