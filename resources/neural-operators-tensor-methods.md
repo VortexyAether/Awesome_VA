@@ -944,3 +944,39 @@
 - Maturity: paper-only
 - Priority: High
 
+
+## Operator Learning for Reconstructing Flow Fields from Sparse Measurements
+
+- Link: https://arxiv.org/abs/2605.23712
+- Type: Mesh-free operator learning for sparse-sensor flow reconstruction
+- Why it matters:
+  - Targets a practical digital-twin/control setting: reconstructing full flow fields from sparse measurements rather than assuming dense simulation snapshots are always available.
+  - Uses language-model-style architecture ideas for operator learning, broadening the design space beyond standard FNO/DeepONet baselines.
+  - Relevant to experimental fluid mechanics, sensor placement, and simulation-in-the-loop control where observations are partial and irregular.
+- Possible use: Build a small sparse-sensor reconstruction benchmark for cavity flow, ventilation, or thermal fields and report field error plus downstream control/design metrics.
+- Maturity: paper-only
+- Priority: High
+
+## Sparse POD Mode Selection and Manifold Dimensionality Reduction with Neural Networks
+
+- Link: https://arxiv.org/abs/2605.27756
+- Type: Reduced-order modeling / sparse POD / neural manifold learning
+- Why it matters:
+  - Revisits classical POD-based model reduction with sparse mode selection instead of treating all learned surrogates as fully black-box models.
+  - Useful for CFD/thermal workflows where interpretability, compression ratio, and solver coupling matter alongside prediction error.
+  - Bridges conventional MOR and neural surrogate modeling, making it a good baseline family for design optimization and inverse problems.
+- Possible use: Compare sparse POD-neural manifold reduction against FNO/GraphNO-style models on VA-style thermal or aerodynamic datasets under fixed latent dimension and rollout-budget constraints.
+- Maturity: paper-only
+- Priority: Medium
+
+## The Neural Compiler
+
+- Link: https://arxiv.org/abs/2605.22498
+- Type: Program-to-network translation system for hybrid Scientific Machine Learning
+- Why it matters:
+  - Translates first-order probabilistic programs into neural networks for hybrid SciML, reducing the need to hand-write custom PyTorch for every equation/prior combination.
+  - Relevant to workflows that combine known physics, unknown correction terms, parameters, and data-driven components.
+  - Points toward declarative scientific-model specifications that agents can inspect, modify, and validate more safely than ad hoc training scripts.
+- Possible use: Prototype a small declarative spec for heat-transfer PDEs, boundary conditions, and trainable closure terms, then compile or generate training code with explicit validation checks.
+- Maturity: paper-only
+- Priority: Medium
