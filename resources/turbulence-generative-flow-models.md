@@ -56,3 +56,15 @@ Resources for turbulence prediction, reduced-order modeling, super-resolution, a
 - Possible use: Benchmark distilled reconstruction against deterministic super-resolution and FNO-style baselines using spectrum, gradient, and conservation diagnostics.
 - Maturity: paper-only
 - Priority: Medium
+
+## Dynamic-Probabilistic Consistency Gap in Chaotic Surrogate Modeling
+
+- Link: https://arxiv.org/abs/2605.31547
+- Type: Chaotic dynamical-system surrogate / uncertainty training analysis
+- Why it matters:
+  - Shows that finite-horizon probabilistic objectives can produce uncertainty estimates that are not dynamically consistent with local tangent dynamics.
+  - Identifies failure modes such as core collapse, noise masking, and blind uncertainty.
+  - The KAFFEE framework uses differentiable EKF-style covariance transport through learned Jacobians, a useful idea for long-rollout fluid or thermal surrogates.
+- Possible use: Add uncertainty/dynamics consistency checks to CFD surrogate validation beyond one-step RMSE.
+- Maturity: paper-only
+- Priority: High

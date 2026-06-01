@@ -980,3 +980,16 @@
 - Possible use: Prototype a small declarative spec for heat-transfer PDEs, boundary conditions, and trainable closure terms, then compile or generate training code with explicit validation checks.
 - Maturity: paper-only
 - Priority: Medium
+
+## Functional Attention
+
+- Link: https://arxiv.org/abs/2605.31559
+- Project/code: https://github.com/xjffff/FUNCATTN
+- Type: Operator-learning attention architecture
+- Why it matters:
+  - Recasts attention as functional correspondence between adaptive bases rather than token-wise pairwise affinity.
+  - Targets resolution-invariant and discretization-robust mappings between continuous fields.
+  - Relevant to PDE solving, CFD/thermal surrogates, sparse observation assimilation, and geometry-dependent field prediction.
+- Possible use: Compare against FNO/Transformer-operator baselines on resolution-transfer tests for heat equation, cavity flow, or cylinder wake.
+- Maturity: paper + project/code link
+- Priority: High

@@ -521,3 +521,27 @@
 - Maturity: paper-only
 - Priority: Medium
 
+
+## GPU Forecasters
+
+- Link: https://arxiv.org/abs/2605.31464
+- Type: LLM-based selective surrogate for GPU kernel runtime optimization
+- Why it matters:
+  - Treats language models as runtime forecasters for proposed GPU kernels, not only as kernel generators.
+  - Useful when coding-agent/evolutionary kernel search can generate many candidates but real GPU compilation/execution is the bottleneck.
+  - The selective/defer-to-GPU framing is a practical pattern for expensive engineering evaluation loops.
+- Possible use: Explore as a prefilter for custom CUDA/JAX kernels in SciML workflows where measurement budget is limited.
+- Maturity: paper-only
+- Priority: Medium
+
+## PithTrain
+
+- Link: https://arxiv.org/abs/2605.31463
+- Type: Agent-native MoE training framework / benchmark
+- Why it matters:
+  - Introduces agent-task efficiency as a metric for how easily coding agents can understand, operate, and extend a framework.
+  - Useful meta-pattern for lab infrastructure: tooling should optimize for human readability, reproducibility, and agent-operability, not only raw throughput.
+  - Relevant to future CFD/CAD automation stacks where agents will maintain scripts, pipelines, and validation harnesses.
+- Possible use: Borrow the agent-operability checklist idea for CFD/thermal automation repositories.
+- Maturity: paper-only
+- Priority: Medium
