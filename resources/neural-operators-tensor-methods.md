@@ -993,3 +993,38 @@
 - Possible use: Compare against FNO/Transformer-operator baselines on resolution-transfer tests for heat equation, cavity flow, or cylinder wake.
 - Maturity: paper + project/code link
 - Priority: High
+
+## Cellular Sheaf Neural Operators
+
+- Link: https://arxiv.org/abs/2606.00937
+- Type: Structure-preserving neural operator for constrained PDEs
+- Why it matters:
+  - Represents PDE state on cellular structures rather than flattening everything into grid-channel tensors.
+  - Directly relevant to CFD/CAE meshes where quantities live naturally on vertices, edges, faces, and cells.
+  - Useful direction for geometry/topology-aware surrogate modeling and finite-volume-compatible learned operators.
+- Possible use: Compare against FNO/GNO/Transformer baselines on mesh-based flow or heat-transfer cases with explicit face/cell variables.
+- Maturity: paper-only
+- Priority: High
+
+## Therm-FM
+
+- Link: https://arxiv.org/abs/2605.22663
+- Type: Foundation-model / neural-operator framework for 3D-IC thermal simulation
+- Why it matters:
+  - Targets repeated finite-element thermal simulations across chip designs, where retraining from scratch is expensive.
+  - Cross-design adaptation is directly relevant to electronics cooling and package-level thermal design loops.
+  - Good thermal-specific counterpoint to generic PDE foundation-model claims.
+- Possible use: Use as a case study for transfer/adaptation metrics in thermal surrogate benchmarks.
+- Maturity: paper-only
+- Priority: High
+
+## Neural Operator-Based CFD Surrogate for SMR Helical Coil Steam Generator
+
+- Link: https://arxiv.org/abs/2605.30277
+- Type: Thermal-hydraulic CFD surrogate for digital twin workflows
+- Why it matters:
+  - Compresses high-fidelity CFD of a helical-coil steam generator toward real-time small modular reactor digital twins.
+  - Strong applied thermal-fluid signal: safety-critical DT workflows need speed, fidelity, and operating-regime awareness.
+  - Useful reference for evaluating surrogate deployment constraints beyond benchmark accuracy.
+- Maturity: paper-only
+- Priority: High

@@ -160,3 +160,37 @@
   - Useful as a non-CFD but control-relevant reference for preventing reward hacking in thermal-management loops.
 - Maturity: paper-only
 - Priority: Medium
+
+## POD-AS-PRS for sensitivity-dominant fluid ROM parameters
+
+- Link: https://arxiv.org/abs/2606.02315
+- Type: Reduced-order modeling / active-subspace sensitivity method
+- Why it matters:
+  - Combines POD-style reduction with active subspaces to identify parameters that dominate fluid-dynamics model response.
+  - Useful interpretable baseline or companion to neural surrogates when CFD design spaces are high-dimensional but only a few directions matter.
+  - Helps prioritize simulation campaigns and parameter sweeps before training expensive surrogate models.
+- Maturity: paper-only
+- Priority: Medium
+
+## Sensitivity-Conditioned Bernoulli Flow Matching for Topology Optimization
+
+- Link: https://arxiv.org/abs/2606.02179
+- Type: Generative surrogate / OOD generalization analysis for topology optimization
+- Why it matters:
+  - Studies why topology-optimization surrogates generalize unevenly under load and boundary-condition shifts.
+  - Conditions generation on sensitivity information, which is closer to optimization physics than pure image-style layout prediction.
+  - Relevant to CAD/design-automation agents where surrogate outputs must survive distribution shift and downstream verification.
+- Possible use: Add sensitivity-distribution diagnostics to topology-optimization or CAD surrogate benchmarks.
+- Maturity: paper-only
+- Priority: High
+
+## Continuous Data Assimilation with Learned Surrogate Dynamics
+
+- Link: https://arxiv.org/abs/2606.00480
+- Type: Learned-dynamics surrogate for data assimilation / control-oriented estimation
+- Why it matters:
+  - Studies continuous data assimilation when the real dynamics are unknown or too expensive and a learned surrogate is used instead.
+  - Directly relevant to sensor-driven CFD/thermal digital twins where surrogate model error and partial observations interact.
+  - Good reminder that surrogate quality should be evaluated inside the estimation/control loop, not only as offline prediction.
+- Maturity: paper-only
+- Priority: High
