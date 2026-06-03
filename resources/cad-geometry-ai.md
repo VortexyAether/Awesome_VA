@@ -521,3 +521,26 @@
 - Possible use: Compare against prompt-only CadQuery/FreeCAD agents on long operation sequences with deterministic geometry checks.
 - Maturity: paper-only
 - Priority: Medium
+
+## VFEAgent
+
+- Link: https://arxiv.org/abs/2605.28978
+- Type: Paper / multimodal FEA automation agent
+- Keywords: finite element analysis, multimodal agent, verification-first synthesis, engineering automation
+- One-line summary: A multimodal multi-agent framework that extracts FEA specifications from images and problem descriptions, then generates and verifies executable simulation code.
+- Why it matters: It frames engineering-agent reliability around structured specification extraction, self-debugging, fallback mechanisms, executability, and physical validity rather than chat-only assistance.
+- Possible use: Compare against CFD/CAE automation workflows where an agent must turn sketches or descriptions into solver-ready cases with validation gates.
+- Maturity: paper-only
+- Priority: High
+
+## MUSE text-to-CAD benchmark
+
+- Link: https://arxiv.org/abs/2605.28579
+- Project: https://dong7313.github.io/muse-benchmark/
+- Type: Benchmark / text-to-CAD evaluation
+- Keywords: text-to-CAD, B-Rep assembly, manufacturability, functionality, assemblability, VLM judge
+- One-line summary: Benchmarks complex editable B-Rep assembly generation using code checks, geometry checks, and design-intent rubrics for manufacturability, functionality, and assemblability.
+- Why it matters: CAD generation for CAE cannot stop at visual or geometric similarity; downstream simulation and manufacturing need executable geometry and engineering-intent alignment.
+- Possible use: Use the failure-cascade framing as a validation template for CAD-to-mesh-to-CFD agent workflows.
+- Maturity: benchmark / project page
+- Priority: High

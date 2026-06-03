@@ -68,3 +68,25 @@ Resources for turbulence prediction, reduced-order modeling, super-resolution, a
 - Possible use: Add uncertainty/dynamics consistency checks to CFD surrogate validation beyond one-step RMSE.
 - Maturity: paper-only
 - Priority: High
+
+## Emergent transfer of a physics foundation model to laboratory turbulence
+
+- Link: https://arxiv.org/abs/2606.01470
+- Type: Paper / physics foundation model for turbulence
+- Keywords: turbulence, Rayleigh-Taylor instability, physics foundation model, simulation-to-experiment transfer, Walrus
+- One-line summary: Fine-tunes a continuum-dynamics foundation model on a few DNS Rayleigh-Taylor cases and tests zero-shot transfer to noisy laboratory turbulence data.
+- Why it matters: The paper targets the hard question of whether simulation-trained physics foundation models can leave the idealized DNS regime and explain laboratory behavior.
+- Possible use: Use as a reading anchor for sim-to-real validation, sparse/noisy experimental transfer, and foundation-model claims in fluid mechanics.
+- Maturity: paper-only
+- Priority: High
+
+## 4D-flow MRI data assimilation with resolvent analysis for stenotic turbulence
+
+- Link: https://arxiv.org/abs/2606.03838
+- Type: Paper / experimental-computational flow analysis
+- Keywords: data assimilation, resolvent analysis, 4D-flow MRI, stenotic flow, PINN
+- One-line summary: Couples 4D-flow MRI, PINN-based data assimilation, RANS-compatible mean-field recovery, stability analysis, and resolvent analysis for stenotic turbulent flow.
+- Why it matters: It is a concrete example of sparse experimental velocity data being converted into physics-consistent fields and coherent-structure analysis, rather than only doing black-box reconstruction.
+- Possible use: Use as a workflow reference for sensor/MRI/PIV data assimilation pipelines before applying modal or stability analysis to experimental flows.
+- Maturity: paper-only
+- Priority: Medium

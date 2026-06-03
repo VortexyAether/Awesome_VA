@@ -252,3 +252,25 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
 - Maturity: paper-only
 - Priority: Medium
 
+
+## PINN residuals for adaptive mesh refinement
+
+- Link: https://arxiv.org/abs/2606.02475
+- Type: Paper / hybrid PINN + finite-difference AMR
+- Keywords: adaptive mesh refinement, PINN residual, finite-difference solver, Burgers equation, Navier-Stokes proxy
+- One-line summary: Uses PINN residuals as off-grid indicators for adaptive mesh refinement, while keeping a classical finite-difference solver as the final approximation engine.
+- Why it matters: This is a pragmatic SciML pattern: use neural models as diagnostics for mesh placement instead of replacing the trusted PDE solver.
+- Possible use: Test a similar residual-probe workflow for OpenFOAM/Python solvers where neural diagnostics suggest refinement, sampling, or case reruns.
+- Maturity: paper-only
+- Priority: Medium
+
+## Differentiable FEM as an alternative to PINN inverse analysis
+
+- Link: https://arxiv.org/abs/2606.03210
+- Type: Paper / differentiable FEM inverse analysis
+- Keywords: differentiable FEM, PINN, inverse analysis, domain discontinuity, structural mechanics
+- One-line summary: Critically evaluates PINNs for falling-weight-deflectometer inverse analysis and finds differentiable FEM more robust and efficient on layered discontinuous domains.
+- Why it matters: It is a useful warning against defaulting to PINNs when a differentiable forward solver can enforce physics as a hard constraint.
+- Possible use: Cite when choosing between PINN-style soft-constraint inverse modeling and differentiable solver pipelines for engineering inverse problems.
+- Maturity: paper-only
+- Priority: Medium

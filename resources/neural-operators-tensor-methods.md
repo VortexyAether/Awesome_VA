@@ -1028,3 +1028,26 @@
   - Useful reference for evaluating surrogate deployment constraints beyond benchmark accuracy.
 - Maturity: paper-only
 - Priority: High
+
+## FreqNO-DPS
+
+- Link: https://arxiv.org/abs/2606.03936
+- Code: https://github.com/niccoloperrone/FreqNO-DPS
+- Type: Paper + code / neural-operator correction
+- Keywords: neural operator, spectral bias, diffusion posterior sampling, sparse sensors, wavefields
+- One-line summary: Combines sparse observations, a frozen neural-operator forecast, and diffusion posterior sampling with frequency-shaped guidance to correct high-frequency spectral bias.
+- Why it matters: CFD/thermal surrogates often look acceptable in field RMSE while damping fine scales; this paper makes spectral calibration an explicit part of the surrogate correction loop.
+- Possible use: Use as a reference for evaluating surrogate spectra, sensor-conditioned correction, and frequency-dependent uncertainty in flow or thermal field reconstruction.
+- Maturity: paper + research code
+- Priority: High
+
+## Validation-gated multi-agent adaptation for thermal-hydraulic surrogates
+
+- Link: https://arxiv.org/abs/2606.03321
+- Type: Paper / thermal-hydraulic surrogate governance
+- Keywords: thermal hydraulics, surrogate adaptation, neural operator, multi-agent governance, validation gate
+- One-line summary: Proposes role-separated agents plus deterministic champion-challenger gates for online adaptation of thermal-hydraulic surrogate models under operating-regime shift.
+- Why it matters: It treats surrogate deployment as an auditable engineering system, not a one-time offline model selection problem; deterministic validation gates retain final authority over model replacement.
+- Possible use: Use the Monitor/Diagnosis/Adaptation/Safety-Auditor/Orchestrator pattern as a template for safe CFD or thermal digital-twin adaptation workflows.
+- Maturity: paper-only
+- Priority: High

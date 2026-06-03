@@ -545,3 +545,25 @@
 - Possible use: Borrow the agent-operability checklist idea for CFD/thermal automation repositories.
 - Maturity: paper-only
 - Priority: Medium
+
+## Knowledge-graph multi-agent framework for virtual commissioning models
+
+- Link: https://arxiv.org/abs/2606.03255
+- Type: Paper / industrial engineering multi-agent workflow
+- Keywords: multi-agent system, knowledge graph, virtual commissioning, PLC, NX MCD, engineering automation
+- One-line summary: Uses graph-grounded multi-agent workflows to understand production systems, generate executable NX Open scripts, and map PLC variables to simulation objects.
+- Why it matters: It shows a practical pattern for agentic engineering: deterministic extraction into shared structured context first, then grounded generation and ranked mapping suggestions.
+- Possible use: Adapt the pattern to CFD/CAE automation by extracting CAD, mesh, solver, and post-processing metadata into a graph before letting agents modify workflows.
+- Maturity: paper-only
+- Priority: Medium
+
+## AAS-native automatic PDDL generation for production-system planning
+
+- Link: https://arxiv.org/abs/2606.02167
+- Type: Paper / digital-twin-to-planning workflow
+- Keywords: Asset Administration Shell, PDDL, automated planning, digital twin, design automation
+- One-line summary: Generates PDDL planning problems from standardized AAS capability models so engineers can evaluate production-system layouts without hand-writing planning domains.
+- Why it matters: This is a clean example of turning engineering digital-twin metadata into executable planning artifacts, a pattern that can transfer to simulation workflow planning.
+- Possible use: Use as an analogy for generating CFD/CAE workflow plans from structured asset/case metadata instead of raw natural-language prompts.
+- Maturity: paper-only
+- Priority: Medium
