@@ -25,3 +25,15 @@
 - Maturity: paper / open-source toolchain claim
 - Priority: High
 
+
+## MARUT
+
+- Link: https://arxiv.org/abs/2605.26388
+- Type: GPU-accelerated high-order CFD framework with AMR
+- Why it matters:
+  - Combines distributed-memory MPI, NVIDIA GPU-resident computation, high-order spectral discontinuous Galerkin discretization, SSP-RK time integration, and dynamic AMR.
+  - Targets high-speed compressible flows, shocks, vortical structures, and finite-rate chemistry across subsonic to hypersonic regimes.
+  - Relevant as a high-fidelity simulation/data backbone for SciML and CFD surrogate experiments, even if it is not an immediate lab dependency.
+- Possible use: Track as a reference for GPU-native solver architecture and benchmark generation for reactive compressible-flow ML.
+- Maturity: paper/framework description
+- Priority: Medium

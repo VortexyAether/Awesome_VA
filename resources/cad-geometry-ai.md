@@ -544,3 +544,75 @@
 - Possible use: Use the failure-cascade framing as a validation template for CAD-to-mesh-to-CFD agent workflows.
 - Maturity: benchmark / project page
 - Priority: High
+
+## Multi-patch neural solver with isogeometric mappings
+
+- Link: https://doi.org/10.1007/s00366-026-02351-z
+- Type: Neural PDE solver on CAD/NURBS domains
+- Why it matters:
+  - Solves PDEs over computer-aided design domains by using multi-patch isogeometric mappings and patch-local neural networks in each parametric space.
+  - Uses custom output layers for strong Dirichlet boundary conditions and interface neural networks for conformity across NURBS patches.
+  - Relevant to CAD-to-CAE automation because it treats CAD geometry as a solver-native representation instead of only a pre-meshing artifact.
+- Possible use: Use as a reference for simple CAD-domain heat-conduction experiments before moving to full CFD/thermal workflows.
+- Maturity: journal paper
+- Priority: Medium
+
+## LLM-enabled CAD–structural analysis via MCP
+
+- Link: https://doi.org/10.1016/j.autcon.2026.107030
+- Type: MCP-based CAD-to-structural-analysis automation paper
+- Why it matters:
+  - Shows Model Context Protocol being applied to CAD and structural-analysis automation in a peer-reviewed construction automation context.
+  - Strong ecosystem signal that MCP can become an engineering workflow interface, not only a generic LLM tool demo.
+  - Relevant to CAD-to-CAE agent design where geometry edits, analysis setup, and artifact validation need a common callable protocol.
+- Possible use: Compare its workflow boundary with FreeCAD/Onshape/OpenFOAM automation patterns when defining VA's CAD-to-CAE stack.
+- Maturity: journal paper
+- Priority: High
+
+## onshape-cli
+
+- Link: https://github.com/am-will/onshape-cli
+- Type: Agent-friendly CLI/API layer for Onshape CAD
+- Why it matters:
+  - Exposes Onshape document, sketch, feature, assembly, drawing, measurement, render, and export operations through Python and Node CLIs with machine-readable JSON responses.
+  - Designed as a tool layer for AI coding agents rather than an autonomous CAD agent, which keeps responsibility boundaries clearer.
+  - Useful reference for deterministic CAD automation: API commands, validation, measurement, and STEP/STL/IGES/3MF/Parasolid export beat brittle browser control.
+- Possible use: Test on a small public Onshape part and require bounding-box/mass-property checks plus STEP/STL export evidence before meshing.
+- Maturity: active early open-source tool
+- Priority: High
+
+## archicad-mcp
+
+- Link: https://github.com/Boti-Ormandi/archicad-mcp
+- Type: MCP server for Archicad automation via Tapir JSON API
+- Why it matters:
+  - Uses a compact tool surface with live schema search and a script-first Python execution layer over 173 underlying Archicad commands.
+  - Good design reference for CAD/BIM agents: expose stable schemas and let complex multi-step logic run near the CAD API instead of chaining many chatty tool calls.
+  - Multi-instance discovery and property lookup are useful patterns for larger engineering projects with several open models.
+- Curation note: Archicad/BIM-specific; treat as an interface-design reference unless a BIM workflow becomes relevant.
+- Maturity: active early open-source tool
+- Priority: Medium
+
+## FreeCad_MCP_Server
+
+- Link: https://github.com/JakobThiessen/FreeCad_MCP_Server
+- Type: MCP server plus FreeCAD workbench bridge
+- Why it matters:
+  - Connects MCP clients to a running FreeCAD instance through a local XML-RPC workbench bridge, with Sketcher, Part, PartDesign, constraints, screenshots, and STEP/STL export tools.
+  - Useful comparison point for FreeCAD-agent architecture: external MCP server plus in-app addon, rather than only headless Python generation.
+  - Highlights practical constraints such as GUI dependency, topology naming instability, and the need to queue operations onto the FreeCAD GUI thread.
+- Possible use: Compare against other FreeCAD MCP servers on a repeatable heat-sink/duct generation and export smoke test.
+- Maturity: early open-source tool
+- Priority: Medium
+
+## cadlens-mcp
+
+- Link: https://github.com/cadlens-co/cadlens-mcp
+- Type: MCP server for parsing CAD drawing files into structured data
+- Why it matters:
+  - Parses DWG, DXF, DWF, DWFX, DGN, and PDF CAD drawings through the CADLens API and returns entity, layer, metadata, and summary views to MCP clients.
+  - Complements CAD-control servers: agents often need to understand existing drawings before creating or modifying geometry.
+  - Useful for drawing-review and legacy-CAD ingestion workflows where AutoCAD is unavailable or GUI automation would be brittle.
+- Curation note: Requires an external CADLens API key; avoid uploading sensitive CAD without approval.
+- Maturity: active early open-source MCP server
+- Priority: Medium

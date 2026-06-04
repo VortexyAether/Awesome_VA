@@ -1051,3 +1051,27 @@
 - Possible use: Use the Monitor/Diagnosis/Adaptation/Safety-Auditor/Orchestrator pattern as a template for safe CFD or thermal digital-twin adaptation workflows.
 - Maturity: paper-only
 - Priority: High
+
+## Semigroup Consistency as a Diagnostic for Learned Physics Simulators
+
+- Link: https://arxiv.org/abs/2605.26324
+- Type: Learned-simulator evaluation diagnostic
+- Why it matters:
+  - Tests whether direct evolution over `s+t` agrees with composing learned predictions over `s` then `t`, a property exact autonomous solution maps should satisfy.
+  - On heat and Burgers dynamics with ConvNet/FNO baselines, semigroup error correlates with rollout degradation, making it useful beyond one-step RMSE.
+  - Good candidate metric for CFD/thermal surrogate validation gates where long-horizon stability matters.
+- Possible use: Add semigroup error to surrogate evaluation reports alongside spectral error, conservation checks, and rollout metrics.
+- Maturity: paper-only / AI4Physics ICML workshop
+- Priority: High
+
+## History-aware adaptive reduced-order models via incremental SVD
+
+- Link: https://arxiv.org/abs/2605.28684
+- Type: Adaptive projection-based ROM / online basis update
+- Why it matters:
+  - Uses occasional full-order correction snapshots and incremental SVD to update the reduced basis when online dynamics leave the offline training regime.
+  - Demonstrates the pattern on Burgers, Sod shock tube, and a stiff rotating detonation engine case, making it relevant to compressible-flow surrogate governance.
+  - Useful middle ground between trusted intrusive ROMs and black-box neural surrogates for regime-shifting CFD workflows.
+- Possible use: Compare against FNO/DeepONet on an online regime-shift benchmark with equal correction-snapshot budgets.
+- Maturity: preprint
+- Priority: High
