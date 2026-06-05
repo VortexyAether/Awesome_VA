@@ -567,3 +567,25 @@
 - Possible use: Use as an analogy for generating CFD/CAE workflow plans from structured asset/case metadata instead of raw natural-language prompts.
 - Maturity: paper-only
 - Priority: Medium
+
+## LAP: Agent-to-Instrument Protocol
+
+- Link: https://arxiv.org/abs/2606.03755
+- Type: Agent/instrument protocol proposal for autonomous science
+- Keywords: autonomous science, agent protocol, lab instruments, MCP-adjacent, scientific workflow
+- One-line summary: Proposes a protocol layer for connecting goal-directed agents with physical scientific instruments, complementing MCP-style agent-to-tool and A2A-style agent-to-agent interfaces.
+- Why it matters: Engineering research agents eventually need to operate simulators, instruments, and lab equipment through auditable interfaces; LAP is a useful signal for standardizing the agent-to-instrument edge.
+- Possible use: Borrow protocol ideas for simulation/instrument wrappers where state, safety limits, provenance, and execution logs matter.
+- Maturity: paper-only
+- Priority: Medium
+
+## Description-Code Inconsistency in MCP Servers
+
+- Link: https://arxiv.org/abs/2606.04769
+- Type: MCP reliability/security measurement paper
+- Keywords: MCP, tool description, code consistency, agent reliability, tool safety, audit
+- One-line summary: Measures and detects mismatches between natural-language MCP tool descriptions and the actual behavior implemented by server code.
+- Why it matters: Agentic CAD/CAE workflows cannot safely trust tool descriptions alone; spec-code consistency, parameter enforcement, and runtime smoke tests are needed before exposing engineering operations to agents.
+- Possible use: Build a small MCP audit harness for CAD/CAE servers that checks ignored parameters, unsafe defaults, and description-code mismatch before lab adoption.
+- Maturity: paper-only
+- Priority: High

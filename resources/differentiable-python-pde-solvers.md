@@ -274,3 +274,14 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
 - Possible use: Cite when choosing between PINN-style soft-constraint inverse modeling and differentiable solver pipelines for engineering inverse problems.
 - Maturity: paper-only
 - Priority: Medium
+
+## WSS reconstruction from passive scalar observations
+
+- Link: https://arxiv.org/abs/2606.06313
+- Type: Differentiable physics / PINN inverse-flow study
+- Keywords: wall shear stress, inverse problem, passive scalar, differentiable physics, PINN, fluid dynamics
+- One-line summary: Reconstructs wall shear stress from spatially limited passive scalar concentration or temperature observations using differentiable physics and physics-informed neural networks.
+- Why it matters: Many experiments and thermal-fluid systems expose scalar fields more easily than full near-wall velocity gradients; this is a useful pattern for recovering hidden engineering quantities from partial observations.
+- Possible use: Adapt the inverse setup to heat-flux, wall-stress, or transport-coefficient estimation in thermal/fluid benchmarks where only sparse scalar measurements are available.
+- Maturity: paper-only
+- Priority: High

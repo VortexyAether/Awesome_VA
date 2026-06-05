@@ -1075,3 +1075,47 @@
 - Possible use: Compare against FNO/DeepONet on an online regime-shift benchmark with equal correction-snapshot budgets.
 - Maturity: preprint
 - Priority: High
+
+## PINO training for parametric PDEs
+
+- Link: https://arxiv.org/abs/2606.06164
+- Type: Physics-informed neural operator training study
+- Keywords: PINO, neural operator, parametric PDE, physics-informed learning, training stability
+- One-line summary: Studies how to train physics-informed neural operators robustly for parametric PDE solution operators using governing-equation supervision.
+- Why it matters: For engineering PDE surrogates, architecture choice is only half the problem; residual formulation, sampling, optimization, and boundary-condition handling can determine whether PINO-style models are usable beyond toy cases.
+- Possible use: Use as a checklist source for PINO ablations on heat-transfer, Burgers, cavity-flow, or other CFD/thermal surrogate benchmarks.
+- Maturity: paper-only
+- Priority: High
+
+## EqGINO
+
+- Link: https://arxiv.org/abs/2606.03260
+- Type: Equivariant geometry-informed Fourier neural operator for 3D PDEs
+- Keywords: Fourier neural operator, equivariance, geometry-informed learning, 3D PDE surrogate
+- One-line summary: Introduces a geometry-informed FNO variant designed to improve generalization under 3D geometric transformations without paying the full cost of spectral group convolutions.
+- Why it matters: CAD/CAE surrogates often fail under coordinate, rotation, or geometry distribution shifts; EqGINO is a useful reference for testing whether equivariant/global operator structure improves robustness on 3D engineering fields.
+- Possible use: Compare against vanilla FNO/GNO/mesh-based models on rotated or transformed 3D heat/flow geometries.
+- Maturity: paper-only
+- Priority: High
+
+## LiNO
+
+- Link: https://arxiv.org/abs/2606.03262
+- Type: Light-inspired neural operator architecture
+- Keywords: neural operator, PDE surrogate, nonlocal communication, mesh scalability, interpretability
+- One-line summary: Proposes a light-inspired neural operator using reflection/refraction/scattering analogies to balance physical interpretability, nonlocal communication, mesh scalability, and compute cost.
+- Why it matters: Neural-operator research is moving from generic FNO variants toward architectures with explicit inductive biases; LiNO is worth tracking as an architecture idea for large-domain PDE surrogates.
+- Possible use: Evaluate only after code/benchmarks mature; compare with FNO, GNO, attention-based operators, and spectral-correction methods on PDE families with nonlocal effects.
+- Maturity: paper-only
+- Priority: Medium
+
+## Underwater CFD generative flow-field surrogate for path planning
+
+- Link: https://arxiv.org/abs/2606.06077
+- Type: CFD surrogate connected to robotic path planning/control
+- Keywords: CFD surrogate, RANS, generative model, AUV, flow-field prediction, path planning
+- One-line summary: Uses conditional generative models to emulate 3D RANS propeller-wake fields for autonomous underwater vehicle launch-and-recovery path planning.
+- Why it matters: This is a useful applied pattern: the surrogate is judged not only by field fidelity, but by whether it supports a downstream control/planning decision in a difficult fluid environment.
+- Possible use: Use as a reference when designing CFD surrogate evaluations that report objective-level or decision-level error, not only field RMSE.
+- Maturity: paper-only
+- Priority: High

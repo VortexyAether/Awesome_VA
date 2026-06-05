@@ -616,3 +616,36 @@
 - Curation note: Requires an external CADLens API key; avoid uploading sensitive CAD without approval.
 - Maturity: active early open-source MCP server
 - Priority: Medium
+
+## Attributed Feature Graphs for Engineering Design
+
+- Link: https://arxiv.org/abs/2606.06405
+- Type: CAD feature representation for data-driven engineering design
+- Keywords: CAD, feature graph, design automation, data-driven design, CAD-to-CAE
+- One-line summary: Represents CAD models as attributed graphs over engineering features such as extrusions, ribs, pockets, and their relationships.
+- Why it matters: CAD-to-CAE automation needs design intent and feature semantics, not only point clouds or meshes; feature graphs can support interpretability, design-rule checks, meshability reasoning, and solver setup.
+- Possible use: Explore feature-graph extraction as an intermediate artifact for boundary tagging, design sweeps, and surrogate conditioning.
+- Maturity: paper-only
+- Priority: High
+
+## UniCAD
+
+- Link: https://arxiv.org/abs/2606.05058
+- Type: Unified benchmark and model for multi-modal multi-task CAD
+- Keywords: CAD benchmark, multimodal CAD, text-to-CAD, point-to-CAD, CAD question answering
+- One-line summary: Introduces a benchmark and universal model covering point-to-CAD reconstruction, text/image-to-CAD generation, and CAD question answering.
+- Why it matters: CAD-AI is moving from isolated demos toward shared multi-task evaluation; useful for tracking whether CAD models are becoming broad engineering assistants rather than single-task shape generators.
+- Possible use: Use the task taxonomy to evaluate future CAD-agent workflows across reconstruction, generation, inspection, and explanation.
+- Maturity: paper-only
+- Priority: Medium
+
+## BRepCLIP
+
+- Link: https://arxiv.org/abs/2606.05515
+- Type: Multimodal representation learning on native CAD B-Rep primitives
+- Keywords: B-Rep, CAD understanding, contrastive learning, face-edge tokens, multimodal pretraining
+- One-line summary: Aligns native CAD boundary-representation primitives with image and language embeddings through contrastive pretraining.
+- Why it matters: Exact B-Rep faces, edges, curves, and topology are closer to downstream CAD/CAE workflows than generic meshes; BRepCLIP is a signal that CAD representation learning is shifting toward native engineering geometry.
+- Possible use: Track for CAD retrieval, feature recognition, natural-language CAD inspection, and solver-prep metadata extraction.
+- Maturity: paper-only
+- Priority: High
