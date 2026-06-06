@@ -69,3 +69,26 @@ Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine L
 - Possible use: Use as a turbulence-closure reading anchor when comparing offline stress prediction, solver stability, and field-level CFD validation.
 - Maturity: paper-only
 - Priority: High
+
+## Emergent Transfer of a Physics Foundation Model from Simulation to Laboratory Turbulence
+
+- Link: https://arxiv.org/abs/2606.01470
+- Type: Physics foundation model / sim-to-lab turbulence study
+- Why it matters:
+  - Tests whether a simulation-trained physics foundation model transfers to laboratory Rayleigh-Taylor instability data.
+  - Raises the bar beyond benchmark accuracy toward experimental deployment and domain-shift robustness.
+  - Useful reliability reference for CFD-AI claims involving foundation models or universal emulators.
+- Possible use: Add to a sim-to-experiment transfer reading list for turbulence and scientific foundation models.
+- Maturity: paper-only
+- Priority: High
+
+## FluidFlower CO2 injection SciML surrogate and Bayesian inference
+
+- Link: https://arxiv.org/abs/2606.05448
+- Type: Multiphase-flow surrogate and inverse modeling study
+- Why it matters:
+  - Combines surrogate modeling and Bayesian inference for CO2-brine flow in porous media using the FluidFlower experiment.
+  - Relevant to nonlinear, partially observed multiphase systems where inverse parameters matter as much as forward prediction.
+  - Good example for connecting SciML surrogates to experimental data and uncertainty-aware inference.
+- Maturity: paper-only
+- Priority: Medium

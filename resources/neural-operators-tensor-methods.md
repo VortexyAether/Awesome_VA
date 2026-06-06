@@ -1119,3 +1119,51 @@
 - Possible use: Use as a reference when designing CFD surrogate evaluations that report objective-level or decision-level error, not only field RMSE.
 - Maturity: paper-only
 - Priority: High
+
+## Automotive aerodynamics surrogate transfer learning
+
+- Link: https://arxiv.org/abs/2605.27968
+- Type: Transformer-based CFD surrogate / transfer-learning study
+- Why it matters:
+  - Tests whether geometry representations learned from several vehicle families transfer to an unseen automotive family.
+  - Directly relevant to industrial CFD surrogate deployment, where new design families break random-split benchmark assumptions.
+  - Useful evaluation pattern: separate within-family accuracy from unseen-family adaptation and downstream aerodynamic quantities.
+- Possible use: Use as a reference protocol when building CAD/geometry-to-flow surrogate experiments with family-shift splits.
+- Maturity: paper-only
+- Priority: High
+
+## Bayesian CFD inverse design with neural operators
+
+- Link: https://arxiv.org/abs/2605.26059
+- Type: Neural-operator surrogate for Bayesian inverse design
+- Why it matters:
+  - Studies whether neural operators can accelerate repeated CFD solves inside MCMC-style inverse design.
+  - Important because the surrogate must preserve posterior geometry and uncertainty, not just produce low field RMSE.
+  - Relevant to shock-dominated aerodynamic design and simulation-budget-limited optimization loops.
+- Possible use: Compare surrogate-assisted posterior quality against high-fidelity CFD on a small inverse-design benchmark.
+- Maturity: paper-only
+- Priority: High
+
+## Neural operator surrogate for SMR helical-coil steam generator CFD
+
+- Link: https://arxiv.org/abs/2605.30277
+- Type: Thermal-hydraulic neural-operator surrogate
+- Why it matters:
+  - Targets real-time transient CFD prediction for small modular reactor digital twins.
+  - Good thermal-fluid example where geometry-specific surrogates matter for operational monitoring, not only design exploration.
+  - Useful reference for thinking about safety gates, regime shift, and validation contracts around neural operators.
+- Possible use: Use as a thermal-hydraulic reading anchor when designing surrogate validation checklists.
+- Maturity: paper-only
+- Priority: High
+
+## Learned Response-Field Inertia Operator for HEC-RAS 2D
+
+- Link: https://arxiv.org/abs/2606.06385
+- Type: Solver-native hydrodynamic surrogate
+- Why it matters:
+  - Evaluates water-surface elevation prediction directly on HEC-RAS 2D nonuniform computational cells.
+  - Avoids raster remapping artifacts and separates static inputs, current state, forcing, calibration quantities, and future targets.
+  - Useful pattern for OpenFOAM/CFD surrogates where native mesh/cell semantics should be preserved.
+- Possible use: Adapt the evaluation idea to OpenFOAM polyMesh or unstructured thermal-fluid datasets.
+- Maturity: paper-only
+- Priority: Medium

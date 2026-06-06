@@ -649,3 +649,14 @@
 - Possible use: Track for CAD retrieval, feature recognition, natural-language CAD inspection, and solver-prep metadata extraction.
 - Maturity: paper-only
 - Priority: High
+
+## freecad-ai
+
+- Link: https://github.com/ghbalf/freecad-ai
+- Type: AI-powered FreeCAD assistant workbench
+- Why it matters:
+  - Provides a FreeCAD-native assistant workflow for generating 3D models from natural language.
+  - Useful UX/reference point for CAD agents operating inside the CAD environment instead of through screenshots alone.
+  - For CAE use, generated geometry still needs deterministic validation, named boundaries, export checks, and meshability tests.
+- Curation note: Treat as an implementation signal; validate on parametric engineering parts before depending on it.
+- Priority: Medium

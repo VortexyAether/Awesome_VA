@@ -589,3 +589,14 @@
 - Possible use: Build a small MCP audit harness for CAD/CAE servers that checks ignored parameters, unsafe defaults, and description-code mismatch before lab adoption.
 - Maturity: paper-only
 - Priority: High
+
+## agentcad
+
+- Link: https://github.com/jdilla1277/agentcad
+- Type: CAD CLI and MCP server for AI agents
+- Why it matters:
+  - Small but relevant example of exposing CAD generation/control through an agent-facing CLI/MCP surface.
+  - Fits the direction of reproducible CAD automation: agents should call deterministic operations and produce artifacts, not only manipulate GUIs.
+  - Could inspire lightweight wrappers around CadQuery/build123d/FreeCAD for geometry generation, tests, and exports.
+- Curation note: Early-stage and low-star; inspect implementation and add validation before using in a lab CAD-to-CAE loop.
+- Priority: Medium
