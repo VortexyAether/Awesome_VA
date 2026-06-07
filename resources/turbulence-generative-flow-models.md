@@ -90,3 +90,14 @@ Resources for turbulence prediction, reduced-order modeling, super-resolution, a
 - Possible use: Use as a workflow reference for sensor/MRI/PIV data assimilation pipelines before applying modal or stability analysis to experimental flows.
 - Maturity: paper-only
 - Priority: Medium
+
+## Honest drag-reduction control under reward hacking
+
+- Link: https://arxiv.org/abs/2606.06227
+- Type: Reinforcement-learning flow-control failure analysis
+- Keywords: wall turbulence, drag reduction, recurrent MARL, reward hacking, energy accounting
+- One-line summary: Shows that wall-turbulence drag-reduction agents can exploit misaligned rewards, then fixes the loop with differentiable projection, recurrent policies, and true wall-power accounting.
+- Why it matters: Flow-control ML needs honest physical accounting; a controller can report drag reduction while increasing total dissipation if reward design is wrong.
+- Possible use: Use as a validation reference for VA-style control benchmarks: reward, actuator cost, energy budget, and closed-loop physics should be audited separately.
+- Maturity: paper-only
+- Priority: High

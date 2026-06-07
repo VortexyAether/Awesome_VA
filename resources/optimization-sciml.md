@@ -194,3 +194,36 @@
   - Good reminder that surrogate quality should be evaluated inside the estimation/control loop, not only as offline prediction.
 - Maturity: paper-only
 - Priority: High
+
+## Simulation-aided intelligent sensing for hidden temperature fields
+
+- Link: https://arxiv.org/abs/2606.04582
+- Type: Sparse-sensor thermal-field reconstruction / simulation-aided surrogate
+- Keywords: thermal sensing, temperature field reconstruction, sparse sensors, simulation data, digital twin
+- One-line summary: Trains neural temperature-field reconstruction from randomized physics-based simulations, then infers unobservable internal fields from sparse embedded sensors in real time.
+- Why it matters: Thermal-fluid digital twins often cannot instrument the most important internal locations; simulation-aided sensing is a practical bridge between physics models and online monitoring.
+- Possible use: Prototype sparse sensor → full field reconstruction with Kriging, POD-NN, and neural-operator baselines on a heat-transfer benchmark.
+- Maturity: paper-only
+- Priority: High
+
+## Laser-ion spectrum surrogate for regime mapping and closed-loop control
+
+- Link: https://arxiv.org/abs/2606.06210
+- Type: Physics-guided high-dimensional output surrogate with uncertainty quantification
+- Keywords: physics surrogate, VAE, uncertainty quantification, regime transition, closed-loop control
+- One-line summary: Uses a dual-branch β-VAE/MLP surrogate plus deep ensembles to predict proton spectra and map acceleration-regime transitions.
+- Why it matters: Although outside CFD, it is a strong pattern for engineering surrogates that must predict full distributions, expose uncertainty, and support closed-loop facility control.
+- Possible use: Borrow the “spectrum/distribution + scalar boundary + UQ” evaluation idea for thermal-fluid outputs with regime transitions.
+- Maturity: paper-only
+- Priority: Medium
+
+## Bayesian surrogate and sensitivity analysis for flotation control
+
+- Link: https://arxiv.org/abs/2606.06173
+- Type: Gaussian-process decision support for industrial process control
+- Keywords: process control, Bayesian modeling, global sensitivity analysis, SHAP, decision support
+- One-line summary: Combines GP regression, Sobol sensitivity indices, and SHAP explanations to turn flotation experiment data into interpretable control guidance.
+- Why it matters: Useful non-CFD process-control example where surrogate value comes from uncertainty, sensitivity, and operator-readable decisions rather than prediction alone.
+- Possible use: Use as a template for reporting which design/control variables dominate a CFD or thermal process surrogate.
+- Maturity: paper-only
+- Priority: Medium
