@@ -92,3 +92,27 @@ Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine L
   - Good example for connecting SciML surrogates to experimental data and uncertainty-aware inference.
 - Maturity: paper-only
 - Priority: Medium
+
+## Drifting Models for Surrogate Flow Modeling
+
+- Link: https://arxiv.org/abs/2606.07481
+- Type: Generative CFD surrogate / real-time flow-field modeling
+- Why it matters:
+  - Adapts generative drifting to fluid mechanics by generating CFD-like flow fields in a learned VAE latent space.
+  - Targets the practical latency problem of diffusion-style generative surrogates: similar accuracy and flow consistency with two-orders-of-magnitude faster single-pass inference.
+  - Uses label-aware masking for boundary-condition alignment and explores spatial conditioning for unseen geometries.
+- Possible use: Compare against diffusion, FNO, POD-NN, and deterministic baselines on field error, boundary-condition consistency, and inference latency for interactive design exploration.
+- Maturity: paper-only
+- Priority: High
+
+## No-Harm Physics-Informed Inverse Learning with Residual-Calibrated Uncertainty
+
+- Link: https://arxiv.org/abs/2606.07153
+- Type: Physics-informed inverse problem certification / uncertainty gate
+- Why it matters:
+  - Proposes a certification-and-selection layer that accepts a learned reconstruction only when its residual-calibrated uncertainty radius is no worse than a baseline.
+  - Combines data, physics, boundary/initial-condition, and optimization residuals into an auditable “do no harm” fallback contract.
+  - Relevant to CFD/thermal surrogate governance, where a learned model should be allowed to abstain or return a trusted baseline under shift or ill-posedness.
+- Possible use: Implement a no-harm gate around thermal/CFD inverse reconstruction experiments before trusting learned updates in a digital twin.
+- Maturity: paper-only
+- Priority: High

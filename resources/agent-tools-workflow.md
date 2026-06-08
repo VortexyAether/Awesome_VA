@@ -185,6 +185,30 @@
 - Maturity: early open-source tool
 - Priority: High
 
+## qcad-mcp
+
+- Link: https://github.com/sandraschi/qcad-mcp
+- Type: MCP bridge for QCAD Pro / 2D CAD automation
+- Why it matters:
+  - Extends the CAD-MCP pattern beyond 3D FreeCAD/CadQuery experiments into 2D architectural/drawing workflows.
+  - Useful workflow signal for agents that need to inspect, modify, or summarize DWG/DXF-style drawing artifacts through explicit tool calls rather than GUI clicking.
+  - Complements CADLens-style drawing parsers and AutoCAD MCP attempts: engineering agents need both read-only drawing understanding and controlled edit surfaces.
+- Curation note: Very early, low-adoption repository; inspect implementation and data-handling boundaries before using on real drawings.
+- Maturity: early open-source MCP server
+- Priority: Low
+
+## Codex Integration with Creative Industry Software
+
+- Link: https://github.com/jianbaorui07-dot/Codex-Integration-with-Creative-Industry-Software
+- Type: Local MCP stdio server and safety bridge for creative/CAD-adjacent tools
+- Why it matters:
+  - Connects agents to local desktop tools such as Blender, AutoCAD/DXF, Photoshop, Illustrator, and video tools through adapter-style MCP surfaces.
+  - The transferable idea is the safety bridge: agent actions against GUI/desktop software should pass through explicit local adapters, schemas, and guardrails.
+  - Relevant to CAD/CAE agent design because simulator/CAD control should be auditable and local-artifact grounded, not a free-form screen automation transcript.
+- Curation note: Windows-first and broad creative-tool scope; treat as an architecture pattern, not a CFD/CAE dependency.
+- Maturity: early open-source tool
+- Priority: Medium
+
 ## TO-Agents
 
 - Link: https://arxiv.org/abs/2605.21622

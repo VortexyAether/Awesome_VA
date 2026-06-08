@@ -650,6 +650,21 @@
 - Maturity: paper-only
 - Priority: High
 
+## GuideCAD
+
+- Link: https://arxiv.org/abs/2606.07024
+- Code: https://github.com/mskimS2/GuideCAD
+- Type: Lightweight multimodal CAD generation via prefix embeddings
+- Keywords: CAD generation, text-to-CAD, image-to-CAD, construction sequence, parameter-efficient training
+- One-line summary: Maps image embeddings into prefix embeddings so a pretrained LLM and transformer decoder can generate executable 3D CAD construction sequences from visual-textual context.
+- Why it matters:
+  - Keeps the focus on CAD construction sequences rather than only mesh/point-cloud outputs, which is more useful for editable engineering workflows.
+  - Uses a small trainable mapping layer instead of full multimodal fine-tuning, making the approach more practical for resource-limited CAD experiments.
+  - Provides both paper and code/dataset release, so it can be inspected as a benchmark/reference for future CAD-agent validation loops.
+- Possible use: Test generated sequences through CadQuery/FreeCAD execution, export, watertightness, and named-boundary checks before treating outputs as CAE-ready.
+- Maturity: paper + early code
+- Priority: Medium
+
 ## freecad-ai
 
 - Link: https://github.com/ghbalf/freecad-ai
