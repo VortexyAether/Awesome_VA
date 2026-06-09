@@ -675,3 +675,17 @@
   - For CAE use, generated geometry still needs deterministic validation, named boundaries, export checks, and meshability tests.
 - Curation note: Treat as an implementation signal; validate on parametric engineering parts before depending on it.
 - Priority: Medium
+
+## Neural Deformation Field for industrial NURBS geometry optimization
+
+- Link: https://arxiv.org/abs/2606.07198
+- Type: Differentiable parametrization and shape optimization for industrial CAD geometry
+- Keywords: CAD, NURBS, neural deformation field, shape optimization, differentiable geometry
+- One-line summary: Uses a neural displacement field over multi-patch NURBS control points to morph industrial CAD surfaces under physical/design constraints.
+- Why it matters:
+  - Works closer to native CAD surface representations than mesh-only or point-cloud generation approaches.
+  - Relevant to CAD-to-CAE automation because shape optimization needs geometry edits that remain exportable, constrainable, and solver-ready.
+  - Useful complement to feature-graph and B-Rep representation work: optimization should preserve engineering semantics, not only visual shape.
+- Possible use: Test whether NURBS morphing workflows preserve named boundaries, patch continuity, export validity, and meshability for CFD cases.
+- Maturity: paper-only
+- Priority: High

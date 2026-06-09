@@ -101,3 +101,27 @@ Resources for turbulence prediction, reduced-order modeling, super-resolution, a
 - Possible use: Use as a validation reference for VA-style control benchmarks: reward, actuator cost, energy budget, and closed-loop physics should be audited separately.
 - Maturity: paper-only
 - Priority: High
+
+## Hybrid Generative Reduced-Order Model for the Minimal Flow Unit
+
+- Link: https://arxiv.org/abs/2606.09044
+- Type: Generative reduced-order model for wall-bounded turbulence
+- Why it matters:
+  - Combines latent generative modeling with reduced-order dynamics to forecast intermittent near-wall turbulence from sparse sensor measurements.
+  - Connects three practical surrogate requirements: compression of high-dimensional flow fields, sparse sensing, and long-horizon rollout stability.
+  - Useful comparison point for deterministic ROMs, neural operators, and diffusion/flow-matching field generators.
+- Possible use: Evaluate sparse-sensor-to-field rollout methods using spectrum, wall quantities, and long-horizon stability metrics.
+- Maturity: paper-only
+- Priority: Medium
+
+## Boundary-layer-induced failure benchmark for standard PINNs
+
+- Link: https://arxiv.org/abs/2606.09676
+- Type: PINN failure benchmark for singularly perturbed transport
+- Why it matters:
+  - Shows how standard PINNs can fail on boundary-layer-dominated transport problems where the solution changes sharply near boundaries.
+  - Directly relevant to heat-transfer and wall-flow surrogates, where wall gradients and fluxes matter more than average domain error.
+  - Encourages validation metrics that separately track local extrema, wall flux, gradient accuracy, and boundary-layer resolution.
+- Possible use: Add a boundary-layer stress test before trusting PINN/FNO/POD-NN models in thermal or near-wall CFD workflows.
+- Maturity: paper-only
+- Priority: High

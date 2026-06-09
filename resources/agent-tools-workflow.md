@@ -624,3 +624,27 @@
   - Could inspire lightweight wrappers around CadQuery/build123d/FreeCAD for geometry generation, tests, and exports.
 - Curation note: Early-stage and low-star; inspect implementation and add validation before using in a lab CAD-to-CAE loop.
 - Priority: Medium
+
+## Collaborative Human-Agent Protocol (CHAP)
+
+- Link: https://arxiv.org/abs/2606.09751
+- Type: Human-agent workflow protocol
+- Why it matters:
+  - Frames operational agents around explicit collaboration, tool use, handoff, and responsibility boundaries.
+  - Relevant to CAD/CAE agents because editing geometry, launching simulations, or changing solver settings should require clear authority and audit trails.
+  - Good governance reference for moving from impressive demos to safe engineering workflows.
+- Possible use: Define engineering-agent action tiers such as read-only inspection, proposed edit, validated edit, external simulation run, and human approval boundary.
+- Maturity: paper-only
+- Priority: Medium
+
+## Enterprise MCP adoption for LLM-driven software engineering
+
+- Link: https://arxiv.org/abs/2606.09182
+- Type: MCP adoption and workflow study
+- Why it matters:
+  - Studies MCP adoption as a socio-technical workflow problem, not only a tool-calling interface.
+  - Useful reminder that CAD/CAE MCP servers need deployment discipline: permissions, logging, tool boundaries, and multi-tool coordination.
+  - Complements low-level CAD MCP tools by describing the organizational layer needed to make tool access reliable.
+- Possible use: Use as a governance checklist when designing MCP bridges for FreeCAD, OpenFOAM, SALOME, or simulation artifact stores.
+- Maturity: paper-only
+- Priority: Medium

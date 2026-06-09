@@ -1167,3 +1167,15 @@
 - Possible use: Adapt the evaluation idea to OpenFOAM polyMesh or unstructured thermal-fluid datasets.
 - Maturity: paper-only
 - Priority: Medium
+
+## Fast control-oriented physics-informed surrogate for TCV tokamak equilibrium reconstruction
+
+- Link: https://arxiv.org/abs/2606.09487
+- Type: Physics-informed surrogate for real-time control
+- Why it matters:
+  - Replaces a tokamak equilibrium reconstruction code with a neural surrogate targeting sub-100 μs inference and 10 kHz shape-control use.
+  - Strong example of a surrogate evaluated against control-loop constraints, not only offline field error.
+  - Relevant to thermal-fluid digital twins where sensor encoding, latency, operating envelope, and fallback behavior are deployment-critical.
+- Possible use: Use as a control-ready surrogate checklist reference for CFD/thermal digital-twin experiments.
+- Maturity: paper-only
+- Priority: High
