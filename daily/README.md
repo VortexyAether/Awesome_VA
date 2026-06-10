@@ -1,29 +1,38 @@
-# Daily Research Radar Template
+# Daily sciML / Engineering Radar Template
 
 Create daily updates as `daily/YYYY-MM-DD.md`.
 
 ```markdown
-# Daily Research Radar — YYYY-MM-DD
+# Daily sciML / Engineering Radar — YYYY-MM-DD
 
-## Highlights
+## Top Signals
 
-- Summarize the most important findings of the day in 3–5 bullets.
+- 3–5 concise signals explaining what changed technically.
 
-## Added Resources
+## New Papers / Tools
 
-### Category name
+### Item title
 
-- [Resource title](URL) — concise note explaining what was added.
+- Link: URL
+- Type: Paper / Code / Dataset / Tool / Blog / Benchmark / Workflow
+- Why it matters: Specific engineering/SciML consequence.
+- VA relevance: How this connects to VA's research, writing, experiments, or workflow.
+- Action: Read / Save / Test / Cite / Watch / Ignore
 
 ## Best Find of the Day
 
 Choose one resource and explain why it is the most valuable from a CFD-AI / SciML research perspective.
 
-## Possible Research Ideas
+## Engineering-AI Pattern
 
-1. Practical idea connected to VA's interests.
-2. Another idea, if genuinely inspired by today's findings.
-3. Optional third idea.
+Reusable pattern seen today: validation gate, geometry-family shift, sparse-sensor reconstruction, CAD-native representation, agent-callable workflow, etc.
+
+## Possible VA Actions
+
+- Read:
+- Test:
+- Save to resource file:
+- LinkedIn/blog candidate:
 ```
 
 Keep daily updates selective. A quiet day with one excellent resource is better than a noisy list of weak links.

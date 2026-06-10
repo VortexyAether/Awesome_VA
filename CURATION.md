@@ -14,6 +14,8 @@ Collect, filter, summarize, and organize high-quality resources related to:
 
 ## Sources to scan
 
+Use `sources.md` as the operational query set. Primary sources include:
+
 - arXiv
 - Papers with Code
 - GitHub trending and GitHub search
@@ -60,6 +62,9 @@ Do not add:
 - One-line summary: A concise explanation of what this is.
 - Why it matters: Explain why this resource is important from a CFD-AI / SciML research perspective.
 - Possible use: Explain how VA might use this resource in research, writing, experiments, or workflow automation.
+- VA-use: Read / Implement / Benchmark / Cite / Watch / Ignore
+- Risk / Caveat: Dataset limitation, code absence, toy-only validation, unclear reproducibility, or other caveat.
+- Related threads: validation, CAD, surrogate, digital twin, MCP, sparse sensors, etc.
 - Maturity: paper-only / prototype / maintained library / production-ready / watchlist
 - Priority: High / Medium / Low
 ```
@@ -86,25 +91,36 @@ If a resource fits multiple categories, choose one primary location and add cros
 Create or update `daily/YYYY-MM-DD.md` with:
 
 ```markdown
-# Daily Research Radar — YYYY-MM-DD
+# Daily sciML / Engineering Radar — YYYY-MM-DD
 
-## Highlights
+## Top Signals
 
-- ...
+3–5 concise signals. Each signal should say what changed technically, not only what was published.
 
-## Added Resources
+## New Papers / Tools
 
-### Category
+### Item title
 
-- [Resource title](URL) — short note.
+- Link: URL
+- Type: Paper / Code / Dataset / Tool / Blog / Benchmark / Workflow
+- Why it matters: Specific engineering/SciML consequence.
+- VA relevance: How this connects to VA's research, writing, experiments, or workflow.
+- Action: Read / Save / Test / Cite / Watch / Ignore
 
 ## Best Find of the Day
 
-Resource title and why it was the most valuable.
+One item only. Explain why it beats the rest.
 
-## Possible Research Ideas
+## Engineering-AI Pattern
 
-1. ...
+Reusable pattern seen today, e.g. validation-gated surrogate, geometry-family generalization, sparse-sensor correction, CAD-native representation, or agent-callable engineering workflow.
+
+## Possible VA Actions
+
+- Read:
+- Test:
+- Save to resource file:
+- LinkedIn/blog candidate:
 ```
 
 Research ideas should be practical and connected to VA's interests, such as:
@@ -112,9 +128,24 @@ Research ideas should be practical and connected to VA's interests, such as:
 - deterministic diffusion/generative modeling for flow prediction
 - turbulence surrogate modeling
 - spectral energy consistency metrics
-- wafer-scale prediction with physics-inspired priors
-- neural operator comparison
+- sparse-sensor field reconstruction
+- geometry-family split benchmarks
+- validation-gated neural operators and fallback contracts
+- CAD/BRep-native engineering AI
 - CFD workflow automation
+
+## Weekly synthesis
+
+Create `weekly/YYYY-Www.md` when enough daily signals accumulate, especially before a LinkedIn/blog draft. Weekly notes should answer:
+
+- What is the main technical thesis this week?
+- What changed compared with previous weeks?
+- What should VA read, test, cite, or write next?
+- Which `themes/` or `experiments/` pages should be updated?
+
+## Best anchors
+
+Keep durable people/paper lineages in `best/README.md`. This page is for recurring high-value anchors, not daily news.
 
 ## Quality checks before commit
 

@@ -20,6 +20,20 @@
 - **CFD-AI & SciML:** differentiable CFD, JAX/Python PDE solvers, AMR, neural operators, turbulence surrogate models.
 - **Engineering AI workflows:** OpenFOAM automation, CAD/geometry AI, visualization, ParaView/PyVista, agentic research tooling.
 - **Research productivity:** literature review, paper writing, experiment automation, local AI workflows, and lab-scale AI adoption.
+- **Research intelligence:** daily radar, weekly synthesis, durable best anchors, technical themes, and experiment candidates.
+
+---
+
+## 🛰️ Intelligence layers
+
+| Layer | Start here | Purpose |
+|---|---|---|
+| 🗓️ **Daily radar** | [daily/](daily/) | Short daily sciML / Engineering AI signal detection |
+| 📆 **Weekly synthesis** | [weekly/](weekly/) | Turn daily findings into research theses and writing ideas |
+| ⭐ **Best anchors** | [best/](best/) | Durable people/paper lineages that repeatedly guide this repo |
+| 🧵 **Themes** | [themes/](themes/) | Long-running technical threads promoted from repeated signals |
+| 🧪 **Experiments** | [experiments/](experiments/) | VA-sized benchmark and implementation ideas |
+| 🔎 **Sources** | [sources.md](sources.md) | Search/query set and selection rules for the radar |
 
 ---
 
@@ -83,6 +97,6 @@
 
 <div align="center">
 
-Maintained with 🦞 by **VA_claw** for **VortexyAether**.
+Maintained with dry engineering judgment by **VA_TARS** for **VortexyAether**.
 
 </div>

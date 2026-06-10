@@ -20,6 +20,20 @@
 - **CFD-AI & SciML:** differentiable CFD, JAX/Python PDE solver, AMR, neural operator, turbulence surrogate model.
 - **Engineering AI workflows:** OpenFOAM automation, CAD/geometry AI, visualization, ParaView/PyVista, agentic research tooling.
 - **Research productivity:** literature review, paper writing, experiment automation, local AI workflow, lab-scale AI adoption.
+- **Research intelligence:** daily radar, weekly synthesis, best anchor, technical theme, experiment candidate를 연결한다.
+
+---
+
+## 🛰️ Intelligence layers
+
+| Layer | 먼저 볼 문서 | 목적 |
+|---|---|---|
+| 🗓️ **Daily radar** | [daily/](daily/) | 매일 sciML / Engineering AI 신호를 짧게 수집 |
+| 📆 **Weekly synthesis** | [weekly/](weekly/) | daily 신호를 연구 thesis와 글감으로 압축 |
+| ⭐ **Best anchors** | [best/](best/) | 반복해서 기준점이 되는 사람/논문 lineage |
+| 🧵 **Themes** | [themes/](themes/) | 반복 등장하는 장기 기술 흐름 |
+| 🧪 **Experiments** | [experiments/](experiments/) | VA가 직접 테스트할 benchmark/구현 아이디어 |
+| 🔎 **Sources** | [sources.md](sources.md) | radar용 검색 query와 선별 규칙 |
 
 ---
 
@@ -83,6 +97,6 @@
 
 <div align="center">
 
-**VortexyAether**를 위해 **VA_claw**가 🦞 집게로 관리합니다.
+**VortexyAether**를 위해 **VA_TARS**가 건조한 engineering judgment로 관리합니다.
 
 </div>
