@@ -163,6 +163,42 @@
   - CadQuery is attractive for CFD/CAE because parametric Python geometry can be versioned, swept, and regenerated.
   - Small early project, but the interface shape is useful for designing reproducible geometry-generation tools.
 
+## EurekAgent
+
+- Link: https://arxiv.org/abs/2606.13662
+- Type: Environment-engineered autonomous scientific-discovery agent
+- Why it matters:
+  - Shifts the focus from prescribing agent workflows to designing the execution environment: permissions, artifacts, budgets, and human-in-the-loop controls.
+  - Uses filesystem and Git-based artifact collaboration, bounded execution, isolated evaluation, and budget-aware exploration as first-class design elements.
+  - Directly relevant to CFD/CAD agents where unsafe edits, untracked simulation artifacts, runaway cost, and reward hacking are practical risks.
+- Possible use: Use as a blueprint for VA engineering-agent sandboxes: read/write scopes, artifact directories, Git commits, cost budgets, and explicit human review gates.
+- Maturity: paper + open-source claim; verify repository before adoption
+- Priority: High
+
+## AgentRivet
+
+- Link: https://arxiv.org/abs/2606.13535
+- Type: Paper-to-executable-artifact research agent
+- Why it matters:
+  - Automates generation of Rivet C++ analysis routines from HEP publications with intermediate code and physics reviews.
+  - Shows a useful pattern for converting a paper into a runnable, reviewable artifact instead of only summarizing it.
+  - The failure analysis is also valuable: ambiguous publication definitions and complex observables remain hard even with strong LLMs.
+- Possible use: Adapt the workflow to CFD benchmark reproduction: extract paper setup, generate case files, run solver, compare figures/metrics, then require human technical review.
+- Maturity: paper-only
+- Priority: Medium
+
+## AgentBeats / agentified agent assessment
+
+- Link: https://arxiv.org/abs/2606.13608
+- Type: Agent evaluation protocol / MCP-A2A benchmark interface
+- Why it matters:
+  - Proposes agentified agent assessment where judge agents and subject agents interact through standardized protocols, including MCP for tool access.
+  - Useful for evaluating heterogeneous engineering agents without binding every benchmark to one fixed LLM-centric harness.
+  - The reproducibility and interface-separation argument transfers well to CAD/CAE agent benchmarks.
+- Possible use: Track for future VA evaluation harnesses where FreeCAD/OpenFOAM agents need comparable task records, tool traces, and privacy-compatible judging modes.
+- Maturity: paper-only
+- Priority: Medium
+
 ## sandraschi FreeCAD MCP
 
 - Link: https://github.com/sandraschi/freecad-mcp

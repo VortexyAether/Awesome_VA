@@ -153,6 +153,30 @@
 - Maturity: paper-only
 - Priority: High
 
+## IterCAD
+
+- Link: https://arxiv.org/abs/2606.13368
+- Type: Iterative multimodal CAD generation/editing agent
+- Why it matters:
+  - Frames CAD generation as a closed-loop, multi-turn interaction between a multimodal agent and an executable CAD sandbox instead of one-shot text-to-CAD.
+  - Covers drawing-to-code, text-to-code, and interactive editing, which better matches real engineering workflows.
+  - Introduces IterCAD-Bench and CD-TR/AUC-TR metrics to jointly account for code executability and geometric precision while reducing survivor bias.
+- Possible use: Reuse the evaluation lens for FreeCAD/CadQuery/OpenSCAD agents: code validity, geometry fidelity, editability, exportability, and downstream meshability.
+- Maturity: paper + benchmark proposal
+- Priority: High
+
+## ComAct / ComCADBench
+
+- Link: https://arxiv.org/abs/2606.13239
+- Type: Professional CAD software agent benchmark / COM-as-action paradigm
+- Why it matters:
+  - Argues that GUI-based professional-software agents are fragile, while COM-style executable abstractions can turn CAD manipulation into deterministic program synthesis.
+  - Introduces ComCADBench for real industrial CAD software and ComActor as a self-correcting CAD agent trained for long-horizon tasks.
+  - Strong signal for CAD/CAE automation: expose stable software action layers rather than relying on screenshots or brittle GUI macros.
+- Possible use: Compare with FreeCAD/Python APIs, OpenCascade bindings, and MCP/COM bridges when designing agent surfaces for engineering tools.
+- Maturity: paper-only
+- Priority: High
+
 ## Agent-Aided Design for Dynamic CAD Models / AADvark
 
 - Link: https://arxiv.org/abs/2604.15184

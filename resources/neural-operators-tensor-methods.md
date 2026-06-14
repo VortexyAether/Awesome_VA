@@ -1179,3 +1179,27 @@
 - Possible use: Use as a control-ready surrogate checklist reference for CFD/thermal digital-twin experiments.
 - Maturity: paper-only
 - Priority: High
+
+## Robust ECH deposition-profile control on DIII-D with neural surrogate optimization
+
+- Link: https://arxiv.org/abs/2606.13661
+- Type: Real-time control surrogate / plasma heating optimization
+- Why it matters:
+  - Combines a parallelized neural-network surrogate of TORBEAM with a genetic optimizer to control tokamak electron-cyclotron-heating deposition profiles.
+  - Reports deployment in DIII-D experiments and validation with ECE measurements and offline ray tracing, including robustness to gyrotron failures and plasma-parameter changes.
+  - Useful control-ready surrogate example: the learned model is evaluated through actuator constraints, hardware failures, operating-shift robustness, and experimental validation.
+- Possible use: Borrow the validation contract for CFD/thermal control surrogates: latency, actuator availability, operating envelope, fallback verification, and post-run audit.
+- Maturity: experimental deployment paper
+- Priority: High
+
+## Hybrid neural-cellular automata wildfire suppression planning
+
+- Link: https://arxiv.org/abs/2606.13633
+- Type: Spatiotemporal surrogate for intervention planning under uncertainty
+- Why it matters:
+  - Couples a CNN/cellular-automata fire-spread model with gradient-based aerial-drop planning for water and retardant interventions.
+  - Evaluates intervention schedules under both aleatoric fire-state sampling and epistemic spatially correlated prediction-error perturbations.
+  - Relevant to engineering surrogates where the model must support a downstream control/planning decision, not only forecast a field.
+- Possible use: Use as a reference for uncertainty-aware planning metrics around thermal-fluid or environmental digital twins.
+- Maturity: paper-only
+- Priority: Medium

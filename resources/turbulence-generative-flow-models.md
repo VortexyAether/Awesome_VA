@@ -125,3 +125,27 @@ Resources for turbulence prediction, reduced-order modeling, super-resolution, a
 - Possible use: Add a boundary-layer stress test before trusting PINN/FNO/POD-NN models in thermal or near-wall CFD workflows.
 - Maturity: paper-only
 - Priority: High
+
+## Spectrally Regularized Latent Flow Matching for Turbulence Generation
+
+- Link: https://arxiv.org/abs/2606.11691
+- Type: Generative turbulence model / latent flow matching
+- Why it matters:
+  - Targets a concrete failure mode of latent diffusion/flow-matching turbulence generators: under-representation of dissipation-range amplitudes.
+  - Uses a zone-weighted log-spectral objective in the compression stage, raising retained deep-dissipation spectral power substantially in both reconstruction and unconditional generation.
+  - Good reminder that turbulence surrogate validation needs spectrum/detail metrics, not only pointwise field loss or visually plausible samples.
+- Possible use: Compare against diffusion, FNO, POD/ROM, and deterministic super-resolution baselines using energy spectrum, structure functions, phase/coherence diagnostics, and sampling cost.
+- Maturity: paper-only; accepted at AI4Physics Workshop at ICML 2026
+- Priority: High
+
+## Data-driven surrogate models for experimentally measured fluid-flow forecasting
+
+- Link: https://arxiv.org/abs/2606.10848
+- Type: Experimental fluid-flow surrogate benchmark / PIV forecasting
+- Why it matters:
+  - Trains FCNN, U-Net, FNO, and DMD-style models on experimentally measured cylinder-wake PIV velocity fields rather than clean synthetic CFD data.
+  - Shows faster-than-real-time short-horizon forecasting is possible, but transient features and high-frequency energy content degrade under noisy, incomplete observations.
+  - Strong validation reference for VA-style CFD-AI: real sensors and experimental data expose failure modes hidden by simulation-only random splits.
+- Possible use: Use as a benchmark pattern for sparse/noisy observation stress tests before trusting CFD surrogates in control or digital-twin loops.
+- Maturity: paper-only
+- Priority: High

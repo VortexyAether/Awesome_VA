@@ -45,6 +45,7 @@
 | 🧪 **Differentiable & Python PDE Solvers** | [Differentiable & Python PDE Solvers](resources/differentiable-python-pde-solvers.md) | JAX/Python solver, differentiable CFD, AMR, inverse/design workflow |
 | 🧠 **Neural operators & tensor methods** | [Neural operators & tensor methods](resources/neural-operators-tensor-methods.md) | FNO, operator learning, tensor method, QTT, spectral/operator architecture |
 | 🌪️ **Turbulence & generative flow models** | [Turbulence & generative flow models](resources/turbulence-generative-flow-models.md) | Turbulence surrogate, super-resolution, rollout prediction, generative physical fields |
+| 🔥 **Thermal & heat transfer** | [Thermal & heat transfer](resources/thermal-heat-transfer.md) | Heat-transfer modeling, thermal property, thermal-fluid validation workflow |
 | 📊 **Datasets & benchmarks** | [Datasets & benchmarks](resources/datasets-benchmarks.md) | Flow dataset, benchmark suite, metric, reproducibility reference |
 
 ---
