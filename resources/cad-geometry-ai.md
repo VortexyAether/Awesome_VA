@@ -713,3 +713,31 @@
 - Possible use: Test whether NURBS morphing workflows preserve named boundaries, patch continuity, export validity, and meshability for CFD cases.
 - Maturity: paper-only
 - Priority: High
+
+## Constrained natural-language interface for FEniCS multi-physics simulations
+
+- Link: https://arxiv.org/abs/2606.10928
+- Type: LLM-assisted but constrained finite-element simulation interface
+- Keywords: FEniCS, Gmsh, finite element, multi-physics, constrained LLM interface, simulation safety
+- One-line summary: Restricts the LLM to prompt parsing, structured JSON, and limited geometry generation while deterministic human-written FEniCS/UFL templates own the solver core.
+- Why it matters:
+  - A strong safety architecture for engineering agents: do not let the LLM freely write weak forms or solver templates on the critical path.
+  - Validates deterministic templates against analytical and published 2D/3D benchmarks, while separately measuring parser and geometry-generation success.
+  - Transfers to CAD/CAE automation where intent parsing, geometry helpers, solver routing, and validation should be separate audited layers.
+- Possible use: Prototype a VA-style `prompt → JSON spec → validated template → artifact report` workflow for FEA/CFD tasks.
+- Maturity: paper-only
+- Priority: High
+
+## DeepJEB++
+
+- Link: https://arxiv.org/abs/2606.12994
+- Type: Simulation-labeled 3D engineering dataset generation pipeline
+- Keywords: engineering dataset, 3D generation, FEA labels, jet-engine bracket, foundation model, data augmentation
+- One-line summary: Expands a small seed set of jet-engine brackets into a 15,360-sample simulation-labeled 3D dataset through 2D latent diffusion augmentation, 3D lifting, VLM filtering, and automated FEA labeling.
+- Why it matters:
+  - Attacks the practical bottleneck of geometry-plus-physics labeled data for data-driven engineering design.
+  - Includes manufacturability, label fidelity, and distributional consistency checks rather than only visual plausibility.
+  - Useful reference for building CAD/CAE datasets where geometry generation and simulation labeling must be automated together.
+- Possible use: Compare with SimJEB/DeepJEB-style datasets when designing VA benchmark data for geometry-to-stress/flow/thermal surrogate models.
+- Maturity: paper-only; dataset release claimed
+- Priority: Medium

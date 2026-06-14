@@ -227,3 +227,31 @@
 - Possible use: Use as a template for reporting which design/control variables dominate a CFD or thermal process surrogate.
 - Maturity: paper-only
 - Priority: Medium
+
+## REMAL residual-equilibrium active learning for multidisciplinary design analysis
+
+- Link: https://arxiv.org/abs/2606.13245
+- Type: Surrogate-based multidisciplinary design analysis / active learning
+- Keywords: MDA, active learning, surrogate modeling, equilibrium consistency, coupled systems
+- One-line summary: Uses residual equilibrium consistency in coupled multidisciplinary systems to guide active learning for surrogate-based design analysis.
+- Why it matters:
+  - In coupled engineering systems, each discipline surrogate can look accurate while the integrated equilibrium state is inconsistent.
+  - The residual/equilibrium-manifold lens is useful for design automation, thermal-structural-fluid coupling, and digital twins where coupling variables must agree.
+  - Moves surrogate evaluation from isolated component error toward coupled-system validity.
+- Possible use: Add coupling residual and fixed-point consistency checks to surrogate-assisted design optimization experiments.
+- Maturity: paper-only
+- Priority: High
+
+## Sequential feedback optimization for wind-farm power maximization
+
+- Link: https://arxiv.org/abs/2606.08315
+- Type: Real-time flow-control optimization benchmark
+- Keywords: sequential feedback optimization, wind farm, MPC, extremum seeking, dynamic flow model
+- One-line summary: Benchmarks sequential feedback optimization against adjoint-based economic MPC and extremum seeking control on a nine-turbine dynamic-flow wind-farm layout.
+- Why it matters:
+  - Compares steady-state power, transient behavior, and computational cost under identical constraints, which is the right deployment lens for control-oriented flow optimization.
+  - Provides a practical reference for when a lower-cost online optimizer may beat heavier MPC in real-time feasibility.
+  - Relevant to VA-style CFD/control surrogates where the final metric is operational objective improvement, not field RMSE alone.
+- Possible use: Borrow the comparison structure for flow-control experiments: objective, transient response, convergence, actuator constraints, and wall-clock budget.
+- Maturity: paper-only
+- Priority: Medium

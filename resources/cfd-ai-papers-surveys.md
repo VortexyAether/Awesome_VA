@@ -116,3 +116,17 @@ Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine L
 - Possible use: Implement a no-harm gate around thermal/CFD inverse reconstruction experiments before trusting learned updates in a digital twin.
 - Maturity: paper-only
 - Priority: High
+
+## TransportBench
+
+- Link: https://arxiv.org/abs/2606.02997
+- Type: Benchmark / dataset for non-equilibrium flow transport
+- Keywords: SciML benchmark, non-equilibrium flow, rarefied gas, hypersonic flow, shock discontinuities
+- One-line summary: Provides high-fidelity datasets and unified evaluation protocols for continuum/rarefied, low-speed/hypersonic, inert/reactive, and translational/internal-energy non-equilibrium flows.
+- Why it matters:
+  - Existing SciML/CFD benchmarks often over-focus on continuum Navier-Stokes-like settings and miss non-equilibrium transport regimes.
+  - The benchmark explicitly probes shock-dominated discontinuities, multi-scale effects, and generalization across geometry and physical parameters.
+  - Reports that no single architecture consistently wins across all tasks, which is a useful antidote to generic “best model” claims.
+- Possible use: Use as an evaluation reference when designing CFD surrogate tests that need regime shift, shock handling, and multi-scale statistics.
+- Maturity: paper + benchmark/code availability claimed in abstract
+- Priority: High

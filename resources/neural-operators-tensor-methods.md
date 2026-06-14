@@ -1203,3 +1203,45 @@
 - Possible use: Use as a reference for uncertainty-aware planning metrics around thermal-fluid or environmental digital twins.
 - Maturity: paper-only
 - Priority: Medium
+
+## Geometry-Aware Anisotropic Boundary Correction for Aerodynamic Simulation
+
+- Link: https://arxiv.org/abs/2606.09963
+- Type: Geometry-conditioned neural-operator correction for aerodynamic simulation
+- Keywords: CFD, aerodynamic surrogate, neural operator, near-wall physics, boundary anisotropy
+- One-line summary: Adds direction-aware boundary correction to neural operators by treating wall-tangential and wall-normal physics differently instead of using isotropic boundary features.
+- Why it matters:
+  - Near-wall quantities such as surface pressure coefficient are often the engineering-critical outputs in aerodynamic design.
+  - Reports roughly 38% average reduction in near-boundary relative L2 error on 2D airfoil and 3D car tasks across multiple operator backbones.
+  - Good validation reminder: global field error can hide boundary-layer and wall-pressure failures.
+- Possible use: Add wall-normal/tangential error, Cp error, and boundary-gradient metrics to aerodynamic surrogate evaluations.
+- Maturity: paper-only
+- Priority: High
+
+## Conformal Prediction for Neural Operators
+
+- Link: https://arxiv.org/abs/2606.09923
+- Type: Distribution-free uncertainty quantification for neural-operator physics simulation
+- Keywords: neural operator, conformal prediction, uncertainty quantification, thermal simulation, safety-critical surrogate
+- One-line summary: Applies split conformal prediction to neural-operator surrogates, giving finite-sample prediction intervals for physics simulations rather than only relative uncertainty scores.
+- Why it matters:
+  - Safety-critical thermal and battery-management applications need coverage guarantees, not just point predictions or ensemble variance.
+  - Reports 89.1% empirical coverage at alpha=0.1 on steady-state heat-conduction benchmarks with adaptive interval widths.
+  - Useful building block for validation gates around learned thermal/CFD surrogates.
+- Possible use: Prototype conformal intervals around FNO/DeepONet heat-transfer baselines and report coverage separately near boundaries and high-gradient regions.
+- Maturity: paper-only; open-source platform claimed in abstract
+- Priority: High
+
+## First-Order Trajectory Matching
+
+- Link: https://arxiv.org/abs/2606.11138
+- Type: Trajectory-aware surrogate modeling for chaotic, turbulent, and stochastic systems
+- Keywords: stochastic dynamics, turbulence, ensemble prediction, probability current, surrogate modeling
+- One-line summary: Learns probability-current velocity directly from trajectories to produce low-cost ensemble forecasts that preserve time marginals and current-like trajectory quantities.
+- Why it matters:
+  - Turbulent/chaotic systems often need ensemble and flux/statistical quantities, not only single deterministic point forecasts.
+  - Avoids explicit drift, diffusion, and score estimation while retaining trajectory-aware quantities such as fluxes, circulations, and barrier-crossing currents.
+  - Relevant to surrogate evaluation where phase-accurate rollout is impossible but ensemble statistics still matter.
+- Possible use: Track as a candidate baseline for ensemble CFD/thermal surrogate benchmarks with statistics, spectra, and flux metrics.
+- Maturity: paper-only
+- Priority: Medium

@@ -316,6 +316,35 @@
 - Maturity: alpha / experimental
 - Priority: Medium
 
+## AgentBuild for scientific agents
+
+- Link: https://arxiv.org/abs/2606.12834
+- Type: Contract-driven scientific agent construction workflow
+- Keywords: scientific agents, MCP, A2A, rubric, curriculum, Rietveld refinement
+- One-line summary: Treats agent construction as a workflow stage where a scientist-authored contract, rubric, curriculum, and knowledge base guide a meta-optimizer that builds the agent inside declared boundaries.
+- Why it matters:
+  - Keeps durable scientific judgment in version-controlled contracts instead of burying it in prompts, fine-tuning, or opaque reinforcement learning.
+  - Demonstrates the pattern on GSAS-II Rietveld refinement behind MCP/A2A, with rubric-gated frontier cases.
+  - Transfers well to CFD/CAE agents: the benchmark contract, artifact requirements, and judge gates should outlive the current base model.
+- Possible use: Define VA engineering-agent contracts for solver setup, artifact provenance, validation figures, and accepted failure modes before optimizing prompts or policies.
+- Maturity: paper-only
+- Priority: High
+
+## Evoflux
+
+- Link: https://arxiv.org/abs/2606.12674
+- Code: https://github.com/IBM/Evoflux
+- Type: Inference-time executable workflow evolution for tool-using compact agents
+- Keywords: MCP-style tool use, executable workflows, compact agents, schema constraints, tool orchestration
+- One-line summary: Evolves executable tool workflows at inference time so compact agents can satisfy live tool schemas, dependencies, and multi-step constraints instead of issuing isolated step-wise tool calls.
+- Why it matters:
+  - Engineering automation needs reusable tool workflows with dependencies and artifacts, not only isolated function calls inside a chat trace.
+  - The compact-agent framing is relevant for local/on-prem engineering tools where cost, latency, and data boundaries matter.
+  - Useful counterpoint to generic agent benchmarks: workflow executability and schema satisfaction are first-class outputs.
+- Possible use: Track as a pattern for generating auditable CAD/CAE workflows that can be replayed outside the LLM transcript.
+- Maturity: paper + code link
+- Priority: Medium
+
 ## neka-nat FreeCAD MCP
 
 - Link: https://github.com/neka-nat/freecad-mcp
