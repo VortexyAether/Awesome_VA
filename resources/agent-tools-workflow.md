@@ -330,6 +330,20 @@
 - Maturity: paper-only
 - Priority: High
 
+## LLM agent for automated discovery in computational physics
+
+- Link: https://arxiv.org/abs/2606.14266
+- Type: Scientific-discovery agent for computational physics
+- Keywords: scientific agents, computational physics, automated discovery, physical constraints, quantitative objectives
+- One-line summary: Frames computational-physics discovery as optimization/search over quantitatively evaluable objectives under physical constraints and uses an LLM-based agent to automate parts of that loop.
+- Why it matters:
+  - Aligns with VA's engineering-agent direction: agents should operate inside bounded environments with objective functions, constraints, artifacts, and validation gates.
+  - More relevant than generic chat-agent papers because computational physics can expose executable simulations and measurable success criteria.
+  - Raises the right audit questions: what did the agent try, what artifacts were generated, how were constraints checked, and can the result be rerun?
+- Possible use: Borrow the structure for CFD/CAD discovery workers that produce case manifests, solver logs, plots, KPI extraction scripts, and failure reports.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Evoflux
 
 - Link: https://arxiv.org/abs/2606.12674

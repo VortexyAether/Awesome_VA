@@ -167,6 +167,20 @@
 - Maturity: maintained library
 - Priority: High
 
+## Zero-shot generalization of transformer neural operators to larger domains
+
+- Link: https://arxiv.org/abs/2606.14597
+- Type: Neural-operator generalization study
+- Keywords: transformer neural operator, zero-shot generalization, larger domains, PDE, domain shift
+- One-line summary: Studies whether transformer neural operators trained on one spatial domain size can generalize zero-shot to larger domains.
+- Why it matters:
+  - Engineering use often trains on a smaller lab/simulation domain and then wants to transfer to larger devices or geometry extents.
+  - Domain-size extrapolation is different from random parameter interpolation and should be tracked as its own failure mode.
+  - Useful for VA surrogate benchmarks where geometry/domain scaling matters as much as boundary-condition variation.
+- Possible use: Add a domain-size extrapolation split to heat-equation, Navier-Stokes, or advection-diffusion neural-operator experiments.
+- Maturity: paper-only
+- Priority: Medium
+
 ## DeepONet: Learning nonlinear operators via the universal approximation theorem of operators
 
 - Link: https://www.nature.com/articles/s42256-021-00302-5

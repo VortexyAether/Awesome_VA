@@ -80,6 +80,34 @@
 - Maturity: paper-only
 - Priority: High
 
+## Implicit discrete adjoint gas-kinetic scheme for all-Mach aerodynamic optimization
+
+- Link: https://arxiv.org/abs/2606.14112
+- Type: Solver-native adjoint shape optimization for CFD
+- Keywords: aerodynamic shape optimization, discrete adjoint, gas-kinetic scheme, all-Mach, hypersonic boundary conditions
+- One-line summary: Develops an implicit discrete adjoint gas-kinetic scheme for aerodynamic shape optimization across subsonic, transonic, supersonic, and hypersonic regimes.
+- Why it matters:
+  - Provides a strong non-ML baseline for design automation: robust solver-native adjoints remain hard to beat when gradients and boundary conditions matter.
+  - Explicit treatment of adiabatic no-slip and isothermal wall adjoint boundary conditions is relevant to hypersonic/thermal design.
+  - Useful comparison point for ML-assisted inverse design and surrogate-assisted optimization claims.
+- Possible use: Use as a citation anchor when arguing that CFD surrogate optimizers should be compared against adjoint-based solver workflows, not only black-box search.
+- Maturity: paper-only
+- Priority: High
+
+## CANN-EUCLID
+
+- Link: https://arxiv.org/abs/2606.14565
+- Type: Unsupervised constitutive model discovery from full-field data
+- Keywords: constitutive modeling, full-field data, interpretable neural network, computational engineering, FEA
+- One-line summary: Extends constitutive artificial neural networks toward unsupervised model discovery from full-field data rather than stress-supervised homogeneous-test data.
+- Why it matters:
+  - Engineering validation often has full-field displacement/strain/temperature artifacts but incomplete direct labels for material laws.
+  - Interpretable constitutive discovery is useful for FEA and coupled thermal-structural workflows where black-box stress predictors are not enough.
+  - Transfers conceptually to VA's broader “artifact-to-law” lens for simulation-backed design automation.
+- Possible use: Track as a reference for using full-field measurement/simulation data to identify material/closure laws under limited direct supervision.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Differentiable multiphysics co-optimization via implicit neural representations
 
 - Link: https://arxiv.org/abs/2605.01040

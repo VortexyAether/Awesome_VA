@@ -130,3 +130,45 @@ Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine L
 - Possible use: Use as an evaluation reference when designing CFD surrogate tests that need regime shift, shock handling, and multi-scale statistics.
 - Maturity: paper + benchmark/code availability claimed in abstract
 - Priority: High
+
+## Machine learning for rarefied gas transport in vacuum and micro/nano systems
+
+- Link: https://arxiv.org/abs/2606.14039
+- Type: Perspective / verification agenda for rarefied-gas ML
+- Keywords: rarefied gas, DSMC, moment closure, gas-surface interaction, verification, micro/nano flow
+- One-line summary: Surveys how machine learning is entering rarefied-gas modeling and argues that the central problem is a regime-specific verification agenda rather than only better headline accuracy.
+- Why it matters:
+  - Rarefied, hypersonic, vacuum, and micro/nano gas-transport settings break many assumptions behind continuum CFD surrogate benchmarks.
+  - Useful checklist source for learned collision physics, operator learning, moment closures, DSMC field surrogates, and gas-surface models.
+  - Helps separate credible engineering deployment from toy PDE surrogate demonstrations.
+- Possible use: Build a VA validation checklist for rarefied/hypersonic surrogate claims: Knudsen-regime coverage, wall interaction model, DSMC/high-fidelity comparison, conservation/residual checks, and fallback rules.
+- Maturity: paper / perspective
+- Priority: High
+
+## Fully GPU-based workflow for hypersonic physics emulators
+
+- Link: https://arxiv.org/abs/2606.13742
+- Type: GPU-native data-generation and physics-emulator workflow
+- Keywords: hypersonic flow, GPU workflow, physics emulator, surrogate pretraining, workflow automation
+- One-line summary: Proposes a GPU-based pipeline that integrates accelerated hypersonic data generation, surrogate pretraining, and physics-aware emulator training.
+- Why it matters:
+  - Treats the emulator as part of an end-to-end engineering workflow rather than a standalone model trained after simulation data already exists.
+  - Hypersonic flows stress surrogate reliability through shocks, steep gradients, and thermal/aerodynamic coupling.
+  - Relevant to VA because data-generation throughput, artifact lineage, and validation cases are the bottleneck for useful design-space exploration.
+- Possible use: Prototype an artifact manifest for emulator pipelines that records solver config, mesh/domain, seed, generated cases, training split, validation regimes, and failure cases.
+- Maturity: paper-only
+- Priority: High
+
+## Feature-preserving Latent-EnKF for shock-dominated flow data assimilation
+
+- Link: https://arxiv.org/abs/2606.12559
+- Type: Data assimilation method for compressible flows with shocks
+- Keywords: EnKF, data assimilation, shocks, compressible flow, latent representation, digital twin
+- One-line summary: Addresses the failure of Gaussian ensemble assumptions in shock-dominated flows by moving flow data assimilation into a feature-preserving latent space.
+- Why it matters:
+  - CFD digital twins for compressible flows need shock/discontinuity location accuracy, not just smoothed field-level RMSE.
+  - Useful reminder that uncertainty in feature location can create multimodal ensembles that vanilla EnKF handles poorly.
+  - Provides a validation lens for learned surrogate/state-estimation pipelines under discontinuities.
+- Possible use: Compare vanilla EnKF, localization tricks, and latent/feature-preserving updates on Burgers/Euler shock benchmarks using shock-location error and conservation residuals.
+- Maturity: paper-only
+- Priority: High

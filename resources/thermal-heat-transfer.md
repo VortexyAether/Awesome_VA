@@ -15,3 +15,17 @@ Resources for heat-transfer modeling, thermal-fluid digital twins, thermal prope
 - Possible use: Track as a reference for automated thermal-property pipelines and for comparing MD/ML-potential heat-transfer estimates against experimental or high-fidelity baselines.
 - Maturity: paper-only
 - Priority: Medium
+
+## Collective Bubble Nucleation
+
+- Link: https://arxiv.org/abs/2606.14567
+- Type: Boiling heat-transfer / two-phase flow physics paper
+- Keywords: boiling, bubble nucleation, vapor removal, site stability, two-phase flow, cooling
+- One-line summary: Studies how interactions between boiling bubbles govern nucleation-site stability and vapor removal through scale-separated hydrodynamic mechanisms.
+- Why it matters:
+  - Boiling/cooling surrogates that only predict averaged heat-transfer coefficients can miss site activation, deactivation, and vapor-removal failure modes.
+  - The paper is a useful physics anchor for regime-aware thermal-fluid ML, especially around phase change and critical heat-transfer transitions.
+  - Relevant to electronics cooling, liquid cooling, and thermal-management digital twins where operating-envelope boundaries matter.
+- Possible use: When evaluating boiling ML/surrogate papers, add separate metrics or qualitative checks for site stability, vapor-removal dynamics, and transition/CHF-adjacent behavior.
+- Maturity: paper-only
+- Priority: Medium
