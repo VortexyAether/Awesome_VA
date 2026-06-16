@@ -1,5 +1,33 @@
 # CAD, Geometry & AI-assisted Design
 
+## LLM-based visual code completion for aerospace geometric design
+
+- Link: https://arxiv.org/abs/2606.16806
+- Type: Aerospace CAD visual-programming copilot / dataset
+- Keywords: aerospace geometry, visual programming, Grasshopper, CAD copilot, AVPD
+- One-line summary: Proposes an LLM/VLM visual code-completion copilot for aerospace design, plus Wingbuilder Grasshopper components and an Aerospace Visual Programming Dataset.
+- Why it matters:
+  - Aerospace CAD automation needs explainable, domain-specific geometry abstractions rather than generic text-to-shape previews.
+  - Visual programming tasks with ground-truth expert workflows are a better benchmark substrate than unconstrained chat demos.
+  - Relevant to VA's CAD-to-CAE automation lens because visual programs can preserve editable design intent and downstream parameter sweeps.
+- Possible use: Use AVPD/Wingbuilder as a reference when designing Grasshopper/CadQuery/FreeCAD tasks for agentic geometry-generation evaluation.
+- Maturity: paper + plugin/dataset described
+- Priority: Medium
+
+## AI+CAD data representation architecture
+
+- Link: https://arxiv.org/abs/2606.16797
+- Type: CAD representation survey / position paper
+- Keywords: AI+CAD, industrial-grade CAD, parametric feature modeling, B-Rep, data representation
+- One-line summary: Argues that CAD AI should prioritize industrial usability and representation architecture over visual plausibility, moving from solid modeling toward parametric feature modeling.
+- Why it matters:
+  - Mesh-like visual outputs are insufficient for engineering workflows that require editability, constraints, feature history, manufacturability, and CAE handoff.
+  - Useful citation for separating CAD generation research from generic 3D generation.
+  - Reinforces VA's rubric: CAD AI artifacts should be evaluated by BRep/feature semantics and downstream meshing/simulation robustness.
+- Possible use: Turn its representation taxonomy into a local CAD-agent evaluation checklist.
+- Maturity: paper-only
+- Priority: High
+
 ## CADAM
 
 - Link: https://github.com/Adam-CAD/CADAM

@@ -1,5 +1,33 @@
 # Agent Tools & Research Workflow
 
+## LabOSBench
+
+- Link: https://arxiv.org/abs/2606.16802
+- Type: Benchmark for multimodal GUI agents controlling scientific instruments
+- Keywords: scientific agents, computer-use agents, instrument control, benchmark, simulation safety
+- One-line summary: Provides web-based scientific-instrument simulators for evaluating feedback-driven multimodal GUI agents without risking real high-precision hardware.
+- Why it matters:
+  - Scientific/engineering agents need evaluation on parameter adjustment, observation feedback, safety, and reproducibility, not only office-software GUI tasks.
+  - The simulated-instrument pattern transfers to CAE/CAD agents: use realistic sandboxes before letting agents touch expensive solvers, machines, or lab hardware.
+  - Useful benchmark-design precedent for VA's “agent must leave artifacts and validation evidence” workflow.
+- Possible use: Mirror the idea with a FreeCAD/OpenFOAM/FEniCS sandbox where agents must configure, run, inspect, and validate simulations through constrained interfaces.
+- Maturity: paper / benchmark described
+- Priority: Medium
+
+## Awesome Physical Engineering AI
+
+- Link: https://github.com/010zx00x1/Awesome-Physical-Engineering-AI
+- Type: Curated meta-index for physical engineering AI tools
+- Keywords: CAD, CAE, CFD, CAM, MCP, manufacturing, digital twins, engineering agents
+- One-line summary: Curates AI tools for the physical engineering lifecycle, including CAD/CAE/CFD tools, MCP connectors, manufacturing, inspection, robotics, PLM, and digital twins.
+- Why it matters:
+  - Useful discovery surface for agent-readable engineering tools, especially the May 2026 focus on official and community MCP connectors.
+  - Helps separate engineering-specific tools from generic AI/productivity tools by asking which physical lifecycle stage is improved.
+  - Should be treated as a discovery index, not an endorsement list; individual tools still need validation on real CAD/CAE artifacts.
+- Possible use: Periodically scan for new MCP/CAE/CAD tools, then promote only tested or clearly relevant items into VA's focused resource pages.
+- Maturity: maintained awesome list
+- Priority: Medium
+
 ## cmux
 
 - Link: https://github.com/manaflow-ai/cmux

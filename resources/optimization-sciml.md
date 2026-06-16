@@ -1,5 +1,33 @@
 # Optimization for Scientific Machine Learning
 
+## Learning practically stabilizing output-feedback nonlinear controllers
+
+- Link: https://arxiv.org/abs/2606.16930
+- Type: Surrogate controller learning / nonlinear output-feedback control
+- Keywords: surrogate controller, output feedback, recurrent dynamics, Lyapunov function, practical stability
+- One-line summary: Trains a recurrent surrogate to imitate an expensive nonlinear controller-observer pair while jointly learning a Lyapunov candidate to encourage practical stability.
+- Why it matters:
+  - Control-loop surrogates need stability and constraint-satisfaction evidence, not just imitation loss.
+  - Relevant to CFD/thermal digital twins where a learned controller may approximate an MPC or high-cost observer but must remain safe under rollout.
+  - The probabilistic validation framing is a useful pattern for acceptance tests before deploying a surrogate controller.
+- Possible use: Use as a control-safety reference when evaluating surrogate MPC or learned flow-control policies.
+- Maturity: paper-only
+- Priority: Medium
+
+## Graphical conditional generative modeling for digital twins
+
+- Link: https://arxiv.org/abs/2606.16219
+- Type: Parsimonious stochastic surrogate modeling for digital twins
+- Keywords: digital twin, conditional generative modeling, uncertainty, model selection, QoI
+- One-line summary: Discovers which candidate variables influence the full conditional law of a target quantity, not only its conditional mean, to build compact digital-twin surrogates.
+- Why it matters:
+  - Digital twins can become unmaintainable when every possible variable, data stream, and timescale is included by default.
+  - For partially observed or coarse-grained systems, tail behavior, variability, and multimodality can matter more than mean prediction.
+  - Strong fit for VA's trust lens: build twins around quantities of interest and stress/safety testing rather than unconstrained fidelity creep.
+- Possible use: Apply the idea as a feature-selection/ablation lens for thermal-fluid twins: include a variable only if it changes the conditional distribution of the relevant QoI.
+- Maturity: paper-only
+- Priority: High
+
 ## SpecMuon: Muon with Spectral Guidance
 
 - Link: https://arxiv.org/abs/2602.16167

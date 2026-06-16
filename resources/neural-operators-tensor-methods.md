@@ -1,5 +1,33 @@
 # Neural Operators & Tensor Methods
 
+## PhysGuard
+
+- Link: https://arxiv.org/abs/2606.16602
+- Type: Sim-to-real adaptation method for neural PDE surrogates
+- Keywords: neural operators, sim-to-real, Fisher information, gradient projection, physics preservation
+- One-line summary: Uses empirical Fisher information from simulation data to identify physics-critical parameter directions and constrain fine-tuning on limited real/experimental data.
+- Why it matters:
+  - Neural operators often need lab or operational calibration, but naive fine-tuning can destroy the physical representations learned from simulation.
+  - Provides a concrete lens for “safe adaptation” of CFD/thermal surrogates under sim-to-real shift.
+  - Useful addition to validation gates: adaptation should improve real-data fit without degrading conservation, boundary behavior, spectra, or core-regime accuracy.
+- Possible use: Test naive fine-tuning vs Fisher-protected adaptation on heat-transfer or simple flow surrogates with a small real/noisy observation set.
+- Maturity: paper-only
+- Priority: High
+
+## Decision-Weighted Flow Matching
+
+- Link: https://arxiv.org/abs/2606.16790
+- Type: Regret-aligned generative modeling for stochastic optimization
+- Keywords: flow matching, contextual stochastic optimization, decision regret, scenario generation
+- One-line summary: Reweights the flow-matching objective by decision-sensitive endpoint information so scenario generators focus on samples that affect downstream optimization decisions.
+- Why it matters:
+  - In engineering design/control, a surrogate or generator can have good distributional fit but still induce poor decisions in sensitive regions.
+  - Offers a useful training/evaluation lens: report downstream regret or objective degradation in addition to field/sample fidelity.
+  - Potentially relevant to uncertainty-aware CFD/thermal design-space exploration where rare but decision-critical cases dominate risk.
+- Possible use: Add a decision-regret metric to surrogate-assisted optimization benchmarks and compare against unweighted generative baselines.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Mamba-3
 
 - Link: https://arxiv.org/abs/2603.15569

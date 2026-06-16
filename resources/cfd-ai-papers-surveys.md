@@ -2,6 +2,34 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Validated LBM dataset and pipeline for turbulent 3D obstructed channel flows
+
+- Link: https://arxiv.org/abs/2606.16765
+- Type: Validated CFD dataset-generation pipeline / surrogate benchmark seed
+- Keywords: LBM, turbulent channel flow, 3D obstructed geometry, neural operators, dataset validation
+- One-line summary: Presents a reproducible cumulant-LBM pipeline for 3D obstructed channel-flow data at Re=1,000–10,000, with grid convergence and experimental checks against Strouhal number, drag coefficients, and turbulent fluctuations.
+- Why it matters:
+  - Moves CFD surrogate evaluation toward verified data-generation pipelines rather than unvalidated synthetic fields.
+  - Useful for testing forecasting, super-resolution, and error-correction neural operators with turbulent-energy-cascade and physics-informed metrics.
+  - Good template for VA-style dataset manifests: geometry generator, solver config, convergence evidence, experimental anchors, split definition, and metric contract.
+- Possible use: Use as a benchmark-design reference before training FNO/U-Net/graph surrogates on generated 3D turbulent flow data.
+- Maturity: paper / pipeline described
+- Priority: High
+
+## Geometry-conditioned latent surrogate for spray interface breakup
+
+- Link: https://arxiv.org/abs/2606.16587
+- Type: Multiphase CFD surrogate / geometry-conditioned latent model
+- Keywords: two-phase flow, spray formation, nozzle design, AMR, VOF, geometry-conditioned surrogate
+- One-line summary: Learns transient spray breakup from 797 two-phase nozzle simulations by encoding AMR cell-density fields as a compact proxy for where the solver concentrates resolution.
+- Why it matters:
+  - Directly connects geometry variation to transient multiphase behavior, a practical CAD-to-CFD surrogate setting.
+  - Treats adaptive-mesh behavior as useful physical/numerical structure instead of ignoring discretization changes.
+  - Relevant for nozzle/cooling/spray design loops where interface topology and breakup timing matter more than smooth global field error.
+- Possible use: Compare against full-state latent surrogates on geometry-held-out spray cases; report interface location, breakup timing, conservation, and downstream design objective error.
+- Maturity: paper-only
+- Priority: High
+
 ## Recent Advances on Machine Learning for Computational Fluid Dynamics: A Survey
 
 - Link: https://arxiv.org/abs/2408.12171
