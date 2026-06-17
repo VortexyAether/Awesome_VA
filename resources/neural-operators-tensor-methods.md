@@ -14,6 +14,20 @@
 - Maturity: paper-only
 - Priority: High
 
+## Physics-conforming Latent Twins
+
+- Link: https://arxiv.org/abs/2606.15053
+- Type: Structure-preserving latent surrogate operator
+- Keywords: latent twin, conservation laws, invariants, dissipative dynamics, PDE surrogate
+- One-line summary: Learns encoder/decoder and latent flow maps whose dynamics preserve or dissipate selected structural quantities, improving physical fidelity after decoding.
+- Why it matters:
+  - Time-dependent PDE surrogates need long-horizon physical behavior, not just interpolation accuracy on training trajectories.
+  - The constraint-transfer viewpoint is useful for deciding which conservation, admissibility, or dissipation conditions can be enforced in reduced latent space.
+  - Relevant to digital twins and control where decoded states must remain physically meaningful over rollout.
+- Possible use: Compare against unconstrained latent dynamics on heat/flow benchmarks using conservation defect, admissibility violations, and long-time qualitative behavior.
+- Maturity: paper-only
+- Priority: High
+
 ## Decision-Weighted Flow Matching
 
 - Link: https://arxiv.org/abs/2606.16790

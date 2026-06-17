@@ -200,3 +200,59 @@ Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine L
 - Possible use: Compare vanilla EnKF, localization tricks, and latent/feature-preserving updates on Burgers/Euler shock benchmarks using shock-location error and conservation residuals.
 - Maturity: paper-only
 - Priority: High
+
+## Domain-validity-gated metamorphic testing of SciML surrogates
+
+- Link: https://arxiv.org/abs/2606.17529
+- Type: Validation framework / oracle-free SciML surrogate testing
+- Keywords: metamorphic testing, CFD surrogate validation, MeshGraphNets, FNO, MR-card, claim ledger
+- One-line summary: Screens candidate metamorphic relations for domain validity, then turns admitted relations into executable MR-cards with source cases, transformations, metrics, tolerances, and typed verdicts.
+- Why it matters:
+  - Directly addresses the oracle problem for CFD/SciML surrogates: exact expected fields may be unavailable, but valid relations can still become auditable tests.
+  - Separates true model-level violations from invalid or out-of-domain test assumptions, as shown on cylinder-flow, compressible-airfoil, Burgers, and heat surrogates.
+  - Strong pattern for VA validation harnesses: every claim should bind to a tracked artifact, tolerance, numerical-floor check, and relation-level verdict.
+- Possible use: Implement MR-card assets around heat-transfer and flow surrogates before trusting them in design/control loops.
+- Maturity: paper-only
+- Priority: High
+
+## GPU-native neural surrogate for kinetic Fokker-Planck rarefied/hypersonic flows
+
+- Link: https://arxiv.org/abs/2606.15622
+- Type: Learned closure inside a rarefied-flow particle simulation loop
+- Keywords: Fokker-Planck, rarefied flow, hypersonic cylinder, GPU surrogate, learned closure
+- One-line summary: Replaces expensive cubic-Fokker-Planck closure calculations with a GPU-native neural surrogate deployed directly in the particle simulation loop.
+- Why it matters:
+  - Shows a learned model inserted into an online solver component, not just a post-hoc field emulator.
+  - Validation emphasizes runtime profiles, break-even cost, conservation/stability diagnostics, particle-per-cell sensitivity, and entropy-proxy fidelity.
+  - Relevant to hypersonic/thermal surrogate governance because near-wall and high-order kinetic diagnostics matter more than smooth field RMSE.
+- Possible use: Use its audit structure as a template for learned-closure experiments in rarefied or shock/heating regimes.
+- Maturity: paper-only
+- Priority: High
+
+## Multiscale hypersonic boundary layer reconstruction via spectral binning and conditional diffusion
+
+- Link: https://arxiv.org/abs/2606.15023
+- Type: Probabilistic hypersonic near-wall reconstruction surrogate
+- Keywords: hypersonic flow, boundary layer, conditional diffusion, spectral loss, uncertainty
+- One-line summary: Reconstructs Mach-conditioned hypersonic Couette near-wall fields from limited top-wall observations using subdomain-wise conditional diffusion and bounded binned spectral power loss.
+- Why it matters:
+  - Hypersonic wall-bounded turbulence needs spectral/high-wavenumber fidelity, wall quantities, and uncertainty structure, not only average profile accuracy.
+  - The subdomain/inpainting setup is a practical pattern for large 3D fields where one global generator may be too coarse or unstable.
+  - Useful evaluation reference for sparse-sensor thermal/fluid digital twins under extreme regimes.
+- Possible use: Add binned spectral metrics and wall-quantity diagnostics to surrogate reconstruction tests.
+- Maturity: paper-only
+- Priority: High
+
+## ShipNet
+
+- Link: https://arxiv.org/abs/2606.15356
+- Type: Geometric deep-learning surrogate for ship hydrodynamics
+- Keywords: ship design, hydrodynamics, geometric deep learning, hull pressure, free-surface waves
+- One-line summary: Predicts hull-surface pressure coefficients and far-field free-surface wave elevation from hull point clouds and speed using a dynamic graph backbone.
+- Why it matters:
+  - A concrete geometry-to-hydrodynamics surrogate for design-space exploration with geometry-held-out evaluation and fast inference.
+  - Also exposes a common risk: results are constrained by two parent hull families and inviscid potential-flow training data.
+  - Good example for VA's CAD/CFD surrogate rubric: report geometry-family shift, solver fidelity limits, and downstream design-objective error.
+- Possible use: Track as an application reference, but demand viscous/high-fidelity validation before treating it as engineering-grade.
+- Maturity: paper-only
+- Priority: Medium

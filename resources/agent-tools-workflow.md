@@ -203,6 +203,35 @@
 - Maturity: paper + open-source claim; verify repository before adoption
 - Priority: High
 
+## Rumoca
+
+- Link: https://arxiv.org/abs/2606.14998
+- Type: Rust-native Modelica compiler / universal algebraic frontend
+- Keywords: Modelica, DAE, CasADi, JAX, Julia, WASM, software-in-the-loop
+- One-line summary: Compiles Modelica through explicit phases into differential-algebraic representations and backend code for modern optimization, SciML, and control environments.
+- Why it matters:
+  - Engineering digital twins often lose semantics when Modelica models are manually rewritten for differentiable simulation or optimization stacks.
+  - A model-preserving frontend that targets CasADi/JAX/Julia plus Rust/WASM simulation could become useful infrastructure for agentic engineering workflows.
+  - The VS Code/WASM/playground shape is promising for zero-install reproducible model artifacts and software-in-the-loop demos.
+- Possible use: Smoke-test a thermal RC or simple control model and inspect which equations, units, events, and constraints survive backend generation.
+- Maturity: paper + compiler/tooling described
+- Priority: High
+
+## ReproRepo
+
+- Link: https://arxiv.org/abs/2606.18237
+- Code: https://github.com/LithiumDA/ReproRepo
+- Type: LLM-agent reproducibility-audit benchmark using GitHub issues
+- Keywords: reproducibility, GitHub issues, research agents, paper-repo pairs, blocker detection
+- One-line summary: Uses human-raised GitHub issues as naturally occurring supervision for evaluating whether LLM agents can identify realistic reproduction blockers in paper/repository pairs.
+- Why it matters:
+  - Engineering agents should be evaluated on visible build/data/configuration failures and semantic blocker localization, not only polished benchmark tasks.
+  - The issue-based supervision idea transfers to CFD/CAE repositories where missing meshes, solver versions, scripts, and datasets are common reproduction blockers.
+  - Useful pattern for weekly audits of VA-curated tools: paper claims, repo state, known issues, and agent-found blockers should be linked.
+- Possible use: Adapt the framework to CFD/SciML repos before promoting a tool from `Watch` to `Test` or `Save`.
+- Maturity: paper + code released
+- Priority: Medium
+
 ## AgentRivet
 
 - Link: https://arxiv.org/abs/2606.13535

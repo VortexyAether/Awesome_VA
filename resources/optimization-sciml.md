@@ -14,6 +14,20 @@
 - Maturity: paper-only
 - Priority: Medium
 
+## Online Spectral Deflation for State Constrained Optimal Control Problems
+
+- Link: https://arxiv.org/abs/2606.17971
+- Type: Solver-native acceleration for PDE-constrained optimal control
+- Keywords: state constraints, active set, spectral deflation, nonlinear thermal, conjugate heat transfer
+- One-line summary: Reuses low reference eigenmodes by restricting them to changing inactive sets, accelerating Jacobi-CG solves without replacing the high-fidelity optimal-control system.
+- Why it matters:
+  - Provides a strong non-ML baseline for repeated thermal/CFD optimal-control solves.
+  - Reports 55–98% CG iteration reduction across diffusion, convection-diffusion, nonlinear thermal, and conjugate heat-transfer benchmarks.
+  - Useful reminder that engineering design loops often need robust linear-algebra reuse as much as learned surrogates.
+- Possible use: Compare against surrogate-assisted thermal control on wall-time, active-set stability, optimum quality, and validation residuals.
+- Maturity: paper-only
+- Priority: High
+
 ## Graphical conditional generative modeling for digital twins
 
 - Link: https://arxiv.org/abs/2606.16219
