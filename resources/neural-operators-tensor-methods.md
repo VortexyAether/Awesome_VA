@@ -1,5 +1,48 @@
 # Neural Operators & Tensor Methods
 
+## Geometry-aware post-hoc UQ for neural operators
+
+- Link: https://arxiv.org/abs/2606.17513
+- Type: Post-hoc uncertainty quantification for operator learning
+- Keywords: neural operators, uncertainty quantification, Gaussian process, geometry shift, residual modeling
+- One-line summary: Freezes a deterministic neural operator and fits a Gaussian process to residuals in the operator's hidden feature space, producing geometry-aware uncertainty estimates for variable-domain PDEs.
+- Why it matters:
+  - CFD/thermal surrogates used on new CAD geometries need calibrated uncertainty, not only point predictions.
+  - Reuses existing pretrained operators, so it is a practical wrapper for turning a deterministic surrogate into a decision-support asset.
+  - Good validation lens for geometry-family shift: uncertainty should concentrate near shocks, wakes, boundary layers, hot spots, or other physically meaningful error regions.
+- Possible use: Test on an airfoil/pipe/heat-transfer surrogate with held-out geometry families and compare UQ calibration against ensembles and residual error maps.
+- Maturity: paper-only
+- Priority: High
+
+## Operator Boosting for compact PDE surrogates
+
+- Link: https://arxiv.org/abs/2606.17460
+- Code: https://github.com/lennonshikhman/boosted-neural-operator
+- Type: Compact neural-operator training framework
+- Keywords: operator learning, FNO, DeepONet, CNO, residual boosting, deployment
+- One-line summary: Builds a stagewise stack of tiny same-family neural operators on residual fields instead of training one large monolithic operator and compressing it afterward.
+- Why it matters:
+  - Many-query workflows such as design optimization, control, uncertainty analysis, and digital twins care about memory/latency as much as raw accuracy.
+  - Reports large parameter reductions while improving the accuracy-parameter Pareto frontier on several PDEBench/APEBench/The Well tasks, including Navier-Stokes-style benchmarks.
+  - Useful baseline before adopting heavyweight architectures in an interactive CFD/thermal surrogate loop.
+- Possible use: Compare boosted tiny FNO/CNO stacks against a standard FNO on QoI error, rollout stability, inference latency, and parameter count.
+- Maturity: paper + code link
+- Priority: High
+
+## Field accuracy vs design readout fidelity
+
+- Link: https://arxiv.org/abs/2606.03038
+- Type: Surrogate-evaluation paper / design-QoI metric warning
+- Keywords: neural field surrogate, readout metrics, design ranking, QoI error, photonics
+- One-line summary: Shows that a full-field photonic surrogate can have good global field error while still mispredicting localized output-port power and mis-ranking candidate designs.
+- Why it matters:
+  - The lesson transfers directly to CFD/thermal surrogates: global RMSE can hide errors in drag/lift, pressure drop, wall heat flux, hotspot maxima, or constraint violations.
+  - Encourages Field / Mediator / Readout style evaluation instead of treating dense-field accuracy as sufficient for engineering decisions.
+  - Good citation for VA's validation harness principle that downstream objective and ranking error must be first-class metrics.
+- Possible use: Add local QoI/readout error and ranking regret to CFD surrogate benchmarks alongside field RMSE and spectral metrics.
+- Maturity: paper-only
+- Priority: High
+
 ## PhysGuard
 
 - Link: https://arxiv.org/abs/2606.16602

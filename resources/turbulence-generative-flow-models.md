@@ -2,6 +2,20 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Mori-Zwanzig graph neural networks for turbulent transport
+
+- Link: https://arxiv.org/abs/2606.14918
+- Type: Physics-structured GNN surrogate for Lagrangian turbulent transport
+- Keywords: turbulence, Mori-Zwanzig, graph neural network, Lagrangian particles, memory model
+- One-line summary: Learns tracer-particle acceleration as a finite-memory expansion over present and delayed particle-neighborhood graphs, with equivariant GNNs parameterizing the memory terms.
+- Why it matters:
+  - Sparse particle/sensor views of turbulence are not Markovian; unresolved Eulerian degrees of freedom appear as memory and noise in reduced dynamics.
+  - Evaluates autoregressive rollout on statistics not imposed during training, including heavy-tailed acceleration, pair dispersion, and four-particle tetrad geometry.
+  - Strong reference for reduced turbulence digital twins where learned dynamics must reproduce multi-particle observables, not only one-step field error.
+- Possible use: Compare finite-memory GNN rollouts against Markovian particle predictors and diffusion trajectory samplers on Lagrangian turbulence benchmarks.
+- Maturity: paper-only
+- Priority: High
+
 ## Turbulence Modeling in the Age of Data
 
 - Link: https://arxiv.org/abs/1804.00183

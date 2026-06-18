@@ -1,5 +1,33 @@
 # CAD, Geometry & AI-assisted Design
 
+## FutureCAD / LLM-driven CAD with B-Rep primitive grounding
+
+- Link: https://arxiv.org/abs/2603.11831
+- Type: Text-to-CAD framework with executable program generation and B-Rep grounding
+- Keywords: CAD generation, B-Rep, CadQuery, LLM, primitive grounding, feature modeling
+- One-line summary: Combines LLM-generated CadQuery programs with text-based B-Rep primitive grounding so feature operations such as fillet/chamfer can target explicit faces and edges.
+- Why it matters:
+  - Engineering CAD automation needs editable feature-based construction and primitive selection, not only visually plausible mesh outputs.
+  - B-Rep grounding is directly relevant to downstream CAE because named faces/edges, boundary metadata, and feature history determine meshing and boundary-condition assignment.
+  - Good comparison point for FreeCAD/CadQuery/OpenSCAD agents: can the system preserve design intent and selectable geometry through edits?
+- Possible use: Test generated CadQuery scripts for execution, STEP export, face/edge naming stability, meshability, and parameter-edit robustness.
+- Maturity: paper-only
+- Priority: High
+
+## Surrogate-assisted crash safety design with foundation-model orchestration
+
+- Link: https://arxiv.org/abs/2606.17577
+- Type: CAE design workflow combining surrogate modeling, optimization, geometry morphing, and LLM/VLM orchestration
+- Keywords: CAE, crash safety, foundation model, surrogate-assisted design, conformal prediction, geometry morphing
+- One-line summary: Uses a CAE-trained surrogate with conformal intervals, NSGA-II search, topology-preserving bumper geometry morphing, and an LLM/VLM interface for pedestrian-protection design exploration.
+- Why it matters:
+  - Shows a realistic role for foundation models in engineering: orchestrate validated CAE tools rather than replace high-fidelity solvers.
+  - The combination of surrogate uncertainty, design constraints, geometry generation, and human-facing explanation is a useful pattern for CAD-to-CAE automation.
+  - Safety-critical setting reinforces the need for high-fidelity fallback and artifact trails before trusting generated designs.
+- Possible use: Adapt the workflow pattern to CFD/thermal design loops: natural-language constraints, surrogate candidates, geometry morphing, uncertainty gate, and high-fidelity recheck.
+- Maturity: workshop paper / workflow case study
+- Priority: Medium
+
 ## LLM-based visual code completion for aerospace geometric design
 
 - Link: https://arxiv.org/abs/2606.16806

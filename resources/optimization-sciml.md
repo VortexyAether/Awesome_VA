@@ -1,5 +1,19 @@
 # Optimization for Scientific Machine Learning
 
+## Multi-agent FEA-AI hybrid optimization for IPMSM design
+
+- Link: https://arxiv.org/abs/2606.09037
+- Type: Multi-agent engineering design optimization workflow
+- Keywords: multi-agent system, FEA, uncertainty-aware surrogate, genetic algorithm, motor design, RAG
+- One-line summary: Combines local LLM/RAG problem definition, automated FEA data generation, LLM-guided resampling, deep-ensemble uncertainty surrogates, and FEA-AI hybrid GA search for permanent-magnet motor design.
+- Why it matters:
+  - Strong workflow pattern for engineering automation: produce a design card, DOE plan, simulation logs, failure analysis, surrogate/UQ model, and fallback-triggered high-fidelity evaluations.
+  - Treats surrogate uncertainty as a routing signal for when to trust fast inference and when to call expensive FEA.
+  - Relevant to VA's CAD/CFD/thermal automation because the same contract can govern geometry sweeps, solver failures, retraining, and optimization candidates.
+- Possible use: Use as a template for a `design card → DOE → solver logs → surrogate/UQ → optimizer → high-fidelity fallback` artifact schema.
+- Maturity: paper-only
+- Priority: High
+
 ## Learning practically stabilizing output-feedback nonlinear controllers
 
 - Link: https://arxiv.org/abs/2606.16930

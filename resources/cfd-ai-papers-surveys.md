@@ -2,6 +2,20 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Interpreting CFD surrogates through sparse autoencoders
+
+- Link: https://arxiv.org/abs/2507.16069
+- Type: Interpretability method for graph-based CFD surrogates
+- Keywords: CFD surrogate, sparse autoencoder, graph neural network, interpretability, audit
+- One-line summary: Trains sparse autoencoders on frozen node embeddings from graph-based CFD surrogates to extract latent feature dictionaries for post-hoc interpretation.
+- Why it matters:
+  - CFD surrogate trust should include whether learned latent features correspond to meaningful flow structures or numerical artifacts.
+  - Complements uncertainty and validation gates with an internal representation audit for MeshGraphNet/Transolver-style models.
+  - Useful warning that a surrogate can look accurate while relying on brittle or non-physical latent shortcuts.
+- Possible use: Run SAE probes on a trained cylinder/airfoil graph surrogate and compare discovered features with vortices, boundary layers, pressure gradients, and mesh artifacts.
+- Maturity: workshop paper
+- Priority: Medium
+
 ## Validated LBM dataset and pipeline for turbulent 3D obstructed channel flows
 
 - Link: https://arxiv.org/abs/2606.16765
