@@ -1,0 +1,25 @@
+name: Update trend dashboard
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 21 * * 0" # weekly, UTC
+
+permissions:
+  contents: write
+
+jobs:
+  update-trends:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Generate trend SVGs
+        run: python scripts/build_trend_charts.py
+      - name: Commit generated assets
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update trend dashboard assets
+          file_pattern: assets/trends/*.svg

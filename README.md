@@ -24,6 +24,36 @@
 
 ---
 
+## 📡 Live Field Dashboard
+
+![Topic momentum](assets/trends/topic-momentum.svg)
+
+![Engineering AI stack coverage](assets/trends/stack-coverage.svg)
+
+> Static SVG dashboard generated from `daily/` and `resources/`. README stays GitHub-safe; automation lives in `scripts/build_trend_charts.py` and `.github/workflows/update-trends.yml`.
+
+---
+
+## 🧭 Engineering AI Stack
+
+```mermaid
+flowchart LR
+    A[Geometry / CAD / BRep] --> B[Mesh / Solver Setup]
+    B --> C[CFD / CAE Simulation]
+    C --> D[Surrogate Models]
+    D --> E[Optimization / Control]
+    E --> F[Design Decision]
+
+    G[AI Agents] --> B
+    G --> C
+    G --> E
+
+    H[Validation / UQ] --> D
+    H --> F
+```
+
+---
+
 ## 🛰️ Intelligence layers
 
 | Layer | Start here | Purpose |

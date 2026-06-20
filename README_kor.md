@@ -24,6 +24,36 @@
 
 ---
 
+## 📡 Live Field Dashboard
+
+![Topic momentum](assets/trends/topic-momentum.svg)
+
+![Engineering AI stack coverage](assets/trends/stack-coverage.svg)
+
+> `daily/`와 `resources/`를 파싱해 생성한 정적 SVG dashboard입니다. README는 GitHub-safe하게 유지하고, 자동화는 `scripts/build_trend_charts.py`와 `.github/workflows/update-trends.yml`에 둡니다.
+
+---
+
+## 🧭 Engineering AI Stack
+
+```mermaid
+flowchart LR
+    A[Geometry / CAD / BRep] --> B[Mesh / Solver Setup]
+    B --> C[CFD / CAE Simulation]
+    C --> D[Surrogate Models]
+    D --> E[Optimization / Control]
+    E --> F[Design Decision]
+
+    G[AI Agents] --> B
+    G --> C
+    G --> E
+
+    H[Validation / UQ] --> D
+    H --> F
+```
+
+---
+
 ## 🛰️ Intelligence layers
 
 | Layer | 먼저 볼 문서 | 목적 |
