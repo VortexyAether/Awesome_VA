@@ -1,5 +1,19 @@
 # Neural Operators & Tensor Methods
 
+## NeuroForge CFD
+
+- Link: https://github.com/ali-kin4/neuroforge-cfd
+- Type: Code / self-correcting CFD-AI research scaffold
+- Keywords: CFD-AI, neural operator, geometry-native surrogate, residual correction, uncertainty quantification, AirfRANS
+- One-line summary: A Python alpha-stage CFD-AI engine that predicts flow fields from geometry and boundary conditions, then checks physics residuals, estimates uncertainty, applies residual-conditioned correction, and falls back to classical CFD only where trust is low.
+- Why it matters:
+  - Treats AI-CFD as a validation-gated loop rather than a one-shot surrogate, which matches engineering decision needs better than raw field prediction.
+  - Exposes useful contract pieces for VA-style surrogate systems: residual maps, trust maps, corrector-on/off ablations, rank correlation for Cl/Cd, and explicit fallback rules.
+  - The repo is honest about scope: early research scaffold, not a validated solver; synthetic data is a smoke test, while AirfRANS is the first serious benchmark path.
+- Possible use: Run the ablation notebook and check whether the corrector improves field error, QoI/rank correlation, and residual-error correlation before borrowing the pattern for Urban_Flighter or CFD-ML experiments.
+- Maturity: prototype / alpha research scaffold
+- Priority: High
+
 ## Geometry-aware post-hoc UQ for neural operators
 
 - Link: https://arxiv.org/abs/2606.17513
