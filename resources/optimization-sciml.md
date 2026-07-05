@@ -1,5 +1,20 @@
 # Optimization for Scientific Machine Learning
 
+## DSGNAR — well-conditioned PINN training
+
+- Link: https://arxiv.org/abs/2607.02194
+- Type: Physics-informed neural network optimization framework
+- Keywords: PINNs, Gauss-Newton, sketching, ill-conditioning, numerical optimization, Navier-Stokes
+- One-line summary: Frames PINN underperformance as an ill-conditioned optimization problem and proposes Doubly-Sketched Gauss-Newton with Adaptive Ratio regularization/step control.
+- Why it matters:
+  - Reinforces that solver-grade SciML needs numerical conditioning and diagnostics, not only new network architectures.
+  - Reports improvements across nonlinear, chaotic, multi-scale, high-dimensional, and Navier-Stokes benchmarks, making it a useful citation for PINN failure-mode discussions.
+  - Good comparison point for neural-operator and differentiable-solver workflows that claim classical-solver precision.
+- Caveat: Code/repro harness and industrial-boundary-condition performance still need checking; treat the reported precision as a research claim, not deployment evidence.
+- Possible use: Cite when arguing for conditioning checks and optimizer baselines in PINN/CFD surrogate evaluations.
+- Maturity: paper-only
+- Priority: High
+
 ## Multi-agent FEA-AI hybrid optimization for IPMSM design
 
 - Link: https://arxiv.org/abs/2606.09037

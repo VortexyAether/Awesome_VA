@@ -1,5 +1,20 @@
 # CAD, Geometry & AI-assisted Design
 
+## Roshera-CAD
+
+- Link: https://github.com/varun29ankuS/Roshera-CAD
+- Type: Agent-native Rust B-Rep geometry kernel / MCP bridge
+- Keywords: CAD agents, B-Rep, geometry kernel, validity certificates, MCP, verification
+- One-line summary: Builds toward a CAD runtime where geometry operations return validity certificates, so agents can query, build, and verify mechanical parts instead of only producing plausible shapes.
+- Why it matters:
+  - CAD-to-CAE automation needs kernel-level truth artifacts: watertight/manifold checks, boundary semantics, and provenance for generated geometry.
+  - The repo's “kernel cannot lie” framing is a useful benchmark for CAD-agent interfaces: every write should leave a checkable contract.
+  - The included `roshera-mcp` surface makes it relevant to agent-readable engineering-tool workflows.
+- Caveat: Fair Source / FSL-1.1-Apache-2.0 today, and README claims need local build/test before relying on certificate semantics or performance.
+- Possible use: Smoke-test a simple parametric part and inspect which validity certificate fields survive export/import into downstream meshing.
+- Maturity: early open repository / watch-test
+- Priority: High
+
 ## FutureCAD / LLM-driven CAD with B-Rep primitive grounding
 
 - Link: https://arxiv.org/abs/2603.11831

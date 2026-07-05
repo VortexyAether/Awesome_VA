@@ -1,5 +1,21 @@
 # Agent Tools & Research Workflow
 
+## Embodied.cpp
+
+- Link: https://github.com/SEU-PAISys/Embodied.cpp
+- Paper: https://arxiv.org/abs/2607.02501
+- Type: Portable C++ inference runtime for embodied AI models
+- Keywords: VLA, world-action models, runtime contracts, typed adapters, simulator evaluation, edge deployment
+- One-line summary: Packages embodied-model deployment around input adapters, sequence builders, backbone execution, head plugins, serving, GGUF conversion, and LIBERO/RoboTwin-style evaluation clients.
+- Why it matters:
+  - Engineering agents need typed sensor/action or simulator/tool adapters and latency/rollout contracts, not only request-response model serving.
+  - The runtime-layer split is a useful pattern for CAD/CAE/simulation agents that must preserve state, artifacts, and deployment boundaries.
+  - Apache-2.0 repo with current support for pi0.5, HY-VLA, and LingBot-style paths makes it a concrete infrastructure reference.
+- Caveat: Robotics-first; transfer the runtime/interface pattern, not the robotics benchmark numbers, to CFD/CAD workflows.
+- Possible use: Reuse the adapter/runtime/evaluation split when designing simulator-agent bridges for Urban_Flighter or lab automation.
+- Maturity: early paper + code
+- Priority: Medium
+
 ## LabOSBench
 
 - Link: https://arxiv.org/abs/2606.16802
