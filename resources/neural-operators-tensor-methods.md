@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## Self-explainable Operator Learning
+
+- Link: https://arxiv.org/abs/2607.02203
+- Type: Interpretable operator-learning method
+- Keywords: operator learning, functional data, integral equations, spatial attribution, fluid dynamics, explainable SciML
+- One-line summary: Reformulates operator learning as additive generalized functional linear-model integral components, enabling localized input-region contributions to be linked to output patterns.
+- Why it matters:
+  - CFD and biomedical surrogates need explanations that are tied to spatial features, not only post-hoc saliency plots.
+  - The method gives a direct lens for sparse sensing and data acquisition: which region actually drove the prediction?
+  - Good trust-pattern citation for neural operators where interpretability must be built into the model contract.
+- Caveat: Current evidence is blood-flow and unsteady-aerodynamics oriented; code, accuracy tradeoffs, and industrial turbulent-CFD relevance still need checking.
+- Possible use: Cite in neural-operator trust/evaluation notes and sparse-sensor placement discussions.
+- Maturity: paper-only
+- Priority: High
+
 ## NeuroForge CFD
 
 - Link: https://github.com/ali-kin4/neuroforge-cfd

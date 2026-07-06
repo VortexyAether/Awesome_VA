@@ -1,5 +1,20 @@
 # Agent Tools & Research Workflow
 
+## ContextNest / ContextNext
+
+- Link: https://arxiv.org/abs/2607.02116
+- Type: Context governance specification for autonomous AI agents
+- Keywords: RAG, MCP, provenance, hash-chained history, deterministic selectors, audit, context governance
+- One-line summary: Adds a governed knowledge-vault layer beneath retrieval so agents can select only approved, current, attributable, integrity-verified context and reconstruct it later.
+- Why it matters:
+  - Engineering agents that touch CAD, CAE, repos, and notes need to prove which source/version influenced an action.
+  - The abstract frames context governance as provenance, version identity, integrity, traceability, and point-in-time reconstruction, not just retrieval relevance.
+  - Matches VA's Obsidian/Issue Board/repo workflow: agent usefulness rises when read/write context leaves an audit trail.
+- Caveat: The title says ContextNest while the abstract also says ContextNext; implementation/repo maturity needs separate verification.
+- Possible use: Use as vocabulary for MCP/Obsidian/repo agent governance and reproducible context packages.
+- Maturity: paper / specification claim
+- Priority: High
+
 ## Embodied.cpp
 
 - Link: https://github.com/SEU-PAISys/Embodied.cpp

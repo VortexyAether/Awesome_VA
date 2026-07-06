@@ -1,5 +1,20 @@
 # Optimization for Scientific Machine Learning
 
+## SNAP-FM — sparse projection for physics-constrained generation
+
+- Link: https://arxiv.org/abs/2607.00095
+- Type: Constrained generative modeling / sparse nonlinear optimization
+- Keywords: flow matching, physics constraints, conservation laws, boundary conditions, sparse KKT systems, ExaModels.jl, MadNLP.jl
+- One-line summary: Enforces physics constraints during generative sampling by exploiting block-sparse nonlinear projection structure instead of treating projection as dense tensor post-processing.
+- Why it matters:
+  - Generative physical surrogates can look plausible while violating conservation laws, boundary conditions, or nonlinear invariants.
+  - SNAP-FM makes inference-time constraint satisfaction a solver/composability problem, which is the right engineering trust boundary.
+  - Useful counterweight to “AI solver” hype: the interesting part is the sparse optimization backend that forces outputs back onto the physical constraint set.
+- Caveat: Industrial CFD geometry, noisy observations, code/reproduction surface, and benchmark breadth still need checking.
+- Possible use: Cite when framing validation-gated or constraint-projected flow matching / diffusion surrogates.
+- Maturity: paper-only
+- Priority: High
+
 ## DSGNAR — well-conditioned PINN training
 
 - Link: https://arxiv.org/abs/2607.02194
