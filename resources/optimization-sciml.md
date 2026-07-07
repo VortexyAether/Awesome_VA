@@ -1,5 +1,20 @@
 # Optimization for Scientific Machine Learning
 
+## Verified residual-specific explicit derivative kernels
+
+- Link: https://arxiv.org/abs/2606.29702
+- Type: Explicit differentiation / PINN and CFD adjoint verification infrastructure
+- Keywords: PINNs, CFD adjoints, derivative kernels, residual Jacobian actions, partial-jet propagation, numerical verification
+- One-line summary: Builds residual-specific explicit derivative kernels as a verifiable complement to nested automatic differentiation for derivative-heavy scientific computing.
+- Why it matters:
+  - Generic AD can become costly for high-order PDE residuals and complex discretized operators; explicit kernels expose the derivative path instead of hiding it in nested transforms.
+  - The paper reports floating-point-level residual/gradient agreement, often 2–4x complete PINN training speedups, and lower peak GPU memory in most cases.
+  - The finite-volume CFD residual example verifies tangent-action and transpose-action kernels with Taylor-remainder, inner-product, and reduced-gradient consistency checks before using them in a GPU-resident discrete-adjoint inversion workflow.
+- Caveat: Code/reproduction harness still needs checking, and residual-specific kernels add per-operator implementation/verification cost.
+- Possible use: Cite when arguing that CFD-AI/Engineering-AI trust depends on auditable derivative and residual primitives, not only field-prediction accuracy.
+- Maturity: paper-only
+- Priority: High
+
 ## SNAP-FM — sparse projection for physics-constrained generation
 
 - Link: https://arxiv.org/abs/2607.00095
