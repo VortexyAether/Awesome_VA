@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## 3D-PRIMME — physics-regulated 3D grain-growth dynamics
+
+- Link: https://arxiv.org/abs/2607.04680
+- Type: Physics-regulated neural surrogate for 3D microstructure evolution
+- Keywords: SciML, materials simulation, grain growth, rollout stability, topology statistics, scale transfer
+- One-line summary: Learns 3D grain-growth dynamics with a physics-regulated neural framework that emphasizes long-horizon physical/statistical consistency rather than only short-horizon prediction.
+- Why it matters:
+  - Good trust-pattern citation for surrogate dynamics: preserve scaling laws, topology statistics, and rollout stability over long horizons.
+  - Transfers conceptually to CFD/thermal surrogates where field RMSE is insufficient if spectra, invariants, or downstream quantities drift.
+  - The Issue Board note highlights the claim of training on a `100^3` grid / 512 grains and applying to `1024^3` / 550,000 grains without retraining, which is a useful scale-transfer claim to verify.
+- Caveat: Materials grain growth is not turbulence; code/data and benchmark details need checking before treating the scale-transfer claim as reusable.
+- Possible use: Cite when designing long-rollout surrogate evaluation criteria for PDE/CFD models.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Self-explainable Operator Learning
 
 - Link: https://arxiv.org/abs/2607.02203

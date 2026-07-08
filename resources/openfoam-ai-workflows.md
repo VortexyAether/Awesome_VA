@@ -2,6 +2,21 @@
 
 AI-assisted OpenFOAM setup, automation, case validation, post-processing, and engineering workflow orchestration.
 
+## SoPlasmaFoam
+
+- Link: https://arxiv.org/abs/2607.05137
+- Type: OpenFOAM-based plasma solver infrastructure
+- Keywords: OpenFOAM, plasma simulation, adaptive mesh refinement, PETSc, GPU, dielectric barrier discharge, streamer discharge
+- One-line summary: Presents an OpenFOAM solver for streamer and dielectric barrier discharges with adaptive mesh refinement and PETSc/GPU-oriented infrastructure.
+- Why it matters:
+  - Engineering AI needs robust solver substrates that agents can call, validate, and package into reproducible workflows.
+  - The interesting signal is solver-grade infrastructure: coupled plasma transport/Poisson physics, AMR, backend performance, and benchmark-style validation.
+  - Useful reminder that “AI for engineering” often depends on making classical solvers more automatable, inspectable, and performance-aware.
+- Caveat: Plasma-specific and not itself an AI-agent system; code URL, license, OpenFOAM version, and example cases need follow-up before lab adoption.
+- Possible use: Track as a solver-infrastructure reference for agentic OpenFOAM workflows and validation-gated multiphysics case automation.
+- Maturity: paper-only from current source check
+- Priority: Medium
+
 ## OpenFOAM MCP Server
 
 - Link: https://github.com/webworn/openfoam-mcp-server

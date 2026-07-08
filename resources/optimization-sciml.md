@@ -1,5 +1,20 @@
 # Optimization for Scientific Machine Learning
 
+## dpti — automated thermodynamic integration for MLIP phase diagrams
+
+- Link: https://arxiv.org/abs/2607.05015
+- Type: Automated computational workflow for phase diagrams with machine-learning interatomic potentials
+- Keywords: thermodynamic integration, MLIP, phase diagram, workflow automation, molecular dynamics, error propagation
+- One-line summary: Automates thermodynamic-integration workflows for phase-diagram calculations, including task orchestration, free-energy/error accounting, and phase-boundary propagation.
+- Why it matters:
+  - Shows the Engineering-AI pattern where the durable value is a domain workflow compiler, not just a model API.
+  - Materials/MLIP workflows face the same trust issues as CFD optimization: path construction, solver/task orchestration, error propagation, reproducibility, and artifact provenance.
+  - Useful analogy for CFD/thermal design loops where expensive high-fidelity solves must be coordinated with surrogate decisions and uncertainty checks.
+- Caveat: Materials/MLIP-specific; package maturity, examples, dependencies, and license need follow-up.
+- Possible use: Use as a workflow-automation reference when designing `DOE → solver task graph → error accounting → decision boundary` pipelines.
+- Maturity: paper-only from current source check
+- Priority: Medium
+
 ## Verified residual-specific explicit derivative kernels
 
 - Link: https://arxiv.org/abs/2606.29702

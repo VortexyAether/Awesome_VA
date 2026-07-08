@@ -1,5 +1,38 @@
 # Agent Tools & Research Workflow
 
+## GaP — Graph-as-Policy
+
+- Link: https://arxiv.org/abs/2607.05369
+- Project: https://graph-robots.github.io/gap
+- Code: https://github.com/graph-robots/graph-as-policy
+- Type: Multi-agent self-learning harness for variational automation tasks
+- Keywords: graph-as-policy, simulation rehearsal, robotics, workflow graph, agent harness, verification
+- One-line summary: Turns task prompts into executable, type-checked computation graphs, rehearses them in simulation, and edits graph structure/parameters from failure feedback before real-world execution.
+- Why it matters:
+  - The transferable pattern is not robotics hype; it is `workflow graph → simulation rehearsal → localized failure repair → deployment`.
+  - CAE/CFD agents need the same shape around CAD, mesh, solver, post-processing, and validation primitives before they can be trusted for design work.
+  - The project page reports 8 open Variational Automation benchmarks and Make Popcorn self-learning from 33% initial success to 94% simulation / 90% real robot, making it a useful artifact-oriented harness reference.
+- Caveat: The benchmark is robotics/pick-and-place oriented and mostly quasi-static; CFD/CAE transfer requires replacing the robot skill library with solver/CAD/mesh/verification primitives.
+- Possible use: Use as vocabulary for Urban_Flighter / Engineering AI harness design: graph artifact, typed node library, rehearsal environment, verifier feedback, and explicit failure routes.
+- Maturity: paper + project + code announced
+- Priority: High
+
+## LLM-as-a-Verifier
+
+- Link: https://arxiv.org/abs/2607.05391
+- Code: https://github.com/llm-as-a-verifier/llm-as-a-verifier
+- Type: General-purpose verifier framework for agent tasks
+- Keywords: verification, agent evaluation, dense feedback, criteria decomposition, LLM judge, benchmark scoring
+- One-line summary: Frames verification as its own scaling axis by using continuous scoring, repeated evaluation, and decomposed criteria rather than only a single discrete LLM-judge score.
+- Why it matters:
+  - Engineering agents need progress signals and artifact checks, not only plausible final answers.
+  - Criteria decomposition is a useful interface pattern for solver-run reports, design artifacts, plots, and code changes.
+  - The public GitHub repo is MIT-licensed and early but concrete enough to inspect for verifier prompt/data structure.
+- Caveat: An LLM verifier is not a physics oracle. CAE/CFD workflows still need deterministic checks such as residuals, conservation, mesh quality, regression tests, and unit consistency.
+- Possible use: Pair LLM-as-verifier style rubric scoring with hard solver checks in Hermes/OpenClaw engineering-agent workflows.
+- Maturity: early paper + code
+- Priority: Medium
+
 ## ContextNest / ContextNext
 
 - Link: https://arxiv.org/abs/2607.02116
