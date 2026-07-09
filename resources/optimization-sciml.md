@@ -1,5 +1,17 @@
 # Optimization for Scientific Machine Learning
 
+## Koopman ISS certification via projection residuals
+
+- Link: https://arxiv.org/abs/2607.06459
+- Type: Stability certification for data-driven Koopman learning control
+- Keywords: Koopman learning, input-to-state stability, projection residual, repetitive systems, control validation
+- One-line summary: Certifies when a fixed Koopman-assisted constrained update yields practical learning-axis stability, treating residuals, channel weakness, deployment shift, and numerical tolerances as ISS inputs.
+- Why it matters: Learned engineering controllers should not be accepted on prediction accuracy alone. The paper’s explicit ultimate-band framing is a good reference for VA-style simulator/control agents that need certificate and fallback boundaries before affecting design or control decisions.
+- Caveat: Theory/numerical control focus; no CFD-in-the-loop or real engineering deployment evidence yet.
+- Possible use: Cite in learned-control validation notes for Urban_Flighter or surrogate MPC workflows.
+- Maturity: paper-only
+- Priority: High
+
 ## dpti — automated thermodynamic integration for MLIP phase diagrams
 
 - Link: https://arxiv.org/abs/2607.05015

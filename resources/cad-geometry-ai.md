@@ -1,5 +1,17 @@
 # CAD, Geometry & AI-assisted Design
 
+## SplineNet — isogeometric deep learning for complex shells
+
+- Link: https://arxiv.org/abs/2607.06026
+- Type: CAD-native CAE / isogeometric deep-learning method for shell structures
+- Keywords: CAD, CAE, isogeometric analysis, T-splines, Bézier extraction, DeepONet, shell mechanics
+- One-line summary: Builds neural architectures directly from watertight spline/T-spline CAD representations, using Bézier extraction and Bernstein polynomial activations for data-free or data-driven shell analysis.
+- Why it matters: CAD-to-CAE automation often loses exact geometry and boundary semantics during model/data exchange. SplineNet is a strong citation for keeping exact CAD geometry inside the learning/analysis architecture instead of treating geometry as a disposable mesh or image-like input.
+- Caveat: Shell structures rather than CFD/turbulence; implementation, CAD-kernel compatibility, and examples need checking before reuse.
+- Possible use: Use as an anchor for “CAD-native surrogate” arguments and for evaluating whether agent-generated geometry remains analysis-suitable downstream.
+- Maturity: paper-only
+- Priority: High
+
 ## Roshera-CAD
 
 - Link: https://github.com/varun29ankuS/Roshera-CAD

@@ -1,5 +1,29 @@
 # Agent Tools & Research Workflow
 
+## KiCad MCP Pro
+
+- Link: https://github.com/oaslananka/kicad-mcp
+- Type: MCP server for KiCad EDA automation and design checks
+- Keywords: MCP, KiCad, EDA, ERC, DRC, DFM, manufacturing artifacts, engineering agents
+- One-line summary: Exposes KiCad schematic/PCB/BOM/DFM/export surfaces to agents while keeping first-pass assistant vs. human sign-off boundaries explicit.
+- Why it matters: EDA is a useful neighbor domain for CAE/CAD agents because deterministic checks such as ERC, DRC, and DFM can become concrete verification artifacts. The transferable pattern is not KiCad itself; it is agent-callable design operations plus explicit report artifacts and sign-off limits.
+- Caveat: Small and EDA-specific; local fixture smoke tests are needed before treating it as dependable infrastructure.
+- Possible use: Compare its report/check surfaces with desired FreeCAD/OpenFOAM/CAE MCP interfaces.
+- Maturity: active open-source project / watch-test
+- Priority: Medium
+
+## Rescale AHPI / agentic HPC simulation workflows
+
+- Link: https://rescale.com/news/rescale-us-national-labs-initiative-doe-simulation-codes/
+- Type: Industry signal for simulation-native agents and HPC workflow orchestration
+- Keywords: HPC, agentic engineering, DOE simulation codes, workflow automation, solver setup, auditability
+- One-line summary: Rescale describes a proposed collaboration with LBNL, ORNL, and LLNL to make DOE simulation codes more accessible through agentic AI and automated HPC workflows.
+- Why it matters: The important signal is `trusted simulation codes + HPC orchestration + simulation-native agents`, not a generic AI-solver replacement story. Mesh configuration, hardware selection, solver tuning, checkpoint management, and workflow audit are exactly where engineering agents can create value without hiding the solver.
+- Caveat: Vendor/partnership source; treat claims as direction signals until independent benchmarks or user case studies are available.
+- Possible use: Use as a market/positioning reference for Engineering AI workflow products that wrap validated solvers rather than replacing them.
+- Maturity: vendor direction signal
+- Priority: Medium
+
 ## GaP — Graph-as-Policy
 
 - Link: https://arxiv.org/abs/2607.05369

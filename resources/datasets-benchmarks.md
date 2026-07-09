@@ -2,6 +2,18 @@
 
 Flow datasets, SciML benchmarks, reproducibility references, metrics, and evaluation protocols.
 
+## GraphBU — MILP instance generation with graph-native block units
+
+- Link: https://arxiv.org/abs/2607.06532
+- Type: Structure-preserving synthetic benchmark generation for MILP instances
+- Keywords: MILP, benchmark generation, graph structure, solver policy, feasibility, optimization
+- One-line summary: Generates MILP instances from local subproblems plus explicit interfaces so solver-facing block/coupling structure is preserved better than template-only or summary-statistic generation.
+- Why it matters: Engineering-AI benchmarks need synthetic families that preserve the structures downstream tools actually use. GraphBU is MILP-specific, but its `local unit + interface + compatibility check` pattern is a useful analogy for CFD/CAE benchmark generation around geometry, boundary conditions, coupling interfaces, and solver policy behavior.
+- Caveat: Not a CFD or mesh benchmark; code/data availability and dataset-specific failure cases still need follow-up.
+- Possible use: Cite when arguing that engineering surrogate benchmarks should preserve domain structure rather than only match broad statistics.
+- Maturity: paper-only
+- Priority: High
+
 ## Zero-To-CAD-1m
 
 - Link: https://huggingface.co/datasets/ADSKAILab/Zero-To-CAD-1m
