@@ -1,5 +1,20 @@
 # Agent Tools & Research Workflow
 
+## PA-SciML — physics-audited agentic surrogate discovery
+
+- Link: https://arxiv.org/abs/2607.07379
+- Type: Verification-first workflow for agentic Scientific Machine Learning
+- Keywords: agentic SciML, surrogate discovery, physics audit, verification, mechanics, validation contract
+- One-line summary: Fixes scoring and machine-checkable physics requirements before agentic surrogate search, then audits candidate outputs for boundary, scaling, superposition, causality, and high-violation cases.
+- Why it matters:
+  - Error-only agentic model search can select a low-loss surrogate that still violates the physics needed for engineering decisions.
+  - The workflow separates model-selection score from explicit output-level physics evidence, which is the right pattern for CAE/CFD agents.
+  - Provides vocabulary for VA-style “trust packets”: stated checks, tolerances, violation search, and verified-only-under-these-assumptions reporting.
+- Caveat: Reported examples are computational solid mechanics; CFD/turbulence use needs separate conservation, boundary-family shift, spectral, QoI, and rollout checks.
+- Possible use: Translate PA-SciML into a CFD surrogate audit harness before using agent-discovered models in Urban_Flighter-style design/control loops.
+- Maturity: paper-only
+- Priority: High
+
 ## KiCad MCP Pro
 
 - Link: https://github.com/oaslananka/kicad-mcp

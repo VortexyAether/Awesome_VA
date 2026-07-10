@@ -1,5 +1,20 @@
 # CAD, Geometry & AI-assisted Design
 
+## ArtisanCAD — CAD-IR and CATIA-MCP for editable industrial CAD agents
+
+- Link: https://arxiv.org/abs/2607.05750
+- Type: Industrial CAD agent architecture with expert-grounded knowledge distillation
+- Keywords: CAD agent, CAD-IR, CATIA, MCP, B-Rep, editable geometry, procedural modeling
+- One-line summary: Distills expert CATIA procedures into reusable skills through an executable CAD intermediate representation that records parameters, ordered operations, MCP tool bindings, dependencies, generated entities, and verification rules.
+- Why it matters:
+  - Text-to-CAD systems are only useful for engineering when feature dependencies, parametric editability, B-Rep validity, and verification rules survive generation.
+  - CAD-IR is a strong pattern for agent-generated geometry: keep the procedural scaffold and tool bindings, not just the final shape.
+  - The reported Text2CAD Chamfer Distance improvement from 14.83 to 9.88 is less important than the shift toward editable, auditable CAD procedures.
+- Caveat: CATIA recordings and industrial macro logs may not transfer directly to FreeCAD/CadQuery/OpenSCAD workflows; public backend/tooling maturity needs checking.
+- Possible use: Compare CAD-IR fields against the desired artifact contract for FreeCAD/OpenFOAM geometry handoff: named parameters, feature history, validation rules, and meshing boundary metadata.
+- Maturity: paper-only
+- Priority: High
+
 ## SplineNet — isogeometric deep learning for complex shells
 
 - Link: https://arxiv.org/abs/2607.06026

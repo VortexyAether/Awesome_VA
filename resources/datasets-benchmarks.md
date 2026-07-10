@@ -2,6 +2,22 @@
 
 Flow datasets, SciML benchmarks, reproducibility references, metrics, and evaluation protocols.
 
+## BubbleSH — deformable bubble-swarm DNS dataset
+
+- Link: https://arxiv.org/abs/2607.07275
+- Dataset: https://doi.org/10.5281/zenodo.21229301
+- Type: Multiphase-flow dataset and generative dynamics benchmark
+- Keywords: CFD dataset, bubbly flow, DNS, multiphase dynamics, spherical harmonics, trajectory prediction, shape prediction
+- One-line summary: Provides transient 3D bubble-swarm direct numerical simulations with bubble trajectories, velocities, and spherical-harmonic shape evolution.
+- Why it matters:
+  - Multiphase CFD surrogates need benchmarks where interaction, morphology, and chaotic rollout distributions matter, not only dense-field RMSE.
+  - The trajectory-plus-shape metric framing is useful for evaluating generative or probabilistic dynamics models under local perturbation sensitivity.
+  - Zenodo lists a concrete 9.2 GB `Data.zip` and 4.4 kB README under CC-BY-4.0, making it a real dataset candidate rather than only a paper claim.
+- Caveat: Bubble-swarm dynamics are specialized; schema, train/test splits, and baseline scripts need inspection before local use.
+- Possible use: Inspect the README and sample metadata, then decide whether BubbleSH belongs in a generative multiphase surrogate benchmark suite.
+- Maturity: paper + Zenodo dataset
+- Priority: High
+
 ## GraphBU — MILP instance generation with graph-native block units
 
 - Link: https://arxiv.org/abs/2607.06532
