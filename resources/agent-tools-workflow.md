@@ -1,5 +1,35 @@
 # Agent Tools & Research Workflow
 
+## LLM fluid-system simulation code generation — syntax ≠ fidelity
+
+- Link: https://arxiv.org/abs/2607.29389
+- Type: Benchmark / evaluation study for LLM simulation code generation
+- Keywords: LLM code generation, Modelica, WNTR, simulation fidelity, agent evaluation, false DONE
+- One-line summary: Benchmarks ten LLMs and six prompting strategies translating fluid-system graphs into WNTR/Modelica code, separating software-quality metrics from functional simulation fidelity.
+- Why it matters:
+  - High pass@k / Call-F1 can coexist with near-zero simulation fidelity.
+  - Compile-repair agents fix syntax without repairing physical mapping or semantic errors.
+  - Direct scorecard lesson for CAE/CFD agents: static checks and dynamic fidelity must both be first-class gates.
+- Caveat: Modelica/WNTR fluid-system wrappers rather than full industrial OpenFOAM decks; absolute model rankings will age quickly.
+- Possible use: Cite when designing Urban_Flighter / CAE harness metrics that refuse to treat compile-success as physics-success.
+- Maturity: paper-only
+- Priority: High
+
+## BSG-VA — validation evidence roles for repair agents
+
+- Link: https://arxiv.org/abs/2607.28871
+- Type: Measurement framework for agent validation evidence quality
+- Keywords: agent verification, evidence-inadequate closure, repair agents, test replay, harness design
+- One-line summary: Replays captured validation commands on buggy, candidate, and gold states to label whether a passing check actually discriminates the reported bug.
+- Why it matters:
+  - “Tests passed” is often treated as defect evidence when it may be regression-only or non-discriminating.
+  - Evidence-role tagging is transferable vocabulary for CAE agent harnesses that currently log smoke/compile success as acceptance.
+  - Bug-contrast feedback is a concrete harness intervention, not only a taxonomy complaint.
+- Caveat: Program-repair domain numbers should not be copied verbatim onto CFD case decks. Analysis code not publicly released at curation time.
+- Possible use: Add evidence-role labels to Engineering AI verification logs before treating a rollout as closed.
+- Maturity: paper-only
+- Priority: High
+
 ## PA-SciML — physics-audited agentic surrogate discovery
 
 - Link: https://arxiv.org/abs/2607.07379

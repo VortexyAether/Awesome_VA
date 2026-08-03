@@ -2,6 +2,38 @@
 
 JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inverse/design workflows, and fast research prototypes.
 
+## DFSC — error-controlled differentiable Mittag–Leffler propagation
+
+- Link: https://arxiv.org/abs/2607.29038
+- Code: https://github.com/hzhooning-art/DFSC
+- Archive: https://doi.org/10.5281/zenodo.21588834
+- Type: Differentiable fractional SciML substrate / PyTorch library
+- Keywords: fractional PDE, Mittag–Leffler, differentiable numerics, residual correction, GPU batching, SciML
+- One-line summary: Separates known Mittag–Leffler fractional propagation from learned residual dynamics, with adaptive truncation/Lanczos depth until successive differentiable evaluations meet a requested tolerance.
+- Why it matters:
+  - Fractional operators are a recurring SciML pain point when special functions must be batched, differentiated, and composed with neural residuals.
+  - Error-controlled propagator depth is a better trust pattern than fixed black-box truncation.
+  - Ships as MIT code + Zenodo archive rather than paper-only claims.
+- Caveat: Useful when the fractional backbone is known; not a universal CFD replacement. Local install/smoke still needed before a Test badge.
+- Possible use: Smoke-test `dfsc` after checking API/docs, then decide whether fractional thermal/viscoelastic experiments should reuse MLSL-style layers.
+- Maturity: paper + early open-source (MIT)
+- Priority: High
+
+## Data-free weak-form GNN PDE solvers
+
+- Link: https://arxiv.org/abs/2607.27901
+- Type: Physics-informed mesh-native neural PDE solver
+- Keywords: weak form, GNN, data-free SciML, residual gate, geometry generalization, hyperelasticity
+- One-line summary: Builds weak-form residuals with FE shape-function gradients on a message-passing GNN, then uses residual maps as an inference-time acceptance and refinement signal without labeled solution fields.
+- Why it matters:
+  - Avoids high-order autodiff residual construction while staying mesh-native.
+  - Residual acceptance/refinement is a reusable engineering pattern for geometry-family shift and load generalization.
+  - Useful citation when arguing that “solver-like” neural methods need residual contracts, not only field RMSE.
+- Caveat: Primary evidence is quasi-static 3D hyperelasticity; turbulent fluid transfer is not claimed. Code availability not confirmed.
+- Possible use: Borrow the residual-gate framing for mesh-based CFD/thermal neural solvers and test-time refinement loops.
+- Maturity: paper-only
+- Priority: High
+
 ## JAX-AMR
 
 - Link: https://github.com/Ashwin3919/JAX-amR

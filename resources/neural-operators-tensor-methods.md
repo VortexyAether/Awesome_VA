@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## HERO — history-enriched rollout training for autoregressive neural operators
+
+- Link: https://arxiv.org/abs/2607.29135
+- Type: Neural-operator training method for long-horizon autoregressive rollouts
+- Keywords: neural operators, FNO, rollout stability, long-horizon PDE, relative supervision, validation metrics
+- One-line summary: Augments absolute trajectory supervision with history-enriched relative losses so autoregressive neural operators are trained against their own earlier long-horizon failure modes.
+- Why it matters:
+  - One-step or absolute trajectory scores can look fine while recursive rollout error re-enters as input and collapses the horizon.
+  - Hardens the acceptance contract for CFD/thermal surrogates toward `nRMSE@H`, stable steps, and train-vs-deploy cost rather than only nRMSE@1.
+  - Works as a training-procedure upgrade rather than forcing an architecture swap.
+- Caveat: Evidence is a periodic single-channel research PDE suite; industrial unstructured multiphysics transfer is not claimed. Public code was not confirmed at curation time.
+- Possible use: Cite when defining rollout green-light criteria for Urban_Flighter-style operator surrogates.
+- Maturity: paper-only
+- Priority: High
+
 ## 3D-PRIMME — physics-regulated 3D grain-growth dynamics
 
 - Link: https://arxiv.org/abs/2607.04680
