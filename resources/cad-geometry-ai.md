@@ -1,5 +1,20 @@
 # CAD, Geometry & AI-assisted Design
 
+## FORGE-SIM — multi-patch B-spline BRep reconstruction for IGA (Watch)
+
+- Link: https://arxiv.org/abs/2607.26234
+- Claimed code: https://github.com/Schindler-EPFL-Lab/FORGE-SIM (GitHub API 404 on 2026-08-04)
+- Type: Vision-to-CAD/sim-ready geometry paper
+- Keywords: B-spline, multi-patch BRep, IGA, thermal/modal simulation, sim-ready reconstruction
+- One-line summary: Optimizes multi-patch B-spline BRep directly from sparse views so reconstructed geometry can feed isogeometric thermal and modal analysis without a mesh-only detour.
+- Why it matters:
+  - Points at the right CAD↔CAE handoff: watertight, simulation-native spline BRep rather than cosmetic meshes.
+  - Observation fields can share the same spline basis, which is attractive for digital-twin reconstruction.
+- Caveat: Claimed GitHub path returned Not Found at curation time — paper-only Watch until a live code/data release exists. Industrial feature-tree BRep editability is not the focus.
+- Possible use: Watch for code release before any Save/Test action; keep as a sim-ready geometry north-star citation.
+- Maturity: paper-only / code unavailable at curation
+- Priority: Medium
+
 ## ArtisanCAD — CAD-IR and CATIA-MCP for editable industrial CAD agents
 
 - Link: https://arxiv.org/abs/2607.05750

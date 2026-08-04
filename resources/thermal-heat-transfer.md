@@ -2,6 +2,23 @@
 
 Resources for heat-transfer modeling, thermal-fluid digital twins, thermal property prediction, and automation-ready validation workflows.
 
+## PINO thermal ranking of low-cost wall materials
+
+- Link: https://arxiv.org/abs/2607.25668
+- Data: https://doi.org/10.5281/zenodo.21311299
+- Type: Physics-informed neural operator + thermal decision-QoI study
+- Keywords: PINO, FNO, building envelope, thermal ranking, ISO 13786, data-scarce physics loss, QoI
+- One-line summary: Couples Crank–Nicolson FDM data generation with a PINO/FNO operator that maps wall-material parameters to temperature fields while preserving peak inner-surface temperature and ISO 13786 lag/decrement QoIs.
+- Why it matters:
+  - Engineering thermal surrogates should preserve decision rankings and regime boundaries, not only field RMSE.
+  - Reports data-scarce physics-loss gains on QoI MAE and shows material rankings can reverse across climate regimes.
+  - Transferable pattern for process/decision QoI evaluation under sparse labeled solves.
+- Evidence: Issue Board harvest notes field rel.L2 ~5.14e-4, QoI MAE ~0.201 K, and scarce-data QoI improvements of roughly 18.8–27.5%.
+- Caveat: 1D wall heat equation for housing materials rather than full-building or aerospace CFD.
+- Possible use: Reuse the QoI-ranking + climate-regime sweep pattern when scoring thermal/CFD surrogates for design decisions.
+- Maturity: paper + Zenodo data claim
+- Priority: High
+
 ## Cepstral analysis for Green-Kubo thermal conductivity calculations of MOFs
 
 - Link: https://arxiv.org/abs/2606.13588

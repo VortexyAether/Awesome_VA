@@ -2,6 +2,21 @@
 
 JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inverse/design workflows, and fast research prototypes.
 
+## PINN residuals as adaptive mesh refinement indicators
+
+- Link: https://arxiv.org/abs/2606.02475
+- Type: Hybrid numerics paper / PINN-guided AMR for finite-difference solvers
+- Keywords: PINN, adaptive mesh refinement, finite difference, residual indicator, hybrid solver
+- One-line summary: Uses a PINN as an off-grid residual probe to build cellwise AMR indicators, then computes the final solution with a classical finite-difference solver.
+- Why it matters:
+  - Keeps the classical solver as the final approximation while using the neural residual only as a diagnostic/refinement prior.
+  - Matches Engineering-AI philosophy better than “neural replaces solver” claims: neural diagnoses, solver decides.
+  - Reports efficiency-style gains on Burgers where residual-guided refinement uses far fewer DoFs than uniform meshes.
+- Caveat: Evidence is mostly 1D Burgers / manufactured tests; gradient indicators can still be competitive; not industrial 3D FV validation.
+- Possible use: Cite when designing hybrid CFD loops that refuse to treat residual-green neural fields as the final engineering answer.
+- Maturity: paper-only
+- Priority: Medium
+
 ## DFSC — error-controlled differentiable Mittag–Leffler propagation
 
 - Link: https://arxiv.org/abs/2607.29038

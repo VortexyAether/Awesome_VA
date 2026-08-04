@@ -1,5 +1,21 @@
 # Neural Operators & Tensor Methods
 
+## Parametric PINN vs tensorial ROM — shallow-water dam-break
+
+- Link: https://arxiv.org/abs/2607.27433
+- Type: Parametric SWE surrogate comparison / flood-style benchmark study
+- Keywords: shallow-water equations, dam-break, PINN, tensorial ROM, shock-aware collocation, parametric surrogate
+- One-line summary: Compares a parametric PINN and a non-intrusive tensorial reduced-order model on the 1D shallow-water dam-break map from space, time, and parameters to state, including out-of-sample and extrapolated parameters.
+- Why it matters:
+  - Makes shock-aware collocation an explicit robustness requirement for PINN-style flood/SWE surrogates.
+  - Shows where TROM can stay stronger near shocks while both models learn a direct multi-query map without time integration.
+  - Useful checklist item for urban-flood / SWE digital twins: param extrapolation holdouts + local shock error, not only global field RMSE.
+- Evidence: Issue Board tables include TROM h 3.58e-4 vs PINN h 2.87e-3 at one out-of-sample point, and much larger PINN q error near shock-adjacent parameters.
+- Caveat: 1D only; no public code harvested; not a street-network 2D/3D flood claim.
+- Possible use: Translate shock-aware collocation and param-extrapolation gates into Urban_Flighter flood-surrogate evaluation.
+- Maturity: paper-only
+- Priority: High
+
 ## HERO — history-enriched rollout training for autoregressive neural operators
 
 - Link: https://arxiv.org/abs/2607.29135

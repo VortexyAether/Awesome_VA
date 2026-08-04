@@ -1,5 +1,21 @@
 # Agent Tools & Research Workflow
 
+## EvoPINN — agentic discovery of executable PINN algorithms
+
+- Link: https://arxiv.org/abs/2607.26490
+- Type: Agentic SciML harness for PINN algorithm discovery
+- Keywords: PINN, agentic SciML, algorithm discovery, structural verification, budgeted PDE evaluation, SLRC-PINN
+- One-line summary: Turns PINN design into execution-grounded search over representation and training programs with structural verification and budget-matched PDE evaluations, rather than unconstrained best-of-N code generation.
+- Why it matters:
+  - Free-form LLM PINN code often fails scientific constraints; the reusable asset is the harness contract, not a single invented architecture.
+  - Autonomously invents SLRC-PINN and reports parameter-matched gains over best-of-N search on standard PDE suites.
+  - Direct pattern for CAE/SciML agents: accept only under budgeted eval + structural verify.
+- Evidence: Issue Board HTML harvest notes Burgers1D EvoPINN rel.L2 ~1.65e-4, SLRC-PINN ~2.04e-4 vs width-matched MLP ~4.55e-4, and large Wave1D gains vs Best-of-56.
+- Caveat: Standard PDE suite rather than industrial mesh/CFD; public code URL not confirmed at curation time.
+- Possible use: Cite when designing Urban_Flighter / Engineering AI discovery loops that refuse unconstrained solver-code generation.
+- Maturity: paper-only
+- Priority: High
+
 ## LLM fluid-system simulation code generation — syntax ≠ fidelity
 
 - Link: https://arxiv.org/abs/2607.29389

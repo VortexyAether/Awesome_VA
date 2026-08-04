@@ -2,6 +2,21 @@
 
 Flow datasets, SciML benchmarks, reproducibility references, metrics, and evaluation protocols.
 
+## Neptuna — multiphase shock-driven flow ML benchmark
+
+- Link: https://arxiv.org/abs/2607.22280
+- Code: https://github.com/tumaer/Neptuna
+- Type: Multiphase CFD-ML benchmark framework / dataset claim
+- Keywords: multiphase flow, shock-driven flows, bubble collapse, droplet breakup, composite loss, CFD benchmark
+- One-line summary: Introduces a large-scale shock-driven compressible multiphase benchmark claim (2.4 TB 2D/3D) and evaluates multiple surrogate families under composite losses that include interface/structure terms.
+- Why it matters:
+  - Multiphase shock problems break MSE-only leaderboards; interface and spectral/structure metrics are first-class trust signals.
+  - Useful anchor for “no single model wins everywhere” evaluation culture in CFD-ML.
+- Caveat: GitHub repo exists but had 0 stars and null license via API at curation; local schema/access/license verification still required before treating the 2.4 TB claim as a ready local benchmark.
+- Possible use: Inspect README/license/sample layout, then decide whether to adopt composite multiphase metrics in VA benchmark checklists.
+- Maturity: paper + early public repo (verify before use)
+- Priority: Medium
+
 ## BubbleSH — deformable bubble-swarm DNS dataset
 
 - Link: https://arxiv.org/abs/2607.07275

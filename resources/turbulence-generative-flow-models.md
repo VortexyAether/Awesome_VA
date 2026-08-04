@@ -2,6 +2,21 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Compactness vs forecast accuracy — controlled wake latent ROMs
+
+- Link: https://arxiv.org/abs/2607.24569
+- Type: Control-oriented fluid reduced-order modeling study
+- Keywords: ROM, POD, convolutional autoencoder, wake control, latent dynamics, long-horizon forecast
+- One-line summary: Compares POD vs nonlinear CAE/VAE encoders plus latent predictors on actuated truck-wake and fluidic-pinball flows, focusing on the tradeoff between latent compactness and long-horizon forecast stability.
+- Why it matters:
+  - Control/MPC ROMs need stable predictions over the horizon used for optimization, not only sharp short-horizon reconstruction.
+  - Nonlinear latents can compress well yet become broadband and more divergence-prone over long horizons; smoother POD latents can be preferable for control.
+  - Complements neural-operator rollout gates (e.g. HERO nRMSE@H) with a ROM-side acceptance principle: forecast stability over max compression.
+- Caveat: 2D actuated wakes; reported accuracy definitions are not identical to nRMSE@H; no public code at curation time.
+- Possible use: Cite when setting green-light criteria for control-oriented CFD surrogates and latent dynamics models.
+- Maturity: paper-only
+- Priority: High
+
 ## Mori-Zwanzig graph neural networks for turbulent transport
 
 - Link: https://arxiv.org/abs/2606.14918
