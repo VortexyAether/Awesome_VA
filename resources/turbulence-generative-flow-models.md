@@ -2,6 +2,34 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Round-Trip Consistency — bidirectional diffusion predicts own rollout error
+
+- Link: https://arxiv.org/abs/2608.00675
+- Type: Paper / measurement-free rollout uncertainty signal
+- Keywords: rollout UQ, bidirectional diffusion, latent dynamics, long-horizon error, test-time self-check
+- One-line summary: Trains one conditional latent diffusion model to step a dynamical system forward or backward via a direction flag, then uses forward-then-backward round-trips as a ground-truth-free deploy-time error signal.
+- Why it matters:
+  - Autoregressive surrogates accumulate error with no labels at deployment; self-reported risk is the missing acceptance piece beside train-time nRMSE@H.
+  - Complements HERO-style long-horizon training and control-ROM stability checks with a measurement-free test-time probe.
+- Caveat: Primary demo is plasma/MHD latent diffusion; not a drop-in unstructured CFD operator. No first-party research code package confirmed beyond HF ecosystem chrome.
+- Possible use: Cite when designing deploy-time rollout risk monitors for CFD/thermal operator stacks.
+- Maturity: paper-only
+- Priority: High
+
+## PITT — physics-informed token transformer for nonlinear balance laws
+
+- Link: https://arxiv.org/abs/2607.23143
+- Type: Paper / hybrid hyperbolic balance-law solver representation
+- Keywords: balance laws, FNO, token transformer, Rankine–Hugoniot, shock, weak solutions
+- One-line summary: Combines symbolic equation tokenization, an FNO encoder, explicit Rankine–Hugoniot shock motion, and piecewise steady-state profiles for 1D nonlinear hyperbolic balance laws.
+- Why it matters:
+  - Structure-aware weak-solution machinery is a stronger engineering pattern than pure black-box rollout on shock-dominated fluids.
+  - Useful bridge citation between neural operators and classical shock relations.
+- Caveat: Part I focuses on Schwarzschild–Burgers-style 1D settings; residual tables need careful column reading; no public code harvested.
+- Possible use: Cite when arguing hybrid structure+learning representations for flood/shock-adjacent surrogates.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Compactness vs forecast accuracy — controlled wake latent ROMs
 
 - Link: https://arxiv.org/abs/2607.24569

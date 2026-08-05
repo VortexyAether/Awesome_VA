@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## When May a Model Replace the Experiment? — surrogate audits & licenses
+
+- Link: https://arxiv.org/abs/2608.01378
+- Code: https://github.com/MAXMA-OSU/Modelassay
+- Type: Paper + open toolkit for surrogate audit/licensing
+- Keywords: surrogate validation, model assay, finite-sample license, design champion selection, audit, trust
+- One-line summary: Reframes surrogate-driven design as an audit-and-license problem: when may a model replace an expensive experiment/simulation/training run under finite-sample guarantees, not R² vibes.
+- Why it matters:
+  - Engineering AI products need a deploy-time language for surrogate authority under selection bias and champion picking.
+  - Toolkit explicitly targets pools, selection, and licenses rather than offline holdout accuracy alone.
+  - Transferable vocabulary next to residual/rollout gates: generate → verify → license-to-deploy.
+- Caveat: Primary framing is chemistry/materials/ML training runs; map carefully onto CFD residual/QoI/rollout contracts. Early MIT repo (low stars at fetch).
+- Possible use: Prototype a Modelassay-style license wrapper around Urban_Flighter surrogate decision QoIs before treating low field error as experiment replacement.
+- Maturity: paper + early open toolkit
+- Priority: High
+
 ## Koopman ISS certification via projection residuals
 
 - Link: https://arxiv.org/abs/2607.06459

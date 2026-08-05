@@ -1,5 +1,36 @@
 # CAD, Geometry & AI-assisted Design
 
+## CADIR — cross-backend editable IR for agentic CAD
+
+- Link: https://arxiv.org/abs/2608.00891
+- Adjacent tool: https://github.com/NiJingzhe/SimpleCADAPI
+- Type: Paper + adjacent open CAD API
+- Keywords: CAD IR, agentic CAD, construction graph, CadQuery, build123d, editability, multi-backend
+- One-line summary: Proposes a construction-graph style editable intermediate representation so agentic CAD generation preserves edit history and can target multiple backends instead of one-shot backend scripts or static geometry.
+- Why it matters:
+  - Engineering CAD agents fail when the artifact is a disposable script or mesh: feature history, topology refs, and backend handoff disappear.
+  - Reported IR comparison metrics include exec success 1.0 with IoU/CD/HD gains over strong baselines.
+  - SimpleCADAPI is a live adjacent LLM-friendly CAD API surface (AGPL-3.0) useful for Test, not a claimed official monorepo.
+- Caveat: Geometric similarity ≠ manufacturability, BRep validity, or sim-ready watertight export; AGPL on SimpleCADAPI.
+- Possible use: Map CADIR fields to FreeCAD/CadQuery/OpenFOAM handoff contracts (params, feature order, validation rules, named boundaries).
+- Maturity: paper + adjacent OSS API
+- Priority: High
+
+## IndustryForge-27B — industrial multimodal CAD foundation model
+
+- Link: https://arxiv.org/abs/2607.28050
+- Type: Paper / domain-enhanced multimodal CAD foundation model
+- Keywords: industrial CAD, multimodal FM, CadQuery, drawings, assemblies, COM API
+- One-line summary: Domain-enhanced 27B multimodal model aimed at industrial CAD: engineering drawings and 3D screenshots to parametric scripts, Windows COM API use, and assemblies.
+- Why it matters:
+  - General VLMs underperform on industrial CAD surfaces; domain enhancement is the signal, not generic image-to-mesh demos.
+  - Reported CadQuery accuracy jumps from ~7.8% to ~77.9%, overtaking a gpt-5.4 baseline on the paper bar.
+  - Complements editable-IR work: weights/scripts alone still need an artifact contract for edit and CAE handoff.
+- Caveat: Weights/code not linked at harvest; Windows COM path is enterprise-specific; benchmark construction opacity — Watch before Save.
+- Possible use: Cite as industrial CAD-FM capability ceiling while preferring IR/MCP contracts for deployable agents.
+- Maturity: paper-only / weights unavailable at curation
+- Priority: Medium
+
 ## FORGE-SIM — multi-patch B-spline BRep reconstruction for IGA (Watch)
 
 - Link: https://arxiv.org/abs/2607.26234

@@ -2,6 +2,20 @@
 
 Flow datasets, SciML benchmarks, reproducibility references, metrics, and evaluation protocols.
 
+## Bound-preserving FV WENO multiphase (classical trust substrate)
+
+- Link: https://arxiv.org/abs/2608.00746
+- Type: Paper / classical multiphase finite-volume scheme
+- Keywords: finite volume, WENO, multiphase, Phase-Field, bound preservation, conservation
+- One-line summary: Builds a consistent, conservation/equilibrium/bound-preserving finite-volume WENO scheme for compressible two-/N-phase flows with a Phase-Field mechanism.
+- Why it matters:
+  - ML multiphase benches still need a classical trust floor for conservation and interface bounds.
+  - Useful counterweight to “neural replaces solver” claims next to Neptuna-class datasets.
+- Caveat: Not an ML method; code release not harvested at curation.
+- Possible use: Keep as numerics reference substrate when scoring multiphase surrogates on conservation/bound metrics.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Neptuna — multiphase shock-driven flow ML benchmark
 
 - Link: https://arxiv.org/abs/2607.22280

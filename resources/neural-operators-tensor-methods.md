@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## Convex Neural Energy Elements — geometry-param NO + FEM assembly
+
+- Link: https://arxiv.org/abs/2608.02036
+- Type: Paper / geometry-parameterized neural-operator FEM element library
+- Keywords: neural operator, FEM assembly, convex energy, geometry generalization, Newton stability, BC shift
+- One-line summary: Learns reusable geometry-parameterized convex energy elements so neural-operator elements assemble monolithically with stability/error guarantees instead of regressing fields that break assembled Hessians.
+- Why it matters:
+  - Field-predicting neural elements can look accurate locally yet induce indefinite assembled Hessians and spurious Newton minima under geometry libraries.
+  - Reports held-out multi-geometry assembly rel.L2 about 0.72±0.33% with Newton finishing in 2 iterations every run, while field-NOE accuracy collapses under BC-pattern shift.
+  - Reusable pattern for VA geometry libraries: accept on assembly/Newton/matrix quality, not only per-element field RMSE.
+- Caveat: No public code harvested at curation; linear/convex trial-energy scope is not a turbulent NS product claim.
+- Possible use: Cite when defining geometry-family acceptance gates for Urban_Flighter / CFD-ML element libraries.
+- Maturity: paper-only
+- Priority: High
+
 ## Parametric PINN vs tensorial ROM — shallow-water dam-break
 
 - Link: https://arxiv.org/abs/2607.27433
