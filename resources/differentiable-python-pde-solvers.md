@@ -2,6 +2,37 @@
 
 JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inverse/design workflows, and fast research prototypes.
 
+## FESOM2-JAX — differentiable unstructured FV ocean–sea-ice shadow
+
+- Link: https://arxiv.org/abs/2608.01546
+- Code: https://github.com/koldunovn/fesom_jax
+- Type: Differentiable classical solver / JAX code-shadow of production FV model
+- Keywords: FESOM2, JAX, unstructured mesh, finite volume, differentiable physics, ocean-sea-ice, adjoint-ready
+- One-line summary: Re-implements FESOM2’s unstructured cell-vertex finite-volume ocean–sea-ice model in JAX so the production-style solver runs from laptop CPU to multi-GPU and is end-to-end differentiable.
+- Why it matters:
+  - Keeps classical residual/FV structure instead of replacing the solver with a pure field surrogate.
+  - Kernel-by-kernel verification vs Fortran lowers the barrier to hybrid physics-ML and gradient-based calibration.
+  - Apache-2.0 public code (`koldunovn/fesom_jax`) makes the pattern inspectable even when the domain is ocean GCM rather than engineering CFD.
+- Caveat: Ocean–sea-ice GCM ≠ industrial product CFD mesh/workflow. Early star count; local smoke and adjoint-path docs still needed before heavy reuse.
+- Possible use: Cite as the clean “differentiable production FV shadow” pattern when designing CFD/thermal twin harnesses that want reverse-mode through a real residual structure.
+- Maturity: paper + early open-source (Apache-2.0)
+- Priority: High
+
+## Adjoint differentiable Brayton GCR plant digital twin
+
+- Link: https://arxiv.org/abs/2607.23176
+- Type: Differentiable plant digital twin / online parameter inversion paper
+- Keywords: adjoint, reverse-mode AD, 4D-Var, digital twin, partial observation, closed-Brayton, gas-cooled reactor
+- One-line summary: Builds an end-to-end-differentiable closed-Brayton gas-cooled reactor digital twin and uses AD-Hessian incremental 4D-Var for online parameter inversion under partial/noisy observations.
+- Why it matters:
+  - Reframes twins as inverse problems under sparse sensing and transient excitation, not only forward field matching.
+  - Reported S1 path: Incremental ~0.45% mean error vs plain adjoint MSE path ~2.57%, with honest multi-estimator corners where UKF can still win.
+  - Reusable acceptance language: parameter recovery + wall-time under observation matrix, not field RMSE alone.
+- Caveat: Reactor-thermal plant model, not atmospheric/urban CFD. No single first-party monorepo harvested (JAX/Diffrax stack citations). Transfer the method, not the domain numbers.
+- Possible use: Cite when defining Urban_Flighter / plant-style twin gates for partial-obs online calibration.
+- Maturity: paper-only / stack citations
+- Priority: High
+
 ## PINN residuals as adaptive mesh refinement indicators
 
 - Link: https://arxiv.org/abs/2606.02475

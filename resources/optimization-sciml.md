@@ -1,5 +1,20 @@
 # Optimization for Scientific Machine Learning
 
+## Multimodal AR transformer surrogate for geological CO₂ storage UQ
+
+- Link: https://arxiv.org/abs/2608.02629
+- Type: Paper / ops decision QoI surrogate under geological uncertainty
+- Keywords: carbon storage, multimodal transformer, auto-regressive surrogate, UQ, injection controls, ops QoI
+- One-line summary: Learns a multimodal auto-regressive transformer surrogate for variable well perforation/injection operations and reports engineering quantities (pressure, mobile mass, injected mass) under geological uncertainty.
+- Why it matters:
+  - Industrial acceptance often lives on ops decision QoIs and posterior bands, not single-step field RMSE.
+  - Reported median errors include sat MAE ~0.028, pressure ~0.21%, total injected CO₂ ~2.3%.
+  - Useful citation next to Modelassay-style deploy-license language for many-query subsurface/process twins.
+- Caveat: SEAM-like faulted aquifer setting; not a drop-in open CFD code package.
+- Possible use: Borrow the QoI+UQ reporting template when scoring CFD/thermal surrogates used for control or injection schedules.
+- Maturity: paper-only
+- Priority: Medium
+
 ## When May a Model Replace the Experiment? — surrogate audits & licenses
 
 - Link: https://arxiv.org/abs/2608.01378

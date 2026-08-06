@@ -1,5 +1,51 @@
 # CAD, Geometry & AI-assisted Design
 
+## CADENA — stepwise CAD reverse engineering
+
+- Link: https://arxiv.org/abs/2608.00799
+- Code: https://github.com/zhemdi/cadena
+- Type: Paper + open-source stepwise CAD reverse engineering
+- Keywords: CAD reverse engineering, stepwise reconstruction, CadQuery DSL, intermediate geometry, RL, mesh-to-program
+- One-line summary: Reconstructs a target mesh as an editable parametric CAD program by growing features step by step and comparing intermediate geometry, instead of emitting the full program in one pass.
+- Why it matters:
+  - Human engineers build feature-by-feature with intermediate checks; most AI CAD systems skip that loop and lose editability/validity.
+  - Reported CADENA-RL vs SOV-CAD: median CD 0.15 vs 0.38, IoU 0.961 vs 0.84, invalid rate 0.3% vs 7.3%.
+  - Complements CADIR-style editable IR and domain CAD foundation models with an open MIT implementation path.
+- Caveat: Mesh→program reverse engineering is not automatically a full MCAD BRep semantic feature tree; some mechanical categories (e.g. tooling/gauges) remain hard. Watertight IoU assumptions need care for CAE handoff.
+- Possible use: Test CADENA outputs against FreeCAD/CadQuery/OpenFOAM boundary-name and edit-history contracts before treating RE as sim-ready geometry.
+- Maturity: paper + open-source (MIT, early stars)
+- Priority: High
+
+## TraceCAD — trace-guided repair for agentic CAD generation
+
+- Link: https://arxiv.org/abs/2608.03062
+- Type: Paper / verification-first recovery layer for CAD agents
+- Keywords: agentic CAD, repair, persistent recovery state, dependency-region search, SimpleCADAPI, FreeCAD macro
+- One-line summary: Adds a recovery layer that keeps requested features, modeling steps, failure evidence, and candidate outcomes as persistent state, then repairs localized dependency regions under execution and preservation checks.
+- Why it matters:
+  - Correction loops often lose which requirements already passed, which ops failed, and what was tried — TraceCAD treats that evidence as first-class state.
+  - Ablations: removing persistent state nearly halves recovery; removing localized search more than doubles geometric regression and doubles code-agent invocations.
+  - Runtime notes point at SimpleCADAPI + FreeCAD-compatible macros — a practical bridge next to editable IR work.
+- Caveat: Dedicated public TraceCAD repo not found at curation (paper-only); depends on SimpleCADAPI (AGPL). Backend-LLM sensitive; geometric IoU/CD/HD ≠ manufacturing/printability gates.
+- Possible use: Steal the harness contract (state + local search + preservation checks + skill memory) even before official code lands; pair with CADIR/CADENA artifact contracts.
+- Maturity: paper-only / code unavailable at curation
+- Priority: High
+
+## Drawing-Recode — annotation grounding for raster 2D CAD → parametric code
+
+- Link: https://arxiv.org/abs/2607.27558
+- Type: Paper / manufacturing drawing digitization
+- Keywords: raster CAD drawings, dimension annotations, annotation grounding loss, parametric CAD sequences, manufacturing digitization
+- One-line summary: Recovers parametric CAD sequences from raster 2D drawings by explicitly grounding dimensional annotations to geometry via cross-attention and an Annotation Grounding Loss.
+- Why it matters:
+  - Pre-digital drawing archives are a real industrial bottleneck; many CAD codegen systems ignore or weakly use dimension text.
+  - Under noise, reported MCD rise is about +3.7% vs +18.9% for a CAD2Program-style baseline.
+  - Useful citation for “annotation-geometry binding” as a missing contract in drawing-to-CAD agents.
+- Caveat: Authors note scanned industrial drawings remain limited/artificial; no public code/data harvested at curation.
+- Possible use: Watch for code/data; use as a checklist item when evaluating drawing digitization agents (dims must bind to features, not only look readable).
+- Maturity: paper-only
+- Priority: Medium
+
 ## CADIR — cross-backend editable IR for agentic CAD
 
 - Link: https://arxiv.org/abs/2608.00891
