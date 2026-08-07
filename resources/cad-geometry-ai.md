@@ -1,5 +1,21 @@
 # CAD, Geometry & AI-assisted Design
 
+## Ortho2CAD — orthographic drawings to editable CadQuery
+
+- Link: https://arxiv.org/abs/2607.08891
+- Code: https://github.com/AdityaJoglekar/Ortho2CAD
+- Type: Paper + open VLM CAD reconstruction workflow
+- Keywords: orthographic drawings, CadQuery, VLM, geometry-grounded RL, hidden lines, parametric CAD
+- One-line summary: Translates raster first-angle orthographic drawings with hidden lines and dimensions into editable CadQuery programs via supervised fine-tuning and geometry-grounded reinforcement learning.
+- Why it matters:
+  - Much industrial geometry intent still lives as 2D drawings; CAE needs parametric 3D, not mesh-only reconstructions.
+  - Reports 100% syntactic validity on evaluated settings and >7% average relative IoU gain vs next-best baseline.
+  - Complements Drawing-Recode / CADENA / CADIR with an open drawing→code path.
+- Caveat: IoU/validity ≠ manufacturing, BRep feature semantics, or sim-ready watertight geometry. License null via GitHub API at curation — verify before redistribution.
+- Possible use: Test Ortho2CAD CadQuery outputs against FreeCAD/mesh/BC naming contracts before treating drawings as automatic CFD geometry sources.
+- Maturity: paper + open repo (early)
+- Priority: High
+
 ## CADENA — stepwise CAD reverse engineering
 
 - Link: https://arxiv.org/abs/2608.00799

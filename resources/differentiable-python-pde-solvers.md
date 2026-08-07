@@ -2,6 +2,21 @@
 
 JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inverse/design workflows, and fast research prototypes.
 
+## Hybrid-Joint — differentiable solver-in-the-loop WMLES closures
+
+- Link: https://arxiv.org/abs/2607.17357
+- Type: Paper / differentiable hybrid neural-CFD framework
+- Keywords: differentiable CFD, WMLES, joint SGS-wall learning, reverse-mode through solver, TBL
+- One-line summary: Backpropagates low-order statistic losses through a differentiable flow solver so neural SGS and wall closures are optimized consistently against the coupled resolved field.
+- Why it matters:
+  - Offline residual fitting ignores solver–closure–numerics coupling that dominates coarse WMLES.
+  - Demonstrates joint optimization necessity via ablations and multi-Re a posteriori transfer.
+  - Pattern-compatible with other differentiable residual substrates (FESOM2-JAX, adjoint plant twins).
+- Caveat: No public code at harvest; research TBL setting rather than industrial multiphysics product mesh.
+- Possible use: Cite when arguing CFD-ML closures must be trained through the discrete solver path used at deploy time.
+- Maturity: paper-only
+- Priority: High
+
 ## FESOM2-JAX — differentiable unstructured FV ocean–sea-ice shadow
 
 - Link: https://arxiv.org/abs/2608.01546

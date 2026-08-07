@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## Multi-granularity conformal prediction for automotive aero neural operators
+
+- Link: https://arxiv.org/abs/2607.17297
+- Code: https://github.com/DevinJia19/Multi-Granularity-Conformal-Prediction-for-Reliable-Neural-Operator-Automotive-Aerodynamic-Surrogate
+- Type: Paper + early open reliability layer for aero surrogates
+- Keywords: conformal prediction, automotive aerodynamics, DrivAerML, neural operator, surface WSS, drag uncertainty
+- One-line summary: Converts deterministic neural-operator Cd / pressure / WSS predictions into calibrated case-level and spatially adaptive conformal intervals for follow-up CFD prioritization on DrivAerML.
+- Why it matters:
+  - Surrogate dashboards need “where not to trust” maps, not only mean-field beauty.
+  - OOF conformal aggregation stabilizes coverage variance; point-adaptive residual normalization narrows surface intervals (~23% pressure, ~25–27% WSS width reductions in reported OOF setting) near nominal 90% coverage.
+  - Pairs cleanly with Modelassay-style license-to-deploy language for design-loop surrogates.
+- Caveat: Early public repo (low stars, license null via API at fetch). Finite-sample conformal guarantees still assume exchangeability and do not replace CFD verification budget.
+- Possible use: Prototype conformal residual maps on Urban_Flighter / aero surrogate outputs before green-lighting geometry candidates.
+- Maturity: paper + early public code
+- Priority: High
+
 ## Multimodal AR transformer surrogate for geological CO₂ storage UQ
 
 - Link: https://arxiv.org/abs/2608.02629

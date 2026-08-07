@@ -2,6 +2,37 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## TIDE — 3D DNS ensembles as turbulence-ML acceptance floor
+
+- Link: https://arxiv.org/abs/2608.04222
+- Code: https://github.com/Dyloong1/TIDE-dataset-benchmark
+- Dataset: https://huggingface.co/datasets/ydai17/TIDE
+- Type: Turbulence benchmark / generative & operator forecasting substrate
+- Keywords: 3D turbulence, DNS, ensemble trajectories, rollout fidelity, spectral metrics, SciML
+- One-line summary: Positions 3D incompressible DNS ensembles with equation-level residual checks as the turbulence-ML testbed where pointwise accuracy is not enough.
+- Why it matters:
+  - Makes “accuracy ≠ physical fidelity” and “single realization ≠ dynamics learning” measurable rather than rhetorical.
+  - Forced/decay and multi-axis generalization splits are stronger than random holdouts for operator/generative flow models.
+- Caveat: Not a wall-bounded industrial CFD mesh benchmark; storage footprint is large.
+- Possible use: Cite next to Neptuna/HERO when arguing multi-metric turbulence rollout gates.
+- Maturity: paper + MIT code + CC-BY-4.0 data
+- Priority: High
+
+## Hybrid-Joint — joint differentiable SGS + wall closures for WMLES
+
+- Link: https://arxiv.org/abs/2607.17357
+- Type: Paper / differentiable hybrid neural-CFD closure learning
+- Keywords: WMLES, SGS closure, wall model, differentiable CFD, joint training, turbulent boundary layer
+- One-line summary: Learns subgrid and wall closures jointly inside a differentiable flow solver as composed neural operators plus fixed structure-preserving layers, using low-order statistics only.
+- Why it matters:
+  - Treats SGS, wall model, and discretization as coupled through the resolved field rather than as independent offline fits.
+  - Reports a posteriori TBL tests across Re_θ≈600–6500 with >4× Re extrapolation, log-law recovery without imposing it, and spectral recovery without spectral training losses.
+  - Ablations show single-closure learning is insufficient — a strong pattern for solver-in-the-loop acceptance.
+- Caveat: Paper-only at curation; complex-geometry product CFD still needs separate gates.
+- Possible use: Cite when defining joint-closure training contracts for wall-bounded LES surrogates.
+- Maturity: paper-only
+- Priority: High
+
 ## Round-Trip Consistency — bidirectional diffusion predicts own rollout error
 
 - Link: https://arxiv.org/abs/2608.00675

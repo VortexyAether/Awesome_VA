@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## Multi-fidelity neural operators under non-trivial fidelity differences
+
+- Link: https://arxiv.org/abs/2608.04708
+- Type: Paper / multi-fidelity neural-operator strategy benchmark
+- Keywords: multi-fidelity, neural operator, transfer learning, residual learning, LF-HF mismatch, autoregressive PDE
+- One-line summary: Benchmarks two-step, residual, intermediate, and transfer multi-fidelity neural-operator recipes on PDE suites that include non-trivial LF–HF governing-equation and temporal mismatches, not only grid coarsening.
+- Why it matters:
+  - Industrial multi-fidelity often looks more like RANS↔LES physics mismatch than simple mesh downsampling.
+  - Finds transfer learning (LF-trained weights as HF initialization) consistently strongest, while piping LF predictions into HF models can amplify error under large discrepancy — especially autoregressive settings.
+  - Useful antidote to “any multi-fidelity stack helps” claims.
+- Caveat: No public code harvested; controlled PDE cases still leave full CFD toolchain transfer open.
+- Possible use: Default multi-fidelity recipe language for CFD-ML: prefer transfer priors; distrust LF-output chaining under physics mismatch.
+- Maturity: paper-only
+- Priority: High
+
 ## Convex Neural Energy Elements — geometry-param NO + FEM assembly
 
 - Link: https://arxiv.org/abs/2608.02036

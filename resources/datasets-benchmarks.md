@@ -2,6 +2,24 @@
 
 Flow datasets, SciML benchmarks, reproducibility references, metrics, and evaluation protocols.
 
+## TIDE — 3D incompressible DNS ensemble benchmark
+
+- Link: https://arxiv.org/abs/2608.04222
+- Code: https://github.com/Dyloong1/TIDE-dataset-benchmark
+- Dataset: https://huggingface.co/datasets/ydai17/TIDE
+- DOI: https://doi.org/10.5281/zenodo.21589489
+- Type: 3D turbulence DNS corpus + SciML benchmark harness
+- Keywords: 3D turbulence, DNS ensemble, neural operator benchmark, physical fidelity, forced/decay transfer, residual checks
+- One-line summary: Releases a 256³ fp64 incompressible DNS corpus with independent ensembles across 15 configurations and a five-task benchmark that scores physical fidelity beside pointwise error.
+- Why it matters:
+  - Breaks the 2D / single-realization habit that lets models fit one trajectory’s statistics without learning dynamics.
+  - Main forecasting configs: learned baselines barely beat persistence and still make about twice the error of a spectral solver given the true equations; low RMSE can still warp small scales.
+  - Forced→decay split exposes missing conditioning on external drive — a reusable acceptance idea for CFD surrogates under regime change.
+- Caveat: Periodic-box spectral DNS, not wall-bounded product meshes; ~2.6 TB corpus. Code MIT / data CC-BY-4.0; early stars at curation.
+- Possible use: Adopt TIDE-style ensemble + residual + fidelity metrics when designing Urban_Flighter / CFD-ML acceptance gates beyond field RMSE.
+- Maturity: paper + public code/dataset (early)
+- Priority: High
+
 ## Bound-preserving FV WENO multiphase (classical trust substrate)
 
 - Link: https://arxiv.org/abs/2608.00746
