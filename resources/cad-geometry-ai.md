@@ -1,5 +1,35 @@
 # CAD, Geometry & AI-assisted Design
 
+## OmniMech — industrial mechanical drawing→CAD multimodal benchmark
+
+- Link: https://arxiv.org/abs/2608.05539
+- Type: Paper / industrial drawing-to-CAD benchmark (data release pending)
+- Keywords: mechanical drawings, GD&T, orthographic, B-rep, STEP, VLM, executable CAD, manufacturing
+- One-line summary: Proposes a million-scale industrial mechanical benchmark with 251k+ fully dimensioned and toleranced orthographic drawings paired with native CAD, multi-view, mesh, STEP, B-rep, and semantic annotations for executable CAD evaluation.
+- Why it matters:
+  - Moves VLM CAD eval beyond coarse general 3D objects toward millimeter tolerances and manufacturing drawings.
+  - Forces metrics beyond visual mesh dumps: executable CAD validity, dimensional/tolerance grounding, multi-view consistency.
+  - Complements Ortho2CAD / Drawing-Recode / CADENA with an industrial GD&T-oriented test surface.
+- Caveat: Data/eval/tool URLs not verified live at curation — Watch / Save-when-released. cs.CV venue gravity; do not treat IoU leaderboards as BRep kernel validity.
+- Possible use: Revisit when dataset drops; add STEP/B-rep validity + dimension consistency gates to VA CAD-agent eval checklists.
+- Maturity: paper; dataset promised
+- Priority: High
+
+## RA-CAD — post-execution critique for state-aware text-to-CAD
+
+- Link: https://arxiv.org/abs/2608.05714
+- Type: Paper / agentic CAD Generate–Execute–Critique–Rewrite loop
+- Keywords: text-to-CAD, ReAct agent, post-execution critique, state-aware repair, parametric CAD
+- One-line summary: Learns how post-execution critique is interpreted and turned into corrective rewrite actions inside a state-aware Generate–Execute–Critique–Rewrite CAD agent loop.
+- Why it matters:
+  - External or frozen critics do not guarantee the agent uses feedback effectively across steps.
+  - Complements TraceCAD (persistent repair state) and CADENA (stepwise RE) with a critique-utilization layer after code execution.
+  - Aligns agentic CAD with verification-after-execute rather than one-shot program emit.
+- Caveat: No first-party monorepo harvested at curation; Issue Board HTML metric columns still need a clean PDF table map before hard numeric claims.
+- Possible use: Steal the harness shape (execute → state-aware critique → rewrite reward) when designing FreeCAD/CadQuery agent loops; Save when code lands.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Ortho2CAD — orthographic drawings to editable CadQuery
 
 - Link: https://arxiv.org/abs/2607.08891

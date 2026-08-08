@@ -1,5 +1,20 @@
 # Optimization for Scientific Machine Learning
 
+## SEAM — global consistency beyond local SciML accuracy
+
+- Link: https://arxiv.org/abs/2608.05702
+- Type: Paper / explanation-admissibility audit framework
+- Keywords: SciML validation, explanation consistency, sheaf obstruction, multi-region audit, FNO OOD monitoring
+- One-line summary: Introduces Scientific Explanation-Admissibility Machines (SEAM/SEAM-Ω) that test whether locally accurate explanations across regions, sensors, or regimes assemble into one globally admissible scientific account.
+- Why it matters:
+  - Local split accuracy and single-prediction explanations can look fine while neighboring patches disagree on overlaps.
+  - Turns disagreement into a channel-resolved obstruction and separates inconsistency from non-identifiability; useful next to Modelassay-style license-to-deploy language.
+  - Reports detection of incompatible explanations on synthetic PDEs and OOD FNO monitoring even when local predictions are accurate.
+- Caveat: Theory-heavy sheaf/obstruction framing; not a one-line CFD CI metric yet. Treat as audit architecture, not tomorrow’s default dashboard KPI.
+- Possible use: Cite when multi-region/sensor/regime CFD-ML patches need a global consistency gate beyond per-patch RMSE.
+- Maturity: paper-only
+- Priority: High
+
 ## Multi-granularity conformal prediction for automotive aero neural operators
 
 - Link: https://arxiv.org/abs/2607.17297

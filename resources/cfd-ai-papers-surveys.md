@@ -2,6 +2,36 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Newton–Krylov correction of steady CFD surrogates (OOD airfoils)
+
+- Link: https://arxiv.org/abs/2608.04400
+- Type: Paper / solver-coupled surrogate deploy pattern
+- Keywords: CFD surrogate, Newton-Krylov, OOD geometry, residual convergence, airfoil optimization, warm-start
+- One-line summary: Uses neural surrogate predictions as high-quality initial guesses for Newton–Krylov iterations so steady CFD keeps classical residual convergence under OOD geometries from real optimization trajectories.
+- Why it matters:
+  - Practical CFD-ML deploy failure mode is OOD geometry, not offline holdout RMSE.
+  - Abstract reports median residual L₂ ratio improved by over seven orders of magnitude on OOD airfoils, with lower field/aero error, plus 15.5× generation-level speedup in supercritical airfoil optimization vs CFD.
+  - Reusable harness pattern: fast global prediction + terminal classical solve, not surrogate-alone green lights.
+- Caveat: No public code harvested at curation; steady CFD scope; 3D flying-wing extension is exploratory. Confirm solver family/details from the PDF before product claims.
+- Possible use: Cite when defining Urban_Flighter / CFD surrogate acceptance as residual + force error under geometry shift, with optional warm-start acceleration.
+- Maturity: paper-only
+- Priority: High
+
+## AC-PINN — artificial compressibility PINN for unsteady Navier–Stokes
+
+- Link: https://arxiv.org/abs/2608.04191
+- Type: Paper / PINN formulation with honest unsteady failure modes
+- Keywords: PINN, artificial compressibility, incompressible Navier-Stokes, cylinder wake, shedding, data assimilation
+- One-line summary: Relaxes the divergence-free constraint with artificial compressibility so PINN residuals become ordinary, then shows plain forward AC-PINN collapses to a steady symmetric cylinder branch unless sparse velocity data are assimilated.
+- Why it matters:
+  - Counterweight to residual-only “PINN solved NS” claims: Re=100 cylinder without data does not recover von Kármán shedding.
+  - Quantifies ε–divergence/velocity error trade-offs on Taylor–Green; with sparse sensors, wake and frequency recover relative to a FEM reference.
+  - Useful validation honesty template for any unsteady fluid PINN review.
+- Caveat: 2D classical benches only; AC parameter is problem-dependent; recovery quality is bounded by the reference solver fidelity.
+- Possible use: Require shedding/limit-cycle diagnostics (not only residual norms) before accepting unsteady NS-PINN results into VA literature notes.
+- Maturity: paper-only
+- Priority: High
+
 ## Interpreting CFD surrogates through sparse autoencoders
 
 - Link: https://arxiv.org/abs/2507.16069
