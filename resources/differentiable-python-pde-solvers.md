@@ -2,6 +2,37 @@
 
 JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inverse/design workflows, and fast research prototypes.
 
+## Discrete energy as exact label-free FE surrogate objective (FE-JEPA)
+
+- Link: https://arxiv.org/abs/2608.05437
+- Code: https://github.com/HymnOfLight/FE-JEPA
+- Type: Paper + early open theory/code note for FE surrogates
+- Keywords: finite element, label-free training, discrete potential energy, stiffness norm, elastostatics, residual learning
+- One-line summary: Proves that assembled discrete potential energy is an exact label-free training objective for linear elastostatics FE surrogates, sharing the unique minimizer and gradients with supervised stiffness-norm regression.
+- Why it matters:
+  - Residual-only FE surrogate training can look good in L² while collapsing modes that matter in the energy/stiffness norm.
+  - Gives a clean theory floor for “no reference solve” training when the discrete energy is available from the same assembly used at deploy.
+  - Executable falsification protocol on a small probe set makes the claim checkable rather than only rhetorical.
+- Caveat: Linear elastostatics scope; JEPA-style extensions are outlook. Repo license null / ★0 at curation → Watch, not product Save.
+- Possible use: Cite when arguing FE/CFD surrogate losses should match the discrete norm used for engineering decisions (energy, residual, force), not only field RMSE.
+- Maturity: paper + immature public repo
+- Priority: High
+
+## DMGS — differentiable multigrid solver for variational inference
+
+- Link: https://arxiv.org/abs/2608.00760
+- Type: Paper / differentiable elliptic multigrid building block
+- Keywords: multigrid, adjoint, JAX, variational inference, diffusion-absorption, NIFTy, JVP, VJP
+- One-line summary: Derives full multigrid hierarchy adjoints by hand for steady diffusion–absorption and exposes efficient JVP/VJP operators to JAX for PDE-constrained variational inference.
+- Why it matters:
+  - Many Bayesian/UQ loops need solver-native Jacobian products, not black-box AD through an opaque iterative solve.
+  - Reports generalization across 32 validation datasets and lower peak memory than a JAX-native multigrid path for the hand adjoint.
+  - Pattern-transferable to CAE twins that want reverse-mode through classical linear solves.
+- Caveat: Steady diffusion–absorption class; not a drop-in NS/OpenFOAM stack.
+- Possible use: Cite next to FESOM2-JAX / Hybrid-Joint when designing adjoint-ready residual substrates for calibration and UQ.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Hybrid-Joint — differentiable solver-in-the-loop WMLES closures
 
 - Link: https://arxiv.org/abs/2607.17357

@@ -66,17 +66,22 @@ AI-assisted OpenFOAM setup, automation, case validation, post-processing, and en
 - Maturity: early open-source plugin
 - Priority: High
 
-## AutoFOAM
+## AutoFOAM (paper + agent) — OOD execution gates and Physics-Validation Gap
 
-- Link: https://github.com/AGN000/AutoFOAM
-- Type: Self-refining autonomous OpenFOAM case-authoring agent
+- Link: https://arxiv.org/abs/2608.00003
+- Code: https://github.com/AGN000/AutoFOAM
+- Cases: https://github.com/AGN000/FoamAgentCases
+- Type: Paper + self-refining autonomous OpenFOAM case-authoring agent
+- Keywords: OpenFOAM, LLM agent, self-evolution, OOD execution, FOAM FATAL, solver routing, physics-validation gap, mesh templates
+- One-line summary: Fine-tunes an LLM OpenFOAM agent on 252 prompts across 7 solvers and 13 mesh templates, then reports OOD execution metrics while explicitly separating run success from physics fidelity.
 - Why it matters:
-  - Targets natural-language-to-OpenFOAM workflows, including autonomous mesh generation through the gmsh OCC API.
-  - Explicitly frames self-refinement and anti-collapse defenses, which are important for long-horizon CFD case setup agents.
-  - Useful as a reference or stress-test target when comparing OpenFOAM MCP/plugin approaches, not yet as a trusted production workflow.
-- Possible use: Evaluate generated cases against deterministic mesh/case validation gates and compare with sim-plugin-openfoam and AI CFD Scientist artifact contracts.
-- Maturity: early open-source research prototype
-- Priority: Medium
+  - Moves NL→OpenFOAM automation from demo videos to tabulated OOD gates: 110/110 cases without FOAM FATAL, 106/110 exact solver routing (96.4%), mean execution reward r=0.64.
+  - Seven-layer self-evolution (surgical FATAL patch, DPO when enough pairs, anchor mix, active learning on weakest family) is a reusable harness shape for long-horizon case setup.
+  - Authors keep a **Physics-Validation Gap**: compile/run success is not residual, y⁺, or QoI acceptance — the right framing for Urban_Flighter / OpenFOAM agent checklists.
+- Caveat: Main agent repo still license-null and low stars at 2026-08-09 refresh; FoamAgentCases is MIT. Do not treat FATAL-free rates as physics green lights.
+- Possible use: Cite when defining agent acceptance as dual-layer (execution gates + physics QoI). Stress-test against sim-plugin-openfoam / AI CFD Scientist artifact contracts; Save product path only after license clarifies.
+- Maturity: paper + early open-source research prototype
+- Priority: High
 
 ## CFDTwin
 

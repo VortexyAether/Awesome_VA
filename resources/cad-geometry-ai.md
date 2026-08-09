@@ -1,5 +1,20 @@
 # CAD, Geometry & AI-assisted Design
 
+## CADCON — wrong design intent can be worse than none
+
+- Link: https://arxiv.org/abs/2607.23191
+- Type: Paper / causal audit of design-intent header conditioning for CAD program completion
+- Keywords: CadQuery, design intent, header conditioning, derangement control, executable B-rep, LoRA, text-to-CAD
+- One-line summary: Tests whether CAD code LLMs actually use design-intent headers under execution-level B-rep scoring, with a derangement-trained control that breaks circular “header helps” claims.
+- Why it matters:
+  - Wrong intent can hurt more than no intent: wrong-header adherence falls below no-header (0.43 → 0.30/0.21 text/token at 40% prefix in reported conditional completion).
+  - Derangement control stays immune to wrong headers (interaction p≤4.2e-3 across 3 seeds) — a reusable evaluation pattern for any intent/tool schema.
+  - Unconditioned 0% prefix baseline is 0/100 executable, so “agent wrote CAD” still needs executable gates.
+- Caveat: Small coder model (1.5B LoRA) and five-feature header set; not full industrial GD&T. First-party monorepo not harvested at curation.
+- Possible use: Steal wrong/masked/none + executable B-rep assertion arms when adding intent tools to FreeCAD/CadQuery agents; do not score “header present” as a win by itself.
+- Maturity: paper-only
+- Priority: High
+
 ## OmniMech — industrial mechanical drawing→CAD multimodal benchmark
 
 - Link: https://arxiv.org/abs/2608.05539

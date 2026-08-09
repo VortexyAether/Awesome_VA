@@ -1,5 +1,35 @@
 # Optimization for Scientific Machine Learning
 
+## FALM-PINN — Fourier-enhanced alternating Levenberg–Marquardt
+
+- Link: https://arxiv.org/abs/2608.05892
+- Type: Paper / PINN training optimizer with Fourier feature decoupling
+- Keywords: PINN, spectral bias, Levenberg-Marquardt, alternating optimization, Fourier features, multi-scale PDE
+- One-line summary: Decouples representation learning (Fourier basis upper level) from coefficient fitting (LM lower level) to attack PINN spectral bias and representation–coefficient coupling.
+- Why it matters:
+  - Reframes many “PINN architecture” failures as optimization structure problems.
+  - Reports relative L² gains up to ~2 orders vs strong baselines; Klein–Gordon harvest shows Vanilla ~8.11e-3 vs FALM ~4.42e-4 after alternating phase with multi-run stats.
+  - Useful counterweight to residual-only leaderboards without optimizer protocol disclosure.
+- Caveat: No public trainer harvested at curation; classical PDE suite, not industrial mesh CFD.
+- Possible use: Cite when reviewing PINN claims or designing VA training recipes that separate feature bases from coefficient solves.
+- Maturity: paper-only
+- Priority: High
+
+## SCORE — self-concordant quasi-Newton PINN training
+
+- Link: https://arxiv.org/abs/2608.04206
+- Type: Paper / quasi-Newton optimizer for residual PINNs
+- Keywords: PINN, quasi-Newton, self-concordance, secant geometry, Burgers, nonconvex residual
+- One-line summary: Stabilizes high-accuracy quasi-Newton PINN refinement with decrement-coupled shifted secant geometry inspired by self-concordant local metrics.
+- Why it matters:
+  - Residual PINN objectives are often indefinite, near-singular, and poorly scaled — BFGS-style refinement fails for structural reasons.
+  - Burgers harvest: SCORE rel L² 2.25e-9 vs SSBroyden 1.40e-8 vs BFGS 1.56e-8 with multi-block mean/std reporting.
+  - Pairs with FALM as the “optimizer axis” of PINN trust, not architecture name races.
+- Caveat: No code harvested; four nonlinear PDE classical suite only.
+- Possible use: Require optimizer identity + multi-seed residual tables before accepting high-precision PINN numbers into literature notes.
+- Maturity: paper-only
+- Priority: Medium
+
 ## SEAM — global consistency beyond local SciML accuracy
 
 - Link: https://arxiv.org/abs/2608.05702
