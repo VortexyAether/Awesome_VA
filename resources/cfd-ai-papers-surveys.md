@@ -2,6 +2,21 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Asymptotic-preserving adjoint UGKS for sensitivity analysis
+
+- Link: https://arxiv.org/abs/2608.03236
+- Type: Paper / multiscale adjoint method for continuum–rarefied gas dynamics
+- Keywords: UGKS, adjoint, asymptotic-preserving, sensitivity analysis, UQ, multiscale kinetic, dual consistency
+- One-line summary: Builds a dual-consistent discrete adjoint for the unified gas-kinetic scheme with an asymptotic-preserving macroscopic projection and microscopic lifting so gradients stay consistent across continuum and rarefied regimes.
+- Why it matters:
+  - Multiscale UQ/sensitivity fails when adjoints ignore stiff cross-scale coupling or inherit under-relaxation/time-step pollution from the forward solver.
+  - Provides a kinetic counterpart to engineering CFD adjoint hygiene: dual consistency + AP structure, not black-box reverse-mode only.
+  - Cavity Re 100/1000 and thermal-disturbance benches support method claims (method paper, not a single % leaderboard).
+- Caveat: Rarefied/kinetic focus; no public code linked at curation; RANS/airfoil product CFD transfer is separate work.
+- Possible use: Cite when designing multiscale UQ or sensitivity loops where surrogate/adjoint gradients must respect regime coupling.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Newton–Krylov correction of steady CFD surrogates (OOD airfoils)
 
 - Link: https://arxiv.org/abs/2608.04400

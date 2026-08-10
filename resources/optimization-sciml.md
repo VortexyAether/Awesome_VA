@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## scikit-rom — open Python platform for projection-based ROM
+
+- Link: https://arxiv.org/abs/2608.04960
+- Code: https://github.com/suparnob100/scikit-rom
+- Type: Paper + early open tooling (education / prototype)
+- Keywords: ROM, POD, Galerkin, hyper-reduction, DEIM, ECSW, offline-online, accuracy report, Python
+- One-line summary: Exposes projection-based reduced-order modeling as an inspectable Python stack from snapshot/POD/Galerkin through offline-online decomposition, hyper-reduction, and explicit Rel L2/RMSE/MAE/R² accuracy reports.
+- Why it matters:
+  - Many ROM stacks hide the multi-stage workflow behind GUIs or monolithic solvers; teaching and prototype harnesses need readable intermediate artifacts.
+  - Useful template for surrogate acceptance contracts: report sample-wise Rel L2 / RMSE / MAE / R² instead of a single opaque “ROM error.”
+  - GitHub `suparnob100/scikit-rom` ★2, pushed 2026-07-15 — live early code surface.
+- Caveat: **No SPDX license** at API check → do not product-Save or depend until clarified. Demo cases are beam/linear teaching scale, not industrial CFD hyper-reduction claims.
+- Possible use: Smoke-test install + tiny hyper-reduction example after license clarification; steal accuracy-report schema for VA ROM/surrogate harness notes.
+- Maturity: prototype / watchlist (license blocked)
+- Priority: Medium
+
 ## FALM-PINN — Fourier-enhanced alternating Levenberg–Marquardt
 
 - Link: https://arxiv.org/abs/2608.05892

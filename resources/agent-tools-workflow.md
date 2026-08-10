@@ -1,5 +1,21 @@
 # Agent Tools & Research Workflow
 
+## OPERA — operator-residual feedback for LM agents (optical experiments)
+
+- Link: https://arxiv.org/abs/2608.05990
+- Code: https://github.com/ningxu1995/OPERA
+- Type: Paper + open method artifacts (MIT)
+- Keywords: agent verification, operator residual, score-only feedback, physical residual, optical experiments, autonomous science
+- One-line summary: Represents experimental actions as optical operators and scores outcomes with physically interpretable residuals so language-model agents optimize withheld physical performance instead of proxy scores alone.
+- Why it matters:
+  - Score-only loops produced score↑ without physical improvement in **23.6–39.0%** of decisions vs **0.9–1.9%** under operator-residual feedback (three optical tasks; bootstrap 95% CI reported).
+  - Target maintenance **75.8%** vs 33.9–60.1% reference policies — same engineering axis as AutoFOAM’s Physics-Validation Gap: pass@k / reward / LLM judge ≠ physics DONE.
+  - GitHub `ningxu1995/OPERA` ★1, **MIT**, pushed 2026-07-23 — small but license-clear method transfer substrate.
+- Caveat: Optics domain, not CFD; residual operators are problem-specific. Transfer is a harness design pattern (residual/force/QoI as first-class feedback), not a drop-in OpenFOAM agent.
+- Possible use: Cite when refusing score-only agent acceptance; map residual schema ideas onto OpenFOAM residual/force-coeff gates in Urban_Flighter / CAE harness design notes.
+- Maturity: paper + early open artifacts
+- Priority: High
+
 ## EvoPINN — agentic discovery of executable PINN algorithms
 
 - Link: https://arxiv.org/abs/2607.26490

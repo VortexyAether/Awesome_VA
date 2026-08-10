@@ -1,5 +1,20 @@
 # CAD, Geometry & AI-assisted Design
 
+## WDR — training-free wireframe anomaly detection & repair for valid B-Reps
+
+- Link: https://arxiv.org/abs/2608.04955
+- Type: Paper / CAD validity gate (training-free intermediate post-process)
+- Keywords: B-Rep, wireframe, validity, GTAD, OCCT, generative CAD, anomaly repair, training-free
+- One-line summary: Intervenes at the intermediate wireframe stage of multi-stage B-Rep generators with a Geometric-Topology Anomaly Detector plus energy-guided selective repair, improving downstream kernel validity without retraining the generator.
+- Why it matters:
+  - Wireframe self-intersections, edge collapses, and disconnected vertices propagate into invalid solids; “pretty mesh” metrics miss this failure mode.
+  - Issue Board HTML tables: DeepCAD-family Valid **79.5→95.6** (DTGBrepGen), **84.2→97.0** (Stitch-A-Shape), **85.3→97.4** (BrepForge); ABC DTG **68.1→83.9** with Novel/Unique retained near 99%; GTAD 3-signal F1 **81.97%**.
+  - Reusable harness pattern: generate → **intermediate geometry gate** → selective repair → execute, complementary to TraceCAD/RA-CAD critique and CADCON intent audits.
+- Caveat: cs.CV venue framing; public code/license not on abs at curation; Valid% depends on the kernel checker; industrial feature-tree CAD transfer unproven.
+- Possible use: Cite when defining FreeCAD/CadQuery agent acceptance as OCCT-class Valid% (plus Novel/Unique), not CD/EMD/F-score alone; design wireframe/topology gates before solidization.
+- Maturity: paper-only
+- Priority: High
+
 ## CADCON — wrong design intent can be worse than none
 
 - Link: https://arxiv.org/abs/2607.23191
