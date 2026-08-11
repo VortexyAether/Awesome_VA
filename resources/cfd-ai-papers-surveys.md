@@ -2,6 +2,21 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Adjoint shape optimization of oscillatory rarefied gas flows
+
+- Link: https://arxiv.org/abs/2608.06910
+- Type: Paper / multiscale AP adjoint + MEMS drag shape optimization
+- Keywords: adjoint, asymptotic-preserving, GSIS, rarefied gas, MEMS, shape optimization, drag reduction, multiscale kinetic
+- One-line summary: Builds a fast-converging asymptotic-preserving adjoint GSIS with macroscopic synthetic equations so gradient-based shape optimization can cut oscillatory rarefied/MEMS gas damping across Knudsen–Strouhal regimes.
+- Why it matters:
+  - Multiscale design needs adjoints that stay consistent near continuum while retaining kinetic accuracy when rarefied — not black-box reverse mode on a single regime model.
+  - Paper HTML optimization tables report drag reductions of **35.5% / 44.3% / 52.6%** vs rounded initial geometry under stated constrained cases (oscillating cylinder / comb / accelerometer-family demos).
+  - Fourier analysis claims spectral radius <0.5 for the synthetic acceleration (error halved per iteration in the infinite-domain idealization).
+- Caveat: Rarefied MEMS scope; not RANS airfoil product CFD. No first-party public optimizer package found at curation — treat % as paper-reported.
+- Possible use: Cite next to AP-adjoint UGKS when writing multiscale UQ/sensitivity/shape-opt method notes with explicit QoI (drag/damping).
+- Maturity: paper-only
+- Priority: High
+
 ## Asymptotic-preserving adjoint UGKS for sensitivity analysis
 
 - Link: https://arxiv.org/abs/2608.03236

@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## CT-PIKAN — coordinate-transformed Physics-Informed KAN + autograd metrics
+
+- Link: https://arxiv.org/abs/2608.06660
+- Code: https://github.com/m-heravifard/CT-PIKAN
+- Type: Paper + early open MIT SciML solver scaffold
+- Keywords: PIKAN, PINN, Kolmogorov-Arnold, curvilinear coordinates, metric tensor, automatic differentiation, geometry-aware PDE
+- One-line summary: Solves PDEs on curvilinear domains by mapping to a regular computational chart and evaluating Jacobians/metric operators with autograd inside a physics-informed KAN loss — no hand-derived metric coefficients.
+- Why it matters:
+  - Cartesian PIKAN/PINN defaults fail the geometry bill on wavy/polar/non-orthogonal domains common in CAD-linked engineering.
+  - Makes differential-geometry operators an inspectable implementation path (AD metrics) rather than paper-only transformed PINNs.
+  - Public MIT scripts for 2D curvilinear heat/Poisson give a runnable starting point (repo ★0, pushed 2026-08-04).
+- Caveat: Classical elliptic/parabolic/hyperbolic benches only; not an industrial mesh-CFD/BC gate. Author accuracy/robustness narrative needs independent re-run before product claims.
+- Possible use: Smoke-test Poisson/heat scripts; prototype metric-aware residual stacks when Urban/CAD surfaces supply curvilinear charts.
+- Maturity: paper + early public code
+- Priority: High
+
 ## scikit-rom — open Python platform for projection-based ROM
 
 - Link: https://arxiv.org/abs/2608.04960

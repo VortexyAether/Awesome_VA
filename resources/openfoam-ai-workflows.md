@@ -2,6 +2,39 @@
 
 AI-assisted OpenFOAM setup, automation, case validation, post-processing, and engineering workflow orchestration.
 
+## openHFDIBRANS — IBM/fictitious-domain RANS for remesh-free TO
+
+- Link: https://arxiv.org/abs/2606.06135
+- Code: https://github.com/techMathGroup/openHFDIBRANS
+- Type: OpenFOAM research solver substrate (RANS + immersed boundary)
+- Keywords: OpenFOAM, immersed boundary, fictitious domain, RANS, wall functions, topology optimization, remesh-free, SIMPLE
+- One-line summary: Extends hybrid fictitious-domain immersed boundary to steady RANS with wall functions in OpenFOAM v8 so CFD-based shape/topology optimization can avoid frequent remeshing.
+- Why it matters:
+  - TO loops die on mesh regenerate cost long before surrogate accuracy becomes the bottleneck.
+  - Claims consistency with body-fitted CFD on BFS/Ahmed/NACA-style benches across two-equation RANS and Re \(10^1\)–\(10^6\).
+  - Live repo with applications, tutorials, and user guide — a concrete solver substrate agents could eventually call.
+- Caveat: **No SPDX license** at GitHub API check → do not product-Save. IBM+RANS cut-cell accuracy and industrial geometry families still need separate gates. Targets OpenFOAM.org v8.
+- Possible use: Tutorial smoke-test after license clarification; reference pattern for geometry-family optimization without remesh-every-design.
+- Maturity: paper + early public research code (license blocked)
+- Priority: High
+
+## PhyNiKCE — neurosymbolic agentic CFD (constraint-first setup)
+
+- Link: https://arxiv.org/abs/2602.11666
+- Code: https://github.com/EarlFan/PhyNiKCE
+- Related: https://github.com/EarlFan/ChatCFD
+- Type: Paper + early neurosymbolic OpenFOAM agent framework
+- Keywords: OpenFOAM, neurosymbolic agents, CSP, deterministic RAG, conservation constraints, context poisoning, trustworthy CFD automation
+- One-line summary: Decouples neural planning from a symbolic knowledge/CSP engine so CFD case setup is validated as constraints rather than pure semantic RAG, targeting conservation-aware autonomous OpenFOAM workflows.
+- Why it matters:
+  - Names the Semantic–Physical Disconnect: linguistically plausible setups that violate solvers/turbulence/BC constraints (“context poisoning”).
+  - Author-reported Gemini-2.5 practical-task gains: ~**96% relative** vs baselines, **−59%** self-correction loops, **−17%** tokens — useful as a hypothesis, not a green light.
+  - Sits on the dual track with Foam-Agent/AutoFOAM: setup/execution success still ≠ residual/QoI physics acceptance.
+- Caveat: PhyNiKCE GPL-3.0 ★1 (low activity); metrics are author-reported on selected tasks. ChatCFD sibling ★51 is the more visible lineage surface.
+- Possible use: Compare symbolic setup gates vs AutoFOAM Physics-Validation Gap when designing VA OpenFOAM agent harness checklists.
+- Maturity: paper + early open-source research prototype
+- Priority: Medium-High
+
 ## SoPlasmaFoam
 
 - Link: https://arxiv.org/abs/2607.05137

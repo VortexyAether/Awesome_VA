@@ -2,6 +2,21 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Symplectic Geometric Closure (SGC) — dual-cascade geometry as a closure constraint
+
+- Link: https://arxiv.org/abs/2608.06606
+- Type: Paper / structure-preserving turbulence closure theory
+- Keywords: symplectic geometry, SGS closure, dual cascade, Kraichnan, online stability, Hamiltonian subgrid transport, 2D turbulence
+- One-line summary: Derives a Symplectic Geometric Closure from multilayer stochastic models so unresolved degrees of freedom feed back through constrained Hamiltonian exchange that preserves dual-cascade geometry and online stability.
+- Why it matters:
+  - Data-driven SGS often fit residuals while losing the geometric architecture that makes inverse-energy / forward-enstrophy cascades and long-time coarse evolution possible.
+  - Reframes acceptance as geometric/structure gates (augmented enstrophy, pullback boundedness, Lie-transport subgrid velocity), not field RMSE alone.
+  - Connects to Kraichnan-type DIA operator architecture and classical \(k^{-5/3}\)/\(k^{-3}\) cascade admission in the dressed Eulerian theory.
+- Caveat: 2D theory-first (58 pages); no public code harvested; transfer to 3D wall-bounded industrial LES is unproven.
+- Possible use: Cite when defining learned-closure green lights as online stability + cascade/invariant diagnostics beside a posteriori spectra.
+- Maturity: paper-only
+- Priority: High
+
 ## TIDE — 3D DNS ensembles as turbulence-ML acceptance floor
 
 - Link: https://arxiv.org/abs/2608.04222
