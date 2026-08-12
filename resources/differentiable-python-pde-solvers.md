@@ -2,6 +2,22 @@
 
 JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inverse/design workflows, and fast research prototypes.
 
+## Reverse-sweep adjoints — differentiate the executed block-implicit solver
+
+- Link: https://arxiv.org/abs/2608.08559
+- Related substrate: https://github.com/NVIDIA/warp
+- Type: Paper / solver-level discrete adjoint method
+- Keywords: differentiable simulation, reverse-sweep adjoint, block implicit solver, discrete adjoint, implicit differentiation
+- One-line summary: Builds the exact discrete adjoint of a block-coordinate implicit solver by reversing the executed block updates, rather than unrolling AD through depth or assembling equation-level global adjoint systems.
+- Why it matters:
+  - Equation-level implicit differentiation differentiates the converged residual, not necessarily the finite algorithm that ran — a trust gap for solver-in-the-loop learning/control.
+  - Reverse-sweep keeps locality of the forward blocks and targets memory-constant reverse passes versus depth-growing unroll.
+  - Continues the OPERA/AutoFOAM axis into gradient space: proxy score ≠ physics residual, and “what you differentiate” must match deploy.
+- Caveat: Primary demos are graphics/elastodynamics; CFD SIMPLE/PISO-like ports are separate engineering. First-party paper monorepo not confirmed (Warp is substrate, not the paper package).
+- Possible use: Cite when designing adjoint/control loops that must audit the executed iterative algorithm, not only the continuous PDE.
+- Maturity: paper-only
+- Priority: High
+
 ## Discrete energy as exact label-free FE surrogate objective (FE-JEPA)
 
 - Link: https://arxiv.org/abs/2608.05437

@@ -2,6 +2,22 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Phase-drift ROM — autoregressive rollout error as accumulated phase drift
+
+- Link: https://arxiv.org/abs/2608.07189
+- Code: https://github.com/Syphonicc/phase-drift-rom
+- Type: Paper + open OpenFOAM→ROM ladder (MIT)
+- Keywords: ROM, CAE-LSTM, phase drift, vortex shedding, rollout stability, bluff-body wake, OpenFOAM
+- One-line summary: Shows that long-horizon latent ROM error on bluff-body wakes is highly structured phase drift at the shedding frequency, not unstructured noise, and corrects it with one-parameter phase realignment gated by an R² diagnostic.
+- Why it matters:
+  - One-step validation can look almost perfect while timing error of a few thousandths of a cycle drives long-horizon field error.
+  - Reports attractor amplitudes matched within ~**0.15%** RMS while **95–98%** of rollout error is pure phase error on Re 100–800 circular/square cylinders.
+  - Public MIT repo with OpenFOAM cases turns the diagnosis into a runnable acceptance ladder (train → diagnose phase → correct iff R² allows).
+- Caveat: Periodic bluff-body wakes only; do not wholesale-transfer to broadband turbulence or strongly transient regimes. Early ★0 repo / WIP surface.
+- Possible use: Add phase/spectrum + R² applicability gates next to HERO-style nRMSE@H when green-lighting wake/ROM surrogates.
+- Maturity: paper + early open code
+- Priority: High
+
 ## Symplectic Geometric Closure (SGC) — dual-cascade geometry as a closure constraint
 
 - Link: https://arxiv.org/abs/2608.06606

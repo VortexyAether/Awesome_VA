@@ -1,5 +1,22 @@
 # GPU OpenFOAM & HPC CFD
 
+## HORSES3D-GPU — high-order DG multi-GPU CFD substrate
+
+- Link: https://arxiv.org/abs/2607.26674
+- Code: https://github.com/horses-framework/HORSES3D
+- GPU fork: https://github.com/horses-framework/HORSES3D-gpu
+- Type: Paper + open high-order discontinuous Galerkin CFD (MIT)
+- Keywords: high-order DG, SEM, OpenACC, multi-GPU, H100, MMS, TGV, verification
+- One-line summary: Ports the open-source HORSES3D high-order DG CFD solver to multi-GPU systems with OpenACC while preserving Fortran structure, with MMS verification and canonical turbulent-flow validation.
+- Why it matters:
+  - Engineering-AI stacks still need trustworthy high-order data and verification substrates before surrogate claims.
+  - Element-local DG structure maps cleanly to GPU gangs/vector parallelism; performance reported on MareNostrum 5 H100 partitions.
+  - Live MIT repos: HORSES3D ★163, HORSES3D-gpu ★10 — license-clear Save candidates for HPC reference.
+- Caveat: Fortran/MPI/OpenACC build weight is real; GPU fork still early stars. Not an agent wrapper — a solver substrate.
+- Possible use: Track as high-fidelity generation/verification backbone next to GALÆXI/MARUT when comparing GPU CFD infrastructure for SciML datasets.
+- Maturity: paper + open-source
+- Priority: High
+
 ## OpenFOAM GPU acceleration guide
 
 - Link: https://openfoam.tistory.com/entry/OpenFOAM-%ED%95%B4%EC%84%9D-%EC%86%8D%EB%8F%84-25%EB%B0%B0-%EC%98%AC%EB%A6%AC%EB%8A%94-%EB%B2%95-GPU-%EA%B0%80%EC%86%8D%ED%99%94-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-2026

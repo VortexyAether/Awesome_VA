@@ -1,5 +1,36 @@
 # Neural Operators & Tensor Methods
 
+## MoNo — Multiscale Optimal Transport Neural Operator for general geometries
+
+- Link: https://arxiv.org/abs/2608.09764
+- Code: https://github.com/ZijiangY1116/MoNo
+- Type: Paper + open tooling (Apache-2.0)
+- Keywords: neural operator, optimal transport, token collapse, multiscale latent, general geometries, CoTAP
+- One-line summary: Stabilizes observation-to-latent soft assignment with entropy-regularized optimal transport so multiscale Transformer neural operators can deepen without token collapse on general geometries.
+- Why it matters:
+  - Learnable projection mechanisms can over-assign some latent tokens and leave others unused; imbalance amplifies across hierarchical latent spaces.
+  - Makes assignment stability a first-class architecture contract rather than a silent failure mode behind field RMSE.
+  - Public Apache-2.0 code (`ZijiangY1116/MoNo`, ★2, pushed 2026-08-11) plus HF dataset badge enables Test before product Save.
+- Caveat: Early stars; industrial mesh/BC gates may sit outside the 7-PDE research suite. Per-benchmark tables need PDF confirmation before hard numeric claims.
+- Possible use: Geometry-family neural-operator baseline next to GINO/Transolver; add OT/assignment diagnostics to Urban_Flighter surrogate acceptance.
+- Maturity: paper + early open code
+- Priority: High
+
+## ADEx-FNO — ambient-domain FNO on varying geometries with CFD initialization
+
+- Link: https://arxiv.org/abs/2608.08608
+- Type: Paper / hybrid neural-operator → classical CFD warm-start
+- Keywords: FNO, ambient domain, SDF, varying geometry, CFD initialization, hybrid residual
+- One-line summary: Embeds each physical domain in a fixed ambient hypercube via signed-distance extension so standard FNO layers stay geometry-agnostic, then hands the predicted field to a classical CFD solver as an initial condition.
+- Why it matters:
+  - Avoids trainable graph/deformation modules that entangle geometry handling with the spectral operator stack.
+  - Issue Board HTML harvest: held-out relative ℓ² **0.32%–0.77%** (2D/3D); CFD init-only improvement band **~7%–48.21%** depending on statistic — the solver remains the trust owner.
+  - Clean hybrid pattern: surrogate proposes, discrete PDE solver decides.
+- Caveat: No first-party monorepo harvested at curation; init-benefit QoI/time definitions need PDF table map. Not a full solver replacement claim.
+- Possible use: Cite when defining NO→OpenFOAM/JAX warm-start contracts and geometry-shift holdouts without mesh-aligned latent grids.
+- Maturity: paper-only
+- Priority: High
+
 ## Multi-fidelity neural operators under non-trivial fidelity differences
 
 - Link: https://arxiv.org/abs/2608.04708

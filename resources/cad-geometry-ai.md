@@ -1,5 +1,21 @@
 # CAD, Geometry & AI-assisted Design
 
+## Test-time CAD consensus selection — verifier-free geometric agreement
+
+- Link: https://arxiv.org/abs/2608.09706
+- Bench: https://github.com/huggingface/cadgenbench
+- Type: Paper + public CAD generation benchmark ecosystem
+- Keywords: text-to-CAD, test-time scaling, consensus selection, geometric agreement, topology, CadQuery, CadGenBench
+- One-line summary: Samples N parametric CAD programs, compiles them to 3D models, and selects the candidate that best agrees with the pool on geometry/topology — training-free test-time compute without an external verifier.
+- Why it matters:
+  - Multi-sample text-to-CAD only helps if selection is trustworthy; VLM verifiers add another failure surface.
+  - Siemens-authored method claims geometric-metric gains over prior verifier selection on the same candidate pools.
+  - Pairs with WDR wireframe validity and CadGenBench (★100, Apache-2.0) STEP/B-Rep contracts: generate → compile → **select under consensus** → kernel validity.
+- Caveat: Authors note topology axes may still favor dedicated verifiers; first-party method monorepo may stay internal. Consensus quality depends on diverse, compilable candidate pools.
+- Possible use: Add a consensus-select stage to FreeCAD/CadQuery agent harnesses before OCCT validity; evaluate on CadGenBench public splits.
+- Maturity: paper + public benchmark (method code TBD)
+- Priority: High
+
 ## WDR — training-free wireframe anomaly detection & repair for valid B-Reps
 
 - Link: https://arxiv.org/abs/2608.04955
