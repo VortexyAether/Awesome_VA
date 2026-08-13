@@ -1,5 +1,36 @@
 # Neural Operators & Tensor Methods
 
+## KNO — Kuramoto Neural Operator (local oscillator PDE operators)
+
+- Link: https://arxiv.org/abs/2608.10234
+- Type: Paper / neural-operator architecture with local inductive bias
+- Keywords: Kuramoto, neural operator, coupled oscillators, local interactions, resolution transfer, PDE operator learning
+- One-line summary: Learns PDE solution operators from coupled-oscillator continuum dynamics instead of a fixed global spectral basis, targeting phenomena dominated by local interactions in physical space.
+- Why it matters:
+  - Most operator architectures assume a fixed global basis that fits smooth global structure but is a weaker prior for locally interacting fields.
+  - Issue Board HTML harvest: Darcy ID rel L2 **0.0141+/-0.0013**, Navier-Stokes ID **0.0950+/-0.0023**, Allen-Cahn **0.00134+/-0.00007**; best/2nd on **7/8** ID and **6** OOD tasks; tiny seed std on q0 init; zero-shot Poisson resolution transfer documented.
+  - Reframes NO competition as **prior selection** (local oscillator vs global spectral / OT-assignment / ambient-domain), not only another FNO variant name.
+- Caveat: Authors acknowledge NS OOD drops under combined resolution+geometry shift. No public code surfaced in HTML harvest -> Cite/Watch, not Save.
+- Possible use: Cite next to MoNo/ADEx when writing geometry-family NO acceptance notes that separate assignment stability, ambient handoff, and local inductive bias.
+- Maturity: paper-only
+- Priority: High
+
+## LGNO — Local-Global Neural Operator for hyperbolic conservation laws
+
+- Link: https://arxiv.org/abs/2606.18221
+- Code: https://github.com/shanxue-w/ConservationLaws
+- Type: Paper + open MIT tooling
+- Keywords: neural operator, hyperbolic conservation laws, local-global, shock capturing, autoregressive rollout, FNO baseline
+- One-line summary: Splits local and global pathways so discrete flow-map learning keeps sharp shocks/contacts that pure global FNO layers tend to smear, with long-horizon rollout stability as a primary claim.
+- Why it matters:
+  - One-step L1 gains compound under autoregressive rollout; global spectral operators can introduce non-physical spikes on velocity fields in long horizons.
+  - Public MIT code (`shanxue-w/ConservationLaws`, stars 6, pushed 2026-06-17) covers convection/Burgers/shallow-water/Euler-style benches.
+  - Pairs with weak-entropy PINN metrics: architecture + discontinuous acceptance surface, not RMSE-only shock claims.
+- Caveat: ~2-month-old preprint age; industrial mesh/BC gates unproven. Treat as research-bench Save, not product CFD drop-in.
+- Possible use: Smoke-test one hyperbolic bench; require one-step vs multi-step rollout diagnostics before green-lighting conservation surrogates.
+- Maturity: paper + open code
+- Priority: High
+
 ## MoNo — Multiscale Optimal Transport Neural Operator for general geometries
 
 - Link: https://arxiv.org/abs/2608.09764

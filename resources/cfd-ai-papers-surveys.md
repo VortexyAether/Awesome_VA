@@ -2,6 +2,37 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Efficient Weak-Entropy PINN for hyperbolic conservation laws
+
+- Link: https://arxiv.org/abs/2608.10389
+- Type: Paper / PINN shock-capturing with entropy gates
+- Keywords: PINN, weak entropy, Rankine-Hugoniot, hyperbolic conservation laws, shock metrics, S-Rate, S-Acc
+- One-line summary: Puts entropy weak-form and Rankine-Hugoniot structure into the PINN loss and elevates shock-location metrics (S-Rate / S-Acc) beside field rel L2 for discontinuous solutions.
+- Why it matters:
+  - Residual-only PINNs can look smooth-L2 competitive while missing entropy-admissible shocks.
+  - Makes metric separation itself the engineering signal: methods that win on smooth IC L2 can fail on nonlinear shocks.
+  - Continues the "one-step RMSE is not DONE" line next to phase-drift ROM and conservation NO rollouts.
+- Caveat: Exact table cells need PDF confirmation before hard numeric claims; no public code harvested at curation.
+- Possible use: Require S-Rate/shock-position gates when reviewing Burgers/SWE/Euler PINN claims for Urban flood or conservation stacks.
+- Maturity: paper-only
+- Priority: High
+
+## Data-driven micromixing surrogate (non-Newtonian) + multi-objective design
+
+- Link: https://arxiv.org/abs/2608.08547
+- Code: https://github.com/BimalenduMahapatra/surrogate-micromixer-optimization
+- Type: Paper + early open process-CFD surrogate stack
+- Keywords: micromixing, non-Newtonian, Carreau-Yasuda, GPR surrogate, NSGA-II, process CFD, multi-objective design
+- One-line summary: Builds a mesh-converged FV CFD dataset for 2D sinusoidal micromixers, fits UQ-capable GPR surrogates for mixing index and pressure drop, then runs NSGA-II multi-objective geometry design.
+- Why it matters:
+  - Process-scale pattern: trust the CFD data gate first (Mesh3->4 MI delta<0.1%, dp delta<0.05%), then surrogate, then optimizer -- not field aesthetics alone.
+  - Reports GPR **R2(MI)=0.9955** and **R2(dp)=0.9948**; authors prefer GPR over slightly stronger XGB because uncertainty is first-class.
+  - Live repo with datasets + ML + NSGA-II code (stars 0, pushed 2026-07-08) makes the loop inspectable.
+- Caveat: 2D creeping microchannel scope only. **No SPDX license** via GitHub API at curation -> Watch/Test, not product-Save.
+- Possible use: Steal the CFD->GPR-UQ->NSGA-II QoI loop shape for process/Urban decision surrogates after license clarification.
+- Maturity: paper + immature public repo (license blocked)
+- Priority: High
+
 ## Adjoint shape optimization of oscillatory rarefied gas flows
 
 - Link: https://arxiv.org/abs/2608.06910

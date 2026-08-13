@@ -1,5 +1,35 @@
 # Optimization for Scientific Machine Learning
 
+## Derivative computation in PINNs -- FD vs AD and silent autograd bugs
+
+- Link: https://arxiv.org/abs/2608.11020
+- Type: Paper / PINN numerics and implementation trust
+- Keywords: PINN, automatic differentiation, finite differences, BatchNorm, self-attention, gradient path audit, GPU memory
+- One-line summary: Shows calibrated finite-difference derivative paths can match AD accuracy on PINN PDE benches while running faster and using less GPU memory, and documents silent autograd failures under inter-sample dependencies (e.g. BatchNorm/self-attention idioms).
+- Why it matters:
+  - Engineering trust for residual PINNs is not only architecture choice -- the **derivative path** is part of the acceptance contract.
+  - Reports **sFD rel L2 1.15% vs AD 1.66%** on a stationary case, with FD faster across tested batch sizes and materially lower memory.
+  - Makes "standard PyTorch autograd snippet" a reviewable risk surface, not an invisible default.
+- Caveat: Needs step-size/eps calibration; not claimed universal for every architecture. Re-run before product trainer claims.
+- Possible use: Add FD-vs-AD and BatchNorm/attention gradient-path checks to any VA PINN/residual harness review checklist.
+- Maturity: paper-only (method recipe)
+- Priority: High
+
+## Conformal risk control for model-form uncertainty in parametric NIROMs
+
+- Link: https://arxiv.org/abs/2608.03360
+- Type: Paper / ROM UQ and deployment validation
+- Keywords: NIROM, model-form uncertainty, conformal risk control, reduced basis, parametric PDE, coverage
+- One-line summary: Quantifies non-intrusive ROM model-form uncertainty from basis truncation via a perturbative stochastic reduced basis and distribution-free conformal risk control, with lambda* as an interpretable calibration diagnostic.
+- Why it matters:
+  - Deployment twins need coverage bands under parameter extrapolation, not only offline reconstruction error.
+  - Treats basis truncation as structured model-form uncertainty rather than unstructured residual noise.
+  - Adaptive conformal risk control is framed for heterogeneous error across parameter space -- closer to engineering gate language than a single global sigma.
+- Caveat: Exchangeability assumptions can break under streaming plant data; public code not harvested; absolute coverage % needs PDF tables.
+- Possible use: Cite when defining digital-twin green lights as conformal coverage + lambda* diagnostics beside Rel L2/RMSE reports.
+- Maturity: paper-only
+- Priority: High
+
 ## CT-PIKAN — coordinate-transformed Physics-Informed KAN + autograd metrics
 
 - Link: https://arxiv.org/abs/2608.06660
