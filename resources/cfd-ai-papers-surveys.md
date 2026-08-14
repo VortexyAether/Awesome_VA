@@ -2,6 +2,23 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## HydroNet — data-guided FVM-PINN for 2D shallow water equations
+
+- Link: https://arxiv.org/abs/2605.11001
+- Code: https://github.com/psu-efd/HydroNet
+- Type: Paper + open MIT tooling
+- Keywords: PINN, finite volume, Roe Riemann solver, shallow water equations, unstructured mesh, conservation, data-guided residual
+- One-line summary: Replaces strong-form PINN residuals for 2D SWE with a differentiable well-balanced Roe FVM loss on unstructured meshes and shows physics-only training can collapse without data guidance.
+- Why it matters:
+  - Strong-form residual PINNs struggle with local conservation, discontinuities, and boundary-conforming unstructured meshes used in real hydrodynamics.
+  - Core engineering signal: physics-only FVM-PINN can satisfy a residual-looking minimum while collapsing to a trivial low-momentum state; data-guided λ-mixed FV residuals recover usable flow (Issue Board: L2(|u|) **0.166→~0.032** class).
+  - GitHub `psu-efd/HydroNet` ★9, **MIT**, forks 3, Zenodo DOI 10.5281/zenodo.20099995.
+- Caveat: 2D SWE focus; metropolitan flood digital-twin scale is a separate product problem. Re-check exact ablation tables in PDF before hard numeric citation.
+- Possible use: Steal FV residual + data-guidance recipe for Urban/SWE PINN trust reviews; reject residual-only green lights on conservation problems.
+- Maturity: paper + open code
+- Priority: High
+
+
 ## Efficient Weak-Entropy PINN for hyperbolic conservation laws
 
 - Link: https://arxiv.org/abs/2608.10389

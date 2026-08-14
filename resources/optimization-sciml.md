@@ -1,5 +1,22 @@
 # Optimization for Scientific Machine Learning
 
+## Variational parameter calibration with physics-aware latent-space ROM surrogates
+
+- Link: https://arxiv.org/abs/2608.11435
+- Code: https://github.com/qiyaozhou963/rom-nn-da
+- Type: Paper + early open tooling
+- Keywords: reduced-order model, latent space, variational data assimilation, parameter calibration, differentiable surrogate, fluids
+- One-line summary: Trains a physics-aware autoencoder latent ROM so the surrogate is informative for variational parameter estimation, not only accurate at forward field reconstruction.
+- Why it matters:
+  - Twin/inverse loops fail when latents reconstruct fields but carry weak parameter information.
+  - Issue Board HTML: POD MSE **0.002424** vs POD-GPR **0.061342**; variational DA-DL-ROM lower estimation error than EnKF-POD-GPR on reported cases.
+  - Continues the “downstream objective error” trust lens into calibration space.
+- Caveat: GitHub ★0 and **SPDX license null** at curation → Watch/Test only, not product-Save. Geometry-family shift breadth still needs review.
+- Possible use: After license check, steal parameter-informative latent supervision + variational DA loop shape for digital-twin calibration notes.
+- Maturity: paper + early unlicensed-looking repo
+- Priority: Medium
+
+
 ## Derivative computation in PINNs -- FD vs AD and silent autograd bugs
 
 - Link: https://arxiv.org/abs/2608.11020

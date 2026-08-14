@@ -1,5 +1,37 @@
 # Neural Operators & Tensor Methods
 
+## GeoIncNO — geometry-aware incremental NO for long-horizon PDE
+
+- Link: https://arxiv.org/abs/2608.11237
+- Type: Paper / neural-operator architecture (long-horizon rollout)
+- Keywords: neural operator, long-horizon, autoregressive rollout, mean drift, spectral inconsistency, latent increment, geometry-aware
+- One-line summary: Predicts geometry-aware latent increments for residual advancement and regulates channel coupling inside active frequency bands so long-horizon PDE rollouts accumulate less spectral/phase/mean drift than weakly structured latent transitions.
+- Why it matters:
+  - Autoregressive NO failures often look like spectral inconsistency, phase misalignment, or mean drift rather than a single bad one-step RMSE.
+  - Issue Board HTML harvest: Rel-L2 excerpt ~**2.18e-2**, Mean Drift ablation ~**3.42e-4**, with multi-PDE long-horizon qualitative checks.
+  - Reframes operator design as structuring the **repeated latent increment**, not only the backbone/state encoder.
+- Caveat: No public code surfaced on abs/HTML at curation. Canonical PDE benches may not cover industrial mesh/BC scarcity gates.
+- Possible use: Cite when defining nRMSE@H / stable-steps / mean-drift acceptance for Urban/SWE or multi-step NO demos; pair with SpectraNet residual-target spectral and phase-drift ROM diagnostics.
+- Maturity: paper-only
+- Priority: High
+
+## SpectraNet — spectral × U-Net hierarchy for stable autoregressive PDE surrogates
+
+- Link: https://arxiv.org/abs/2605.09096
+- Code: https://github.com/Enrikkk/spectranet
+- Type: Paper + open MIT tooling
+- Keywords: SpectraNet, FNO, U-Net, residual-target spectral block, semigroup consistency, autoregressive rollout, Navier-Stokes
+- One-line summary: Composes truncated spectral convolutions inside a U-Net hierarchy with a Residual-Target Spectral Block and Semigroup-Consistency Loss to slow exponential one-step Lipschitz blow-up during long rollouts.
+- Why it matters:
+  - Makes the FNO vs hierarchical U-Net tension explicit and targets rollout stability, not only one-step field error.
+  - Reports NS ν=1e-5 @64² test Rel-L2 **0.0822** at **2.04M** params (**2.33×** fewer than canonical FNO at ~20% lower error under the paper protocol).
+  - GitHub `Enrikkk/spectranet` ★1, **MIT**, pushed 2026-05-20 — small but license-clear micro-bench substrate.
+- Caveat: Early/low-star repo; industrial geometry OOD and mesh-family shift unproven. Verify table protocol before hard SOTA claims.
+- Possible use: Test install + multi-step vs one-step diagnostics; compare residual-target spectral + semigroup loss against GeoIncNO increment structuring notes.
+- Maturity: paper + early open code
+- Priority: High
+
+
 ## KNO — Kuramoto Neural Operator (local oscillator PDE operators)
 
 - Link: https://arxiv.org/abs/2608.10234

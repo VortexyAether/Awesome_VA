@@ -1,5 +1,21 @@
 # CAD, Geometry & AI-assisted Design
 
+## CADEngBench — it looks like CAD, but does it work?
+
+- Link: https://arxiv.org/abs/2608.09296
+- Type: Paper / multi-gate parametric CAD + assembly + physics benchmark
+- Keywords: CAD agent eval, B-Rep validity, DFM, parametric edit, CalculiX FEA, assembly joints, engineering-grade CAD
+- One-line summary: Evaluates CAD generation beyond visual plausibility with two tracks: 300 parametric parts × zero-to-CAD + functional edit (600 tasks) under B-Rep/DFM/parameter-family/CalculiX FEA gates, plus 150 assembly pairs under joint grounding and kinematic checks.
+- Why it matters:
+  - A model can look like CAD and still fail engineering contracts: design requirements, parameter response, controlled edits, structural response, and valid joints.
+  - Issue Board harvest: L0 program/solid significant pairs **17/28**, L3 FEA pair pass **0/28** under Holm-corrected McNemar — solid/visual separation does not imply physics-response separation.
+  - Extends CadGenBench / WDR / consensus-select with an explicit **L0→L3 multi-gate ladder** for agent DONE definitions.
+- Caveat: Linear-static CalculiX only; kernel diversity and multi-physics limited. Official monorepo/license not confirmed at curation → Cite/Watch until Save gate clears.
+- Possible use: Require B-Rep validity + DFM + parametric family + FEA/joint checks in FreeCAD/CadQuery agent harness scorecards; do not green-light on mesh dump or single Valid% alone.
+- Maturity: paper; public code TBD
+- Priority: High
+
+
 ## Test-time CAD consensus selection — verifier-free geometric agreement
 
 - Link: https://arxiv.org/abs/2608.09706
