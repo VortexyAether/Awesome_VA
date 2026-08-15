@@ -1,5 +1,36 @@
 # Neural Operators & Tensor Methods
 
+## DD-RNO — domain-decomposed routed NO for airfoil RANS + LCQ force head
+
+- Link: https://arxiv.org/abs/2608.13490
+- Dataset lineage: https://github.com/Extrality/AirfRANS
+- Type: Paper / aero RANS neural operator (force QoI)
+- Keywords: neural operator, domain decomposition, airfoil, RANS, AirfRANS, force coefficients, LCQ, CL/CD
+- One-line summary: Routes near-wall and far-field airfoil RANS subdomains to specialist streams and attaches a wall-consistent LCQ force head so CL/CD become first-class targets instead of unstable post-hoc surface integrals.
+- Why it matters:
+  - Single-network airfoil surrogates often blur wall BL vs far-field tradeoffs and then lose force fidelity even when volumetric fields look acceptable.
+  - HTML Full DD-RNO: \(u_x\) MSE **0.088**, \(C_L\) MAE **0.0101**, \(C_D\) MAE **1.59e-4**, \(C_L/C_D\) corr **0.9994/0.9975**; LCQ reports ~**7.5×** drag MSE reduction and relative drag error **46.90% → 1.091%** class ablations; ~**144 ms**/200k-node mesh on RTX 2050.
+  - Makes **downstream force objective + domain routing** the acceptance surface, not field RMSE alone.
+- Caveat: Claimed code `taksh2406/DD-RNO` **404** at 2026-08-15 curation → Cite/Watch, not Save. Paper-linked AirfRANS mirror also 404; use canonical `Extrality/AirfRANS` (★68, ODbL). Industrial 3D/mesh-family OOD unproven.
+- Possible use: Cite when defining Urban_Flighter / aero surrogate force gates (CL/CD, wall-consistent heads) next to AirfRANS baselines; re-check code URL before Test.
+- Maturity: paper-only (claimed code unavailable)
+- Priority: High
+
+## Distillation of foundation models for time-dependent PDEs (TREX)
+
+- Link: https://arxiv.org/abs/2608.11937
+- Type: Paper / foundation → student neural-operator deploy path
+- Keywords: foundation model, knowledge distillation, TREX, Poseidon, TFNO, time-dependent PDE, low-data transfer
+- One-line summary: Distills large time-dependent PDE foundation teachers (e.g. Poseidon-class) into lighter student operators (TFNO/U-Net/FNO) with TREX teacher-rollout extension so few-shot accuracy can survive under deploy cost budgets.
+- Why it matters:
+  - Foundation few-shot value is real, but parameter/latency cost often blocks ops use.
+  - Separates **train-time teacher capacity** from **deploy-time student budget** as an Engineering-AI path, not only another operator backbone race.
+  - Documents TREX vs IC-KD / relational KD and equivariance-oriented checks (HTML harvest; exact table cells need PDF confirmation).
+- Caveat: Public code/weights path not confirmed at curation. Teacher license and weight access are separate gates.
+- Possible use: Cite when scoring foundation adoption next to edge latency/memory caps; Watch for student recipes + open weights.
+- Maturity: paper-only
+- Priority: Medium
+
 ## GeoIncNO — geometry-aware incremental NO for long-horizon PDE
 
 - Link: https://arxiv.org/abs/2608.11237

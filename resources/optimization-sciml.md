@@ -1,5 +1,36 @@
 # Optimization for Scientific Machine Learning
 
+## Diagnostics for Physics — audit suite for learned PDE simulators
+
+- Link: https://arxiv.org/abs/2606.18200
+- Code: https://github.com/lennonshikhman/diagnostics_for_physics
+- Type: Paper + open MIT tooling
+- Keywords: learned simulator, semigroup consistency, generator discrepancy, energy balance, Rel L2, rollout audit, validation suite
+- One-line summary: Audits learned PDE time-steppers as approximate evolution operators with semigroup, generator, energy/balance/admissibility, and perturbation diagnostics instead of one-step relative \(L^2\) alone.
+- Why it matters:
+  - Low Rel \(L^2\) does not prove a surrogate behaves like a coherent numerical propagator under multi-step rollout.
+  - Provides an executable checklist for controlled degradation (underfit/oversmooth) where structural diagnostics move even when single-step metrics look “ok-ish”.
+  - GitHub `lennonshikhman/diagnostics_for_physics` ★2, **MIT**, pushed 2026-06-18 — small but license-clear audit substrate next to SpectraNet/GeoIncNO long-horizon notes.
+- Caveat: Early/low-star; suites center canonical PDE families (NS2D/SW2D/…). Industrial mesh/geometry OOD needs user adapters. Issue Board HTML excerpts (e.g. FNO NS2D Rel \(L^2\) ~1.51e-2 / semigroup ~1.01e-2) should be re-checked on local runs before hard claims.
+- Possible use: Smoke-test on one internal surrogate; map semigroup/generator/energy metrics into HERO-class nRMSE@H / stable-steps acceptance notes.
+- Maturity: paper + early open code
+- Priority: High
+
+## AE-NODE error propagation — Jacobian diagnostics for long-horizon ROM
+
+- Link: https://arxiv.org/abs/2608.13132
+- Type: Paper / ROM long-horizon diagnostics
+- Keywords: autoencoder, Neural ODE, reduced-order model, Jacobian transport, error propagation, long-horizon extrapolation
+- One-line summary: Separates local discrepancy injection from amplification in AE+Neural-ODE latent dynamics via a path-integral identity and multi-step Jacobian transport diagnostics when short-horizon accuracy looks similar across models.
+- Why it matters:
+  - Compact latent + good local prediction can still diverge under long-horizon forecast.
+  - Gives a quantitative language for amplification vs injection that pairs with mean-drift / semigroup rollout gates.
+  - Burgers 1D/2D multi-seed tables separate AE representation error from AE+ODE rollout behavior (Issue Board HTML).
+- Caveat: Burgers-centric; industrial CFD ROM transfer unproven. Public code not confirmed.
+- Possible use: Cite next to GeoIncNO mean-drift and SpectraNet semigroup notes when defining long-horizon ROM red lights.
+- Maturity: paper-only
+- Priority: Medium
+
 ## Variational parameter calibration with physics-aware latent-space ROM surrogates
 
 - Link: https://arxiv.org/abs/2608.11435

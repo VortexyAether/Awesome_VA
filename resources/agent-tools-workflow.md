@@ -1,5 +1,22 @@
 # Agent Tools & Research Workflow
 
+## Paper-replication — coding agents replicate SciML claims under completion gates
+
+- Link: https://arxiv.org/abs/2607.02134
+- Code: https://github.com/PredictiveScienceLab/paper-replication-paper
+- Type: Paper + open Apache-2.0 harness artifacts
+- Keywords: coding agent, SciML reproducibility, claim targets, provenance, completion gate, MATCHED evidence, replication report
+- One-line summary: Turns SciML paper replication into a workspace with recorded claim targets, method reconstruction, run provenance, comparison evidence, report coverage, and an exogenous completion gate — not a free-form “agent ran something” loop.
+- Why it matters:
+  - Computational claims (e.g. relative MSE thresholds, CI coverage) need claim-level evidence bundles, not chat transcripts.
+  - Reports **12/12** independent workspaces passing the completion gate and **158/158** recorded targets MATCHED with report coverage on a four-paper case study.
+  - Still separates MATCHED-under-target-rule from identical numeric/physics fidelity across runs — same axis as BSG-VA “tests passed ≠ bug-discriminating”.
+  - GitHub `PredictiveScienceLab/paper-replication-paper` ★11, **Apache-2.0**, pushed 2026-07-05.
+- Caveat: Four-paper / high-compute case study; gate success ≠ general SciML agent autonomy. Re-read acceptance rules before treating MATCHED as universal fidelity.
+- Possible use: Steal completion-gate + provenance vocabulary for VA radar/paper harnesses; Test install of release bundle before adopting as internal template.
+- Maturity: paper + open release bundle
+- Priority: High
+
 ## OPERA — operator-residual feedback for LM agents (optical experiments)
 
 - Link: https://arxiv.org/abs/2608.05990
