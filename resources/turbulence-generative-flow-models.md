@@ -2,6 +2,36 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## LBM for compressible Navier–Stokes–Fourier (auto-derived D3Q7)
+
+- Link: https://arxiv.org/abs/2608.13437
+- Type: Paper / classical compressible LBM trust substrate
+- Keywords: lattice Boltzmann, compressible NSF, shock thickness, viscous shock, dilatational dissipation, Taylor-Green, symbolic compiler
+- One-line summary: Automatically derives and validates a 3D compressible NSF lattice Boltzmann scheme (D3Q7) that carries viscous stress and heat flux as transported state variables, with Sod/Becker and supersonic TGV evidence.
+- Why it matters:
+  - Raises the classical floor any compressible ML surrogate must clear: shock thickness, viscous shocks, and dilatational dissipation channels—not only field RMSE.
+  - Reports first-order shock-thickness convergence on Sod/Becker exact solutions and ~**30%** closer dilatational dissipation than the next-best of seven compared solvers on supersonic TGV \(M_0=1.25\) at \(512^3\) (Issue Board HTML).
+  - Single-precision deploy realism is part of the validation story.
+- Caveat: Public code not listed at harvest. Not a general industrial FV/BC stack. LBM-specific assumptions remain.
+- Possible use: Cite when defining compressible SciML acceptance tables (shock thickness + dilatational/solenoidal split) before surrogate leaderboards.
+- Maturity: paper-only
+- Priority: High
+
+## Free-stream transition iLES database (T3-class)
+
+- Link: https://arxiv.org/abs/2606.20139
+- Dataset: https://doi.org/10.5281/zenodo.17166216
+- Type: Transition turbulence database for model/ML development
+- Keywords: bypass transition, iLES, ERCOFTAC T3, free-stream turbulence, full-field 3D
+- One-line summary: Supplies wall-resolved, full-field 3D time-resolved free-stream transition data that classic T3 integral experiments cannot provide for modern RANS/ML transition work.
+- Why it matters:
+  - Transition acceptance needs inlet turbulence parameters and measurement-channel fidelity, not only \(C_f\) curves.
+  - Public Zenodo packaging makes the corpus a real Save candidate after schema inspection.
+- Caveat: Flat-plate bypass; industrial 3D geometry transition is a separate gate. Cross-listed under datasets-benchmarks.
+- Possible use: Pull inlet/mesh tables when designing transition-model or ML closure tests.
+- Maturity: paper + Zenodo dataset
+- Priority: Medium-High
+
 ## Phase-drift ROM — autoregressive rollout error as accumulated phase drift
 
 - Link: https://arxiv.org/abs/2608.07189

@@ -2,6 +2,34 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Julia for CFD — ecosystem, performance, and composability survey
+
+- Link: https://arxiv.org/abs/2608.12801
+- Type: Paper / survey (CFD software + differentiable workflows)
+- Keywords: Julia, CFD ecosystem, composability, automatic differentiation, accelerators, design/inference loops
+- One-line summary: Critically maps Julia CFD projects and evidence for performance/composability when simulation must sit inside design, inference, optimization, and learning loops.
+- Why it matters:
+  - Engineering-AI value often comes from **software composition** (physics + numerics + AD + hardware), not only a new backbone.
+  - Documents project families plus published scale/accelerator evidence and the real limits of differentiation/composition claims.
+- Caveat: Survey — verify maturity/license of any cited project before adoption. Not a claim that Julia replaces production OpenFOAM/FLUENT stacks.
+- Possible use: Use as a scouting map when comparing Julia vs JAX/Python differentiable CFD paths for agent-callable loops.
+- Maturity: paper survey
+- Priority: High
+
+## BTF-PINN — Dirichlet BC without boundary training
+
+- Link: https://arxiv.org/abs/2608.12823
+- Type: Paper / PINN essential-boundary contract
+- Keywords: PINN, Dirichlet BC, boundary-training-free, interior-only loss, flux-jump tests
+- One-line summary: Solves homogeneous Dirichlet problems with an interior-only BTF-PINN strategy that avoids boundary collocation, penalty weights, and boundary-fitted parametric tricks.
+- Why it matters:
+  - Practical PINNs often fail as **BC lottery** (weight/collocation tuning) rather than as architecture races.
+  - Offers a structural alternative for essential BC satisfaction; Issue Board HTML shows multi-case relative \(L_2\) tables including heat/flux-jump style tests.
+- Caveat: Homogeneous Dirichlet core setting; inhomogeneous/complex CAD boundaries need extra work. Code not confirmed at curation.
+- Possible use: Cite when reviewing PINN BC claims; require essential-BC contracts without boundary-weight green lights.
+- Maturity: paper-only
+- Priority: High
+
 ## HydroNet — data-guided FVM-PINN for 2D shallow water equations
 
 - Link: https://arxiv.org/abs/2605.11001

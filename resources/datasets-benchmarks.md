@@ -2,6 +2,37 @@
 
 Flow datasets, SciML benchmarks, reproducibility references, metrics, and evaluation protocols.
 
+## U3DWind — urban low-altitude wind dataset + UAM benchmark
+
+- Link: https://arxiv.org/abs/2607.04495
+- Code/data: https://github.com/hweifluids/LatticeUrbanWind
+- Type: Urban CFD / UAM wind dataset + NWP-LBM toolkit
+- Keywords: urban air mobility, low-altitude wind, building turbulence, gust hazards, lattice Boltzmann, vertiport, route feasibility
+- One-line summary: Releases a low-altitude urban wind field dataset/benchmark aimed at UAM stability, route, and vertiport decisions, with a live LatticeUrbanWind NWP-LBM coupling toolkit for high-resolution city-scale generation.
+- Why it matters:
+  - Moves acceptance from pixel/field MAE toward UAM decision QoI under building-induced turbulence and gusts.
+  - Issue Board HTML harvest: relative \(L_2\) **0.094** class with other \(L_2\) **0.13–0.18** and ensemble Brier-style probabilistic scores; claimed ~**460×** acceleration vs a reference workflow is setting-dependent.
+  - Live repo ★**22**, pushed 2026-08-02 — inspectable substrate for Urban_Flighter-adjacent benches.
+- Caveat: GitHub license **NOASSERTION** at 2026-08-17 API check → clarify SPDX before product use. Lattice lineage vs industrial RANS/LES acceptance is separate. Do not treat acceleration claims as universal.
+- Possible use: Smoke-test README/sample generation; map hazard/route metrics into Urban_Flighter acceptance notes after license gate.
+- Maturity: paper + public toolkit (license gate)
+- Priority: High
+
+## Free-stream transition iLES database (ERCOFTAC T3-class)
+
+- Link: https://arxiv.org/abs/2606.20139
+- Dataset: https://doi.org/10.5281/zenodo.17166216
+- Type: Transition / turbulence high-fidelity database
+- Keywords: bypass transition, iLES, ERCOFTAC T3, free-stream turbulence, RANS validation, full-field 3D time-resolved
+- One-line summary: Provides wall-resolved iLES-style full-field 3D time-resolved data filling gaps left by classic ERCOFTAC T3 experiments for modern transition-model and ML development.
+- Why it matters:
+  - Transition ML/RANS work needs measurement-channel fidelity and inlet turbulence length-scale gates, not only integral skin-friction curves.
+  - Zenodo primary surface makes the corpus citable and downloadable.
+- Caveat: Flat-plate bypass focus; complex industrial geometry transition transfer is separate. Age ~2 months at curation.
+- Possible use: Cite when building transition acceptance channels next to T3A/T3C5-style tables; inspect Zenodo packing before local Save.
+- Maturity: paper + Zenodo dataset
+- Priority: Medium-High
+
 ## TIDE — 3D incompressible DNS ensemble benchmark
 
 - Link: https://arxiv.org/abs/2608.04222

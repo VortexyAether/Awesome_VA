@@ -1,5 +1,50 @@
 # Neural Operators & Tensor Methods
 
+## HyperShape — hyperelasticity across diverse shapes
+
+- Link: https://arxiv.org/abs/2608.09938
+- Related code lineage: https://github.com/camlab-ethz/ConvolutionalNeuralOperator
+- Type: Paper / geometry-generalization framework for solid-mechanics neural operators
+- Keywords: hyperelasticity, geometry-family shift, multi-shape training, FNO, CNO, GINO, Transolver, OOD shapes
+- One-line summary: Builds a multi-shape hyperelasticity generation/evaluation frame so neural operators are scored under rising geometric diversity rather than few simple domains that overstate generalization.
+- Why it matters:
+  - Hyperelastic response is geometry- and BC-sensitive; few-shape benches hide OOD collapse.
+  - Reports clear mean relative \(L_2\) degradation as shape variability rises, with multi-shape training improving OOD; point-cloud models struggle on far shapes (Issue Board HTML).
+  - Compares FNO/CNO/U-Net/GINO/Transolver-class families under the same geometry stress test.
+- Caveat: Synthetic shapes — manufacturable CAD/BRep transfer unproven. Dataset packaging/license beyond CNO lineage (MIT ★228) needs confirmation. API published field shows 2026-06-02 under this arXiv id.
+- Possible use: Cite when forcing **geometry-family shift** gates next to AirfRANS/force-QoI language; Watch for official dataset release packaging.
+- Maturity: paper + related open CNO lineage
+- Priority: High
+
+## PatternFormer — multi-branch / multi-solution surrogates (RD)
+
+- Link: https://arxiv.org/abs/2608.12286
+- Code: https://github.com/changzhipeng1-prog/PatternFormer
+- Type: Paper + early public code (multi-valued PDE solutions)
+- Keywords: multi-branch solutions, reaction-diffusion, neural operator limit, single-valued map failure, solution-set coverage
+- One-line summary: Serializes coexisting solution branches as a sequence so one forward pass recovers multi-valued RD patterns that single-output NO/PINN maps structurally miss.
+- Why it matters:
+  - Single-valued Rel \(L_2\) leaderboards can green-light models that miss entire regimes (hysteresis / multi-steady states).
+  - HTML excerpts: median relative \(L_2\) ~**1–2%** class with failure modes when branch relative \(L_2\) exceeds **0.15**.
+- Caveat: Reaction–diffusion centric; CFD multi-regime transfer unproven. Repo ★0 and **license unset** at 2026-08-17 → Cite/Watch, not product Save.
+- Possible use: Steal the evaluation question “one solution vs solution-set coverage” for multi-regime engineering surrogates; re-check license before Test.
+- Maturity: paper + immature public repo
+- Priority: Medium-High
+
+## Non-overlapping Schwarz FE–Neural Operator hybrid (solid mechanics)
+
+- Link: https://arxiv.org/abs/2606.08796
+- Type: Paper / hybrid FE-NO domain decomposition
+- Keywords: Schwarz, Neumann-Dirichlet, FE-NO, DeepONet, irregular domains, interface transmission
+- One-line summary: Moves FE-NO coupling from overlapping Dirichlet–Dirichlet to non-overlapping Neumann–Dirichlet Schwarz so local nonlinear/fine features accelerate while FE fidelity is retained on irregular domains.
+- Why it matters:
+  - Replaces “all FE vs all NO” with an **interface contract** hybrid.
+  - Issue Board HTML: FE-NO coupling ~**12.8 s** class and wall-clock speed-ups ~**2.87×** vs overlapping baseline tables.
+- Caveat: Solid-mechanics scope; fluids/CFD interface transfer separate. Code not confirmed at curation. Age ~70d at first Awosome entry.
+- Possible use: Cite when designing hybrid trust regions + transmission conditions rather than full operator replacement.
+- Maturity: paper-only
+- Priority: Medium
+
 ## DD-RNO — domain-decomposed routed NO for airfoil RANS + LCQ force head
 
 - Link: https://arxiv.org/abs/2608.13490
