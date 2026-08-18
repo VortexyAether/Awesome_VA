@@ -1,5 +1,21 @@
 # Neural Operators & Tensor Methods
 
+## HI-MeshGraphNets — hierarchical MeshGraphNets
+
+- Link: https://arxiv.org/abs/2608.13827
+- Code: https://github.com/leesihun/MeshGraphNets
+- Type: Paper + early public mesh-GNN runtime
+- Keywords: MeshGraphNets, hierarchical GNN, unstructured mesh, iso-cost, VRAM, long-range message passing
+- One-line summary: Replaces flat MeshGraphNets processors with FPS+Voronoi coarsening and learned interpolation so long-range mesh communication is cheap on high-fidelity unstructured grids.
+- Why it matters:
+  - Flat hop-1 message passing forces deep processors on industrial meshes and pays VRAM, time, and over-smoothing together.
+  - Issue Board Tables 2–3 (rectangular inclusion): stress/disp \(R^2\) **0.99 / 0.99** vs MGN 28MP **0.85 / −0.11**; VRAM **10.45 vs 17.03 GB**; train **10.18 vs 25.41 h**.
+  - Distinct from the original DeepMind MeshGraphNets entry (`2010.03409`); README confirms hierarchical V-cycle runtime by SiHun Lee.
+- Caveat: ★0 and SPDX license unset at 2026-08-18. Benches are structural/contact-heavy — urban/air CFD family OOD is separate. Repo name collides with the original MGN project.
+- Possible use: Test the hierarchical path on one internal mesh after license clarification; require iso-cost (VRAM/time) next to field \(R^2\).
+- Maturity: paper + immature public repo
+- Priority: High
+
 ## HyperShape — hyperelasticity across diverse shapes
 
 - Link: https://arxiv.org/abs/2608.09938

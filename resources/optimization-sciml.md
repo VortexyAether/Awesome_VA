@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## NestyNet — analytic segmented surrogates for stiff physics functions
+
+- Link: https://arxiv.org/abs/2608.05862
+- Code: https://github.com/RodrigoIbata/NestyNet
+- Type: Paper + live SciML fitting library
+- Keywords: segmented analytic surrogate, Levenberg–Marquardt, analytic derivatives, AI Feynman, stiff functions
+- One-line summary: Fits stiff but smooth physics functions with a deterministic segmented analytic model and a tailored second-order LM optimizer, exposing cheap analytic gradients/Hessians/antiderivatives.
+- Why it matters:
+  - Value-only NN fits often fail the derivative/integral fidelity SciML actually needs.
+  - AI Feynman 120-equation median gains vs Adam MLP: **2100× / 1400× / 780×** (value / 1st / 2nd); still **540× / 450× / 250×** after L-BFGS; up to **~44×** vs autograd.
+  - Live repo ★6 (pushed 2026-08-06) with a reproducibility section — inspectable substrate, not a paper-only claim.
+- Caveat: Equation/function bench (astro-ph.IM), not a CFD field surrogate. × factors are benchmark-sensitive. GitHub SPDX is **NOASSERTION** while README badge says MPL-2.0 — confirm license before product use.
+- Possible use: Smoke-test install + one analytic-derivative target; do not treat as a drop-in mesh operator.
+- Maturity: paper + early open library
+- Priority: Medium-High
+
 ## Diagnostics for Physics — audit suite for learned PDE simulators
 
 - Link: https://arxiv.org/abs/2606.18200

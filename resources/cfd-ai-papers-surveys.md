@@ -2,6 +2,52 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Data-driven hypersonic NEQ ROM with catalytic surfaces
+
+- Link: https://arxiv.org/abs/2608.14445
+- Type: Paper / thermochemistry reduced-order model
+- Keywords: hypersonic, chemical non-equilibrium, catalytic wall, heat flux, ROM, wall QoI
+- One-line summary: Extends a Scherding-class data-driven ROM to hypersonic reactive flows with localized catalytic-surface discontinuities that create sharp wall-chemistry and heat-transfer jumps.
+- Why it matters:
+  - Field-RMSE surrogates routinely miss catalytic-patch discontinuities that dominate wall heat flux and species fluxes.
+  - Issue Board HTML reports ~**50%** overall simulation-cost cut on a catalytic BL setting (\(Re_x\in[1.4\times10^5,10^6]\)).
+  - Makes **wall QoI + cost** the acceptance surface, not volumetric cosmetics.
+- Caveat: No public code harvested. Depends on hypersonic thermochemistry libraries (Mutation++ lineage) — not urban low-speed air. Transfer the evaluation pattern, not the library stack.
+- Possible use: Cite when defining wall-heat-flux / species-jump gates for process or reentry-adjacent surrogates.
+- Maturity: paper-only
+- Priority: High
+
+## Exact BC on implicit geometries for continuum PINNs
+
+- Link: https://arxiv.org/abs/2606.07579
+- Type: Paper / hard vs soft PINN boundary enforcement
+- Keywords: PINN, implicit geometry, hard BC, traction, SDF, elastodynamics
+- One-line summary: Interpolates boundary data over implicit geometries and compares soft vs hard traction enforcement on first- and second-order plane-strain PINNs.
+- Why it matters:
+  - Complements BTF-PINN (interior-only Dirichlet): here the geometry is implicit and the contract is hard/soft traction.
+  - All-soft tends to be slower/more accurate; all-hard faster/less accurate — BC choice is a gate, not a residual lottery.
+  - First-order plane-strain reports higher relative accuracy; Issue Board Table 2 relative \(L^2\) ~\(1.868\times10^{-3}\) class.
+- Caveat: Manufactured elastodynamic plane-strain. Fluid BC / industrial CAD transfer unproven. Code not confirmed.
+- Possible use: Cite next to BTF-PINN when requiring an essential-BC contract on implicit/CAD-like boundaries.
+- Maturity: paper-only
+- Priority: High
+
+## Conservative discrete FV structure vs learned rollout (1D DDP)
+
+- Link: https://arxiv.org/abs/2606.01366
+- Code: https://github.com/Airscker/DDP-benchmark
+- Type: Paper + early structure-preserving benchmark
+- Keywords: conservative finite volume, autoregressive rollout, drift-diffusion-Poisson, positivity, 1-step vs long horizon
+- One-line summary: Shows that a classical conservative finite-volume core, not a learned next-state head, is what keeps long autoregressive rollouts stable on a 1D drift–diffusion–Poisson transport bench.
+- Why it matters:
+  - Headline rollout MSE **\(7.35\times10^{-9}\)** vs unconstrained **42.3**; Poisson recompute / charge projection / 4-step rollout training all stay \(O(10^1)\).
+  - Wins rollout MSE on **60/64** configs but only **19/64** one-step MSE — 1-step leaderboards invert the engineering ranking.
+  - README matches the paper; GitHub API description is stale/unrelated and should be ignored.
+- Caveat: 1D plasma-transport prototype (Dirichlet potential, zero-flux walls; no Bohm/sheath). ★0 and license unset at 2026-08-18 → Cite/Test, not product Save.
+- Possible use: Cite beside HERO / Diagnostics-for-Physics when refusing 1-step Rel \(L^2\) as DONE for conservation problems.
+- Maturity: paper + immature public repo
+- Priority: High
+
 ## Julia for CFD — ecosystem, performance, and composability survey
 
 - Link: https://arxiv.org/abs/2608.12801
