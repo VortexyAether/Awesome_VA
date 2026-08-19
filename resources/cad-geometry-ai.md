@@ -1,5 +1,23 @@
 # CAD, Geometry & AI-assisted Design
 
+
+## HiFi-BRep — high-fidelity latent representation for robust B-Rep generation
+
+- Link: https://arxiv.org/abs/2608.16485
+- Code: https://github.com/1nnoh/HiFi-BRep
+- Weights: https://huggingface.co/1nnoh/HiFi-BRep
+- Type: Paper + live CAD generator (CVPR 2026)
+- Keywords: B-Rep, manifold validity, topology-guided attention, compilability, DeepCAD, ABC
+- One-line summary: Builds a padding-free topology-aware latent and a single-stage decoder that predicts geometry and topology in parallel with differentiable manifold constraints, instead of sequential non-differentiable validity post-processing.
+- Why it matters:
+  - Compilability and coverage can look strong while Valid% is weak — DTGBrepGen DeepCAD compilability 92.48 vs Valid 43.20 is the cautionary pair.
+  - Issue Board Table 1 DeepCAD: Valid **72.20%** vs DeepCAD 68.20 / BrepDiff 63.69 / DTG 43.20 / BRepGen 20.76; Compilability **90.38%**; COV **70.40** (DeepCAD 76.67 is broader — coverage ≠ solid).
+  - README matches arXiv:2608.16485; GitHub `1nnoh/HiFi-BRep` ★3, **Apache-2.0**, pushed 2026-08-18.
+- Caveat: ABC family shift collapses Compilability 35.61 / Valid 32.66. Early-star repo. Visual/Chamfer wins still do not replace kernel Valid.
+- Possible use: Add Valid% on DeepCAD *and* ABC as a CAD-agent DONE gate next to WDR/CADEngBench; smoke-test the Apache runtime before product Save.
+- Maturity: paper + early open code + public weights
+- Priority: High
+
 ## CADEngBench — it looks like CAD, but does it work?
 
 - Link: https://arxiv.org/abs/2608.09296

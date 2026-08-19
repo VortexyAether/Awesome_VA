@@ -1,5 +1,22 @@
 # Optimization for Scientific Machine Learning
 
+
+## BOCoDe — engineering-centered Bayesian optimization benchmark
+
+- Link: https://arxiv.org/abs/2608.15073
+- Code: https://github.com/rosenyu304/BOCoDe
+- Type: Paper + PyTorch/BoTorch benchmark library
+- Keywords: Bayesian optimization, engineering design, mixed-variable, constrained multi-objective, HPO transfer
+- One-line summary: Ships 307 black-box problems (159 engineering / 80 HPO / 68 synthetic) with cited provenance and a unified API so BO/evolutionary rankings can be compared across problem classes instead of synthetic/HPO-only suites.
+- Why it matters:
+  - HPO and toy BBO rarely cover constrained, multi-objective, mixed-variable physics design.
+  - API 2026-08-15 cs.CE: 31 algorithms × 5 problem classes; tabular-foundation embeddings separate engineering from HPO most clearly; algorithm ranking does not transfer across domains.
+  - README matches: maximize convention, `gx <= 0` inequality constraints, still under construction. GitHub `rosenyu304/BOCoDe` ★4, **MIT**, pushed 2026-08-15.
+- Caveat: Not every task is a CFD solver-in-the-loop. Library self-labels as under construction — smoke-test install/API before treating numbers as frozen.
+- Possible use: Pick one constrained engineering task and one HPO task; refuse to port the HPO champion into a design loop without a re-rank.
+- Maturity: paper + early open library
+- Priority: High
+
 ## NestyNet — analytic segmented surrogates for stiff physics functions
 
 - Link: https://arxiv.org/abs/2608.05862

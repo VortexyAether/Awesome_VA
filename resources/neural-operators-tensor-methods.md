@@ -1,5 +1,22 @@
 # Neural Operators & Tensor Methods
 
+
+## FAST-DeepONet — factor-augmented branch for high-dimensional PDE inputs
+
+- Link: https://arxiv.org/abs/2608.15408
+- Code: https://github.com/kwonji39/FAST-DeepONet
+- Type: Paper + MIT DeepONet runtime
+- Keywords: DeepONet, small-sample, sensor-grid refinement, spectral branch, Navier–Stokes, Darcy
+- One-line summary: Replaces a raw high-dimensional DeepONet branch with a fixed spectral path plus a regularized projection of the orthogonal residual so the sensor grid can be refined without statistical collapse.
+- Why it matters:
+  - More sensors are not more data when operator samples stay small — covariates become strongly correlated.
+  - API 2026-08-15: plain DeepONet NS Rel.\(L_2\) **0.0394 → 0.1556** as branch size grows 129→8193; FAST stays **~0.04**. Across NS/Darcy/wave, Rel.\(L_2\) improves **4.7–37.0%** with **3–7×** fewer parameters.
+  - README confirms Kwon/Kim/Lin + `fastnn/` library + NSE/Darcy generators. GitHub `kwonji39/FAST-DeepONet` ★0, **MIT**, pushed 2026-08-15.
+- Caveat: Coordinate-query DeepONet family. ★0. Unstructured-mesh / high-contrast interface transfer is a different axis (DeepOHeat). 2D NS/Darcy/wave ≠ factory CFD.
+- Possible use: When refining observation grids, plot Rel.\(L_2\) vs branch size before claiming a denser sensor win; smoke-test `fastnn/` on the bundled NS sweep.
+- Maturity: paper + early open code
+- Priority: High
+
 ## HI-MeshGraphNets — hierarchical MeshGraphNets
 
 - Link: https://arxiv.org/abs/2608.13827

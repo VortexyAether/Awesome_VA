@@ -1,5 +1,21 @@
 # Thermal & Heat Transfer
 
+
+## DeepOHeat-v2 — self-improving thermal operator for high-contrast 3D-IC
+
+- Link: https://arxiv.org/abs/2608.16080
+- Type: Paper / physics-informed thermal operator + trust-gated design loop
+- Keywords: DeepOHeat, 3D-IC, high-contrast conductivity, discrete energy loss, hotspot trust gate, peak temperature
+- One-line summary: Replaces continuous residual training on high-contrast multi-die stacks with a discretized energy loss, a matrix-preconditioned optimizer, and a hotspot trust gate that only accepts incremental retraining when held-out validation error improves.
+- Why it matters:
+  - Continuous physics losses are ill-defined at discontinuous conductivity interfaces; the discretized strong-form Hessian (\(\kappa_2\approx6\times10^4\)) defeats first-order training.
+  - API 2026-08-17: peak temperature error **>30 K → 0.55 K**; returned-design surrogate–true peak gap **1.12 K → 0.11 K**, matching a solve-every-step optimizer (Issue Board HTML ~56× faster).
+  - Transferable pattern: score **hotspot QoI under optimization OOD**, not only in-distribution field RMSE.
+- Caveat: No public code at curation. 3D-IC domain is far from urban/external aerodynamics — steal the interface + gate contract, not the chip stack.
+- Possible use: Cite when a thermal/CFD surrogate is used *inside* a design optimizer and must refuse or re-solve when the placement leaves the training distribution.
+- Maturity: paper-only
+- Priority: High
+
 Resources for heat-transfer modeling, thermal-fluid digital twins, thermal property prediction, and automation-ready validation workflows.
 
 ## PINO thermal ranking of low-cost wall materials
