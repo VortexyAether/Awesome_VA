@@ -1,6 +1,22 @@
 # Neural Operators & Tensor Methods
 
 
+
+## Spray SDF-FNO — regime-agnostic gas-liquid interface operator
+
+- Link: https://arxiv.org/abs/2608.17825
+- Type: Paper / multiphase neural operator (physics.flu-dyn)
+- Keywords: spray atomisation, SDF, FNO, Volume-of-Fluid, inventory conservation, physics-informed ablation
+- One-line summary: Forecasts 2D spray interfaces with a boundary-conditioned FNO on the signed-distance field and shows that representation plus a liquid-inventory penalty matter more than a full physics-informed operator extension.
+- Why it matters:
+  - Long-horizon multiphase surrogates fail on conservation and fine ligaments, not only one-step RMSE.
+  - HTML §6 (2026-08-18): SDF vs volume-fraction FNO cuts phase-field error by **~3×** at Δn=10; SDF-FNO proxy RMSE \(\alpha^p\) **0.0171 / 0.0320 / 0.0408** at Δn=1/5/10. Unmatched U-Net still wins the fixed-grid error table.
+  - Dropping the inventory penalty raises relative inventory error **~5×** at Δn=1. Target-increment + Eikonal + phase-bound extension trains stably but stays inside case-to-case scatter (no predictive gain or cost). Interfacial-area rank ρ **0.93 → 0.73** (Δn=1→10).
+- Caveat: 2D sharp-interface VoF. No public code at harvest. Conservation term is CFD-label supervised, not boundary-flux enforced. Not a 3D industrial injector Save.
+- Possible use: Cite when scoring multiphase operators on **inventory + rank-ρ**, and when a “physics-informed” add-on needs an honest no-gain ablation.
+- Maturity: paper-only
+- Priority: High
+
 ## FAST-DeepONet — factor-augmented branch for high-dimensional PDE inputs
 
 - Link: https://arxiv.org/abs/2608.15408

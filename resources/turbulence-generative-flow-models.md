@@ -2,6 +2,21 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Residual LSTM on Wagner — transonic unsteady airfoil lift
+
+- Link: https://arxiv.org/abs/2608.17894
+- Type: Paper / aeroelastic residual learner
+- Keywords: Wagner function, residual learning, LSTM, NLR 7301, transonic shock, leave-family-out
+- One-line summary: Trains an LSTM on CFD minus analytical Wagner lift so the network learns a lower-variance unsteady correction instead of the full force history.
+- Why it matters:
+  - Direct NN lift models can look fine on in-family sinusoids and then fail when a motion family is held out.
+  - Table 7 (5-seed external NRMSE): residual **0.054±0.007** vs direct **0.065±0.009**. Direct wins pitch-only; residual wins plunge and coupled pitch-plunge.
+  - Residual lowers family-mean NRMSE across four motion families in leave-one-out / leave-family-out; authors note the baseline must actually remove structured response.
+- Caveat: 2D NLR 7301. Some high-frequency cases favor the direct model. No public code. 3D wing / Mach interpolation left as future work.
+- Possible use: Cite when a classical low-order aero theory exists — require leave-family-out, not a single pitch NRMSE.
+- Maturity: paper-only
+- Priority: High
+
 ## LBM for compressible Navier–Stokes–Fourier (auto-derived D3Q7)
 
 - Link: https://arxiv.org/abs/2608.13437

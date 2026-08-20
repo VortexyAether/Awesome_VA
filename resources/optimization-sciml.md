@@ -1,6 +1,21 @@
 # Optimization for Scientific Machine Learning
 
 
+
+## Adaptive ST surrogate — rSVD + PNMAE/PNrMAE sampling
+
+- Link: https://arxiv.org/abs/2608.17250
+- Type: Paper / adaptive DoE for high-dimensional spatio-temporal output
+- Keywords: rSVD, leave-one-out, PNMAE, PNrMAE, adaptive sampling, turbine blade, thermo-mechanical
+- One-line summary: Compresses high-d field output with rSVD, fits a latent surrogate, then adaptively samples using the fraction of nodes that miss physical MAE/rMAE gates (reconstruction + surrogate error together).
+- Why it matters:
+  - Field RMSE hides whether a few critical nodes (hotspots, fillets) are still wrong.
+  - HTML §6: exploration+exploitation learning function on EI of PNMAE/PNrMAE; example stop when mean PNrMAE **≤15%** or N≥66. Demonstrated on a gas-turbine blade thermo-mechanical transient (MHI-funded; SMO).
+- Caveat: No public code. Blade thermo-mechanics ≠ urban/air CFD family. Authors still want reconstruction error isolated from surrogate error.
+- Possible use: Steal **percent-of-nodes-over-threshold** as the adaptive-sampling objective for high-d CFD/thermal UQ.
+- Maturity: paper-only
+- Priority: Medium-High
+
 ## BOCoDe — engineering-centered Bayesian optimization benchmark
 
 - Link: https://arxiv.org/abs/2608.15073
