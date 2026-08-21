@@ -2,6 +2,35 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+
+## Intrusive vs non-intrusive ROM for Carreau GNF
+
+- Link: https://arxiv.org/abs/2608.18259
+- Type: Paper / non-Newtonian ROM comparison (physics.flu-dyn)
+- Keywords: ROM, Carreau, DEIM, RBF, intrusive, lid-driven cavity, settling sphere
+- One-line summary: Compares ROM-FULL, ROM-DEIM, and ROM-RBF on the same POD snapshots for Carreau generalized Newtonian cavity and settling-sphere flows.
+- Why it matters:
+  - Same offline basis, three online contracts: full nonlinear reassembly, hyper-reduced DEIM, non-intrusive RBF interpolation.
+  - Abstract: FULL is most accurate but pays full-order reassembly; RBF is fastest and breaks outside the training rheology; DEIM is the efficiency–accuracy compromise even when data are sparse.
+- Caveat: No public code. 2D benches. Not a turbulence / external-aero transfer.
+- Possible use: Cite when a “one surrogate” pitch hides solver-access vs millisecond interpolation vs rheology OOD.
+- Maturity: paper-only
+- Priority: High
+
+## PINN inverse granular pipe flow from sparse sensors
+
+- Link: https://arxiv.org/abs/2608.18641
+- Type: Paper / inverse PINN (physics.flu-dyn)
+- Keywords: PINN, granular flow, sparse sensing, inverse, KTGF, pipe flow
+- One-line summary: Reconstructs steady granular pipe fields from sparse observations plus continuum constitutive residuals when inlet/outlet/wall BCs are unknown.
+- Why it matters:
+  - Inverse CFD with missing BCs is the actual industrial sensor setting, not a forward residual lottery.
+  - HTML Fig.6: full-field relative error axial velocity **1.1×10⁻²**, solids fraction 1.6×10⁻², granular temperature 3.7×10⁻². Data-volume collapse: axial velocity **1.1×10⁻² → 1.4×10⁻¹**. Random supervision ~7.5×10⁻³ on axial velocity.
+- Caveat: CFD/KTGF labels, not DEM or lab probes. Steady pipe. No public code.
+- Possible use: Cite when a sparse-sensor PINN reports one Rel.L2 without a data-budget collapse curve.
+- Maturity: paper-only
+- Priority: High
+
 ## Data-driven hypersonic NEQ ROM with catalytic surfaces
 
 - Link: https://arxiv.org/abs/2608.14445

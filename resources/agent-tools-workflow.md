@@ -1,5 +1,21 @@
 # Agent Tools & Research Workflow
 
+
+## MOOSEnger — harness closes the model gap on MOOSE multiphysics
+
+- Link: https://arxiv.org/abs/2608.15881
+- Type: Paper / agentic CAE harness (cs.LG + cs.CE)
+- Keywords: MOOSE, INL, agent harness, local LLM, executable alignment, Navier–Stokes
+- One-line summary: A retrieval–run–memory harness around MOOSE input authoring lifts GPT-5.2 / Gemma4 from 5% / 0% unaided success to 90% / 76.5% on 200 prompts; remaining gaps concentrate in NS, plasticity, porous flow, and phase field.
+- Why it matters:
+  - The product is the search / executable diagnosis / persistent-memory loop, not the frontier model card.
+  - HTML table (2026-08-16): overall **153/200 (76.5%) vs 179/200 (90%) vs 10/200 (5%) vs 0/200**; NS **16/25 (64%) vs 21/25 (84%) vs 0 vs 0**. Reactor mesh: Gemma 88% vs GPT 84%.
+  - Success = run successfully **and** aligned with requested physics/geometry/BC/outputs — still not a residual/conservation gate.
+- Caveat: No public agent repo in the HTML. Fluid categories still need base-model reasoning inside the harness. Do not copy reactor-mesh scores onto urban air CFD decks.
+- Possible use: Cite when refusing “swap the model” as a CAE-agent roadmap; require unaided vs harness tables.
+- Maturity: paper-only
+- Priority: High
+
 ## Paper-replication — coding agents replicate SciML claims under completion gates
 
 - Link: https://arxiv.org/abs/2607.02134

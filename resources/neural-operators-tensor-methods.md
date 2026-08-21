@@ -2,6 +2,22 @@
 
 
 
+
+## Flux-form spatiotemporal neural operators — conservation in the update
+
+- Link: https://arxiv.org/abs/2608.18148
+- Type: Paper / coarse-grained operator learning (nlin.CD + physics.comp-ph)
+- Keywords: neural operator, flux-form, local conservation, Mori–Zwanzig, rollout, Kuramoto–Sivashinsky
+- One-line summary: Learns a history-slab → future-slab coarse-grained operator with a divergence-form update so mass changes only through fluxes, plus a data-driven Mori–Zwanzig memory length.
+- Why it matters:
+  - Long-horizon operator DONE is statistical/spectral fidelity under autoregressive rollout, not 1-step RMSE.
+  - HTML KS table: spectrum relative error εS **0.08465 (Local) vs 0.2059 (Global)**; No conservation blows up early. Local beats Global on Burgers mode-wise energy; 2D NS long-time statistics likewise.
+  - No public code in the HTML.
+- Caveat: Spectrally filtered Burgers / KS / 2D NS — not industrial geometry or BC families. Posted 2026-08-11 (gap-fill).
+- Possible use: Cite when scoring conservation inductive bias as local flux vs global-mean vs none.
+- Maturity: paper-only
+- Priority: High
+
 ## Spray SDF-FNO — regime-agnostic gas-liquid interface operator
 
 - Link: https://arxiv.org/abs/2608.17825

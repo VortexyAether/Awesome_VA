@@ -2,6 +2,24 @@
 
 AI-assisted OpenFOAM setup, automation, case validation, post-processing, and engineering workflow orchestration.
 
+
+## Outram Park / Outram-Foam — agentic OpenFOAM port with V&V receipts
+
+- Link: https://arxiv.org/abs/2608.17504
+- Code: https://github.com/theodoreOnzGit/outram-park-backend
+- Related: https://github.com/theodoreOnzGit/tampines-steam-tables
+- Type: Paper + early GPL-3.0 Rust OpenFOAM / thermal-hydraulics libraries
+- Keywords: OpenFOAM, Rust, agentic porting, Ghia cavity, Sod, Edwards blowdown, HEM, V&V
+- One-line summary: Ports OpenFOAM libraries to Rust (Outram-Foam) with Claude Code in the loop, then argues that human V&V — not code generation — is the bottleneck for reliable simulation software.
+- Why it matters:
+  - Distinguishes Foam-Agent-style setup agents from a port that leaves classical CFD receipts.
+  - HTML: Ghia Re=100 max pointwise error **~6.3% → ~1.9%** after 20×20→40×40; Sod L1 **3.7% → 0.7%** with vanLeer MUSCL. Steam tables vs Moody HEM; 1D HEM vs Edwards blowdown.
+  - GitHub `theodoreOnzGit/outram-park-backend` ★1 **GPL-3.0** pushed 2026-08-20; `tampines-steam-tables` ★2 GPL-3.0.
+- Caveat: Reactor / two-phase HEM scope — not an external-aero product claim. ★1. Agentic productivity numbers are qualitative. Smoke-test before any Save.
+- Possible use: Test a cavity or steam-table path after GPL review; cite as the V&V-receipt pattern for LLM solver ports.
+- Maturity: paper + early public research code
+- Priority: High
+
 ## openHFDIBRANS — IBM/fictitious-domain RANS for remesh-free TO
 
 - Link: https://arxiv.org/abs/2606.06135
