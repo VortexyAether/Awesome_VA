@@ -3,6 +3,21 @@
 
 
 
+
+## REC-trunk DeepONet — rational+Chebyshev dictionary for high-Péclet walls
+
+- Link: https://arxiv.org/abs/2608.19658
+- Type: Paper / DeepONet trunk design (cs.LG + math.NA)
+- Keywords: DeepONet, Chebyshev trunk, AAA rational basis, high Péclet, entrance flow, wall layer
+- One-line summary: Replaces a vanilla or pure-Chebyshev DeepONet trunk with a prescribed Chebyshev plus AAA-rational dictionary so thin entrance-layer profiles do not ring at the wall.
+- Why it matters:
+  - High-Péclet heat/mass entrance problems fail on wall-normal layers, not bulk Rel.L2.
+  - API 2026-08-20; Choi/Kumar; 5 seeds. Clearest Chebyshev win at ε∈[1.00e-4, 1.78e-4] — profile-error cut up to **19.5%**. Wall-normal temperature/concentration cuts up to **60.2%** vs vanilla and **32.2%** vs Chebyshev; Pe or Pe_m from 10² to 10⁴.
+- Caveat: No public code. Scalar BVP / thermal / absorbing-wall entrance operators — not unstructured CFD geometry. Chebyshev already close on many bulk profiles.
+- Possible use: Cite when a thin-layer operator is proposed — demand wall-normal error next to the profile metric.
+- Maturity: paper-only
+- Priority: High
+
 ## Flux-form spatiotemporal neural operators — conservation in the update
 
 - Link: https://arxiv.org/abs/2608.18148

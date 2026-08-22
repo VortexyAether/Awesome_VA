@@ -2,6 +2,21 @@
 
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
+## Complementary PINNs — SIREN+causal on DFG cylinder wake
+
+- Link: https://arxiv.org/abs/2608.19632
+- Code: https://github.com/deveshshah1/Navier_Stokes_Exploration_with_PINNs
+- Type: Paper + MIT PINN ablation (cs.LG + physics.flu-dyn)
+- Keywords: PINN, vortex shedding, SIREN, causal weighting, DFG, Schäfer–Turek, OpenFOAM
+- One-line summary: Shows PINN training tricks on the unsteady cylinder wake compose as complementary pairs, not as a longer method list: SIREN plus causal weighting recovers shedding, and stacking more techniques can collapse the field.
+- Why it matters:
+  - Isolated Fourier features, causal weights, hard BCs, SIREN, or extra data leave Re=100 shedding essentially at the untreated baseline.
+  - HTML Table 2: SIREN+causal **Ux/Uy/p Rel.L2 7.8% / 17.1% / 16.7%**, St **0.300**, wake correlation **0.988**. Adding self-adaptive → **21.8 / 75.7 / 37.9**. Fourier+SIREN+causal → **58.1 / 99.8 / 98.1**.
+  - Abstract headline 4.1% average Rel.L2 vs OpenFOAM is the unlocked regime, not the default Table-2 pairing. Re=20 steady Rel.L2 ≤3%; untreated Re=100 is 68 / 86 / 118%.
+- Caveat: 2D laminar icoFoam DFG. Do not copy the pairing to 3D/high-Re. Repo ★0 MIT, pushed 2026-08-20.
+- Possible use: Cite when a PINN write-up lists many tricks — require the pair table and the stack-collapse column.
+- Maturity: paper + early MIT repo
+- Priority: High
 
 ## Intrusive vs non-intrusive ROM for Carreau GNF
 

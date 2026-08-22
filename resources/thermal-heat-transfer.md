@@ -1,6 +1,23 @@
 # Thermal & Heat Transfer
 
 
+
+## Differentiable vapor-compression — one JAX residual for size, integrate, MPC
+
+- Link: https://arxiv.org/abs/2608.19552
+- Code: https://github.com/smyng91/hvac_designer
+- Type: Paper + MIT JAX plant (eess.SY + cs.CE)
+- Keywords: JAX, vapor-compression, heat pump, TR-BDF2, MPC, mass conservation, automated sizing
+- One-line summary: Implements a finite-volume vapor-compression plant natively in JAX so machine sizing, stiff integration, and implicit-Euler MPC share one compiled residual instead of a fitted controller surrogate.
+- Why it matters:
+  - Electrified thermal equipment is usually split across rating-point selection, stiff multi-phase ODEs, and a second control model.
+  - Unfitted Ramírez 16-run capacity MAPE **7.37%** (max |ΔQ| 19.23%); power/COP MAPE **19.34% / 18.14%** because the source is I×120 V. NREL HIL on-period cooling **−1.62% / −1.19%**. JAX vs NumPy relative difference **<10⁻¹⁶**.
+  - Mass is kept by putting both (∂ρ/∂p)_h and (∂ρ/∂h)_p into the pressure ODE. Repo ★0 MIT, pushed 2026-08-20.
+- Caveat: Single-stage subcritical. No auto-defrost, ducts, or multi-zone. Not an external-aero CFD solver. Power/COP weaker than capacity.
+- Possible use: Steal the **shared-residual** contract for any thermal plant+control loop; smoke-test after lockfile review, do not product-Save on ★0.
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## DeepOHeat-v2 — self-improving thermal operator for high-contrast 3D-IC
 
 - Link: https://arxiv.org/abs/2608.16080
