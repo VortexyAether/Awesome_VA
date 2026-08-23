@@ -2,6 +2,37 @@
 
 
 
+## Weak-Pareto — weak-form discovery that keeps support under noise
+
+- Link: https://arxiv.org/abs/2608.12879
+- Code: https://github.com/Pongpisit-Thanasutives/Weak-Pareto
+- Type: Paper + MIT equation-discovery runtime (cs.LG + math.DS)
+- Keywords: weak form, fractional PDE, Pareto subset, noise, equation discovery
+- One-line summary: Discovers fractional PDEs from noisy fields by moving derivatives onto smooth test functions and selecting term types plus continuous orders at a validation-error–complexity elbow.
+- Why it matters:
+  - Pointwise fractional derivatives amplify high-frequency noise; the weak library is the robustness, not a denser dictionary.
+  - API 2026-08-13; Thanasutives/Kawahara. Abstract: correct support at every tested multiplicative-noise level on advection-diffusion / Burgers; unregularised strong-form largely fails once noise is introduced.
+  - GitHub `Pongpisit-Thanasutives/Weak-Pareto` ★0, **MIT**, pushed 2026-08-17.
+- Caveat: Fractional PDE benches. Not a RANS/closure transfer.
+- Possible use: Smoke-test the published FADE/Burgers noise sweep before borrowing the weak library.
+- Maturity: paper + early MIT repo
+- Priority: Medium-High
+
+## S-PENNs — UQ samples that cannot leave GENERIC
+
+- Link: https://arxiv.org/abs/2608.12624
+- Uses: https://github.com/Crunch-UQ4MI/neuraluq
+- Type: Paper / structure-preserving UQ (cs.LG + physics.comp-ph)
+- Keywords: GENERIC, structure-preserving, epinet, conformal, admissibility, UQ
+- One-line summary: Attaches lightweight epinets to the constrained pieces of a pretrained GENERIC model so every sampled realization stays thermodynamically admissible, then calibrates intervals with split conformal prediction.
+- Why it matters:
+  - Standard UQ on a hard-constrained architecture can sample illegal trajectories.
+  - API 2026-08-12; He/Reina. Oscillator+heat bath, chemical motor ODE, 1D viscoplastic PDE. HTML inverse Kraichnan–Orszag **a=0.98±0.07, b=1.01±0.06**. About 1–3 orders cheaper than deep ensembles.
+- Caveat: Not an Euler/RANS demo. `neuraluq` is an existing library (★202) — refresh only, not a new Save.
+- Possible use: Cite when UQ is bolted onto a conservative / GENERIC / hard-constraint surrogate — ask whether samples stay admissible.
+- Maturity: paper + existing UQ library
+- Priority: High
+
 ## Adaptive ST surrogate — rSVD + PNMAE/PNrMAE sampling
 
 - Link: https://arxiv.org/abs/2608.17250

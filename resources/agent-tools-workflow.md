@@ -1,6 +1,23 @@
 # Agent Tools & Research Workflow
 
 
+## SWE-bench Science — public score 96.64% vs Pass@1 47.90%
+
+- Link: https://arxiv.org/abs/2608.19799
+- Code: https://github.com/OpenMOSS/SWE-bench-Science
+- Data: https://huggingface.co/datasets/OpenMOSS-Team/SWE-bench-Science
+- Type: Paper + MIT science-agent benchmark (cs.CL + cs.SE)
+- Keywords: SWE-bench, scientific software, pass@1, evidence chain, anchoring, private tests
+- One-line summary: Evaluates repository-level scientific-code repair with public vs private tests so a high visible score can still fail exact hidden success.
+- Why it matters:
+  - Scientific code is part of the instrument: a wrong patch can break the evidence, not only the build.
+  - API 2026-08-20; Xu et al.; 119 tasks / 98 repos / 20 domains. PDF Table 2: Claude Code + Opus-5 max **public 96.64% / Pass@1 47.90%**. Four failure modes (knowledge/abstraction, surface repair, incomplete integration, failed generalization). Scientific guidance is not uniformly helpful — misaligned hints can anchor.
+  - GitHub `OpenMOSS/SWE-bench-Science` ★49, **MIT**, pushed 2026-08-21.
+- Caveat: Not a factory CFD/OpenFOAM suite. Pass@1 = all applicable private tests, not a residual/conservation gate.
+- Possible use: Cite when a CAE-agent card quotes pass@k — demand public vs private and failure-mode counts.
+- Maturity: paper + live MIT benchmark repo
+- Priority: High
+
 ## MOOSEnger — harness closes the model gap on MOOSE multiphysics
 
 - Link: https://arxiv.org/abs/2608.15881

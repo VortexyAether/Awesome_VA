@@ -4,6 +4,22 @@
 
 
 
+## Iterative Refinement DA — resolution-wise forecast–analysis on Kraichnan 256
+
+- Link: https://arxiv.org/abs/2608.14744
+- Code: https://github.com/dmrigank/Iterative_refinement_DA
+- Type: Paper + MIT DA / neural-operator runtime (cs.LG + physics.flu-dyn)
+- Keywords: data assimilation, iterative refinement, FNO, diffusion, Kraichnan, super-resolution
+- One-line summary: Replaces one-shot super-resolution with a hierarchy of forecast–analysis steps: a shared FNO prior with spectral-mode slicing plus a shared conditional diffusion posterior at the next resolution.
+- Why it matters:
+  - One-shot RMSE winners are not automatically multiscale DA winners.
+  - Abstract: Kraichnan 256 RMSE **0.184** / SSIM **0.836**. HTML: FNO-only RMSE **2.568**. 1D Burgers one-shot diffusion RMSE **2.776e-3** vs IR **4.355e-3**.
+  - GitHub `dmrigank/Iterative_refinement_DA` ★0, **MIT**, pushed 2026-07-22.
+- Caveat: Synthetic Burgers / Kraichnan. Engineering geometry/BC gates are separate. ★0; code predates the arXiv date.
+- Possible use: Test Burgers vs Kraichnan 256; keep the 1D one-shot win next to the 2D IR win.
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## REC-trunk DeepONet — rational+Chebyshev dictionary for high-Péclet walls
 
 - Link: https://arxiv.org/abs/2608.19658

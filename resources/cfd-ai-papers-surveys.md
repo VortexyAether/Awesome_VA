@@ -1,5 +1,19 @@
 # CFD-AI Papers & Surveys
 
+## IGR adjoint — shock sensitivities without freezing limiters
+
+- Link: https://arxiv.org/abs/2608.09759
+- Type: Paper / compressible Euler adjoint (math.NA + math.OC)
+- Keywords: IGR, adjoint, shock capturing, limiter freeze, Euler, sensitivities
+- One-line summary: Derives forward and adjoint sensitivities for information-geometric regularization of compressible Euler so shocks become smooth inviscid profiles and grid-refined sensitivities match FD/AD without freezing limiters.
+- Why it matters:
+  - Frozen shock sensors / limiters are a common way to make adjoints look stable while reporting the wrong shape gradient.
+  - API 2026-08-10; Schäfer. Periodic-BC IGR system; refinement → FD/AD match. HTML conversion empty (0 B).
+- Caveat: Periodic BC only in the abstract. No public code. Engineering walls / complex geometry not shown.
+- Possible use: Cite when a shock-shape adjoint “works” after freezing sensors — ask for the unfrozen refinement plot.
+- Maturity: paper-only
+- Priority: High
+
 Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine Learning, and machine learning for fluid mechanics. Method-specific papers should live in their topic files instead of here.
 
 ## Complementary PINNs — SIREN+causal on DFG cylinder wake
