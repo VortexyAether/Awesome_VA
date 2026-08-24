@@ -2,6 +2,20 @@
 
 
 
+## PCINN — Spatial-ALD coverage with an identifiability boundary
+
+- Link: https://arxiv.org/abs/2608.00212
+- Type: Paper / hybrid PINN + hard-coded ALD chemistry (cs.LG + physics.comp-ph)
+- Keywords: PCINN, Spatial-ALD, coverage, identifiability, Fisher, profile likelihood, CVD
+- One-line summary: Learns only the operating-condition to near-wall concentration closure, integrates known surface kinetics along the substrate path, and reports which kinetic constants survive Fisher / profile-likelihood tests.
+- Why it matters:
+  - Millisecond coverage is not a kinetics receipt. \(E_{\mathrm{ads}}\) and \(k_{\mathrm{des}}\) are robust; \(k_{\mathrm{ads}}\) is not separately identifiable at one temperature.
+  - API 2026-07-31; Hu/Liu/Jiang/Dong. Query **~7 ms**, about \(5\times10^4\times\) vs CFD. Test \(R^2_{\log}=0.998\), LOO \(R^2_{\mathrm{raw}}=0.974\), 30 training cases, four coverage decades. Four-temperature \(\nu\)–\(E_{\mathrm{ads}}\) slope **0.065 eV/decade**.
+- Caveat: No public code at curation. SALD column ≠ external aero CFD. 07-31 gap-fill.
+- Possible use: Cite when a CVD/ALD surrogate quotes millisecond coverage — ask the identifiability table, not only \(R^2\).
+- Maturity: paper-only
+- Priority: High
+
 ## Differentiable vapor-compression — one JAX residual for size, integrate, MPC
 
 - Link: https://arxiv.org/abs/2608.19552

@@ -1,5 +1,35 @@
 # CFD-AI Papers & Surveys
 
+## Implicit-adjoint FV CHT topology optimization (JAX)
+
+- Link: https://arxiv.org/abs/2608.19426
+- Code: https://github.com/smyng91/topology_optimization
+- Type: Paper + MIT 2D FV / adjoint TO (math.NA)
+- Keywords: adjoint, finite volume, conjugate heat transfer, topology optimization, JAX, Brinkman
+- One-line summary: Builds a self-contained 2D staggered-MAC finite-volume CHT topology optimizer whose discrete advection keeps uniform temperature as an exact nullspace and whose sensitivities come from an implicit-function adjoint, not unrolled iteration.
+- Why it matters:
+  - Density-based thermofluid TO is only reproducible if the discrete energy operator and the adjoint match the residual that is actually solved.
+  - API 2026-08-19; Sam Yang. Stokes–Brinkman or Darcy + energy at fixed solid volume. MMS + directional Taylor remainder. Four benches: volume-to-point tree / Darcy convection / Stokes–Brinkman conjugate cooling / Dirichlet sandwich.
+  - GitHub `smyng91/topology_optimization` ★0, **MIT**, pushed 2026-08-19. Distinct from the same author's 08-22 `smyng91/hvac_designer`.
+- Caveat: 2D staggered MAC. Not 3D / turbulence / compressible. ★0 newborn.
+- Possible use: Smoke-test the uniform-T nullspace and Taylor remainder before treating a pretty cooling tree as a TO receipt.
+- Maturity: paper + early MIT repo
+- Priority: High
+
+## Implicit sweep BGK on unstructured grids (ORNL)
+
+- Link: https://arxiv.org/abs/2608.19150
+- Type: Paper / unstructured DG kinetic solver (cs.CE)
+- Keywords: BGK, unstructured, implicit sweep, DG, Kokkos, Sod, Frontier
+- One-line summary: Solves multidimensional BGK with a nodal DG implicit sweep on unstructured grids so boundary-layer CFL does not set the time step, and checks the continuum limit on 2D/3D unstructured Sod.
+- Why it matters:
+  - Kinetic demos that stay Cartesian hide the geometry that actually forces implicit sweeps.
+  - API 2026-08-19; Evans/Glasby/Hauck et al. Third-order B-stable DIRK. H100 **>20×** vs 64-core EPYC 9654. Frontier run: 2.77 trillion phase-space DoF / 1536 nodes / 6144 MI250X.
+- Caveat: No dedicated public solver URL. Kinetic ≠ RANS product. `tahandy/ToroExact` is a Sod reference, not this code.
+- Possible use: Cite when a kinetic paper only shows Cartesian shocks — ask for unstructured continuum-limit Sod.
+- Maturity: paper-only
+- Priority: High
+
 ## IGR adjoint — shock sensitivities without freezing limiters
 
 - Link: https://arxiv.org/abs/2608.09759

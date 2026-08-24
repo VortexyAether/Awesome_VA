@@ -1,6 +1,20 @@
 # Agent Tools & Research Workflow
 
 
+## Harness Continual Learning — skills/tools forget when the model is frozen
+
+- Link: https://arxiv.org/abs/2608.19013
+- Type: Paper / agent harness continual learning (cs.LG + cs.AI)
+- Keywords: harness, continual learning, forgetting, skills, tools, routing, frozen model
+- One-line summary: Treats prompts, memories, tools, skills, and routing as the evolving state around a frozen foundation model, and separates candidate harness updates from a retention/validity commit gate.
+- Why it matters:
+  - A CAE agent can regress after a skill or tool patch even when weights never move.
+  - API 2026-08-19; Kang/Gu/Lv/Li/Wang/Gao. Relative gains **>10%** in multiple settings. Issue Board HTML: ALFWorld / Qwen3.5-9B Full HCL **63.41** vs zero-shot **34.84**; Avg. Fgt **0.45**, committed **18**.
+- Caveat: Text / ALFWorld / Minecraft benches. Not a CFD/CAD harness demo. No public code.
+- Possible use: Cite when a CAE agent “improved” after a skill/tool update — require current-gain vs historical-retention vs validity, not a single new pass-rate.
+- Maturity: paper-only
+- Priority: High
+
 ## SWE-bench Science — public score 96.64% vs Pass@1 47.90%
 
 - Link: https://arxiv.org/abs/2608.19799

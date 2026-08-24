@@ -2,6 +2,21 @@
 
 
 
+## Implicit-adjoint FV CHT topology optimization (JAX)
+
+- Link: https://arxiv.org/abs/2608.19426
+- Code: https://github.com/smyng91/topology_optimization
+- Type: Paper + MIT 2D FV / adjoint TO (math.NA)
+- Keywords: topology optimization, discrete adjoint, conjugate heat transfer, implicit function theorem, JAX
+- One-line summary: Optimizes 2D conjugate-heat-transfer layouts with projected-gradient / β-continuation while reverse-mode derivatives come from the implicit function theorem rather than unrolled solver loops.
+- Why it matters:
+  - Unrolled AD can hide a porous fake heat source; the discrete identity \(\mathbf{u}\cdot\nabla T=\nabla\cdot(\mathbf{u}T)-T(\nabla\cdot\mathbf{u})\) is the gate.
+  - Same-day primary write-up lives in `cfd-ai-papers-surveys.md`. Live MIT repo ★0, pushed 2026-08-19.
+- Caveat: 2D MAC. Do not product-Save on ★0.
+- Possible use: Pair with the 08-22 JAX HVAC residual paper as a same-author discrete-adjoint / shared-residual stack, not as one product.
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## Weak-Pareto — weak-form discovery that keeps support under noise
 
 - Link: https://arxiv.org/abs/2608.12879

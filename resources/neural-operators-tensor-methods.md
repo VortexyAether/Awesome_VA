@@ -4,6 +4,22 @@
 
 
 
+## KernelMO — closed-form multi-input multi-output operators
+
+- Link: https://arxiv.org/abs/2608.11831
+- Code: https://github.com/liaochunyang/kernelMO
+- Type: Paper + unlicensed kernel-operator runtime (cs.LG + math.ST + stat.ML)
+- Keywords: kernel methods, multi-input multi-output, operator learning, KernelMO, OOD, closed-form
+- One-line summary: Learns multi-input multi-output operators with a kernel encoder–decoder whose convergence rate is governed by the hardest constituent problem, not by the number of inputs and outputs.
+- Why it matters:
+  - Adding channels is not automatically a harder SciML problem; the worst constituent sets the rate.
+  - API 2026-08-12; Weihs/Liao/Sun/Schaeffer. Closed-form train/infer. Five parametric PDE families vs neural-operator / deep baselines.
+  - GitHub `liaochunyang/kernelMO` ★0, **license unset**, pushed 2026-08-12.
+- Caveat: No license → Save withheld. ★0. No engineering geometry/BC gate.
+- Possible use: Test only after license clarification; score OOD and cost vs DeepONet/MIONet, not one-step RMSE.
+- Maturity: paper + unlicensed early repo
+- Priority: Medium-High
+
 ## Iterative Refinement DA — resolution-wise forecast–analysis on Kraichnan 256
 
 - Link: https://arxiv.org/abs/2608.14744
