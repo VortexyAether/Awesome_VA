@@ -1,5 +1,49 @@
 # CFD-AI Papers & Surveys
 
+## Low-fidelity aerofoil opt for curvilinear / cyclorotor kinematics
+
+- Link: https://arxiv.org/abs/2608.20951
+- Code: https://github.com/BenIrwin95/Low-Fidelity-Cyclorotor-Aerofoil-Optimiser
+- Type: Paper + Apache-2.0 MATLAB shape-opt (physics.flu-dyn)
+- Keywords: aerofoil, cyclorotor, multi-fidelity, Figure of Merit, streamtube, dynamic stall
+- One-line summary: Optimises cyclorotor camber with a single-streamtube model and separate leading-/trailing-edge objectives, capturing most of the high-fidelity Figure-of-Merit gain at a fraction of the cost.
+- Why it matters:
+  - Downstream hover QoI plus a fidelity ladder beat field RMSE as the shape-search receipt.
+  - API 2026-08-21; Irwin/Toal/Krishna. Four-blade LF opt takes **77%** of HF FM gain (HTML: 0.39 / 0.59 / 0.65). Pitch-kinematics opt also helps but cuts thrust.
+  - GitHub ★0 Apache-2.0 pushed 2026-07-29.
+- Caveat: ★0. Hovering cyclorotor ≠ quad-rotor kinematics. 2D URANS HF.
+- Possible use: Cite as a fidelity-ladder example; do not transfer the 77% number across kinematics families.
+- Maturity: paper + early Apache repo
+- Priority: High
+
+## Point-cloud quality metrics that actually predict meshfree error
+
+- Link: https://arxiv.org/abs/2608.20872
+- Type: Paper / meshfree verification (math.NA + cs.CE)
+- Keywords: meshfree, point cloud, GFDM, quality metrics, verification
+- One-line summary: Tests which point-cloud quality metrics actually correlate with GFDM collocation error across elliptic and hyperbolic, 2D and 3D cases, and shows that several popular metrics do not.
+- Why it matters:
+  - “Point clouds are easier than meshes” is not a verification statement until quality predicts error.
+  - API 2026-08-21; Abdolahzadeh/Davydov/Michel/Suchde. Six reliable indicators (Issue Board: RE, GFL2, GFL1, DJM, FD, IMPF). No public code.
+- Caveat: Tied to GFDM collocation. Authors caveat transfer to other meshfree schemes.
+- Possible use: Cite when a meshfree pitch skips a discretization-quality gate.
+- Maturity: paper-only
+- Priority: High
+
+## Urban flood GO-OED — place sensors for the decision, not coverage
+
+- Link: https://arxiv.org/abs/2608.21182
+- Type: Paper / Bayesian OED + NN flood surrogate (stat.AP + physics.geo-ph)
+- Keywords: urban flood, GO-OED, PO-OED, sensor placement, QoI, tRIBS-Urban
+- One-line summary: Shows that single-sensor placement on a Detroit 2014 flood surrogate flips with the learning target: point depth stays local, regional mean/max depth can go nonlocal.
+- Why it matters:
+  - Coverage and expected inundation are not the decision package.
+  - API 2026-08-21; Cheng/Tran/Dong et al. 2,576 candidate sites. Parameter EIG does not transfer evenly into predictive-uncertainty cuts. No public code.
+- Caveat: Single sensor. Michigan geometry ≠ Korean cities.
+- Possible use: Cite when an urban sensor map is coverage-first — ask which QoI the EIG actually maximises.
+- Maturity: paper-only
+- Priority: High
+
 ## Implicit-adjoint FV CHT topology optimization (JAX)
 
 - Link: https://arxiv.org/abs/2608.19426

@@ -1,8 +1,35 @@
 # Neural Operators & Tensor Methods
 
+## STCO — prescribed-condition neural operators for IBM CFD
 
+- Link: https://arxiv.org/abs/2608.20477
+- Type: Paper / prescribed-condition operator interface (cs.AI)
+- Keywords: neural operator, STCO, PCOL, prescribed condition, IBM, FAGL, DSFiLM
+- One-line summary: Supplies prescribed target-time motion, inflow, and force fields to twelve matched operator backbones so future-state queries are not limited to observed states and static descriptors.
+- Why it matters:
+  - Control and shape-change deployment fail when the query never sees the prescribed button.
+  - API 2026-08-20; Yang/Zhang/Li. WaterLily.jl IBM. Mean paired rel-L2 **-31.1%**, pressure-derived load **-24.7%**. Longer-lead field error down on 11/12 backbones.
+  - Issue Board HTML: PINO field 0.438→0.194; MGN field 0.438→0.242. ID-Lead Δn=1–20 / OOD-Lead 21–40. No public code in API/HTML.
+- Caveat: 2D IBM water-tank. Not exterior RANS. Code absent → Test withheld.
+- Possible use: Cite when a control surrogate quotes one-step RMSE — demand prescribed query fields plus ID/OOD lead.
+- Maturity: paper-only
+- Priority: High
 
+## OpPropRank — shared physics responses rank NO libraries without ground truth
 
+- Link: https://arxiv.org/abs/2608.20441
+- Code: https://github.com/ToughClimb/OpPropRank-open-source
+- Type: Paper + MIT operator-library ranking runtime (cs.LG + math.NA + physics.comp-ph)
+- Keywords: neural operator, model selection, residual, shared physics response, OpPropRank
+- One-line summary: Ranks a finite neural-operator library from one linearized shared physics response on the span of candidate differences, without high-fidelity ground truth at deploy time.
+- Why it matters:
+  - Raw residual magnitude is not a ranking receipt.
+  - API 2026-08-20; Liang/Liu. Fluid / reaction-diffusion / wave. Abstract pairwise >99.6% / checkpoint 99.0%. HTML pairwise 99.59% (49122/49323), top-1 99.01%; raw residual ~67.8% on a two-PDE eight-lib cut.
+  - GitHub `ToughClimb/OpPropRank-open-source` ★0 MIT pushed 2026-08-06.
+- Caveat: ★0 newborn. Push predates the arXiv date. Bench PDEs ≠ engineering geometry/BC gates.
+- Possible use: Smoke-test pairwise/top-1 vs raw residual; do not product-Save on ★0.
+- Maturity: paper + early MIT repo
+- Priority: High
 
 ## KernelMO — closed-form multi-input multi-output operators
 
