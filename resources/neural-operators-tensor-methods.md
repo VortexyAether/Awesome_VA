@@ -1,5 +1,19 @@
 # Neural Operators & Tensor Methods
 
+## Read-Write-Relax — global tokens + local mesh relaxation
+
+- Link: https://arxiv.org/abs/2608.21677
+- Type: Paper / industrial mesh PDE surrogate (cs.LG + cs.AI + cs.CE + physics.app-ph + physics.comp-ph)
+- Keywords: mesh GNN, latent tokens, multigrid, wall shear, industrial CFD
+- One-line summary: Interleaves latent-token attention with mesh message-passing relaxation so industrial-scale surrogates correct both ends of the error spectrum.
+- Why it matters:
+  - Global tokens are a spatial low-pass; local MP lacks long-range reach. Neither half of the multigrid cycle substitutes for the other.
+  - API 2026-08-21; Kumar/Zimmermann/Bjorgaard/Chaplais/Bouklas/Salvador/Lavin. Industrial + public benches; scarce-data claim. Issue Board HTML: branching pipe + centrifugal pump; Table 4 best val MSE(×10^{-3}) RWR **15.7 / 7.2 / 1.58 / 0.409 / 0.190** vs RWP 29.9 / 10.8 / …. No public code.
+- Caveat: Steady flow. Code/data license unverified. Bulk NMAE ≠ wall-shear receipt.
+- Possible use: Cite when a mesh-GNN leaderboard is field NMAE-only — ask wall-shear / vorticity / spectral bands.
+- Maturity: paper-only
+- Priority: High
+
 ## STCO — prescribed-condition neural operators for IBM CFD
 
 - Link: https://arxiv.org/abs/2608.20477

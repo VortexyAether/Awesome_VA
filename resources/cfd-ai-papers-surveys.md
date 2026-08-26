@@ -1,5 +1,62 @@
 # CFD-AI Papers & Surveys
 
+## When a neural surrogate cannot accelerate a solver
+
+- Link: https://arxiv.org/abs/2608.23075
+- Type: Paper / closed-loop surrogate negative result (astro-ph.IM + astro-ph.HE + cs.LG + physics.comp-ph)
+- Keywords: surrogate, Amdahl, closed-loop, UQ gating, radiation hydrodynamics
+- One-line summary: Shows that a 5.8× cheaper inner-block surrogate cannot accelerate a stiff multiphysics loop once runtime share, offline-rank confounding, and a correct OOD gate are measured together.
+- Why it matters:
+  - Per-call speedup is not loop acceleration; only the share of wall clock sets Amdahl's cap.
+  - API 2026-08-24; Thümmler/Kuroda. Target block **16.9%** of critical-rank wall clock → **~1.2×** cap. Fourteen-network Spearman **+0.73** collapses to **−0.04** under control. States **73×** off manifold; gate defers **96.8–99.7%**; gated loop **0.94–0.96×**. Density bias **−19.9%** / 6000 steps. No public code.
+- Caveat: Neutrino GR hydro ≠ exterior RANS. Economics of gating still transfers. Test withheld.
+- Possible use: Cite when a surrogate pitch quotes per-call speedup or holdout RMSE as deploy acceleration.
+- Maturity: paper-only
+- Priority: High
+
+## Inverted PINN model selection — lower residual, worse solution
+
+- Link: https://arxiv.org/abs/2608.21683
+- Type: Paper / PINN verification (physics.comp-ph + physics.app-ph)
+- Keywords: PINN, residual, admissibility, model selection, structural identity
+- One-line summary: Finds that a smaller aggregate PDE residual systematically ranks a worse solution when a defining structural identity is penalized instead of hard-wired.
+- Why it matters:
+  - Scalar residual is not an admissibility receipt.
+  - API 2026-08-21; Rabiu Musah. 64 matched pairs invert **83%** (Wilson 72–90%). Six architectures invert **46/48**. Vorticity–stream residual margin **9.37%** with **>6-order** identity violation. Source deletion leaves **97%** of reported structure. Lexicographic gate: identity → boundary trace → solvability integral → residual. No public code.
+- Caveat: Single author, no code. Bench PDE ≠ engineering geometry.
+- Possible use: Cite in PINN/NO selection checklists before residual competition.
+- Maturity: paper-only
+- Priority: High
+
+## JXRGCM — Jin–Xin relaxation continuation for conservation-law PINNs
+
+- Link: https://arxiv.org/abs/2608.22493
+- Type: Paper / hyperbolic conservation PINN (math.NA)
+- Keywords: PINN, Jin-Xin, relaxation, continuation, shock, entropy solution
+- One-line summary: Anneals the Jin–Xin relaxation parameter with warm starts so a PINN can follow a shock layer toward the entropy solution instead of fitting one fixed scale.
+- Why it matters:
+  - Fixed-ε relaxation PINNs cannot track the singular limit.
+  - API 2026-08-23; Lorin/Tang/Yang/Zhu. Sub-characteristic ε-independent stability; scalar L2 **O(ε^{1/4})**. Burgers / SWE dam-break / Sod. No public code.
+- Caveat: 1D/standard shock benches. No engineering geometry gate.
+- Possible use: Cite when a shock PINN uses a fixed relaxation penalty.
+- Maturity: paper-only
+- Priority: High
+
+## Spinning quadrotor — hover thrust from passive wings
+
+- Link: https://arxiv.org/abs/2608.23163
+- Code: https://github.com/pyromania99/spinning-quadrotor-hover
+- Type: Paper + unlicensed UAV hardware/code (cs.RO)
+- Keywords: quadrotor, hover, passive lift, yaw, Urban_Flighter
+- One-line summary: Holds a sustained yaw in hover so passive lifting surfaces produce thrust, cutting required motor thrust 22% in preliminary hardware tests.
+- Why it matters:
+  - Downstream hover QoI plus hardware beat field RMSE as the flight-efficiency receipt.
+  - API 2026-08-24; Parkala/Kandath. ICUAS 2026 DOI 10.1109/ICUAS69441.2026.11598692. GitHub ★0, license unset, pushed 2026-06-09.
+- Caveat: ★0 unlicensed. Spinning quadrotor ≠ default Urban_Flighter kinematics. Do not transfer −22%.
+- Possible use: Inspect after license clarification; treat as a QoI-ladder example, not a kinematics transfer.
+- Maturity: paper + unlicensed early repo
+- Priority: High
+
 ## Low-fidelity aerofoil opt for curvilinear / cyclorotor kinematics
 
 - Link: https://arxiv.org/abs/2608.20951
