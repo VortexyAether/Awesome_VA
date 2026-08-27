@@ -469,6 +469,20 @@
 - Maturity: paper-only
 - Priority: High
 
+## IterCAD (orthographic REVISE/STOP)
+
+- Link: https://arxiv.org/abs/2608.24020
+- Type: Paper / iterative CAD program repair (cs.CV + cs.AI)
+- Keywords: IterCAD, orthographic views, program repair, REVISE, STOP, CADExpert
+- One-line summary: Turns dimensioned orthographic views into executable parametric CAD by repeated inspect-and-repair (REVISE/STOP), not one-shot generation.
+- Why it matters:
+  - Same product name as June IterCAD (`2606.13368`) but a different loop: view-to-code repair vs executable sandbox editing.
+  - API 2026-08-25; Wu/Niu/Yu/Chen/Xue/Li. ACM MM 2026. Issue Board HTML: IterCAD-Q3.5 **IoU 91.61% / Mean CD 0.5387 / Med CD 0.1038 / Exec 99.33%** vs CME-CAD 80.71 / 1.00 / Exec 98.25. No public code in API.
+- Caveat: Code absent. Do not overwrite the June IterCAD entry. Exec% is nearly saturated; IoU/CD is the signal.
+- Possible use: Cite beside, not instead of, `2606.13368` when scoring CAD agents on inspect-and-repair vs sandbox multi-turn.
+- Maturity: paper-only
+- Priority: High
+
 ## IterCAD
 
 - Link: https://arxiv.org/abs/2606.13368

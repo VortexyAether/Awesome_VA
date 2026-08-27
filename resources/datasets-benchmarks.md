@@ -2,6 +2,22 @@
 
 Flow datasets, SciML benchmarks, reproducibility references, metrics, and evaluation protocols.
 
+## PhysicsBench — unified generative + predictive CAE leaderboard
+
+- Link: https://arxiv.org/abs/2608.24056
+- Leaderboard: https://leaderboard.narnia.ai
+- Data: https://github.com/Narnialabs/leaderboard
+- Type: Paper / CAD-CFD-FEA benchmark (cs.LG + cs.CE)
+- Keywords: PhysicsBench, limited-data, generative CAD, field prediction, BenchRank, AirfRANS, DrivAer
+- One-line summary: Ranks generative geometry models and predictive field/scalar models under one procedure and limited S–XL data scales instead of unconstrained academic boards.
+- Why it matters:
+  - Unlimited-data academic standing weakly predicts small-data industrial ranking.
+  - API 2026-08-25; Lee/Jeong/Kang. 40 pages. Seven tasks; **66 models × 9 datasets → 28 configs**. Industrial CAD/CFD/FEA plus AirfRANS / DrivAerNet++ / DrivAerML / DeepJEB / DeepWheel. BenchRank uses PageRank over a head-to-head dominance graph. GitHub ★0, license unset, pushed 2026-08-12.
+- Caveat: ★0 unlicensed. Vendor-operated leaderboard. Quality-view ranks move with α / τ_d knobs.
+- Possible use: Cite when a CAE-AI pitch quotes an unconstrained academic board — demand limited-N rank plus geometry + field/scalar metrics.
+- Maturity: paper + unlicensed leaderboard repo
+- Priority: High
+
 ## U3DWind — urban low-altitude wind dataset + UAM benchmark
 
 - Link: https://arxiv.org/abs/2607.04495

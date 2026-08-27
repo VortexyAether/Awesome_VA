@@ -1,6 +1,19 @@
 # Thermal & Heat Transfer
 
+## IC-ThermBench — within-family OK, cross-package OOD collapses
 
+- Link: https://arxiv.org/abs/2608.23977
+- Code: https://github.com/Day333/ThermalBench
+- Type: Paper + unlicensed thermal OOD bench (cs.CE)
+- Keywords: IC-ThermBench, 3D-IC, chiplet, cross-package OOD, FNO, hotspot
+- One-line summary: Shows thermal-learning RMSE/MAE staying near 1 K inside layout/material/BC families, then jumping to ~15 K on unseen packages.
+- Why it matters:
+  - Family generalization is not package-family transfer.
+  - API 2026-08-25; Huang/Yang/Ding/Xin. 3D-IC steady/transient + industrial package + **50k** 2.5D chiplet. Best RMSE/MAE S4 **1.216 / 0.938 K** → S5 **15.99 / 15.00 K**; 10-label adapt MAE **2.60 K**. GitHub ★29, SPDX NOASSERTION, pushed 2026-08-26.
+- Caveat: IC package ≠ exterior CFD. No SPDX. Simulator-domain validity is an author-stated limit.
+- Possible use: Cite when a thermal surrogate reports only within-family RMSE — ask the unseen-package column.
+- Maturity: paper + unlicensed early repo
+- Priority: High
 
 ## PCINN — Spatial-ALD coverage with an identifiability boundary
 

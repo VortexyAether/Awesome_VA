@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## DeepONet-LSTM — history-required output-feedback operator
+
+- Link: https://arxiv.org/abs/2608.24699
+- Code: https://github.com/JingZhang-JZ/deeponet-lstm-rd-output-feedback
+- Type: Paper + unlicensed 1D RD control operator (eess.SY)
+- Keywords: DeepONet, LSTM, output feedback, reaction-diffusion, causal operator
+- One-line summary: Learns a causal boundary operator from reaction coefficient plus measurement history; a history-free DeepONet fails to stabilize.
+- Why it matters:
+  - Operator fit is not closed-loop stability. Causality / history is the gate.
+  - API 2026-08-25; Zhang/Qi/Jiang. Lipschitz + practical-stability claim. Issue Board HTML ν=8.8: modified-loss Eu **1.018e-2 vs MSE 4.083e-2**; terminal ‖u(T)‖ neural ~1e-4 vs backstepping ~1e-8. GitHub ★0, license unset, pushed 2026-06-02.
+- Caveat: 1D reaction-diffusion. ★0 unlicensed. Not an exterior 3D CFD result.
+- Possible use: Cite when an output-feedback neural operator quotes one-step RMSE — demand a history ablation and closed-loop terminal norm.
+- Maturity: paper + unlicensed early repo
+- Priority: High
+
 ## Read-Write-Relax — global tokens + local mesh relaxation
 
 - Link: https://arxiv.org/abs/2608.21677

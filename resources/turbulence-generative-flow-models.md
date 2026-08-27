@@ -2,6 +2,20 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Vortex-shedding LQG — higher-order ROM can lose the loop
+
+- Link: https://arxiv.org/abs/2608.24435
+- Type: Paper / closed-loop ROM control (physics.flu-dyn)
+- Keywords: vortex shedding, LQG, DMD-c, waterbed, cylinder, DDES
+- One-line summary: Shows that raising ROM order past a sweet spot can worsen vortex-shedding suppression via the waterbed effect, while a 2D-trained controller still cuts 3D DDES drag 13.7%.
+- Why it matters:
+  - Latent compactness is not closed-loop stability. More modes can increase sensitivity in unmodelled bands.
+  - API 2026-08-25; Proudfoot/Nicholls/Tang/Bacic. Re=1000 cylinder. Lift-only LQG needs ≥4th order; best near **9 modes**; >14 modes drop. Lift-variance **−28.6 dB**, 2D drag **−26%**. 3D DDES Cd **−13.7%**. Claimed `Jackp-1/LQG-Cylinder-Control` GitHub API 404.
+- Caveat: Cylinder bench. Code missing → Test withheld. Sweet spot is Re/sensor-specific.
+- Possible use: Cite when a control ROM adds modes for accuracy — demand an order sweep and a 2D-train / 3D-deploy check.
+- Maturity: paper-only
+- Priority: High
+
 ## Residual LSTM on Wagner — transonic unsteady airfoil lift
 
 - Link: https://arxiv.org/abs/2608.17894
