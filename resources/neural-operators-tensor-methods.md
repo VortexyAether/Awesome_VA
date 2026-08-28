@@ -1,5 +1,36 @@
 # Neural Operators & Tensor Methods
 
+## CoKo-UNO — Koopman truncation residual needs SSM compensation
+
+- Link: https://arxiv.org/abs/2608.25879
+- Code: https://github.com/tangyinglv/CoKo-UNO
+- Type: Paper + unlicensed unsteady-flow operator (physics.flu-dyn)
+- Keywords: Koopman, UNO, SSM, rollout, CFDBench, Kolmogorov
+- One-line summary: Compensates the state-dependent residual of finite-dimensional Koopman truncation with a selective SSM so unsteady-flow rollout does not re-inject the cut modes every step.
+- Why it matters:
+  - Koopman compactness is not residual-free propagation. nRMSE@1 is not nRMSE@H.
+  - API 2026-08-26; Lv/Dai/Sun. 43 pages, 12 figures. Abstract: four benches, **76.76%** Rel L2 drop vs strongest baseline, train time **41.40%** of RNO.
+  - Issue Board HTML: Kolmogorov ν=10⁻³ Rel L2 **1.09e-2** vs UNO **4.69e-2** vs FNO **4.76e-2**; ν=10⁻⁴ **1.19e-1** vs UNO **2.54e-1**; Cylinder |U| **1.05e-2** vs RNO **1.27e-2**; step infer **−64.76%** vs FNO. GitHub ★0, license unset, pushed 2026-08-23.
+- Caveat: 2D benches. ★0 unlicensed → Test withheld. The 76.76% figure is Kolmogorov ν=10⁻³ vs the strongest baseline.
+- Possible use: Cite when a Koopman/UNO pitch quotes one-step Rel L2 — demand nRMSE@H and a residual-compensation ablation.
+- Maturity: paper + unlicensed early repo
+- Priority: High
+
+## MPNO — constructive spectral-radius gate for AR operators
+
+- Link: https://arxiv.org/abs/2608.25744
+- Type: Paper / Markov physics-informed operator (cs.LG)
+- Keywords: neural operator, Markov, spectral radius, rollout, WNO, FNO
+- One-line summary: Builds a row-stochastic propagator P=I−αL̃ with physics-coupled edges so ρ(P)≤1 by construction instead of hoping autoregressive rollout stays bounded.
+- Why it matters:
+  - Emergent FNO stability is not a spectral-radius receipt. WNO can diverge; MeshGraphNets can collapse to zero.
+  - API 2026-08-26; Du/Zhou/Xia/Xin/Zhang/Zhang/Zhang/Xu. Concrete-penetration Rel L2 **0.7304±0.0008**, ~20K params (~1/4 FNO).
+  - Issue Board HTML: bounded 29-step active window; OOD 2D Euler shock tube **91 steps** where FNO/WNO diverge. LS-DYNA ~10⁵× is a vendor-class speedup claim.
+- Caveat: Primary scenario is solid penetration. Fluids are Burgers/Darcy/shock-tube. No public code.
+- Possible use: Cite when an AR operator quotes one-step Rel L2 — ask ρ(P) and long-horizon boundedness. Do not product-Save on the LS-DYNA factor.
+- Maturity: paper-only
+- Priority: High
+
 ## DeepONet-LSTM — history-required output-feedback operator
 
 - Link: https://arxiv.org/abs/2608.24699

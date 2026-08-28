@@ -1,5 +1,51 @@
 # CFD-AI Papers & Surveys
 
+## PINN remedies — FP64 and alignment fix disjoint slices
+
+- Link: https://arxiv.org/abs/2608.25327
+- Type: Paper / PINN verification (cs.LG + cs.AI)
+- Keywords: PINN, FP64, SSM, alignment, seed, convection
+- One-line summary: Shows under pre-registered seed-paired controls that FP32→FP64 and SSM+sub-sequence alignment repair disjoint equation/seed slices; neither substitute for the other.
+- Why it matters:
+  - Precision is not architecture. Residual/stopping criteria are not solution success.
+  - API 2026-08-26; Zhang/He/Hu/Yuan/Jiao. 11 pages. Pre-registered **144-run** + independent **85-run**. Success = Rel ℓ2 < 0.05.
+  - Hard convection β=50: alignment **2/5** (FP32) / **3/5** (FP64); unaligned SSM **0/5**; vanilla MLP 0/5→1/5. Reaction backbone alone 3/5–4/5. Tight L-BFGS tolerance lowers median error with success counts unchanged.
+- Caveat: 1D convection/reaction/wave. No public code → Test withheld.
+- Possible use: Cite when a PINN “fix” is only FP64 or only a new backbone — demand per-seed success, not a median residual.
+- Maturity: paper-only
+- Priority: High
+
+## Entropy-stable ALE moving-wall NS
+
+- Link: https://arxiv.org/abs/2608.25146
+- Type: Paper / classical entropy-stable ALE (math.NA + math.AP)
+- Keywords: entropy-stable, ALE, moving wall, SBP, NACA, compressible NS
+- One-line summary: Recasts compressible Euler/NS on moving domains in ALE form and proves entropy-conservative/stable moving-wall conditions through a high-order SBP semi-discretization.
+- Why it matters:
+  - Learned FSI heads need a hard hyperbolic/entropy skeleton before a residual lottery.
+  - API 2026-08-25; Galimberti/Nuca/Dalcin/Guardone/Parsani. 57 pages, 15 figures. No-slip in wall-relative velocity.
+  - Issue Board cases: isentropic vortex, annular Poiseuille, heaving-pitching NACA-0012, 2-DOF airfoil, supersonic.
+- Caveat: Classical numerics, not AI. Code link not in API.
+- Possible use: Cite as the moving-wall entropy substrate before attaching a learned surrogate head.
+- Maturity: paper-only
+- Priority: High
+
+## JICF chapter — LOSO splits by QoI
+
+- Link: https://arxiv.org/abs/2608.26064
+- Code: https://github.com/KjayJunIOR/parametric-sindy-jax-gridsearch
+- Type: Book chapter + unlicensed JAX SINDy (physics.flu-dyn)
+- Keywords: jet-in-cross-flow, LOSO, QoI, SINDy, MLP, ROM
+- One-line summary: Maps injector spacing to unburnt H₂, wall heat, and bulk temperature, then shows leave-one-sample-out error is QoI-dependent; parametric SINDy is a compact field ROM, not a better bulk RMSE.
+- Why it matters:
+  - Decision QoI is not field RMSE. Offline response surfaces are not dynamic ROMs.
+  - API 2026-08-26; Eduku/Popov/Jacobs. 18 pages. Non-monotonic spacing; favorable region near 8D.
+  - Issue Board HTML: LOSO bulk T **1.46%** (all <4%), wall heat **27.2%**, H₂ **21.7%**. SINDy Reynolds-stress nRMSE **+6.7%** vs POD. GitHub ★0, SPDX NOASSERTION, pushed 2026-08-26.
+- Caveat: Small-sample hydrogen JICF. Unlicensed → Test withheld. Do not transfer to exterior RANS.
+- Possible use: Cite when a CFD-ML pitch quotes one QoI — demand the holdout column for the decision quantity.
+- Maturity: paper + unlicensed early repo
+- Priority: High
+
 ## When a neural surrogate cannot accelerate a solver
 
 - Link: https://arxiv.org/abs/2608.23075
