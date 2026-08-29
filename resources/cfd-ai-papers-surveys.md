@@ -1,5 +1,35 @@
 # CFD-AI Papers & Surveys
 
+## SnapPINN — freeze velocity, then Poisson from one sparse snapshot
+
+- Link: https://arxiv.org/abs/2608.26711
+- Type: Paper / sparse-sensing PINN (physics.flu-dyn + physics.comp-ph)
+- Keywords: PINN, sparse snapshot, dissipation, pipe DNS, Poisson
+- One-line summary: Reconstructs 3D velocity, gradients, pressure, and TKE dissipation from one sparse noisy velocity snapshot by freezing a sine-MLP velocity net, then solving Poisson pressure.
+- Why it matters:
+  - Bulk velocity is not a dissipation receipt. Gradient QoI needs a separate gate.
+  - API 2026-08-27; Barta/Bauer/Bagheri. 3D DNS turbulent pipe, **100** cases. Seeding **0.07–17.59%** of the DNS grid.
+  - Bulk U **<0.5%** even at extreme sparsity; dissipation **~50%** at f=0.07%; a-posteriori Re_τ **4–24%**. No public code.
+- Caveat: One pipe geometry. The 50% dissipation error is a sparsity limit, not a win. Test withheld.
+- Possible use: Cite when a sparse-sensor PINN quotes bulk velocity — demand dissipation / gradient QoI at the same seeding.
+- Maturity: paper-only
+- Priority: High
+
+## Mortar mixer — Np–Re plus numerical dissipation %
+
+- Link: https://arxiv.org/abs/2608.27423
+- Type: Paper / classical mortar FEM rotating mixer (physics.flu-dyn + math.NA)
+- Keywords: mortar, ALE, mixer, power number, numerical dissipation, SUPG
+- One-line summary: Couples rotor and stator with mortar cells in a matrix-free high-order CG Navier–Stokes solver and reports both the experimental Np–Re curve and energy-balance numerical viscosity.
+- Why it matters:
+  - A learned mixer head needs a rotating-geometry skeleton that does not hide dissipation.
+  - API 2026-08-27; Campos/Munch/Ferreira/Boffito/Banquy/Blais. 2D Rushton torque; 3D pitched-blade **Np vs Re = 1–2000**.
+  - Numerical dissipation **1% (Re=200) / 10% (Re=2000)**. Ideal strong scaling on large problems. No code link in the API.
+- Caveat: Classical numerics, not AI. Code unverified.
+- Possible use: Cite as the rotating-geometry substrate before attaching a learned mixer head — require Np–Re plus dissipation %.
+- Maturity: paper-only
+- Priority: High
+
 ## PINN remedies — FP64 and alignment fix disjoint slices
 
 - Link: https://arxiv.org/abs/2608.25327

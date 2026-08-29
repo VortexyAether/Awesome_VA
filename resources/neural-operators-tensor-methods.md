@@ -1,5 +1,21 @@
 # Neural Operators & Tensor Methods
 
+## DNO — Dirichlet as eigenfunction layer, not a data target
+
+- Link: https://arxiv.org/abs/2608.27256
+- Code: https://github.com/mtrautner/DNO
+- Type: Paper + unlicensed neural operator (math.NA + cs.LG)
+- Keywords: Dirichlet, neural operator, Laplacian eigenfunctions, Darcy, Helmholtz
+- One-line summary: Forces each layer output into the span of homogeneous Dirichlet Laplacian eigenfunctions so the operator satisfies the wall independently of training.
+- Why it matters:
+  - Matching BC in the loss is not a geometry-shift receipt. The wall is a lock.
+  - API 2026-08-27; Stuart/Trautner. Lipschitz bounded domains, arbitrary meshes. Universal-approximation proof.
+  - Darcy Rel L2 median **0.772%** (best 0.482 / worst 2.02); Helmholtz median **0.130%** (best 0.0283). GitHub ★0, license unset, pushed 2026-07-10 (blank FNO example).
+- Caveat: Homogeneous Dirichlet only. Box/circle benches. Unlicensed ★0 → Test withheld.
+- Possible use: Cite when an NO “matches BC in the loss” — ask the architecture lock and a non-box geometry. Do not product-Save until SPDX exists.
+- Maturity: paper + unlicensed early repo
+- Priority: High
+
 ## CoKo-UNO — Koopman truncation residual needs SSM compensation
 
 - Link: https://arxiv.org/abs/2608.25879

@@ -2,6 +2,21 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## RTI ROM — put nonlinearity in dynamics or in the latent
+
+- Link: https://arxiv.org/abs/2608.26783
+- Type: Paper / RTI reduced-order model (physics.flu-dyn)
+- Keywords: Rayleigh-Taylor, ROM, POD, PINN, autoencoder, mixing
+- One-line summary: Compares linear POD plus PINN nonlinear dynamics against a nonlinear autoencoder with linear physics-constrained latent dynamics on DNS Rayleigh–Taylor transition.
+- Why it matters:
+  - Latent compactness is not a statement of where the nonlinearity lives.
+  - API 2026-08-27; Granger/Nadiga/Gréa/Briard/Creusy. Tracks mixing-layer growth plus 1D TKE and dissipation profiles.
+  - Both strategies reconstruct, interpolate, and extrapolate at a qualitative “satisfactory” level. No public code. No single RMSE locked in the abstract.
+- Caveat: Qualitative performance language. Pair with the 08-28 vortex-shedding waterbed result: more modes can still lose the loop.
+- Possible use: Cite when a mixing ROM sells latent size — ask whether nonlinearity sits in the encoder or the dynamics.
+- Maturity: paper-only
+- Priority: High
+
 ## Vortex-shedding LQG — higher-order ROM can lose the loop
 
 - Link: https://arxiv.org/abs/2608.24435
