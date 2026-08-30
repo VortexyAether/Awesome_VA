@@ -1,5 +1,22 @@
 # CAD, Geometry & AI-assisted Design
 
+## Procedura — admit a part only after compile, mate, and connectivity
+
+- Link: https://arxiv.org/abs/2608.26238
+- Code: https://github.com/SpatiaOS/Procedura
+- Project: https://spatiaos.github.io/projects/procedura/
+- Type: Paper + MIT CAD-as-code agent (cs.CV + cs.GR)
+- Keywords: procedural CAD, mates, compile gate, connectivity, OpenSCAD, P3D-Bench
+- One-line summary: Writes an object as named parts joined by typed mates and commits a part only after compile, mate, and connectivity checks pass.
+- Why it matters:
+  - Render SR / Chamfer is not printability. Disconnected solids that look touching still fail.
+  - abs 2026-08-26; Lin/Yang/Hu/Zhou/Zhang/Cao/Liu/Yao. Issue Board HTML: P3D overall **0.590** (Gemini 3.7 Flash) vs one-shot GPT-5.6-sol **0.563**.
+  - GitHub `SpatiaOS/Procedura` ★**94**, **MIT**, pushed 2026-08-27. README: Manifold OpenSCAD required; one `hull()` **1774 s CGAL vs 1.77 s Manifold**.
+- Caveat: Vision assembly judge ≠ OCCT/STEP validity. Not a Fusion/OCC MCP. Isaac Sim is `--motion` only.
+- Possible use: Smoke-test mate/compile on a hard-surface part; keep kernel Valid% as a second gate.
+- Maturity: paper + live MIT repo
+- Priority: High
+
 
 ## HiFi-BRep — high-fidelity latent representation for robust B-Rep generation
 

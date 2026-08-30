@@ -2,6 +2,20 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Self-augmented diffusion guidance — residual as a sample condition
+
+- Link: https://arxiv.org/abs/2608.26748
+- Type: Paper / physics-informed generative fluids (cs.LG)
+- Keywords: diffusion, physics residual, Darcy, guidance, CoCoGen
+- One-line summary: Learns the data distribution conditioned on deviation from the governing equation and samples at deviation=0, without solving the PDE at every denoising step.
+- Why it matters:
+  - Visual fluid frames are not dynamics. Residual-as-condition is cheaper than per-step PDE and still needs a shock/spectral check.
+  - abs 2026-08-27; Osaka/Takeishi/Yairi. Issue Board HTML: Darcy mean residual **4.97e-2 → 1.19e-2** (1x); 2x **1.11e-2**; PIDM+CoCoGen **6.90e-3**. No public code.
+- Caveat: Darcy + 2D fluid sequences. Residual drop ≠ conservation of shocks or spectra.
+- Possible use: Cite when a generative fluid model shows frames — ask residual-as-condition vs per-step PDE.
+- Maturity: paper-only
+- Priority: High
+
 ## RTI ROM — put nonlinearity in dynamics or in the latent
 
 - Link: https://arxiv.org/abs/2608.26783

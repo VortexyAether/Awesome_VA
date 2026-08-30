@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## SAR-NOMAD — virtual sensing scores LEE, not Rel L2 alone
+
+- Link: https://arxiv.org/abs/2608.23987
+- Type: Paper / neural operator virtual sensing (cs.LG)
+- Keywords: NOMAD, Sparse-Activation-ReLU, virtual sensing, LEE, heat exchanger, lid-driven cavity
+- One-line summary: Replaces trunk-NOMAD ReLU with a single-step Sparse-Activation-ReLU so edge virtual sensing can be scored on Latency-Error-Energy instead of Rel L2.
+- Why it matters:
+  - Rel L2-only Variable Spiking can collapse 5–13% error as spiking drops. LEE is the deploy gate.
+  - abs 2026-08-25; Howes/Ahmed/Alam. Issue Board HTML: HX LEE **26.35**, LDC LEE **37.96** vs VS/LIF-NOMAD **≥5×**; graph-neighbor HX L2 ~**7×** vs KNN.
+  - No public code.
+- Caveat: 2D sections. SpiNNaker energy correction is crude by the authors' own wording. Test withheld.
+- Possible use: Cite when a virtual-sensing NO quotes Rel L2 — demand LEE on the same geometry.
+- Maturity: paper-only
+- Priority: High
+
 ## DNO — Dirichlet as eigenfunction layer, not a data target
 
 - Link: https://arxiv.org/abs/2608.27256

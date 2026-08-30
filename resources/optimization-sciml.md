@@ -1,5 +1,19 @@
 # Optimization for Scientific Machine Learning
 
+## PI-SCM — backprop-free PINN speed on ODE/linear PDE, not NS
+
+- Link: https://arxiv.org/abs/2608.26549
+- Type: Paper / backpropagation-free PINN (math.NA + cs.AI + cs.LG + eess.SY)
+- Keywords: PINN, stochastic configuration, least squares, van der Pol, Helmholtz, Allen-Cahn
+- One-line summary: Linearizes the physics loss with analytical local Jacobians and solves weights by least squares so training drops backpropagation — on ODE and linear-PDE benches.
+- Why it matters:
+  - A 28× wall-clock vs a 4×64 PINN is not a Navier–Stokes receipt.
+  - abs 2026-08-27; Song/Chen/Cen/Wu/Zhang. Issue Board HTML: VdP unsupervised PINN **40.0 s / RMSE 5.49e-3** vs PI-SC-III **1.44 s / 1.93e-3**. PIELM is faster still but RMSE ~**3 orders** worse. **Zero NS experiments**. No public code.
+- Caveat: Helmholtz / Allen–Cahn / van der Pol. Fluid geometry absent. Test withheld.
+- Possible use: Cite when a PINN “drops backprop” — ask the bench class before the clock.
+- Maturity: paper-only
+- Priority: High
+
 
 
 ## Implicit-adjoint FV CHT topology optimization (JAX)
