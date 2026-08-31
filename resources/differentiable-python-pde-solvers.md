@@ -1,5 +1,20 @@
 # Differentiable & Python PDE Solvers
 
+## GTransNet-BDF — post-hoc mass projection after least-squares residual
+
+- Link: https://arxiv.org/abs/2608.23980
+- Type: Paper / structure-preserving phase-field NN (math.NA)
+- Keywords: Cahn-Hilliard, GTransNet, BDF, mass projection, energy stability
+- One-line summary: Approximates mixed Cahn–Hilliard with GTransNet + stabilized BDF, then restores mass with a cheap post-processing projection because collocation least-squares residuals break conservation.
+- Why it matters:
+  - Time-discrete mass/energy claims do not survive a nonzero least-squares residual. Projection is the gate, not the residual penalty.
+  - API 2026-08-25; Doan/Hoang/Ju/Wang. Mesh-free hidden layers; 2D/3D experiments including irregular domains.
+  - Issue Board HTML Table 2: ε=0.2, Δt~1/320, L∞ **6.08e-06**. No public code.
+- Caveat: Phase-field substrate, not NS/turbulence. Test withheld.
+- Possible use: Cite when a structure-preserving NN quotes residual only — ask the mass/energy projection after the LS step.
+- Maturity: paper-only
+- Priority: High
+
 JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inverse/design workflows, and fast research prototypes.
 
 ## Reverse-sweep adjoints — differentiate the executed block-implicit solver

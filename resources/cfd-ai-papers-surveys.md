@@ -1,5 +1,20 @@
 # CFD-AI Papers & Surveys
 
+## Inverse-PINN two-axis diagnosis — field accuracy can hide the wrong coefficient
+
+- Link: https://arxiv.org/abs/2608.15373
+- Type: Paper / inverse-PINN diagnosis
+- Keywords: PINN, inverse, identifiability, residual profile, field RMSE
+- One-line summary: Separates finite-sample resolution under a stated observation protocol from the signed parameter preference encoded by the final field and residual view.
+- Why it matters:
+  - Matching the field is not recovering the coefficient. The two can even move in opposite directions.
+  - Zhang/Tao. Abstract: matched-forward MAE **2.34%–17.46%**; displacement vs signed log-error in 240 RBA runs **r=.994** (237/240 direction).
+  - Issue Board HTML: 24 intervention fields, field rel L2 vs parameter relative error **r = 0.057**; Allen–Cahn / Buckley–Leverett / Burgers MAE% **2.34 / 6.69 / 17.46**. No public code.
+- Caveat: 1D synthetic scalar PDEs. Diagnostic coordinates, not an oracle-free estimator. Test withheld.
+- Possible use: Cite when an inverse PINN quotes field RMSE — demand coefficient error on the same observation protocol.
+- Maturity: paper-only
+- Priority: High
+
 ## SnapPINN — freeze velocity, then Poisson from one sparse snapshot
 
 - Link: https://arxiv.org/abs/2608.26711

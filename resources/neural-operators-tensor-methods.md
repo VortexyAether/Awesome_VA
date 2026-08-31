@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## Wrong-Physics Backdoors — a plausible operator output can still be the wrong parameter
+
+- Link: https://arxiv.org/abs/2608.20439
+- Type: Paper / neural-operator validation (cs.LG + physics.comp-ph)
+- Keywords: backdoor, FNO, DeepONet, solver archive, parameter provenance, Navier-Stokes
+- One-line summary: Poisons a reusable PDE-operator archive so a trigger selects a valid same-family solution under the wrong physical parameter while clean Rel L2 stays low.
+- Why it matters:
+  - Clean prediction error and parameter-agnostic plausibility are not a provenance gate. The wave can be another setting's answer.
+  - API 2026-08-20; Liang/Liu. Abstract: **476** campaigns on Burgers, advection-diffusion, **2D Navier–Stokes**, Poisson. FNO BSR **1.0000** on AD and 2D NS.
+  - Issue Board HTML: FNO Burgers/AD BSR **1.0000 / 1.0000**, margin **0.7513 / 0.8704**; **1428** seeds. No public code in HTML.
+- Caveat: Code path unverified → Test withheld. Transformer/GRU/LSTM are support models.
+- Possible use: Cite when an operator archive quotes clean Rel L2 — demand tensor↔parameter stamps and a relink/trigger test.
+- Maturity: paper-only
+- Priority: High
+
 ## SAR-NOMAD — virtual sensing scores LEE, not Rel L2 alone
 
 - Link: https://arxiv.org/abs/2608.23987
