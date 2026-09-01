@@ -2,6 +2,21 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Physics-constrained SGS — prediction-embedded training beats residual-fit labels
+
+- Link: https://arxiv.org/abs/2608.28525
+- Type: Paper / LES turbulence closure (physics.flu-dyn)
+- Keywords: LES, SGS, premixed flame, conservation, equivariance, embedded training
+- One-line summary: Embeds an SGS net in the resolved equations under conservation, scalar boundedness, and equivariance, scaled by residual size, and trains on predicted trajectories rather than residual labels.
+- Why it matters:
+  - A priori residual MAE is not a long LES. Embedded rollout beats residual-fit of the same net.
+  - API 2026-08-28; Suh/MacArt/Olson/Freund. Abstract: beats no-model / dynamic / residual-fit on long-time dissipation and flame kinematics.
+  - Issue Board HTML: LES inference **+14%** vs no-model. No public code.
+- Caveat: Single-species one-step irreversible chemistry. Not an urban/external-flow transfer. Test withheld.
+- Possible use: Cite when an SGS net quotes residual MAE — demand embedded rollout vs residual-fit ablation.
+- Maturity: paper-only
+- Priority: High
+
 ## Self-augmented diffusion guidance — residual as a sample condition
 
 - Link: https://arxiv.org/abs/2608.26748

@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## Adjoint vs PINN inverse — the unknown’s representation picks the method
+
+- Link: https://arxiv.org/abs/2606.12337
+- Code: https://github.com/zhangzhen117/adjoint_PINN_inverse_comparison
+- Type: Paper + MIT inverse-PDE comparison (math.NA + cs.LG)
+- Keywords: adjoint, PINN, inverse, Darcy, Allen-Cahn, Navier-Stokes, warm-start
+- One-line summary: Matches domain, PDE, observations, regularizer, and optimizer so grid fields favor discrete adjoint and neural unknowns favor PINN; PINN-warm-started adjoint recovers adjoint-level accuracy at about half the cost.
+- Why it matters:
+  - Mismatched setups are not a method receipt. What you search for picks the key.
+  - API v2 2026-08-21 (v1 2026-06-10); Zhang/Alla/Karniadakis. 42 pages, 10 figures. Abstract: Burgers, noisy Darcy, 3D Allen–Cahn, unsteady NS viscosity.
+  - Issue Board HTML: Allen–Cahn 5469 s → **2448 s**. GitHub ★**1**, **MIT**, pushed 2026-08-21.
+- Caveat: NS is one viscosity parameter. Smoke locally before Test.
+- Possible use: Cite when inverse PINN vs adjoint is argued from mismatched setups — demand matched protocol.
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## PI-SCM — backprop-free PINN speed on ODE/linear PDE, not NS
 
 - Link: https://arxiv.org/abs/2608.26549

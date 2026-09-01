@@ -1,5 +1,35 @@
 # Neural Operators & Tensor Methods
 
+## Conformal UQ for neural operators — coverage is a spatial quantile, not a point nRMSE
+
+- Link: https://arxiv.org/abs/2608.28515
+- Type: Paper / neural-operator UQ (math.NA + cs.AI + math.PR)
+- Keywords: conformal, UQ, neural operator, Darcy, Navier-Stokes, residual quantile
+- One-line summary: Split conformal scales a normalized residual field by its spatial (1−γ)-quantile so a pointwise band covers a 1−γ fraction of the domain with probability ≥1−α.
+- Why it matters:
+  - Point Rel L2 is not a spatial coverage receipt. Calibration-conditional coverage is Beta.
+  - API 2026-08-28; Stent/Boullé. 19 pages, 6 figures. Abstract: Darcy + Navier–Stokes; tighter than existing corrections at target coverage.
+  - Issue Board HTML: Ma et al. 2024 bands **1.78× / 1.23×** wider at N=16 / N=64. No public code in HTML.
+- Caveat: 2D. Band width tracks residual-estimator quality. Test withheld.
+- Possible use: Cite when an NO card quotes Rel L2 — demand a spatial coverage fraction.
+- Maturity: paper-only
+- Priority: High
+
+## Euclidean FNO — integer Fourier modes are a different operator on a different cell
+
+- Link: https://arxiv.org/abs/2608.28425
+- Type: Paper / domain-transfer neural operator (cs.LG + cond-mat.mtrl-sci + physics.comp-ph)
+- Keywords: FNO, Euclidean, wavevector, domain transfer, heat equation, exchange-correlation
+- One-line summary: Replaces integer-mode spectral weights with a continuous kernel of the physical wavevector so the same operator does not silently change on a new periodic cell.
+- Why it matters:
+  - Grid-resolution invariance is not domain-shape invariance. Integer modes lock to the box.
+  - API 2026-08-28; Bosch/Schmitz/Herbst. Abstract: heat equation + XC potentials across crystal cells.
+  - Issue Board HTML Table 4: rectangular equivalent-cell FNO Rel L2 **49.70%**, n=6 supercell **90.16%**; EFNO **3.5×10⁻⁶** on every cell. No public code.
+- Caveat: Periodic cells / materials XC. Non-periodic inflow–outflow CFD unverified. Test withheld.
+- Possible use: Cite when an FNO is reused on a new box — demand physical-wavenumber kernels.
+- Maturity: paper-only
+- Priority: High
+
 ## Wrong-Physics Backdoors — a plausible operator output can still be the wrong parameter
 
 - Link: https://arxiv.org/abs/2608.20439

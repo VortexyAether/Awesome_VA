@@ -1,5 +1,20 @@
 # CFD-AI Papers & Surveys
 
+## Dimension-bridging 3D RANS — 2D airfoil coefficients corrected toward 3D wing QoI
+
+- Link: https://arxiv.org/abs/2608.27639
+- Type: Paper / multi-fidelity aero QoI (cs.CE)
+- Keywords: RANS, Gaussian functional regression, multi-fidelity, airfoil, wing, adaptive sampling
+- One-line summary: Learns a GFR correction from 2D RANS aerodynamic coefficients to 3D RANS coefficients when reduced dimensionality changes the governing physics.
+- Why it matters:
+  - 2D rank is not a 3D wing receipt. Adaptive UQ sampling is the HD budget, not a denser 2D grid.
+  - API 2026-08-27; Lao/Scott/Bui-Thanh/Laiu/Bement. Abstract: fewer HD evals than stationary kernels; NN kernel “millions of times” wall-clock.
+  - Issue Board HTML: three QoIs **1.93×10⁶** on a single CPU with primal reuse. No public code.
+- Caveat: k-ω SST held fixed. Family-shift width not the lead table. Test withheld.
+- Possible use: Cite when a 2D RANS surrogate is sold for 3D design — demand the HD correction + adaptive UQ.
+- Maturity: paper-only
+- Priority: High
+
 ## Inverse-PINN two-axis diagnosis — field accuracy can hide the wrong coefficient
 
 - Link: https://arxiv.org/abs/2608.15373
