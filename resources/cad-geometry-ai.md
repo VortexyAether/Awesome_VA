@@ -1,5 +1,21 @@
 # CAD, Geometry & AI-assisted Design
 
+## MIRAGE-CAD — construction plan is the execution gate, not Chamfer
+
+- Link: https://arxiv.org/abs/2608.28669
+- Code: https://github.com/Cad-Kernel/MIRAGE-CAD
+- Type: Paper + 0BSD executable CAD (cs.CV + cs.PL + cs.SE)
+- Keywords: construction plan, CadQuery, OpenCASCADE, STEP, B-Rep, multimodal CAD
+- One-line summary: Maps NL/image/point/STEP inputs to an explicit construction plan, then emits Python CAD that OpenCASCADE must build and export as STEP.
+- Why it matters:
+  - Same final geometry can come from different procedures. Syntax SR can rise while Build/STEP fall.
+  - API 2026-08-24; Zhan. 64 pages. Abstract: 2,500 held-out queries/modality; Build **55.4–70.0%**, STEP **52.3–66.2%** without retrieval.
+  - Issue Board HTML Table 4: dropping the plan Build **70.0→35.4**, STEP **66.2→34.6**; syntax **94.5→97.6**. GitHub ★**0**, **0BSD**, pushed 2026-08-24.
+- Caveat: ★0. STEP input is a global descriptor, not an entity-level B-Rep encoder. Local OCC smoke before Test.
+- Possible use: Save after OCC/STEP smoke; keep Build/STEP as the gate next to Procedura mate/compile.
+- Maturity: paper + licensed early repo
+- Priority: High
+
 ## ExpConCAD — fill missing spatial slots, then emit executable CadQuery
 
 - Link: https://arxiv.org/abs/2608.24760

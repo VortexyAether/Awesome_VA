@@ -1,5 +1,35 @@
 # Neural Operators & Tensor Methods
 
+## Sensitivity-constrained neural operators — state fit ≠ Jacobian / inverse / rollout
+
+- Link: https://arxiv.org/abs/2608.29888
+- Type: Paper / neural-operator inverse + rollout (cs.LG)
+- Keywords: neural operator, Jacobian, adjoint, RANS, Spalart-Allmaras, tsunami, rollout
+- One-line summary: Adds sampled solver-derived Jacobian supervision so a neural operator learns the input–output response, not only the state field.
+- Why it matters:
+  - State Rel L2 is not a rollout or inverse receipt. Response information can be amortized across minibatches without the full Jacobian at every step.
+  - API 2026-08-30; Behroozi/Shen/Kifer/Lawson. Abstract: advection–diffusion, RANS–SA, dimensionality scaling, long-horizon autoregressive rollout, Tohoku tsunami inversion.
+  - Issue Board HTML: rollout error **0.276 → 0.086 (~3.2×)**. No public code in HTML.
+- Caveat: Code path unverified → Test withheld. Tsunami is a PoC. RANS grid 64×64.
+- Possible use: Cite when an NO card quotes Rel L2 — demand a Jacobian/rollout check.
+- Maturity: paper-only
+- Priority: High
+
+## Graph Spectral Neural Operator — spectral bias without domain warping
+
+- Link: https://arxiv.org/abs/2608.29892
+- Type: Paper / irregular-geometry neural operator (cs.LG)
+- Keywords: graph Laplacian, spectral operator, irregular mesh, SWE, zero-shot geometry
+- One-line summary: Combines a graph-Laplacian spatial basis with a temporal Fourier kernel so spectral operator learning works on non-Cartesian meshes without warping.
+- Why it matters:
+  - Grid-resolution invariance is not unstructured-geometry invariance. Warping/interpolation is not a geometry-family receipt.
+  - API 2026-08-30; Behroozi/Shen. Abstract: zero-shot resolution and geometry-family claims; formulation avoids autoregressive rollouts.
+  - Issue Board HTML: AMG error cut **64.8%**; SWE **0.0174 vs Transolver 0.0625 (72%)**; epoch up to **5×**. No public code.
+- Caveat: Geometry-family width is bench-bound. Industrial CAD meshes are a separate track. Test withheld.
+- Possible use: Cite when an FNO is reused on unstructured CAD meshes — demand no-warp spectral numbers.
+- Maturity: paper-only
+- Priority: High
+
 ## Conformal UQ for neural operators — coverage is a spatial quantile, not a point nRMSE
 
 - Link: https://arxiv.org/abs/2608.28515

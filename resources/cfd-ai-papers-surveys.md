@@ -1,5 +1,20 @@
 # CFD-AI Papers & Surveys
 
+## TraCTra — sparse observations + differentiable forward model, no full-state labels
+
+- Link: https://arxiv.org/abs/2608.30909
+- Type: Paper / label-free flow reconstruction (physics.flu-dyn)
+- Keywords: sparse sensing, assimilation, Kolmogorov, shadowgraph, trajectory consistency
+- One-line summary: Trains a reconstruction net from partial observation sequences plus a differentiable forward model so predicted states stay consistent with later observations and later reconstructions.
+- Why it matters:
+  - Experimental inverse problems rarely come with full-state labels. Trajectory consistency is the gate.
+  - API 2026-08-31; Zhu/Page. Abstract: 3D turbulence from coarse fields, velocity from density fluctuations, 2D shadowgraph→3D fields, small-window vorticity.
+  - Issue Board HTML: 3D Kolmogorov **ε~0.2**. No public code in HTML.
+- Caveat: Kolmogorov/shadowgraph substrate. Urban wind-sensor transfer needs a re-run. Test withheld.
+- Possible use: Cite when a reconstruction net quotes full-field labels — demand partial-obs + forward-model consistency.
+- Maturity: paper-only
+- Priority: High
+
 ## Dimension-bridging 3D RANS — 2D airfoil coefficients corrected toward 3D wing QoI
 
 - Link: https://arxiv.org/abs/2608.27639

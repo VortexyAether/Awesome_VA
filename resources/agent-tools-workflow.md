@@ -1,6 +1,21 @@
 # Agent Tools & Research Workflow
 
 
+## Simulator-backed agents — verification cadence is a protocol hyperparameter
+
+- Link: https://arxiv.org/abs/2608.28147
+- Type: Paper / agent verification harness (cs.SE + cs.AI)
+- Keywords: verification cadence, DWSIM, stale evidence, Qwen, harness hyperparameter
+- One-line summary: Measures whether an engineering agent re-queries the simulator after an edit when cadence guidance is retained versus omitted, with no hard gate.
+- Why it matters:
+  - A passed run can be stale after the deck changes. Cadence is a protocol knob, not a model card.
+  - API 2026-08-28; Zhu/Tong/Ren. 12 pages. DWSIM valve-pressure; 5 Qwen models × 8 synthetic cases × 3 repeats.
+  - Re-verification **94/120 vs 32/120**; final success **95/120 vs 35/120**.
+- Caveat: Process simulator, not OpenFOAM/CAD. Instruction adherence, not spontaneous stale-evidence detection.
+- Possible use: Cite when a CAE agent “verified the run” — demand post-edit re-query counts.
+- Maturity: paper-only
+- Priority: High
+
 ## Harness Continual Learning — skills/tools forget when the model is frozen
 
 - Link: https://arxiv.org/abs/2608.19013
