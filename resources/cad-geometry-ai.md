@@ -1,5 +1,22 @@
 # CAD, Geometry & AI-assisted Design
 
+## RealCAD — parameter-frequency prior ≠ image-conditioned CAD
+
+- Link: https://arxiv.org/abs/2608.30617
+- Code: https://github.com/sunyh39/RealCAD
+- Dataset: https://www.modelscope.cn/datasets/yeguomao/RealCAD
+- Type: Paper + MIT image-to-CAD (cs.CV)
+- Keywords: DeepCAD, parameter bias, Sim2Real, OpenRealCAD, command accuracy
+- One-line summary: Shows DeepCAD local normalization piles geometric parameters on a few bins, then tests image-to-CAD on 392 3D-printed four-view photographs.
+- Why it matters:
+  - Command/parameter accuracy can be a frequency prior, not image-conditioned geometry.
+  - abs 2026-08-31; Tang. OpenRealCAD: 392 printed objects, 4 views, 7:3 instance split.
+  - Issue Board HTML: x,y values 128/176/223 = **61.62%**; radii 47–48 = **55.86%**; real-domain Cmd **60.18→64.85%**, Para **52.03%**. GitHub `sunyh39/RealCAD` ★**1**, **MIT**, pushed 2026-09-01.
+- Caveat: Authors say mCD/IR gains are limited. Grammar-constrained decoding is future work. ★1.
+- Possible use: Save next to MIRAGE Build/STEP — demand a de-biased parameter metric plus a kernel/build gate.
+- Maturity: paper + live MIT repo + public dataset
+- Priority: High
+
 ## MIRAGE-CAD — construction plan is the execution gate, not Chamfer
 
 - Link: https://arxiv.org/abs/2608.28669

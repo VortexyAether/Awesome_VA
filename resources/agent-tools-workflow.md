@@ -1,5 +1,20 @@
 # Agent Tools & Research Workflow
 
+## Domain-grounded MCP — tool pick ≠ result interpretation
+
+- Link: https://arxiv.org/abs/2608.30696
+- Type: Paper / MCP scientific visualization (cs.CE + cs.HC)
+- Keywords: MCP, ontology, ParaView, TTK, interpretation accuracy, CFD post
+- One-line summary: Splits LLM intent, deterministic domain-tool execution, and LLM explanation, with an ontology that constrains valid analysis chains on a shared ParaView server.
+- Why it matters:
+  - Tool selection can already be reliable while result interpretation is not.
+  - abs 2026-08-31; Lee. 27 pages. CFD post + TTK on the same server; extra domains need only ontology + wrappers.
+  - Ablation: interpretation accuracy **0.41→0.91** only when the fact is retrieved in scoped form; bulk context fails.
+- Caveat: No public code URL in abs/HTML → Test withheld. Visualization agent, not a solver harness.
+- Possible use: Cite when a CAE MCP “called the right tool” — demand scoped-fact interpretation accuracy, not tool-pick rate.
+- Maturity: paper-only
+- Priority: High
+
 
 ## Simulator-backed agents — verification cadence is a protocol hyperparameter
 

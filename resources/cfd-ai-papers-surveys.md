@@ -1,5 +1,37 @@
 # CFD-AI Papers & Surveys
 
+## DiffGeo — scarce-data aero generation, not another GAN airfoil dump
+
+- Link: https://arxiv.org/abs/2609.00812
+- Code: https://github.com/kfxw/DiffGeo
+- Type: Paper + MIT latent-diffusion aero design (cs.CE)
+- Keywords: latent diffusion, airfoil, turbomachinery, data scarcity, constraint adherence
+- One-line summary: Learns a latent shape parameterization and a diffusion sampler that generates geometry-valid, constraint-conditioned aero designs from extremely small datasets.
+- Why it matters:
+  - Sample diversity is not constraint satisfaction. FID is not lift/drag.
+  - abs 2026-09-01; Wei. cs.CE. AIAA Journal postprint DOI 10.2514/1.J066320. Abstract: 2D airfoil vs GAN/VAE, surrogate-optimization conditional sampling, 3D blades.
+  - Issue Board HTML: UIUC N=50–1000; LSM+LSDM 50-shape train **671.9 / 716.4 s (V100)**; unconditional 50-sample **690.51 ms**. GitHub `kfxw/DiffGeo` ★**2**, **MIT**, pushed 2026-06-16.
+- Caveat: SU2 NACA-0012 is a demo link, not an in-repo CFD gate. Repo predates the arXiv drop. Local smoke before Test.
+- Possible use: Save after a local smoke; keep constraint-error / QoI next to FID when a generative foil card is sold.
+- Maturity: paper + live MIT repo
+- Priority: High
+
+## APPSolver — unstructured ship tokens lose to persistence at 1-step
+
+- Link: https://arxiv.org/abs/2608.29355
+- Code: https://github.com/wenhuahuo/APPSolver
+- Type: Paper + MIT unstructured ship-flow surrogate (cs.AI + cs.LG)
+- Keywords: unstructured mesh, ship CFD, persistence, adaptive patch, iso-cost
+- One-line summary: Converts non-uniform hull-slice points into adaptive quadtree patch tokens and reports that persistence still wins one-step MAE on three ShipBench hulls.
+- Why it matters:
+  - One-step nRMSE is not a product surrogate. The supported APP benefit is compute, not universal accuracy.
+  - abs 2026-08-29; Huo. Abstract: persistence lowest 1-step MAE on DTC/KCS/KVLCC2; APP-Transformer **1.815 GFLOPs / 1.309 ms**; adaptive vs uniform+learned MAE cut **16.4–24.9%**.
+  - Issue Board HTML: strongest learned vs persistence MAE **+17.4 / +6.8 / +9.7%**. GitHub `wenhuahuo/APPSolver` ★**0**, **MIT**, pushed 2026-09-01.
+- Caveat: 2D horizontal slices. OpenFOAM-7 tutorial hulls. Absolute next-state does not prove long-horizon dynamics. Test withheld (data-heavy).
+- Possible use: Cite when a mesh tokenizer quotes 1-step MAE — demand persistence and a multi-step gate.
+- Maturity: paper + licensed early repo
+- Priority: High
+
 ## TraCTra — sparse observations + differentiable forward model, no full-state labels
 
 - Link: https://arxiv.org/abs/2608.30909
