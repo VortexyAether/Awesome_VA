@@ -1,5 +1,35 @@
 # Neural Operators & Tensor Methods
 
+## SpeND — polynomial consistency is a subspace, not a high-k operator
+
+- Link: https://arxiv.org/abs/2609.02833
+- Type: Paper / mesh-free spectral-like discretisation (no public code in HTML)
+- Keywords: SpeND, mesh-free, LABFM, RBF-FD, SPH, hard constraint, spectral response
+- One-line summary: Learns explicit mesh-free stencil weights from local node geometry, then hard-projects them onto a polynomial-consistency affine subspace so fourth-order consistency is a construction, not a penalty.
+- Why it matters:
+  - Polynomial consistency only binds the low-wavenumber limit. Leftover stencil degrees of freedom are an implicit kernel choice.
+  - abs 2026-09-02; Starepravo/Broadley/King/Lind. Self-supervised, physics-agnostic, no reference PDE solution.
+  - Issue Board HTML: disordered 2D, same stencil |N_a|=30, p=4, wider spectral band than LABFM / structured 4th-order FD; refinement recovers 4th-order.
+- Caveat: No public code → Test withheld. 2D modal analysis, not an SPH fluid rollout.
+- Possible use: Cite when a mesh-free card quotes polynomial order — demand spectral response on disordered nodes.
+- Maturity: paper-only
+- Priority: High
+
+## Causal constitutive neural operator — history is a function-to-function map
+
+- Link: https://arxiv.org/abs/2609.02194
+- Type: Paper / constitutive neural operator (plasticity-damage; no public code in HTML)
+- Keywords: neural operator, causal attention, constitutive, plasticity, damage, path dependence
+- One-line summary: Maps full strain histories to stress trajectories in one parallel forward pass with causal-masked attention, spectral convolutions, and SIREN activations, instead of autoregressive internal-state RNNs.
+- Why it matters:
+  - Point stress RMSE is not a path-causality receipt. Internal variables are typically unmeasured.
+  - abs 2026-09-02; Arora/Scheunemann/Brepols/Rezaei. Rate-independent plasticity and ductile damage.
+  - Issue Board HTML: train N=50, same physical path resampled at N=1000 (20×) with nearly flat error.
+- Caveat: Synthetic constitutive benches. Identifiability from experiment-only stress–strain unproven. No public code.
+- Possible use: Cite when a material operator quotes point RMSE — demand N-train ≠ N-eval path invariance.
+- Maturity: paper-only
+- Priority: High
+
 ## Sensitivity-constrained neural operators — state fit ≠ Jacobian / inverse / rollout
 
 - Link: https://arxiv.org/abs/2608.29888

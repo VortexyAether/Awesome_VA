@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## SHoSP — robust TO as a first-order worst-case mass budget
+
+- Link: https://arxiv.org/abs/2608.30499
+- Reanalysis: https://github.com/PSLer/MiniFEM
+- Type: Paper + BSD-2-Clause MATLAB FEM reanalysis
+- Keywords: topology optimization, robustness, sensitivity hot spot, Hölder, MiniFEM
+- One-line summary: Adds a smooth-max of objective sensitivities and reads the penalty weight as a dimensionless first-order worst-case material-mass perturbation budget, suppressing hinges and stress concentrations without extra sample loops.
+- Why it matters:
+  - Extra robust-TO samples are not the only fragility gate. The extra adjoint reuses the same stiffness matrix.
+  - abs 2026-08-31; Wang/Aage/Sigmund. Compliance and compliant mechanisms; porous infill, multi-load, large 3D.
+  - GitHub `PSLer/MiniFEM` ★**2**, **BSD-2-Clause**, MATLAB, pushed 2026-08-24 — reanalysis package, not necessarily the SHoSP loop itself.
+- Caveat: MiniFEM ≠ SHoSP optimizer repo. ★2. Structured-mesh stress effects need the body-fitted cross-check.
+- Possible use: Cite when a robust TO card quotes extra samples — demand the mass-perturbation budget reading.
+- Maturity: paper + existing reanalysis package
+- Priority: High
+
 ## Adjoint vs PINN inverse — the unknown’s representation picks the method
 
 - Link: https://arxiv.org/abs/2606.12337

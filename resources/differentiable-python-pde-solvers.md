@@ -1,5 +1,22 @@
 # Differentiable & Python PDE Solvers
 
+## GRADSOLVE — exact discrete adjoint of the steps you actually took
+
+- Link: https://arxiv.org/abs/2609.02876
+- Code: https://github.com/ECLIPSE-AI4Science/gradsolve
+- Docs: https://eclipse-ai4science.github.io/gradsolve/
+- Type: Paper + MIT JAX GPU ODE ensemble solver (Python)
+- Keywords: discrete adjoint, ODE ensemble, JAX, GPU, Diffrax, recorded steps
+- One-line summary: Records the steps an adaptive ODE solver accepted and reverse-mode differentiates a fixed-step replay, returning the exact discrete adjoint of those steps cheaper than an adaptive checkpointed loop.
+- Why it matters:
+  - Fast GPU ensemble solvers are often reverse-mode slow; differentiable solvers are often forward-slow. The derivative must match the executed steps.
+  - abs 2026-09-02; Spurio Mancini. Forward kernel **2.8×** vs DiffEqGPU.jl; recorded reverse **5.6–14.1×** vs Diffrax checkpointed adjoint at matched forward-state accuracy.
+  - GitHub `ECLIPSE-AI4Science/gradsolve` ★**5**, **MIT**, Python, pushed 2026-09-03.
+- Caveat: Low-dimensional ODE ensembles, not CFD meshes. Stiff systems fall toward parity at tight tolerances. Local smoke before Test.
+- Possible use: Save after a JAX/GPU smoke; keep recorded-mesh adjoint identity next to the forward speedup.
+- Maturity: paper + live MIT repo
+- Priority: High
+
 ## GTransNet-BDF — post-hoc mass projection after least-squares residual
 
 - Link: https://arxiv.org/abs/2608.23980
