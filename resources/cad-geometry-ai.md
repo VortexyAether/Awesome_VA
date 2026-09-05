@@ -1,5 +1,21 @@
 # CAD, Geometry & AI-assisted Design
 
+
+## RealCADBench — executability, IoU, and Judge disagree
+
+- Link: https://arxiv.org/abs/2609.03773
+- Type: Paper / industrial intent-to-program CAD benchmark (dataset host unverified)
+- Keywords: RealCADBench, FreeCAD, intent-to-program, assembly, Judge, factory automation
+- One-line summary: 12,632 factory-automation CAD tasks across 19 categories, with text/drawing/photo/render inputs emitting FreeCAD Python that a shared runtime must execute, scored on execution, Solid IoU, Surface IoU, and a visual-semantic Judge.
+- Why it matters:
+  - Execution SR and IoU are not the same ranking as industrial intent. No frontier model wins every axis.
+  - abs 2026-09-03; JoyIndustrial VisCAD Team. cs.CV. Eval 1,770 (Part 1,745 + RCB-Assm25).
+  - Six large models: execution **0.565–0.812**, Solid IoU **0.2841–0.5379**, Surface IoU **0.112–0.217**. On RCB-Assm25, Codex+GPT-5.5 can raise execution/IoU while Judge drops **−6.98 pp**.
+- Caveat: Dataset/code release URL not in HTML → Save withheld. `huggingface/cadgenbench` is a prior bench. Judge is an LLM rubric.
+- Possible use: Cite next to RealCAD `2608.30617` / MIRAGE-CAD — demand Solid IoU *and* assembly Judge, not execution SR alone.
+- Maturity: paper-only
+- Priority: High
+
 ## RealCAD — parameter-frequency prior ≠ image-conditioned CAD
 
 - Link: https://arxiv.org/abs/2608.30617

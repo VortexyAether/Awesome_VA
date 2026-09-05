@@ -2,6 +2,22 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+
+## QoI twin — field NRMSE and gradient QoI collapse at different speeds
+
+- Link: https://arxiv.org/abs/2608.29633
+- Type: Paper / reduced-state scientific twin (no public code in HTML)
+- Keywords: digital twin, JHTDB, QoI, reconciliation, rollout, gradient intensity
+- One-line summary: Splits a causal provisional rollout while the primary is dark from a reconciled future-aware correction after resync, using a time bridge plus energy matching without an extra corrector net.
+- Why it matters:
+  - Window field NRMSE is not a twin-accept receipt. Gradient-intensity QoI can stay worse than the field score.
+  - abs 2026-08-30; Zhu/Klasky/Ranka et al. cs.CE. JHTDB isotropic patches, gap S∈{4,6,8}.
+  - At S=8, full reconciliation cuts window NRMSE by about **60%** and vx global gradient-intensity **4.21% → 2.91%**; future-aware physical interpolation stays **20.40%** on the same metric.
+- Caveat: Built on an existing CAESAR surrogate. No public code. Isotropic turbulence patches, not industrial geometry.
+- Possible use: Cite when a twin quotes window NRMSE — demand gradient/process QoI after an S-step primary gap.
+- Maturity: paper-only
+- Priority: High
+
 ## Physics-constrained SGS — prediction-embedded training beats residual-fit labels
 
 - Link: https://arxiv.org/abs/2608.28525

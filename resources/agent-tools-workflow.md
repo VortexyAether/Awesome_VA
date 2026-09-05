@@ -1,5 +1,21 @@
 # Agent Tools & Research Workflow
 
+
+## CAE harness — Direct + repair beats specialized multi-agent
+
+- Link: https://arxiv.org/abs/2609.03718
+- Type: Paper / CAE agent harness evaluation (no paper eval scripts in HTML)
+- Keywords: CAE agent, OpenFOAM, FoamBench, repair loop, tutorial, multi-agent
+- One-line summary: Holds information access and repair budget fixed and finds a single-agent Direct baseline at **96.4%** on FoamBench versus specialized multi-agent **88.2%**, with execution-feedback repair lifting **71.8% → 96.4%**.
+- Why it matters:
+  - Job-title multi-agent scaffolding is not the missing CAE ingredient once the base model can see logs and retry.
+  - abs 2026-09-03; Shi/Zhang. cs.CE + cs.CL + physics.comp-ph. OpenFOAM, FEniCS, PyChrono, COMSOL.
+  - Scripted reflection adds 0. Solver tutorials remain the leftover human input (**80.9 → 96.4**). Authors state run-success ≠ field-correct.
+- Caveat: Some FoamBench success labels are convergence or LLM-judge. `Hmbown/CodeWhale` is a generic TUI, not paper code.
+- Possible use: Cite when a CAE agent quotes multi-agent success — demand Direct+repair ablation and physics-field checks.
+- Maturity: paper-only
+- Priority: High
+
 ## Domain-grounded MCP — tool pick ≠ result interpretation
 
 - Link: https://arxiv.org/abs/2608.30696

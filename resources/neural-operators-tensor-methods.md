@@ -1,5 +1,21 @@
 # Neural Operators & Tensor Methods
 
+
+## LatentDDM — freeze the local operator, learn only composition
+
+- Link: https://arxiv.org/abs/2609.03069
+- Type: Paper / neural-operator composition transfer (no public code in HTML)
+- Keywords: LatentDDM, neural operator, composition, Darcy, airfoil rollout, few-shot
+- One-line summary: Pretrains a neural operator on small subdomains, then freezes it and trains only a lightweight module that composes local predictions on a new geometry, size, or operating condition.
+- Why it matters:
+  - Full-domain neural operators break under domain-size and condition shift. Transfer unit is the composition module, not a global fine-tune.
+  - abs 2026-09-02; Chen/Zhang/Deng. cs.LG. Steady Darcy + unsteady pitching airfoil.
+  - After 16 target simulations on larger Darcy domains, error is **36–56%** below capacity-matched full-domain models. Issue Board HTML: protected-test Rel L2 **0.062–0.074**. 20-step airfoil field rollouts improve zero-shot and few-shot.
+- Caveat: No author code URL → Test withheld. 2D Darcy/airfoil. AMReX `incflo` is a solver citation, not a reproduction package.
+- Possible use: Cite when a foundation-NO card quotes few-shot domain growth — demand frozen-local + composition vs full fine-tune / LoRA.
+- Maturity: paper-only
+- Priority: High
+
 ## SpeND — polynomial consistency is a subspace, not a high-k operator
 
 - Link: https://arxiv.org/abs/2609.02833
