@@ -1,5 +1,20 @@
 # Optimization for Scientific Machine Learning
 
+## MAW-ECM — fixed cubature leaves points on the table
+
+- Link: https://arxiv.org/abs/2609.03068
+- Type: Paper / FEM hyperreduction (math.NA + cs.CE; no public code in HTML)
+- Keywords: empirical cubature, hyperreduction, nonlinear manifold ROM, damage, homogenization
+- One-line summary: Starts from a feasible fixed-weight ECM rule, then greedily prunes integration points by redistributing weights with the latent coordinates through convex QPs that keep positivity.
+- Why it matters:
+  - Frozen sampling weights leave hyperreduction on the table. Adaptive weights are the remaining prune.
+  - abs 2026-09-02; From: Sebastian Ares De Parga Regalado. Negative-stiffness metamaterial homogenization + history-dependent continuum damage.
+  - Adaptive weights remove about **80%** of remaining points in homogenization and **>97%** in damage. Issue Board HTML: example m0=54 Gauss / 48 elements; homogenization stress-error window `7.87e-5` / `2.98e-4`.
+- Caveat: No public code → Test withheld. Authors leave mass/first-moment conservation open if adaptive cubature is used on inertia.
+- Possible use: Cite when a manifold ROM quotes element count — demand adaptive weights vs frozen ECM.
+- Maturity: paper-only
+- Priority: High
+
 ## SHoSP — robust TO as a first-order worst-case mass budget
 
 - Link: https://arxiv.org/abs/2608.30499

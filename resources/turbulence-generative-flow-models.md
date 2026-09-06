@@ -3,6 +3,22 @@
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
 
+## Stochastic OpInf — experimental wave ROM needs mean and covariance
+
+- Link: https://arxiv.org/abs/2609.04008
+- Code: https://github.com/hyeonghun1/CapillaryWaveTurbulence
+- Type: Paper + MIT experimental stochastic ROM (physics.comp-ph)
+- Keywords: operator inference, stochastic ROM, capillary wave, experiment, Tikhonov
+- One-line summary: Learns low-dimensional SDEs of capillary-wave turbulence from ultra-high-speed DHM experiments, selecting ROM dimension from mean and covariance error and reading Tikhonov as a spectral-content knob.
+- Why it matters:
+  - Field RMSE is not a second-moment receipt. Experimental repeats expose stochastic content that a mean-only ROM hides.
+  - abs 2026-09-03; From: Hyeonghun Kim. physics.comp-ph. 16 repeats × 10 acoustic capillary-number conditions.
+  - Issue Board HTML: max pointwise relative error **<0.04**; weak-mean error **0.153→0.0557**. GitHub ★**0**, **MIT**, Jupyter, pushed 2026-08-27.
+- Caveat: Microfluidic interface and apparatus bias. No 3D engineering-geometry transfer. Smoke locally before Test.
+- Possible use: Save after a local notebook smoke; demand mean+cov dimension vs energy-only POD on experimental twins.
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## QoI twin — field NRMSE and gradient QoI collapse at different speeds
 
 - Link: https://arxiv.org/abs/2608.29633

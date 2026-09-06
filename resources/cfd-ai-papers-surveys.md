@@ -1,5 +1,36 @@
 # CFD-AI Papers & Surveys
 
+## Structured UQ — fake energy in the feedback block inflates shear thresholds
+
+- Link: https://arxiv.org/abs/2609.02301
+- Type: Paper / input-output shear-flow stability (physics.flu-dyn; no public code in HTML)
+- Keywords: structured uncertainty, shear flow, Couette, Poiseuille, energy production
+- One-line summary: Transforms input-output channels so structured uncertainty is repeated-diagonal, preserving component-wise advection pathways and cutting artificial energy production that made earlier μ-thresholds overly conservative.
+- Why it matters:
+  - Unstructured or poorly blocked uncertainty can manufacture energy and violate divergence-free pathways.
+  - abs 2026-09-02; From: Ofek Frank-Shapir. Couette and plane Poiseuille.
+  - Issue Board HTML: new thresholds less conservative than repeated-block; `Re ≲ 1000` OW vs SPS mode swap; factor up to `√3`.
+- Caveat: Incompressible shear base flows. No public code. DNS/experiment agreement is qualitative.
+- Possible use: Cite when a shear-stability card quotes μ-analysis — demand the fake-energy term under the chosen block.
+- Maturity: paper-only
+- Priority: High
+
+## IB-LBM — rank drag, or rank no-slip?
+
+- Link: https://arxiv.org/abs/2609.02298
+- Code: https://github.com/mulgae-life/iblbm-mechanism-resolved
+- Type: Paper + MIT IB-LBM mechanism study (physics.flu-dyn; PoF accepted)
+- Keywords: immersed boundary, LBM, no-slip, kernel, drag ranking
+- One-line summary: Uses fixed/oscillating cylinders and sedimenting particles as probes of Eulerian-Lagrangian momentum transfer, arguing local no-slip fidelity — not a universal Cd ranking — discriminates DF/MDF/DFC and kernels.
+- Why it matters:
+  - Cd RMSE is not a wall-slip receipt. Hat vs Peskin 4-point Cd reversal under DFC is spatial redistribution of the marker correction.
+  - abs 2026-09-02; From: Hongju Jo. Related DOI 10.1063/5.0336036. Re ≤ 200, 2D.
+  - GitHub `mulgae-life/iblbm-mechanism-resolved` ★**1**, **MIT**, Python, pushed 2026-09-01.
+- Caveat: Low-Re cylinder/particle. Not industrial geometry. ★1.
+- Possible use: Cite when an IB/LBM card quotes Cd — demand no-slip fidelity and kernel redistribution.
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## DiffGeo — scarce-data aero generation, not another GAN airfoil dump
 
 - Link: https://arxiv.org/abs/2609.00812
