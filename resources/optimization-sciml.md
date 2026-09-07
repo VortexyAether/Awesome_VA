@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## GUA — conflict-free gradient surgery can be undone by the optimizer
+
+- Link: https://arxiv.org/abs/2609.01558
+- Code: https://github.com/JingXiao10/GUA
+- Type: Paper + MIT PINN optimizer alignment (cs.LG)
+- Keywords: PINN, gradient surgery, optimizer, GUM, GUA, conflict-free
+- One-line summary: Shows that a conflict-free surgery direction can leave the cone after momentum, adaptive scaling, or preconditioning, then realigns the applied update and the optimizer state (GUA).
+- Why it matters:
+  - Surgery success is not the applied step. Residual vs IC/BC conflict can return after the optimizer transform.
+  - abs 2026-09-01; Xiao/Chen/Wang/Jia/Lai. Burgers / Kovasznay / Beltrami / Heat-MS.
+  - Issue Board HTML: M-SGD Ru **51.3–86.3%**. GUA applied-update conflict 0 on reported PINN settings; relative L2 down **11.6–98.2%**. GitHub `JingXiao10/GUA` ★**9**, **MIT**, pushed 2026-09-02.
+- Caveat: 1D/2D standard PINN benches. Not a 3D CFD PINN receipt. Smoke locally before Test.
+- Possible use: Test after a local smoke; demand applied-update Ru when a PINN card quotes gradient surgery.
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## MAW-ECM — fixed cubature leaves points on the table
 
 - Link: https://arxiv.org/abs/2609.03068

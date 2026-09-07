@@ -3,6 +3,21 @@
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
 
+## MPS turbulence encoding — field fidelity is not dissipation fidelity
+
+- Link: https://arxiv.org/abs/2608.28869
+- Type: Paper / tensor-network a priori turbulence encoding (physics.flu-dyn + cs.CE; no public code in HTML)
+- Keywords: matrix product state, tensor network, isotropic turbulence, dissipation, compression
+- One-line summary: Truncates isotropic DNS with an MPS ansatz so velocity fidelity stays high at a few percent of the original memory while mean dissipation and gradients break first.
+- Why it matters:
+  - Field fidelity and kinetic energy are not an SGS/dissipation receipt. Compression leaderboards hide gradient QoI.
+  - abs 2026-08-28; Esmaeili/Alipanah/Pinkston/Givi/Livescu. 23 pages. Incompressible 3D hydro + Fickian scalar DNS.
+  - Issue Board HTML: velocity **99.8% fidelity / 5% memory**; scalar needs **15%** memory for the same fidelity; KE relative error **0.2%**; mean dissipation **~10%**.
+- Caveat: A priori encoding, not Navier–Stokes time-stepping. Homogeneous isotropic turbulence. No public code.
+- Possible use: Cite when a turbulence compressor quotes fidelity/KE — demand mean dissipation and gradients.
+- Maturity: paper-only
+- Priority: High
+
 ## Stochastic OpInf — experimental wave ROM needs mean and covariance
 
 - Link: https://arxiv.org/abs/2609.04008

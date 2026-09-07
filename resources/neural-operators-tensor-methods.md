@@ -1,6 +1,21 @@
 # Neural Operators & Tensor Methods
 
 
+## Polyconvex mixture — a material family is a shared potential basis
+
+- Link: https://arxiv.org/abs/2609.00359
+- Type: Paper / parametric hyperelasticity foundation model (physics.comp-ph + cond-mat.mtrl-sci; no public code in HTML)
+- Keywords: polyconvex, mixture-of-experts, hyperelasticity, constitutive, composition transfer
+- One-line summary: Mixes polyconvex neural strain-energy potentials with a conditioner so one shared convex basis covers a family of compositions instead of a single ICNN lottery.
+- Why it matters:
+  - Train RMSE can match a monolithic PICNN while unknown composition+load test RMSE does not.
+  - abs 2026-08-31; Yang/Padmanabha/Seidl/Bouklas. PolyJet experiments + Gent synthetics.
+  - Issue Board HTML Table A2: Nmat=6 test RMSE (Mat+Mode) **0.2744 vs 0.701**; Nmat=24 **0.0472 vs 0.0684**. Train RMSE **0.0256 vs 0.0263**.
+- Caveat: No public code → Test withheld. Printed-resin / Gent benches. Not a fluid constitutive transfer.
+- Possible use: Cite when a constitutive net quotes train RMSE — demand unseen composition+load vs a single ICNN.
+- Maturity: paper-only
+- Priority: High
+
 ## LatentDDM — freeze the local operator, learn only composition
 
 - Link: https://arxiv.org/abs/2609.03069

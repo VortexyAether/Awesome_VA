@@ -1,5 +1,20 @@
 # CFD-AI Papers & Surveys
 
+## Boltzmann ROM — inverse cost needs mass-conserving residual minimization
+
+- Link: https://arxiv.org/abs/2609.02578
+- Type: Paper / parametric Boltzmann ROM + inverse (math.NA + math.OC; no public code in HTML)
+- Keywords: Boltzmann, reduced-order model, inverse, mass conservation, kinetic
+- One-line summary: Builds a greedy residual subspace for parametric steady Boltzmann with mass-conserving residual minimization, then uses temperature observations to recover collision parameters without repeating the full-order solve.
+- Why it matters:
+  - Subspace dimension is not an inverse receipt. Mass leakage in the residual minimizer poisons reconstructed collision parameters.
+  - abs 2026-09-02; Tong/Hu/Li/Shen/Yang. Separable approximation of the quadratic collision kernel for online cost.
+  - Issue Board HTML: ROM vs FOM speed **>10³**, relative error **~0.01%**; online ≥**200×**.
+- Caveat: Noisy observations not shown. No public code. Rarefied/thermally driven setting, not industrial NS.
+- Possible use: Cite when a kinetic ROM quotes speedup — demand mass-conserving residual vs unconstrained subspace.
+- Maturity: paper-only
+- Priority: High
+
 ## Structured UQ — fake energy in the feedback block inflates shear thresholds
 
 - Link: https://arxiv.org/abs/2609.02301
