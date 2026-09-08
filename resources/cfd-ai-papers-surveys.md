@@ -1,5 +1,20 @@
 # CFD-AI Papers & Surveys
 
+## ENPINN — sharp-layer PINN needs energy-norm weak loss, not residual derivatives alone
+
+- Link: https://arxiv.org/abs/2608.29499
+- Type: Paper / energy-norm PINN (math.NA + math-ph; no public code in HTML)
+- Keywords: PINN, energy-norm, sharp layers, gPINN, WLPINN, weak form
+- One-line summary: Puts gradient information and variational structure into an energy-norm weak loss so PINNs resolve boundary and interior layers instead of relying on point residuals or residual derivatives alone.
+- Why it matters:
+  - Mid-train relative L2 is not a layer-resolution receipt. WLPINN can look better mid-training and then stall.
+  - abs 2026-08-30; Maity/Das/Patawari/Jagtap. Combustion, coupled multi-scale, 2D Burgers interior layer, 3D time-dependent.
+  - Issue Board HTML: same capacity ENPINN beats gPINN/WLPINN/VSPINN on convergence/accuracy.
+- Caveat: No public code → Test withheld. Generalized convection–diffusion–reaction, not wall-bounded 3D CFD.
+- Possible use: Cite when a sharp-layer PINN quotes residual derivatives — demand energy-norm vs gPINN/WLPINN.
+- Maturity: paper-only
+- Priority: High
+
 ## Boltzmann ROM — inverse cost needs mass-conserving residual minimization
 
 - Link: https://arxiv.org/abs/2609.02578

@@ -1,5 +1,21 @@
 # Neural Operators & Tensor Methods
 
+## APEBench / PRDP — emulator training must name which solver role is being used
+
+- Link: https://arxiv.org/abs/2608.24547
+- Code: https://github.com/tum-pbs/apebench
+- Type: Thesis + MIT JAX emulator bench (cs.LG; NeurIPS 2024 suite)
+- Keywords: APEBench, PRDP, neural emulator, differentiable physics, spectral error
+- One-line summary: Reads numerical solvers and neural emulators in one spectral language, then splits the solver’s jobs — data generation, supervised loss, hybrid differentiable physics, and benchmark reference.
+- Why it matters:
+  - Train RMSE is not an emulator receipt if the data solver, test solver, and differentiable solver are unnamed.
+  - abs 2026-08-25; Koehler. APEBench + Progressively Refined Differentiable Physics + Neural Emulator Superiority.
+  - Issue Board HTML Ch.13: NS emulator train-time **−62%**, solver iterations up to **86%**. GitHub `tum-pbs/apebench` ★**109**, **MIT**, pushed 2026-06-01. ≥46 PDEs in 1D/2D/3D.
+- Caveat: Thesis bundle. Repo last push 2026-06-01. Spectral periodic benches, not industrial geometry. Smoke locally before Test.
+- Possible use: Save after a local smoke; demand which solver role produced the speedup card.
+- Maturity: paper + live MIT repo
+- Priority: High
+
 
 ## Polyconvex mixture — a material family is a shared potential basis
 

@@ -2,6 +2,35 @@
 
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
+## Compact Gaussian kinetics — conserved-moment fidelity is not a validity domain
+
+- Link: https://arxiv.org/abs/2609.04606
+- Type: Paper / rarefied kinetic representation (physics.flu-dyn; no public code in HTML)
+- Keywords: rarefied, DVM, Gaussian mixture, transport fidelity, validity domain
+- One-line summary: Compresses DVM states with localized Gaussians that keep conserved moments at sub-percent while transport and OOD Mach cases expose the validity domain.
+- Why it matters:
+  - Conserved-moment error is not a license to use the map off the fitted Mach/Kn set.
+  - abs 2026-09-04; Roohi. Ma3/Ma5 shocks + lid-driven cavities.
+  - Same 4608-coefficient budget: transport ~1–2% vs multilinear 89–98%. Withheld Ma6 distribution 42.86±5.40% → 11.45±0.94%; transport still 30–40%. Normalized-coordinate guard rejects Ma12.
+- Caveat: Monatomic shock/cavity. Not NS time-stepping. No public code.
+- Possible use: Cite when a kinetic ROM quotes conserved-moment error — demand withheld-Mach transport and an OOD guard.
+- Maturity: paper-only
+- Priority: High
+
+## Wing turbulence XAI — Q-event intensity is not the predictive structure
+
+- Link: https://arxiv.org/abs/2609.05015
+- Type: Paper / explainable wing-turbulence DL (physics.flu-dyn; no public code in HTML)
+- Keywords: wing, Shapley, Q-criterion, coherent structures, APG
+- One-line summary: Trains a short-term wing-flow predictor, then uses Shapley attribution to find regions needed for the forecast — not the classical Q-event intensity census.
+- Why it matters:
+  - Field error ~1% is not structure identity. Drag/separation interventions should track predictive volume, not vortex-criterion intensity.
+  - abs 2026-09-04; Molina-Casino/Cremades/Hoyas/Cardesa/Chedevergne/Vinuesa. Re_c=2e5, α=5°, trip at x/c=0.1.
+  - Issue Board HTML: as APG grows, important low-speed volume **80%→58%**, mid-amplitude **16%→26%**.
+- Caveat: One code, one angle of attack. No public code. No closed-loop control.
+- Possible use: Cite when a wing-turbulence pitch quotes Q-events — demand Shapley predictive volume vs intensity.
+- Maturity: paper-only
+- Priority: High
 
 ## MPS turbulence encoding — field fidelity is not dissipation fidelity
 
