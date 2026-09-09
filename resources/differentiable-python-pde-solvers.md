@@ -1,5 +1,21 @@
 # Differentiable & Python PDE Solvers
 
+## Multi-index Bell PINN — high-order mixed derivatives are a tabulated Faà-di-Bruno, not nested AD
+
+- Link: https://arxiv.org/abs/2609.03768
+- Code: https://github.com/fimoto/DNNF90
+- Type: Paper + Fortran PINN derivative engine (physics.comp-ph + physics.plasm-ph)
+- Keywords: PINN, Faà di Bruno, Bell polynomial, mixed derivatives, nested AD
+- One-line summary: Tabulate the multivariate Faà di Bruno / Bell convolutions over a downward-closed multi-index set so high-order PINN residuals carry only the mixed derivatives the operator needs, without nested AD graphs.
+- Why it matters:
+  - Nested AD through order K explodes memory. A small solution RMSE is not a derivative-norm receipt.
+  - abs 2026-09-03; Imoto. 3rd/5th/7th-order dispersive, incompressible flow, five-field EHD. 7th-order Zakharov–Kuznetsov in 3+1D relative solution error **6e-4**. 330 mixed derivatives through order 7 on one CPU.
+  - GitHub `fimoto/DNNF90` ★**0**, license **NOASSERTION**, pushed 2026-09-03.
+- Caveat: Low-dimensional dispersive / plasma-adjacent PDEs. ★0 + non-SPDX license → Save/Test withheld.
+- Possible use: Cite when a high-order PINN quotes nested AD — demand tabulated multi-index and derivative-norm vs solution RMSE.
+- Maturity: paper + ★0 Fortran repo
+- Priority: High
+
 ## GRADSOLVE — exact discrete adjoint of the steps you actually took
 
 - Link: https://arxiv.org/abs/2609.02876

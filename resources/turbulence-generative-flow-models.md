@@ -1,5 +1,20 @@
 # Turbulence & Generative Flow Models
 
+## Wind-turbine wake dissipation — Cε is an FST-flavour field, not a universal constant
+
+- Link: https://arxiv.org/abs/2609.03996
+- Type: Paper / experimental wake dissipation (physics.flu-dyn; no public code)
+- Keywords: wind turbine, wake, dissipation, Cε, free-stream turbulence, non-equilibrium
+- One-line summary: Shows that normalised TKE dissipation Cε in a wind-turbine wake is an FST-flavour field: an annular high-Cε ring under low/moderate inflow, collapsing when high-intensity FST erodes tip vortices.
+- Why it matters:
+  - A single Cε is not a wake-closure receipt across free-stream turbulence flavours.
+  - abs 2026-09-03; Bourhis/Buxton. D=0.58 m. Tip-region Cε scales as √Re_D / Re_λ under low/moderate FST.
+  - Issue Board HTML: I∞ 1–11%, ℒ∞/D 0.1–2. Self-similar to x/D=20 for I∞≤5.8%; high-intensity L7/L8 breaks. High-wavenumber model <7% of ε.
+- Caveat: Lab-scale experiment, not ML and not a full wind farm.
+- Possible use: Cite when a wake surrogate quotes a universal Cε — demand FST-intensity flavour and the tip-band scaling.
+- Maturity: paper-only
+- Priority: High
+
 Resources for turbulence prediction, reduced-order modeling, super-resolution, autoregressive flow prediction, learned closures, and generative modeling of physical fields.
 
 ## Compact Gaussian kinetics — conserved-moment fidelity is not a validity domain

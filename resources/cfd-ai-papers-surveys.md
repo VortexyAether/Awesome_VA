@@ -1,5 +1,34 @@
 # CFD-AI Papers & Surveys
 
+## LA-NODE — reduced-order self-intersections are a missing latent dimension, not more layers
+
+- Link: https://arxiv.org/abs/2608.22142
+- Type: Paper / latent-augmented Neural ODE ROM (cs.LG; no public code in HTML)
+- Keywords: Neural ODE, reduced-order, self-intersection, latent augmentation, IPMSM
+- One-line summary: Augments a Neural ODE with the minimum latent dimension needed so a reduced-order trajectory that self-intersects in phase space can carry two velocities at one compact state.
+- Why it matters:
+  - Compact latent error is not uniqueness. Deeper NODE/Transformer stacks cannot assign two velocities to one point.
+  - abs 2026-08-22; Wang/Zhou/Mei/Zheng/Bai/Nagahara. IPMSM drive + distributed energy system.
+  - Issue Board HTML: IPMSM train MSE **[1e-5, 1e-4]** vs ANODE/Transformer **[1e-4, 1e-3]**. Extra latent dims beyond the rank bound add no gain.
+- Caveat: Low-dimensional industrial manifolds, not high-dimensional CFD field rollout. No public code.
+- Possible use: Cite when a NODE/ROM quotes compact latent error — demand self-intersecting uniqueness and min augmentation rank.
+- Maturity: paper-only
+- Priority: High
+
+## FS-ENGD-PINN — coupled poroelasticity needs split + energy natural gradient, not a deeper residual net
+
+- Link: https://arxiv.org/abs/2608.26303
+- Type: Paper / Fixed-Stress + ENGD PINN (math.NA + math.OC; CiCP accepted; no public code in HTML)
+- Keywords: PINN, Biot, Fixed-Stress, energy natural gradient, poroelasticity
+- One-line summary: Splits Biot consolidation with Fixed-Stress, then trains with energy natural gradient descent and a three-field mixed form so coupled PINN stiffness is a physics+geometry contract, not a deeper residual net.
+- Why it matters:
+  - Adam residual on a monolithic Biot PINN can stall displacement at relative error **1.0**.
+  - abs 2026-08-26; Sun/Liu/Feng/Cai. Mandel-Cryer, layered Terzaghi, 3D. Issue Board HTML: Example 3 error ~2e-4.
+- Caveat: Poroelasticity, not external aerodynamics. No public code.
+- Possible use: Cite when a coupled PINN quotes Adam residual — demand split vs monolithic and the displacement stall.
+- Maturity: paper-only (CiCP accepted)
+- Priority: High
+
 ## ENPINN — sharp-layer PINN needs energy-norm weak loss, not residual derivatives alone
 
 - Link: https://arxiv.org/abs/2608.29499

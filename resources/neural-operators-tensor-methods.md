@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## DeepONet attention — cross-attention is the operator, self-attention+dot-product is not free lunch
+
+- Link: https://arxiv.org/abs/2609.04407
+- Type: Paper / DeepONet attention ablation (cs.LG; no public code in HTML)
+- Keywords: DeepONet, cross-attention, self-attention, physics-informed, operator fusion
+- One-line summary: Holds data-driven and physics-informed DeepONet training fixed while swapping only attention fusion, showing query-dependent cross-attention — not branch self-attention plus dot-product — is the reliable operator.
+- Why it matters:
+  - Attention-NO papers usually change several axes at once. A 28× card is not a fusion-location receipt.
+  - abs 2026-09-03; Amar Alem Koric/Qibang Liu/Seid Koric. 25 pages. 1D diffusion–reaction, 1D Burgers, 2D Poisson.
+  - Per-sensor tokenization + cross-attention cuts classical DeepONet mean relative L2 by **2.4–28.0×**; best configs **3.5–32.3×**. Branch self-attention + dot-product alone degrades the 1D problems. Issue Board HTML Table 3: physics-informed Burgers V1 **1.24e-1** vs V4 **7.04e-3**.
+- Caveat: 1D/2D practice PDEs, not industrial 3D CFD. No public code → Test/Save withheld.
+- Possible use: Cite when an attention-DeepONet quotes a single architecture jump — demand cross- vs self-attention under the same data/physics split.
+- Maturity: paper-only
+- Priority: High
+
 ## APEBench / PRDP — emulator training must name which solver role is being used
 
 - Link: https://arxiv.org/abs/2608.24547
