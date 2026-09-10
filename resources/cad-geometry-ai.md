@@ -1,5 +1,21 @@
 # CAD, Geometry & AI-assisted Design
 
+## CIT-CAD — IoU is not construction intent; CSR + monotonic repair is the gate
+
+- Link: https://arxiv.org/abs/2609.07434
+- Code: https://anonymous.4open.science/r/CIT-CAD-2FC2
+- Type: Paper / text-to-CAD constraint-intent bench (cs.AI + cs.SE; anonymous repo)
+- Keywords: CIT-CAD, Constraint Intent Tree, CadQuery, IoU, CSR, verification
+- One-line summary: Infers a Constraint Intent Tree from the brief so text-to-CAD is generated, checked, and repaired against explicit constraints rather than silhouette IoU.
+- Why it matters:
+  - Mean IoU can pass while decomposition, Booleans, and sketch relations fail. VSR ≠ IoU@0.95 ≠ CSR.
+  - abs 2026-09-07; Du/Sun/Xi/Li. Issue Board HTML: vanilla Mean IoU **32.6%**, IoU@0.95 **4.2%**; CIT-CAD Mean IoU **36.0%**, IoU@0.95 **7.2%**, VSR **78.0%**.
+  - Repair rejects a candidate that breaks already-satisfied constraints (monotonic).
+- Caveat: Anonymous repo → GitHub API before Test/Save. CSR only on the implemented constraint vocabulary. Not an industrial kernel-solid gate.
+- Possible use: Cite when a text-to-CAD quotes IoU — demand CSR and monotonic repair.
+- Maturity: paper + anonymous code
+- Priority: High
+
 
 ## RealCADBench — executability, IoU, and Judge disagree
 

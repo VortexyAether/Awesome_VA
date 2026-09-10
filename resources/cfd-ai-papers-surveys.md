@@ -1,5 +1,20 @@
 # CFD-AI Papers & Surveys
 
+## ONECYL — graph surrogates need geometry level-set + force/rollout gates, not field RMSE on one Re
+
+- Link: https://arxiv.org/abs/2609.08947
+- Type: Paper / bluff-body graph-surrogate benchmark (physics.flu-dyn + cs.LG; no public code in HTML)
+- Keywords: ONECYL, graph transformer, cylinder, rollout, level-set, drag-lift
+- One-line summary: Benchmarks unsteady circular-cylinder flow across laminar–transitional–high-Re with a graph-transformer baseline scored on full-field rollout, virtual probes, and drag/lift — not single-Re field RMSE.
+- Why it matters:
+  - Pretty wake fields are not a force receipt. Unseen-geometry long-horizon prediction is the gate.
+  - abs 2026-09-08; Michel/Campos/Dujardin/Areiza/Meliga/Hachem. VMS FEM **450** cases, **270,000** snapshots, **15** unseen test shapes.
+  - Level-set geometry encoding improves long-horizon unseen prediction; divergence regularization helps more as flow complexity grows. Issue Board HTML: 600-step rollout claim.
+- Caveat: Circular-cylinder family, not industrial polyhedra. No public code → Test/Save withheld.
+- Possible use: Cite when a graph CFD surrogate quotes field RMSE — demand unseen-geometry rollout plus drag/lift.
+- Maturity: paper-only
+- Priority: High
+
 ## LA-NODE — reduced-order self-intersections are a missing latent dimension, not more layers
 
 - Link: https://arxiv.org/abs/2608.22142

@@ -1,5 +1,21 @@
 # Differentiable & Python PDE Solvers
 
+## AD vs discretization — as nonlinearity/shocks grow, discrete constraints beat AD residuals
+
+- Link: https://arxiv.org/abs/2609.07437
+- Code: https://github.com/guoxing0809/neuropde_analysis
+- Type: Paper / AD-PINN vs discrete-constraint analysis (math.NA + cs.LG + physics.flu-dyn)
+- Keywords: PINN, automatic differentiation, discretization, hypersonic, GNN, MLP
+- One-line summary: Splits approximation, optimization, and truncation error for AD residuals versus discretization-based constraints from linear Poisson to high-Mach cylinders.
+- Why it matters:
+  - Denser AD samples are not a shock receipt. As nonlinearity grows, discrete constraints win on accuracy; complex BCs favor GNN over MLP.
+  - abs 2026-09-07; Guo/Tang/Meng/Zhang/Xiao/Liu. High-resolution MSE can stall or worsen velocity error.
+  - GitHub `guoxing0809/neuropde_analysis` ★**0**, license **none**, pushed 2026-09-09.
+- Caveat: No SPDX → Test/Save withheld. Do not freeze a single winner cell from mixed table maps.
+- Possible use: Cite when a PINN quotes AD residuals on shocks — demand the discrete-constraint error split.
+- Maturity: paper + unlicensed ★0 repo
+- Priority: High
+
 ## Multi-index Bell PINN — high-order mixed derivatives are a tabulated Faà-di-Bruno, not nested AD
 
 - Link: https://arxiv.org/abs/2609.03768

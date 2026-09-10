@@ -1,5 +1,37 @@
 # Neural Operators & Tensor Methods
 
+## LGNO — local stencil operators, not global FNO, for rollout-stable field evolution
+
+- Link: https://arxiv.org/abs/2609.07752
+- Code: https://github.com/baiming-zhang/LGNO
+- Type: Paper + Apache local-gradient neural operator (cs.LG + math-ph)
+- Keywords: LGNO, local stencil, neural operator, rollout, translation-invariant kernel
+- One-line summary: Learns translation-invariant local kernels from nonlinear gradient-discretization priors, then factorizes a zero-consistent stencil so coefficients and field reconstruction stay separate.
+- Why it matters:
+  - Global FNO/MLP train loss is not a rollout receipt. Local stencils are the interpretability unit.
+  - abs 2026-09-07; Zhang/Tang/Xu/Chen/Xiong. 29 pages, 11 figures. Benches: diffusion, Burgers, NS, Gross–Pitaevskii, Schrödinger.
+  - GitHub `baiming-zhang/LGNO` ★**0**, **Apache-2.0**, pushed 2026-07-04.
+- Caveat: ★0. Repo push predates the abs date. Not industrial unstructured CFD. GP/Schrödinger examples are adjacent. Local smoke before Test.
+- Possible use: Test after a local smoke; demand local-stencil rollout vs FNO/MLP train-loss cards.
+- Maturity: paper + licensed early repo
+- Priority: High
+
+## TopoBox-3D — arbitrary-mesh NOs are not topology-general
+
+- Link: https://arxiv.org/abs/2609.05860
+- Code: https://github.com/asmld/TopoBox-3D
+- Type: Paper + MIT topology-OOD NO bench (cs.LG)
+- Keywords: TopoBox-3D, topology OOD, Hodge, Betti, neural operator, Rayleigh
+- One-line summary: Shows that accepting arbitrary meshes is not topology generalization: tunnels and cavities move both the harmonic kernel and the decaying spectrum.
+- Why it matters:
+  - Geometry-family shift ≠ topology-OOD. Implicit-topology models take excess matched degradation in **37 of 45** cells.
+  - abs 2026-09-05; Chen/Xu/Nie/Fan/Wang. Initial Rayleigh quotient is the most stable error predictor. TNO ranks first on mixed-input nonharmonic tasks with nontrivial harmonic support.
+  - GitHub `asmld/TopoBox-3D` ★**0**, **MIT**, pushed 2026-09-09.
+- Caveat: Controlled 3D topology boxes, not industrial CAD voids/fillets. ★0 → local smoke before Save.
+- Possible use: Cite/Save when a geometry-general NO quotes unstructured-mesh IO — demand topology-OOD cells.
+- Maturity: paper + live MIT repo
+- Priority: High
+
 ## DeepONet attention — cross-attention is the operator, self-attention+dot-product is not free lunch
 
 - Link: https://arxiv.org/abs/2609.04407
