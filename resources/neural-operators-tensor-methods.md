@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## Two-scale PCA-Net — local PCA patches create block artifacts; a cheap global coarse field is the missing scale
+
+- Link: https://arxiv.org/abs/2609.08034
+- Code: https://github.com/dmrigank/PAtch_PCA_methods_extensions
+- Type: Paper + MIT two-scale localized PCA operator (cs.LG)
+- Keywords: PCA-Net, localization, two-scale, interface artifact, Poisson, Darcy
+- One-line summary: Splits the solution into a coarse-global PCA field plus nonoverlapping local residual patches so localized operator learning does not pay for scale with block offsets and fake high-k content.
+- Why it matters:
+  - Patch RMSE is not a continuous-solution receipt. Spectral/PDE residual weights can improve a diagnostic without fixing tiling.
+  - abs 2026-09-07; Dhingra/Stout/San. Issue Board HTML Table 30 Poisson-128 learned MRE: Plain L2L **0.04829** vs Two-scale **0.01139** (oracle **0.00501**). SSIM 0.943 → 0.997. GitHub `dmrigank/PAtch_PCA_methods_extensions` ★**0**, **MIT**, pushed 2026-09-10.
+- Caveat: 2D Poisson/Darcy, not industrial mesh CFD. ★0. Final setting zeros spectral/PDE residual weights. Local smoke before Test.
+- Possible use: Test after a local smoke; demand two-scale vs plain L2L interface/MRE, not patch RMSE alone.
+- Maturity: paper + licensed early repo
+- Priority: High
+
 ## LGNO — local stencil operators, not global FNO, for rollout-stable field evolution
 
 - Link: https://arxiv.org/abs/2609.07752

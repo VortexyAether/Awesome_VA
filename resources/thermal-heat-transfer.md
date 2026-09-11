@@ -1,5 +1,19 @@
 # Thermal & Heat Transfer
 
+## Physics-guided extrapolation — in-domain R² is not a license to leave the Fourier window
+
+- Link: https://arxiv.org/abs/2609.09912
+- Type: Paper / PINN–BiLSTM extrapolation protocol (cs.LG; no public code in HTML)
+- Keywords: extrapolation, PINN, BiLSTM, heat diffusion, Fourier number, hard BC
+- One-line summary: Uses a classical 1D transient diffusion analytical solution as a sequential train–predict–validate–extend gate so interpolation R² cannot be sold as horizon extension.
+- Why it matters:
+  - In-window R²≈0.99 is not an out-of-window Fourier-number receipt. Early-Fo stiff boundary layers accumulate without physics alignment (Root-Fourier, boundary weights, hard BC, log-time).
+  - abs 2026-09-09; Yadav/Dubey/Chakraborty/Akolekar. Issue Board HTML interpolation Fo=0.002/0.007: PG-BiLSTM R² **0.99003** MAE **0.00607** → R² **0.99953** MAE **0.00239**; modified PINN R² **0.99978** MAE **0.00122** / R² **0.99998** MAE **0.00067**. First extrapolation points Fo=**0.0009** and **0.0091**.
+- Caveat: 1D Dirichlet heat conduction, not 3D CFD. No public code. Interpolation MAE does not replace the extrapolation clock — the paper says so.
+- Possible use: Cite when a PINN quotes in-domain R² — demand the first out-of-window Fo point.
+- Maturity: paper-only
+- Priority: High
+
 ## IC-ThermBench — within-family OK, cross-package OOD collapses
 
 - Link: https://arxiv.org/abs/2608.23977

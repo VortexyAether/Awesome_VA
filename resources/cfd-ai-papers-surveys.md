@@ -1,5 +1,33 @@
 # CFD-AI Papers & Surveys
 
+## IDP hybrid FV — cell averages and point values need one local stability certificate on general meshes
+
+- Link: https://arxiv.org/abs/2609.10476
+- Type: Paper / invariant-domain hybrid FV (math.NA + physics.comp-ph; no public code in HTML)
+- Keywords: invariant-domain, hybrid FV, Active Flux, PAMPA, unstructured mesh
+- One-line summary: Preserves a convex admissible set for hybrid hyperbolic schemes whose cell averages update conservatively while boundary point values may evolve non-conservatively, under one local CFL without post-update repair.
+- Why it matters:
+  - Smooth convection L1 order is not a discontinuous Euler min-value receipt. Averages-only safety is not hybrid safety.
+  - abs 2026-09-09; Ding/Cui/Abgrall/Wu. Issue Board HTML Table 2: triangular N=180224 cell-average L1 **3.92e-5** observed order **3.09**, point **4.01e-5** / **3.12**. Limiter activity Λ Finest **1.93%**. Cartesian 640² L1 **1.19e-5** order **2.93**.
+- Caveat: Classical numerics, not an ML surrogate. No industrial polyhedra/OpenFOAM import. No public code → Test withheld.
+- Possible use: Cite when a hybrid FV/Active Flux card quotes smooth L1 order — demand one local admissibility certificate for averages and point values.
+- Maturity: paper-only
+- Priority: High
+
+## FSAN — global flow-condition vectors ignore that different surface patches live in different states
+
+- Link: https://arxiv.org/abs/2609.06660
+- Type: Paper / aero surface-Cp operator-on-points (cs.CV + cs.AI; no public code in HTML)
+- Keywords: FSAN, flow-state, surface Cp, Emmi-Wing, DrivAerNet++
+- One-line summary: Encodes surface point clouds and flow conditions separately, then partitions geometry into learnable local flow-states instead of injecting one (Ma, Re, AoA) vector onto every face.
+- Why it matters:
+  - A global condition embedding is not a local shock/separation receipt. Extreme coupled conditions can raise error for every model — architecture is not the regime.
+  - abs 2026-09-06; Jin/Yao/Guan/Li. Issue Board HTML: Emmi-Wing REL-L2 **>20%** vs Transolver with **~14%** fewer params; DrivAerNet++ REL-L2 **10%** vs AdaField with **~94%** fewer params. Chunks of 8192 points.
+- Caveat: Wednesday gap-fill. No code → Test withheld. REL-L2 is not an integrated Cd/Cl gate. Extreme-sample P95 can lose to the baseline.
+- Possible use: Cite when an aero surrogate quotes global condition embeddings — demand local flow-state and Cd/Cl, not only surface REL-L2.
+- Maturity: paper-only
+- Priority: High
+
 ## ONECYL — graph surrogates need geometry level-set + force/rollout gates, not field RMSE on one Re
 
 - Link: https://arxiv.org/abs/2609.08947
