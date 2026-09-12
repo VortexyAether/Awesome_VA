@@ -1,5 +1,20 @@
 # CAD, Geometry & AI-assisted Design
 
+## Canonical B-rep — file topology is not a solid invariant; encoders collapse on the same part
+
+- Link: https://arxiv.org/abs/2609.11573
+- Type: Paper / CAD B-rep encoder robustness (cs.CV + cs.AI + cs.CG; no public code in API)
+- Keywords: B-rep, canonical region graph, AAGNet, FreeCAD, Fusion 360, mIoU
+- One-line summary: Shows the same solid can emit different B-rep graphs under kernel rebuild, export repartition, and designer order, then proposes a canonical region graph whose nodes/features/frames are derived from the solid rather than the file.
+- Why it matters:
+  - Clean-split B-rep mIoU is not a round-trip receipt. Popular encoders collapse on composed perturbations and human FreeCAD rewrites.
+  - abs 2026-09-10; Jiang/Mohamed/Hitt/Lomakina/Jiang/Jang.
+  - Issue Board HTML Table 2 MFInstSeg macro mIoU: AAGNet clean **0.9851** → composed **0.0055**. Ours clean **0.9922** → composed **0.9816**. Fusion 360 Gallery **3000** parts.
+- Caveat: No public code → Test withheld. Neighbor-face graph predictions can move the same face when adjacency changes (author caveat). Not an industrial kernel-solid Valid% gate.
+- Possible use: Cite next to CIT-CAD (2609.07434) when a B-rep encoder quotes clean mIoU — demand composed/kernel-rebuild/human-FreeCAD collapse.
+- Maturity: paper-only
+- Priority: High
+
 ## CIT-CAD — IoU is not construction intent; CSR + monotonic repair is the gate
 
 - Link: https://arxiv.org/abs/2609.07434

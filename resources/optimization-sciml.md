@@ -1,5 +1,21 @@
 # Optimization for Scientific Machine Learning
 
+## MSFO — multi-fidelity can win early and lose the final blade to single-fidelity EGO
+
+- Link: https://arxiv.org/abs/2609.11112
+- Companion: https://arxiv.org/abs/2609.11111
+- Type: Paper / turbine multi-fidelity sequential sampling (physics.flu-dyn + cs.CE; no public code in API)
+- Keywords: multi-fidelity, turbine, sequential sampling, EGO, energy loss
+- One-line summary: Mixes multi-fidelity and single-fidelity surrogates by density/uncertainty (MSFO) after observing that MFS can converge faster early and still lose the final turbine design to HF-only EGO.
+- Why it matters:
+  - Early MFS curves are not the last blade. Clustered HF samples let LF distort late search.
+  - abs 2026-09-10; Wang/Song/Guo/Li/Feng. Journal MS related to GT2023-104237.
+  - Issue Board HTML Table 2 GE-E3: baseline energy loss **3.980** / mass **340.8** / angle **74.85**. MSFO corr=0.79 **3.204** / **340.3** / **74.92**. EGO **3.208**.
+- Caveat: No public code → Test withheld. Loss-coefficient reduction sentence was an HTML empty slot. Industrial solver/mesh family not stated.
+- Possible use: Cite when a turbine card quotes multi-fidelity speedup — demand late-stage vs EGO plus mass-flow constraint, not early RMSE.
+- Maturity: paper-only
+- Priority: High
+
 ## GUA — conflict-free gradient surgery can be undone by the optimizer
 
 - Link: https://arxiv.org/abs/2609.01558

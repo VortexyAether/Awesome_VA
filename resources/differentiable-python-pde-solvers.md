@@ -1,5 +1,21 @@
 # Differentiable & Python PDE Solvers
 
+## DiffSWE2d — CFL stays in the forward pass; the inverse graph is gauge MSE plus smoothness
+
+- Link: https://arxiv.org/abs/2609.11426
+- Code: https://github.com/ZhonghouXu/DiffSWE2d
+- Type: Paper + MIT PyTorch SWE solver (physics.flu-dyn + physics.geo-ph)
+- Keywords: differentiable SWE, flood, tsunami, CFL detach, gauge MSE, inverse
+- One-line summary: Puts HLLC+limiter shallow-water time marching on a PyTorch graph, detaches adaptive CFL from reverse mode, and inverts boundary waveforms against training-gauge stage MSE.
+- Why it matters:
+  - A differentiable flood solver is not AD through pretty frames. CFL/limiters are forward stability; the product is the inverse graph plus a water-level QoI.
+  - abs 2026-09-10; Zhonghou Xu. Two established benches plus tsunami waveform inversion.
+  - GitHub `ZhonghouXu/DiffSWE2d` ★**0**, **MIT**, Python, forks **4**, pushed 2026-09-11. Issue Board HTML: Monai-valley gauges 0–2, n=0.01.
+- Caveat: 2D structured SWE, not unstructured industrial flood/sediment. ★0 → local smoke before Test. Save withheld until smoke.
+- Possible use: Test after a local smoke; demand detached-CFL gauge MSE next to AD-PINN residual cards (2609.07437) and IDP hybrid FV (2609.10476).
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## AD vs discretization — as nonlinearity/shocks grow, discrete constraints beat AD residuals
 
 - Link: https://arxiv.org/abs/2609.07437

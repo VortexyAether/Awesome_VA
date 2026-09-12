@@ -1,5 +1,21 @@
 # CFD-AI Papers & Surveys
 
+## Variational PI-GNN — put the constitutive jump on the mesh, not in a coordinate PINN width
+
+- Link: https://arxiv.org/abs/2609.10983
+- Code: https://github.com/aashay-y/Variational-PIGNN-composites
+- Type: Paper + MIT label-free variational GNN (math.NA + cs.LG; solid mechanics, not CFD)
+- Keywords: PI-GNN, bimaterial, variational, interface jump, label-free
+- One-line summary: Minimizes discrete total potential energy on a conforming adaptive mesh graph with per-element constitutives, so the bimaterial stress jump lives on the discretization rather than a coordinate PINN width.
+- Why it matters:
+  - Displacement L2 can hide an interface. Coordinate PINNs are sensitive to regularization width and interface penalties; this GNN carries heterogeneity in the mesh.
+  - abs 2026-09-10; Yadav/Das/Annabattula. Issue Board HTML: circular inclusion ux L2 PINN **0.86%** / PI-GNN **0.17%**, σxx **15.08%** / **7.57%**. Other holdout PINN **7.66%** vs PI-GNN **0.49%**. Stiffness-ratio von Mises **<3.58%**.
+  - GitHub `aashay-y/Variational-PIGNN-composites` ★**0**, **MIT**, Python, pushed 2026-09-10.
+- Caveat: 2D plane stress/torsion, not CFD. ★0. Interface-representation gate, not a product replacement.
+- Possible use: Test after a local smoke; demand interface stress jump, not displacement RMSE. Do not classify as a fluid surrogate.
+- Maturity: paper + early MIT repo
+- Priority: High
+
 ## IDP hybrid FV — cell averages and point values need one local stability certificate on general meshes
 
 - Link: https://arxiv.org/abs/2609.10476
