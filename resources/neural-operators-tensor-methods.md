@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## ARB preconditioners — the ROM is a Krylov tool, not a field surrogate
+
+- Link: https://arxiv.org/abs/2609.11097
+- Type: Paper / additive reduced-basis FGMRES preconditioner (math.NA; no public code in abs)
+- Keywords: reduced basis, preconditioner, FGMRES, multi-query, parametrized PDE
+- One-line summary: Regularizes a singular reduced-order block with identity or projected corrections and uses it as an FGMRES wrench, so the product is online solve time rather than a reduced field movie.
+- Why it matters:
+  - Snapshot/projection error is not a multi-query receipt. A singular ROM sold as the solution is the failure mode.
+  - abs 2026-09-10; Fan/Hu/Zhang.
+  - Issue Board HTML Table 1 convection-diffusion 100 random online: GMRES+ILU **4.391±0.644 s** / AMG **0.525±0.019 s** / ARB M(1) **0.159±0.023 s**. Table 2 mean speedup vs ILU **28.1×**, vs AMG **3.3×**.
+- Caveat: Linear stationary/Helmholtz. Not an unsteady NS surrogate. No public code.
+- Possible use: Cite when a ROM card quotes snapshot error — demand FGMRES online seconds vs AMG/ILU plus a nonsingularity condition.
+- Maturity: paper-only
+- Priority: High
+
 ## Two-scale PCA-Net — local PCA patches create block artifacts; a cheap global coarse field is the missing scale
 
 - Link: https://arxiv.org/abs/2609.08034

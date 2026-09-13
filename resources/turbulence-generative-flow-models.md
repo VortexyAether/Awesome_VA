@@ -1,5 +1,20 @@
 # Turbulence & Generative Flow Models
 
+## NN SGS — a priori RMSE is not an LES license; train the filter shift and simplify the inputs
+
+- Link: https://arxiv.org/abs/2511.17475
+- Type: Paper / neural SGS closure (physics.flu-dyn + cs.LG; v2 replacement 2026-09-10; no public code in abs/HTML)
+- Keywords: LES, SGS, a posteriori, filter augmentation, input complexity
+- One-line summary: Shows that matching a priori filter RMSE is not an LES license: two-filter training plus simpler inputs keep a posteriori spectra from splitting across two numerical LES codes.
+- Why it matters:
+  - Offline residual/filter scores are not solver-loop spectra. Complex inputs make the a priori/a posteriori gap worse.
+  - abs v1 2025-11-21 / v2 2026-09-10; Wu/Lele. Related JFM DOI 10.1017/jfm.2026.11995.
+  - Issue Board HTML Table 2: NN-BoxDSCF-Simple-Original-G RMSE **0.757 (0.017)** DRMSE **0.672** Corr **0.661**. One- vs two-filter a priori stays within **5%**. a posteriori SSE is log-energy spectral sum (PadeLibs k∈[0,35], PadeOps k∈[0,24]).
+- Caveat: HIT box-filter. Not wall-bounded industrial mesh. No public code. Do not freeze a single SSE winner from image tables.
+- Possible use: Cite when an SGS card quotes a priori RMSE — demand two-solver a posteriori spectra and an input-complexity ablation.
+- Maturity: paper-only (v2)
+- Priority: High
+
 ## Wind-turbine wake dissipation — Cε is an FST-flavour field, not a universal constant
 
 - Link: https://arxiv.org/abs/2609.03996

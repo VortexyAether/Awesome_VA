@@ -1,5 +1,35 @@
 # CFD-AI Papers & Surveys
 
+## Ghost-cell IB — do not store geometry weights; the reconstruction must stay stable on a compact stencil
+
+- Link: https://arxiv.org/abs/2609.10165
+- Type: Paper / Cartesian embedded-boundary reconstruction (physics.flu-dyn; no public code in abs/HTML)
+- Keywords: ghost-cell, immersed-boundary, Cartesian, cylinder, reconstruction stability
+- One-line summary: Imposes Dirichlet/Neumann analytically at the embedded boundary on a compact nearest-neighbour stencil, so moving geometry does not depend on stored reconstruction weights.
+- Why it matters:
+  - Image-point + matrix inverse + stored geometric weights break when CAD moves. Compact redraw plus a linear stability criterion is the product.
+  - abs 2026-09-09; Rapaka/Jagad/Addad/Riahi.
+  - Issue Board HTML Table 2 cylinder Re=100 HGC Cd **1.37** (Henderson 1.34, Mittal 1.35), CGC_ES **1.34**, St **0.17**. CGC diverges for Re<100.
+- Caveat: Cartesian embedded boundary, not polyhedral OpenFOAM import. No public code. Second-order spatial.
+- Possible use: Cite when an IB/CAD wall quotes stencil order — demand Re-sweep stability (CGC vs HGC Cd/St), not local truncation.
+- Maturity: paper-only
+- Priority: High
+
+## Vectorial LBM — generic EOS plus shock capturing live in the relaxation, not in an ideal-gas fork
+
+- Link: https://arxiv.org/abs/2609.10639
+- Type: Paper / compressible Euler LBM (math.NA + physics.flu-dyn; CC BY 4.0; no public code in abs/HTML)
+- Keywords: lattice Boltzmann, vectorial, generic EOS, shock, Euler
+- One-line summary: Uses vector populations plus a space-time adaptive relaxation so one solver covers ideal and non-ideal EOS, including strong shocks, without an ideal-gas fork.
+- Why it matters:
+  - Smooth acoustic L2 is not a shock-tube receipt. Constitutive jumps have to live in the relaxation coefficient.
+  - abs 2026-09-09; Hosseini/Karlin.
+  - Issue Board HTML: strong-shock tube N=2000, density ratio 10^5, Mach **≈198**. Focusing-pulse critical Mach **M0,c ≈ 0.0985**.
+- Caveat: Classical numerics, not ML. No public code. No industrial CAD coupling.
+- Possible use: Cite when a compressible LBM quotes smooth L2 — demand generic EOS plus a strong-shock tube.
+- Maturity: paper-only
+- Priority: High
+
 ## Variational PI-GNN — put the constitutive jump on the mesh, not in a coordinate PINN width
 
 - Link: https://arxiv.org/abs/2609.10983
