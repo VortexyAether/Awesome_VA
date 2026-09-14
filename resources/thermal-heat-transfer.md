@@ -1,5 +1,20 @@
 # Thermal & Heat Transfer
 
+## Induction welding — parameterized geometry plus a line kW interval is the validation unit
+
+- Link: https://arxiv.org/abs/2609.11250
+- Type: Paper / 3D EM–thermal FEM (physics.comp-ph; GetDP + Gmsh; no paper GitHub)
+- Keywords: induction welding, GetDP, Gmsh, process QoI, parameterized geometry
+- One-line summary: Couples a time-harmonic magnetic scalar potential to SUPG quasi-stationary advection–diffusion heat transport on parameterized tube geometry, then validates against a plant power interval rather than an unmeasured weld-spot temperature.
+- Why it matters:
+  - Field RMSE is not a line receipt. CAD parameters move mesh and heat source together; the honest gate is **58–62 kW (±3%)**.
+  - abs 2026-09-10; Ivanov/Asperheim/Grande/Das.
+  - Issue Board HTML Table 1 AISI304 OD 31.75 mm, WT 1.5 mm, ~60 kW, 1500 A RMS, 49 m/min. Ferrotron 559H vs FeNiZnV: power **314.12 → 231.25 kW** (−26.38%).
+- Caveat: Not ML. One commercial line. Scripts unpublished. Guessed GetDP GitHub path 404. Not a general non-tube twin.
+- Possible use: Cite when a process twin quotes field RMSE — demand the measured kW interval and the unmeasured-hotspot caveat.
+- Maturity: paper-only
+- Priority: High
+
 ## Physics-guided extrapolation — in-domain R² is not a license to leave the Fourier window
 
 - Link: https://arxiv.org/abs/2609.09912

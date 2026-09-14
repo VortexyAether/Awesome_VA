@@ -1,5 +1,36 @@
 # CFD-AI Papers & Surveys
 
+## CLS geometric reinit — volume loss is the reinitialization contract, not a PDE residual trophy
+
+- Link: https://arxiv.org/abs/2602.00275
+- Substrate: https://github.com/chaos-polymtl/lethe
+- Type: Paper / conservative level-set reinitialization (physics.flu-dyn; Lethe implementation, no paper-only GitHub in HTML)
+- Keywords: conservative level-set, reinitialization, volume loss, capillary, Lethe
+- One-line summary: Rebuilds the CLS interface with a geometric distance plus local/global volume correction so reinitialization is a conservation contract rather than a PDE-residual trophy.
+- Why it matters:
+  - Projection reinitialization can keep a pretty signed-distance residual and still dump volume on deforming/breakup capillary cases.
+  - abs 2026-01-30, Friday flu-dyn cross-list 2026-09-11; Papillon-Laroche/Alphonius/Schreter-Fleischhacker/Harvey/Blais.
+  - Issue Board HTML §4.1 Rising Bubble: geometric reinit **under 2% volume loss**; projection reinit **>25%** at highest frequency. Lethe `chaos-polymtl/lethe` ★**403**, Apache-2.0, pushed 2026-09-12.
+- Caveat: January leftover. No paper-specific release → Test only against Lethe substrate. Not industrial CAD coupling. Do not re-Save Lethe.
+- Possible use: Cite when a level-set card quotes residual or curvature — demand deforming/breakup volume vs projection reinit.
+- Maturity: paper + existing Apache FEM substrate
+- Priority: High
+
+## PINN avalanche — mass conservation is not a trajectory license; stage the window and place the four sensors
+
+- Link: https://arxiv.org/abs/2609.05542
+- Type: Paper / depth-averaged Savage–Hutter PINN (cond-mat.soft; no public code in abs/HTML)
+- Keywords: PINN, Savage-Hutter, sparse observation, curriculum, granular avalanche
+- One-line summary: Extends a depth-averaged PINN to a curved chute and shows that a ~0.2% mass integral can still hide a two-order trajectory failure unless training is staged and sensors bracket the acceleration–deceleration transition.
+- Why it matters:
+  - Conserved mass is not a front/rear receipt. Observation count is weaker than placement.
+  - abs 2026-09-02; Purohit/Sikarwar/Sharma/Bhutani.
+  - Issue Board HTML: eight-stage curriculum held-out track_err **0.77**, front RMSE **0.71**, rear **0.52**, mass **0.16%**. Full-span even-spaced track_err **65.08** (mass 0.11%). Four transition-bracketing observations **0.81** vs late cluster **64.18** vs early **42.96**.
+- Caveat: Lab curved chute, not 3D urban/CFD mesh. No public code → Test withheld.
+- Possible use: Cite when a PINN quotes mass/energy conservation — demand held-out front/rear plus curriculum and placement ablations.
+- Maturity: paper-only
+- Priority: High
+
 ## Ghost-cell IB — do not store geometry weights; the reconstruction must stay stable on a compact stencil
 
 - Link: https://arxiv.org/abs/2609.10165

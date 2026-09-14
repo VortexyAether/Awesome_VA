@@ -1,5 +1,20 @@
 # CAD, Geometry & AI-assisted Design
 
+## PH2T-splines — unrestricted hierarchical refinement is not a dimensionally stable basis
+
+- Link: https://arxiv.org/abs/2609.11443
+- Type: Paper / hierarchical T-mesh spline assumption (math.NA; Part I; no public code in HTML)
+- Keywords: PH2T-splines, T-mesh, hierarchical refinement, dimensional stability, IGA
+- One-line summary: Shows that unrestricted hierarchical refinement and vanishable T-edge cleanup still leave unstable spline dimensions, so a (d−1)×(d−1) template is the reasonable mesh assumption before a highest-smoothness basis.
+- Why it matters:
+  - Refinement freedom is not a basis receipt. Same-solid B-rep collapse (2609.11573) has a spline twin: mesh family first, pretty hierarchy second.
+  - abs 2026-09-10; Huang/Xi.
+  - Issue Board HTML §5: construction-suitable T-meshes; four dimensional-instability examples; template translation plus known (d−1)×(d−1) stability. Basis construction deferred to later parts.
+- Caveat: Part I only. No implementation/bench code. No fluid-solver coupling.
+- Possible use: Cite when an IGA/T-spline quotes hierarchical freedom — demand dimensional stability, not vanishable-edge cleanup alone.
+- Maturity: paper-only
+- Priority: High
+
 ## Canonical B-rep — file topology is not a solid invariant; encoders collapse on the same part
 
 - Link: https://arxiv.org/abs/2609.11573
