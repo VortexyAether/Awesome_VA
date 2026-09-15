@@ -1,5 +1,21 @@
 # CAD, Geometry & AI-assisted Design
 
+## SNAP3D — Chamfer-complete parts are not an assembly; simulate standing rate
+
+- Link: https://arxiv.org/abs/2609.13146
+- Project: https://lucytuan.github.io/SNAP3D/
+- Type: Paper / physics-guided part assembly from a single image (cs.GR + cs.CV; CC BY 4.0)
+- Keywords: part generation, contact graph, connectors, gravity stability, Chamfer, assembly
+- One-line summary: Recovers a contact graph and parameterized connectors, then uses simulation feedback so visually complete parts actually stand as an assembly instead of interpenetrating or collapsing.
+- Why it matters:
+  - Geometric completeness (Chamfer / p-F1) is not a physics-assembly receipt. Same-solid B-rep collapse has an assembly twin.
+  - abs 2026-09-11; Tuan/Tsui/Ugrinovic/Kitani/Ma.
+  - Issue Board HTML Table 1: Ours Stable **95.0**, Falls **3.0**, IPR **0.5** vs XPart Stable **0.0** / Falls **64.0** / IPR **31.8**. Ablation PGE+CGR **86% →** full **95%**. Stable = no intersection + worst free-part motion **<6%** / rotation **<10°**.
+- Caveat: Vision part generation, not BRep/STEP kernel validity. Genesis/libuipc is existing sim substrate — do not Save it as today’s item.
+- Possible use: Cite when a part generator quotes Chamfer — demand standing rate and intersection under gravity.
+- Maturity: paper + project page
+- Priority: High
+
 ## PH2T-splines — unrestricted hierarchical refinement is not a dimensionally stable basis
 
 - Link: https://arxiv.org/abs/2609.11443

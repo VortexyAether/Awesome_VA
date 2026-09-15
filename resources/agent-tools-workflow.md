@@ -1,6 +1,21 @@
 # Agent Tools & Research Workflow
 
 
+## OpenFOAM case-bundle — Build is review; Replay is 140 STLs; chat is not the artifact
+
+- Link: https://arxiv.org/abs/2609.11941
+- Type: Paper / OpenFOAM coding-agent operating model (cs.SE + cs.CE + cs.DC; CC BY 4.0; no public case bundle)
+- Keywords: OpenFOAM, case-bundle, Replay, interFoam, coding agent, evidence chain
+- One-line summary: Splits agent work into reviewed Build and Replay of a persistent case bundle, then finishes 140 injector STLs on remote HPC instead of treating a chat log as the artifact.
+- Why it matters:
+  - Solver “ran” in a conversation is not an engineering receipt. Draft≠review has to live in a directory contract.
+  - abs 2026-07-15, Monday listing 2026-09-14; Xiao/Li/Zhang/Xu/Mao/Chen. OpenFOAM-7 interFoam VOF.
+  - Replay **140** STL geometries with post-processing. Separate Pi runtime: four LLM backends **all succeeded**. `earendil-works/pi` is a generic agent toolkit (★105115 MIT), not a CFD Save.
+- Caveat: Case bundle unpublished → Test withheld. Single injector family. Completion/replay contract, not a physics QoI leaderboard. July leftover.
+- Possible use: Cite when an OpenFOAM agent quotes pass@k — demand the reviewed bundle and Replay completion.
+- Maturity: paper-only
+- Priority: High
+
 ## CAE harness — Direct + repair beats specialized multi-agent
 
 - Link: https://arxiv.org/abs/2609.03718

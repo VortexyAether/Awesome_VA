@@ -1,5 +1,21 @@
 # CFD-AI Papers & Surveys
 
+## Aircraft surface ROM — in-domain LVAE MSE is not a 3D license; POD wins the zero-shot lift-drag gate
+
+- Link: https://arxiv.org/abs/2609.12185
+- Dataset: https://github.com/cashend/OptiWing3D
+- Type: Paper / 2D→3D surface-field transfer (physics.flu-dyn; CC BY-NC-SA)
+- Keywords: LVAE, POD, surface pressure, zero-shot transfer, BWB, lift-drag
+- One-line summary: Learns compact 2D airfoil surface representations, then shows linear POD — not the better in-domain LVAE — transfers to 3D extruded wings and BWB when the gate is lift and drag.
+- Why it matters:
+  - Reconstruction MSE on the training geometry family is not a 3D force-coefficient license.
+  - abs 2026-09-10; VanGessel/Diniz/Fuge. 2D latent **28–41**. Dataset1 LVAE MSE **3.01e-5** vs POD **8.53e-4** @dim 28.
+  - Zero-shot POD Cl/Cd: extruded wing **0.1% / 0.7%**, BWB **0.3% / 0.7%**. Five BWB fine-tunes cut MSE **5×** vs zero-shot and **70×** vs scratch. `cashend/OptiWing3D` ★**0**, no SPDX, pushed 2026-01-07.
+- Caveat: Surface pressure, not volume CFD. Unsteady/separation generalization not claimed. ★0 + no license → Test withheld. CC BY-NC-SA.
+- Possible use: Cite when a 2D surface autoencoder quotes MSE — demand zero-shot 3D Cl/Cd vs POD.
+- Maturity: paper + unlicensed early dataset
+- Priority: High
+
 ## CLS geometric reinit — volume loss is the reinitialization contract, not a PDE residual trophy
 
 - Link: https://arxiv.org/abs/2602.00275

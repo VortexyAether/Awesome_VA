@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## PI-CP — residual is a nonconformity score; FNO equivariance needs coordinates before Dirichlet PDEs
+
+- Link: https://arxiv.org/abs/2609.11935
+- Type: Paper / physics-informed conformal UQ for neural operators (cs.LG; no public code)
+- Keywords: conformal prediction, FNO, PDE residual, coverage, Dirichlet, coordinate channels
+- One-line summary: Puts the PDE residual into a split-conformal nonconformity score so neural-operator intervals carry coverage and widen where physics is violated, and shows FNO needs coordinate channels on Dirichlet PDEs.
+- Why it matters:
+  - Field RMSE and dropout variance are not a spatially adaptive interval contract (CV≈0 for score-only CP).
+  - abs 2026-06-26, Monday listing 2026-09-14; Chin. Six physics: heat 2D/3D, structural 2D/3D, Darcy, NS.
+  - Four conformal methods **89–91%** coverage vs MC Dropout **82–100%**. FNO **10–12×** vs CNN/DeepONet. Coordinate channels cut Darcy rel_l2 **63% → 1%** (up to **63×**).
+- Caveat: Exchangeability assumed. Not industrial unstructured mesh. No public code → Test withheld. June leftover.
+- Possible use: Cite when an FNO quotes accuracy — demand conformal coverage and a Dirichlet coordinate-channel ablation.
+- Maturity: paper-only
+- Priority: High
+
 ## ARB preconditioners — the ROM is a Krylov tool, not a field surrogate
 
 - Link: https://arxiv.org/abs/2609.11097
