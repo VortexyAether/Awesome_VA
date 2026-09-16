@@ -1,5 +1,20 @@
 # Neural Operators & Tensor Methods
 
+## VIOT — incompressibility is a stream function, not a soft divergence penalty
+
+- Link: https://arxiv.org/abs/2609.13729
+- Type: Paper / amortized incompressible optimal-transport neural operator (cs.LG + cs.GR; no public code in API)
+- Keywords: VIOT, FNO, stream function, incompressible transport, optimal transport
+- One-line summary: Predicts a divergence-free velocity from a stream function or vector potential, then amortizes source–target density transport with an FNO instead of an hour-scale adjoint solve per pair.
+- Why it matters:
+  - A soft divergence penalty is not constructive incompressibility. Per-pair adjoint time is not an operator receipt.
+  - abs 2026-09-12; He/Lu/Wang/Li/Chen/Zhu.
+  - API: 2D/3D feed-forward vs hour-scale per-pair adjoint, about **10^4×** online. Issue Board HTML: 2D **256²**, 3D **128³**; curl vs Helmholtz Table 5 terminal error **2.7×** on 100 in-pool pairs.
+- Caveat: Generative transport operator, not a CFD-solver replacement. No public code → Test withheld. Walls/no-slip are a separate boundary.
+- Possible use: Cite when an FNO quotes divergence penalties — demand constructive stream-function/vector-potential and a curl-vs-Helmholtz terminal error.
+- Maturity: paper-only
+- Priority: High
+
 ## PI-CP — residual is a nonconformity score; FNO equivariance needs coordinates before Dirichlet PDEs
 
 - Link: https://arxiv.org/abs/2609.11935

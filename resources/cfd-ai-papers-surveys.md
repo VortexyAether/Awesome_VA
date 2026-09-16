@@ -1,5 +1,53 @@
 # CFD-AI Papers & Surveys
 
+## EFR-OpInf — online LES-style filter is the long-horizon contract; L2 regularization is not
+
+- Link: https://arxiv.org/abs/2609.14812
+- Code: https://github.com/irmoore/EFR_Opinf
+- Type: Paper / OpInf ROM with online evolve–filter–relax (math.NA + physics.flu-dyn; no SPDX)
+- Keywords: OpInf, EFR, ROM, LES filter, rollout, channel flow
+- One-line summary: Adds an online evolve–filter–relax spatial filter, borrowed from LES, so Operator Inference stays bounded past the training horizon instead of relying on L2 regularization.
+- Why it matters:
+  - Matching training rel L2 is not a test-window license. Strong regularization can survive validation and still blow up on test.
+  - abs 2026-09-13; Moore/Tsai/Gruber/Farcaş/Wentland/Tezaur/Iliescu.
+  - Issue Board HTML §4 3D MCF Re=**5000**: train **6–8%**, val **8–12%**, EFR test **9.5–14.6%** on [3000,3100]. Weak/strong L2 blow at **t≈3042 / 3082**. CDR EFR rel L2 **≤10^{-4}**. `irmoore/EFR_Opinf` ★**0**, no SPDX, pushed 2026-09-07.
+- Caveat: ★0 + no license → Test withheld. Over-dissipative filters freeze KE. Not industrial CAD coupling.
+- Possible use: Cite when an OpInf/ROM quotes training rel L2 — demand the test-window bound vs L2 blow-up, plus KE under filter strength.
+- Maturity: paper + unlicensed early repo
+- Priority: High
+
+## Enstrophy-stable NS — 2D under-resolved meshes need an enstrophy law, not more viscosity knobs
+
+- Link: https://arxiv.org/abs/2609.15520
+- Code: https://github.com/BorisAndrews/enstrophy_code
+- Type: Paper / structure-preserving mixed FEM for incompressible NS (math.NA; MIT)
+- Keywords: enstrophy, Navier-Stokes, mixed FEM, under-resolved, de Rham
+- One-line summary: Discretizes incompressible NS so energy and enstrophy evolution laws hold together, giving a Reynolds-independent velocity-gradient bound that stabilizes 2D under-resolved meshes.
+- Why it matters:
+  - Energy conservation is not an enstrophy receipt. Extra viscosity knobs are not the 2D under-resolved product.
+  - abs 2026-09-14; Andrews/Shams/Farrell.
+  - Issue Board HTML: Re=**10^6** shear; cylinder/sphere wakes; penalty variants that use only a standard de Rham complex. `BorisAndrews/enstrophy_code` ★**0**, **MIT**, pushed 2026-09-14.
+- Caveat: Classical numerics, not ML. ★0. Not an OpenFOAM import.
+- Possible use: Cite when an incompressible scheme quotes energy conservation — demand the enstrophy law on under-resolved 2D meshes.
+- Maturity: paper + licensed early repo
+- Priority: High
+
+## Cavitation FEM — complementarity must hold exactly; the augmentation parameter should drop out
+
+- Link: https://arxiv.org/abs/2609.15223
+- Code: https://github.com/mglarson1/cavitation-fem
+- Type: Paper / structure-preserving augmented-Lagrangian FEM (math.NA; BSD-3-Clause)
+- Keywords: cavitation, complementarity, Reynolds, Stokes, Crouzeix-Raviart
+- One-line summary: Builds Reynolds and Stokes cavitation FEM so discrete complementarity holds exactly and the augmentation parameter leaves the method.
+- Why it matters:
+  - Close pressure profiles are not a cavity receipt. The constrained scalar is mechanical pressure only with a deviatoric stress and zero bulk viscosity.
+  - abs 2026-09-14; Hansbo/Larson.
+  - Issue Board HTML: first-order Reynolds error proof; Stokes 2D/3D well-posedness. `mglarson1/cavitation-fem` ★**0**, **BSD-3-Clause**, pushed 2026-09-11.
+- Caveat: Lubrication cavitation, not external aerodynamics. ★0.
+- Possible use: Cite when a cavitation card quotes pressure-profile closeness — demand exact complementarity and that the augmentation parameter drops out.
+- Maturity: paper + licensed early repo
+- Priority: High
+
 ## Aircraft surface ROM — in-domain LVAE MSE is not a 3D license; POD wins the zero-shot lift-drag gate
 
 - Link: https://arxiv.org/abs/2609.12185
