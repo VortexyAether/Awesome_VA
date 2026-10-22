@@ -16,22 +16,6 @@
 - Maturity: paper + early MIT repo
 - Priority: High
 
-## AD vs discretization — as nonlinearity/shocks grow, discrete constraints beat AD residuals
-
-- Link: https://arxiv.org/abs/2609.07437
-- Code: https://github.com/guoxing0809/neuropde_analysis
-- Type: Paper / AD-PINN vs discrete-constraint analysis (math.NA + cs.LG + physics.flu-dyn)
-- Keywords: PINN, automatic differentiation, discretization, hypersonic, GNN, MLP
-- One-line summary: Splits approximation, optimization, and truncation error for AD residuals versus discretization-based constraints from linear Poisson to high-Mach cylinders.
-- Why it matters:
-  - Denser AD samples are not a shock receipt. As nonlinearity grows, discrete constraints win on accuracy; complex BCs favor GNN over MLP.
-  - abs 2026-09-07; Guo/Tang/Meng/Zhang/Xiao/Liu. High-resolution MSE can stall or worsen velocity error.
-  - GitHub `guoxing0809/neuropde_analysis` ★**0**, license **none**, pushed 2026-09-09.
-- Caveat: No SPDX → Test/Save withheld. Do not freeze a single winner cell from mixed table maps.
-- Possible use: Cite when a PINN quotes AD residuals on shocks — demand the discrete-constraint error split.
-- Maturity: paper + unlicensed ★0 repo
-- Priority: High
-
 ## Multi-index Bell PINN — high-order mixed derivatives are a tabulated Faà-di-Bruno, not nested AD
 
 - Link: https://arxiv.org/abs/2609.03768
@@ -96,22 +80,6 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
 - Caveat: Primary demos are graphics/elastodynamics; CFD SIMPLE/PISO-like ports are separate engineering. First-party paper monorepo not confirmed (Warp is substrate, not the paper package).
 - Possible use: Cite when designing adjoint/control loops that must audit the executed iterative algorithm, not only the continuous PDE.
 - Maturity: paper-only
-- Priority: High
-
-## Discrete energy as exact label-free FE surrogate objective (FE-JEPA)
-
-- Link: https://arxiv.org/abs/2608.05437
-- Code: https://github.com/HymnOfLight/FE-JEPA
-- Type: Paper + early open theory/code note for FE surrogates
-- Keywords: finite element, label-free training, discrete potential energy, stiffness norm, elastostatics, residual learning
-- One-line summary: Proves that assembled discrete potential energy is an exact label-free training objective for linear elastostatics FE surrogates, sharing the unique minimizer and gradients with supervised stiffness-norm regression.
-- Why it matters:
-  - Residual-only FE surrogate training can look good in L² while collapsing modes that matter in the energy/stiffness norm.
-  - Gives a clean theory floor for “no reference solve” training when the discrete energy is available from the same assembly used at deploy.
-  - Executable falsification protocol on a small probe set makes the claim checkable rather than only rhetorical.
-- Caveat: Linear elastostatics scope; JEPA-style extensions are outlook. Repo license null / ★0 at curation → Watch, not product Save.
-- Possible use: Cite when arguing FE/CFD surrogate losses should match the discrete norm used for engineering decisions (energy, residual, force), not only field RMSE.
-- Maturity: paper + immature public repo
 - Priority: High
 
 ## DMGS — differentiable multigrid solver for variational inference
@@ -471,7 +439,6 @@ JAX/Python PDE and CFD solver resources for differentiable simulation, AMR, inve
 - Possible use: Reference when designing surrogate-assisted thermal/CFD inverse problems with credible intervals, not only best-fit parameters.
 - Maturity: paper-only
 - Priority: Medium
-
 
 ## PINN residuals for adaptive mesh refinement
 

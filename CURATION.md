@@ -41,6 +41,28 @@ Judge each candidate by:
 
 Only add resources that are genuinely worth saving. It is better to add 3 good resources than 20 mediocre ones.
 
+## Source authority tiers
+
+This tiering applies going forward to ALL curation — daily picks, resource pages, and `best/README.md` anchors — not only the cleanup pass that introduced it.
+
+**Tier A — default-trust. Actively seek these for "Best Find" / `best/README.md` anchors.**
+Peer-reviewed prestigious venues: Journal of Fluid Mechanics (JFM) and JFM Rapids, Physical Review Fluids, Physical Review Letters, Physical Review X, Journal of Computational Physics, AIAA Journal, Journal of Aircraft, Progress in Aerospace Sciences, Annual Review of Fluid Mechanics, Computer Methods in Applied Mechanics and Engineering (CMAME), International Journal for Numerical Methods in Fluids/Engineering, Nature / Nature Physics / Nature Machine Intelligence / Nature Communications, Science, PNAS, and top peer-reviewed ML venues (NeurIPS/ICML/ICLR/JMLR main-track, not workshop-only) when the paper is CFD-AI/SciML relevant.
+
+**Tier B — keep only with strong signal.**
+arXiv/preprint-only work is acceptable only if it has at least one of:
+- an explicit "accepted at <Tier-A-like venue>" notice,
+- a public code repo with real traction (meaningful stars AND a real license, not ★0/no-SPDX),
+- authorship from a well-known lab/group with a track record,
+- a widely-cited survey/review.
+
+**Tier C — reject by default / remove on sight.**
+- arXiv-only preprints with no accepted venue AND (no public code OR a ★0 unlicensed throwaway repo) AND no exceptional, independently-verifiable validation,
+- vague or narrow single-result papers with no broader significance,
+- SEO/blog-spam,
+- anything already a near-duplicate of an existing entry.
+
+When adding or re-evaluating any entry, state the tier (or cite the venue/signal that justifies Tier B) so later passes don't need to re-derive it from scratch.
+
 ## Reject by default
 
 Do not add:

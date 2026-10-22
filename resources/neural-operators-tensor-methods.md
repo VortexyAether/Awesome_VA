@@ -123,7 +123,6 @@
 - Maturity: paper + live MIT repo
 - Priority: High
 
-
 ## Polyconvex mixture — a material family is a shared potential basis
 
 - Link: https://arxiv.org/abs/2609.00359
@@ -274,38 +273,6 @@
 - Maturity: paper-only
 - Priority: High
 
-## DNO — Dirichlet as eigenfunction layer, not a data target
-
-- Link: https://arxiv.org/abs/2608.27256
-- Code: https://github.com/mtrautner/DNO
-- Type: Paper + unlicensed neural operator (math.NA + cs.LG)
-- Keywords: Dirichlet, neural operator, Laplacian eigenfunctions, Darcy, Helmholtz
-- One-line summary: Forces each layer output into the span of homogeneous Dirichlet Laplacian eigenfunctions so the operator satisfies the wall independently of training.
-- Why it matters:
-  - Matching BC in the loss is not a geometry-shift receipt. The wall is a lock.
-  - API 2026-08-27; Stuart/Trautner. Lipschitz bounded domains, arbitrary meshes. Universal-approximation proof.
-  - Darcy Rel L2 median **0.772%** (best 0.482 / worst 2.02); Helmholtz median **0.130%** (best 0.0283). GitHub ★0, license unset, pushed 2026-07-10 (blank FNO example).
-- Caveat: Homogeneous Dirichlet only. Box/circle benches. Unlicensed ★0 → Test withheld.
-- Possible use: Cite when an NO “matches BC in the loss” — ask the architecture lock and a non-box geometry. Do not product-Save until SPDX exists.
-- Maturity: paper + unlicensed early repo
-- Priority: High
-
-## CoKo-UNO — Koopman truncation residual needs SSM compensation
-
-- Link: https://arxiv.org/abs/2608.25879
-- Code: https://github.com/tangyinglv/CoKo-UNO
-- Type: Paper + unlicensed unsteady-flow operator (physics.flu-dyn)
-- Keywords: Koopman, UNO, SSM, rollout, CFDBench, Kolmogorov
-- One-line summary: Compensates the state-dependent residual of finite-dimensional Koopman truncation with a selective SSM so unsteady-flow rollout does not re-inject the cut modes every step.
-- Why it matters:
-  - Koopman compactness is not residual-free propagation. nRMSE@1 is not nRMSE@H.
-  - API 2026-08-26; Lv/Dai/Sun. 43 pages, 12 figures. Abstract: four benches, **76.76%** Rel L2 drop vs strongest baseline, train time **41.40%** of RNO.
-  - Issue Board HTML: Kolmogorov ν=10⁻³ Rel L2 **1.09e-2** vs UNO **4.69e-2** vs FNO **4.76e-2**; ν=10⁻⁴ **1.19e-1** vs UNO **2.54e-1**; Cylinder |U| **1.05e-2** vs RNO **1.27e-2**; step infer **−64.76%** vs FNO. GitHub ★0, license unset, pushed 2026-08-23.
-- Caveat: 2D benches. ★0 unlicensed → Test withheld. The 76.76% figure is Kolmogorov ν=10⁻³ vs the strongest baseline.
-- Possible use: Cite when a Koopman/UNO pitch quotes one-step Rel L2 — demand nRMSE@H and a residual-compensation ablation.
-- Maturity: paper + unlicensed early repo
-- Priority: High
-
 ## MPNO — constructive spectral-radius gate for AR operators
 
 - Link: https://arxiv.org/abs/2608.25744
@@ -319,21 +286,6 @@
 - Caveat: Primary scenario is solid penetration. Fluids are Burgers/Darcy/shock-tube. No public code.
 - Possible use: Cite when an AR operator quotes one-step Rel L2 — ask ρ(P) and long-horizon boundedness. Do not product-Save on the LS-DYNA factor.
 - Maturity: paper-only
-- Priority: High
-
-## DeepONet-LSTM — history-required output-feedback operator
-
-- Link: https://arxiv.org/abs/2608.24699
-- Code: https://github.com/JingZhang-JZ/deeponet-lstm-rd-output-feedback
-- Type: Paper + unlicensed 1D RD control operator (eess.SY)
-- Keywords: DeepONet, LSTM, output feedback, reaction-diffusion, causal operator
-- One-line summary: Learns a causal boundary operator from reaction coefficient plus measurement history; a history-free DeepONet fails to stabilize.
-- Why it matters:
-  - Operator fit is not closed-loop stability. Causality / history is the gate.
-  - API 2026-08-25; Zhang/Qi/Jiang. Lipschitz + practical-stability claim. Issue Board HTML ν=8.8: modified-loss Eu **1.018e-2 vs MSE 4.083e-2**; terminal ‖u(T)‖ neural ~1e-4 vs backstepping ~1e-8. GitHub ★0, license unset, pushed 2026-06-02.
-- Caveat: 1D reaction-diffusion. ★0 unlicensed. Not an exterior 3D CFD result.
-- Possible use: Cite when an output-feedback neural operator quotes one-step RMSE — demand a history ablation and closed-loop terminal norm.
-- Maturity: paper + unlicensed early repo
 - Priority: High
 
 ## Read-Write-Relax — global tokens + local mesh relaxation
@@ -380,22 +332,6 @@
 - Possible use: Smoke-test pairwise/top-1 vs raw residual; do not product-Save on ★0.
 - Maturity: paper + early MIT repo
 - Priority: High
-
-## KernelMO — closed-form multi-input multi-output operators
-
-- Link: https://arxiv.org/abs/2608.11831
-- Code: https://github.com/liaochunyang/kernelMO
-- Type: Paper + unlicensed kernel-operator runtime (cs.LG + math.ST + stat.ML)
-- Keywords: kernel methods, multi-input multi-output, operator learning, KernelMO, OOD, closed-form
-- One-line summary: Learns multi-input multi-output operators with a kernel encoder–decoder whose convergence rate is governed by the hardest constituent problem, not by the number of inputs and outputs.
-- Why it matters:
-  - Adding channels is not automatically a harder SciML problem; the worst constituent sets the rate.
-  - API 2026-08-12; Weihs/Liao/Sun/Schaeffer. Closed-form train/infer. Five parametric PDE families vs neural-operator / deep baselines.
-  - GitHub `liaochunyang/kernelMO` ★0, **license unset**, pushed 2026-08-12.
-- Caveat: No license → Save withheld. ★0. No engineering geometry/BC gate.
-- Possible use: Test only after license clarification; score OOD and cost vs DeepONet/MIONet, not one-step RMSE.
-- Maturity: paper + unlicensed early repo
-- Priority: Medium-High
 
 ## Iterative Refinement DA — resolution-wise forecast–analysis on Kraichnan 256
 
@@ -473,22 +409,6 @@
 - Maturity: paper + early open code
 - Priority: High
 
-## HI-MeshGraphNets — hierarchical MeshGraphNets
-
-- Link: https://arxiv.org/abs/2608.13827
-- Code: https://github.com/leesihun/MeshGraphNets
-- Type: Paper + early public mesh-GNN runtime
-- Keywords: MeshGraphNets, hierarchical GNN, unstructured mesh, iso-cost, VRAM, long-range message passing
-- One-line summary: Replaces flat MeshGraphNets processors with FPS+Voronoi coarsening and learned interpolation so long-range mesh communication is cheap on high-fidelity unstructured grids.
-- Why it matters:
-  - Flat hop-1 message passing forces deep processors on industrial meshes and pays VRAM, time, and over-smoothing together.
-  - Issue Board Tables 2–3 (rectangular inclusion): stress/disp \(R^2\) **0.99 / 0.99** vs MGN 28MP **0.85 / −0.11**; VRAM **10.45 vs 17.03 GB**; train **10.18 vs 25.41 h**.
-  - Distinct from the original DeepMind MeshGraphNets entry (`2010.03409`); README confirms hierarchical V-cycle runtime by SiHun Lee.
-- Caveat: ★0 and SPDX license unset at 2026-08-18. Benches are structural/contact-heavy — urban/air CFD family OOD is separate. Repo name collides with the original MGN project.
-- Possible use: Test the hierarchical path on one internal mesh after license clarification; require iso-cost (VRAM/time) next to field \(R^2\).
-- Maturity: paper + immature public repo
-- Priority: High
-
 ## HyperShape — hyperelasticity across diverse shapes
 
 - Link: https://arxiv.org/abs/2608.09938
@@ -504,21 +424,6 @@
 - Possible use: Cite when forcing **geometry-family shift** gates next to AirfRANS/force-QoI language; Watch for official dataset release packaging.
 - Maturity: paper + related open CNO lineage
 - Priority: High
-
-## PatternFormer — multi-branch / multi-solution surrogates (RD)
-
-- Link: https://arxiv.org/abs/2608.12286
-- Code: https://github.com/changzhipeng1-prog/PatternFormer
-- Type: Paper + early public code (multi-valued PDE solutions)
-- Keywords: multi-branch solutions, reaction-diffusion, neural operator limit, single-valued map failure, solution-set coverage
-- One-line summary: Serializes coexisting solution branches as a sequence so one forward pass recovers multi-valued RD patterns that single-output NO/PINN maps structurally miss.
-- Why it matters:
-  - Single-valued Rel \(L_2\) leaderboards can green-light models that miss entire regimes (hysteresis / multi-steady states).
-  - HTML excerpts: median relative \(L_2\) ~**1–2%** class with failure modes when branch relative \(L_2\) exceeds **0.15**.
-- Caveat: Reaction–diffusion centric; CFD multi-regime transfer unproven. Repo ★0 and **license unset** at 2026-08-17 → Cite/Watch, not product Save.
-- Possible use: Steal the evaluation question “one solution vs solution-set coverage” for multi-regime engineering surrogates; re-check license before Test.
-- Maturity: paper + immature public repo
-- Priority: Medium-High
 
 ## Non-overlapping Schwarz FE–Neural Operator hybrid (solid mechanics)
 
@@ -595,7 +500,6 @@
 - Possible use: Test install + multi-step vs one-step diagnostics; compare residual-target spectral + semigroup loss against GeoIncNO increment structuring notes.
 - Maturity: paper + early open code
 - Priority: High
-
 
 ## KNO — Kuramoto Neural Operator (local oscillator PDE operators)
 
@@ -948,7 +852,6 @@
 - Possible use: Use as a reading anchor when deciding whether to add equivariant layers to CAD/mesh-to-field surrogate experiments.
 - Maturity: paper-only
 - Priority: Medium
-
 
 ## Hybrid Fourier Neural Operator-Lattice Boltzmann Method
 
@@ -1806,7 +1709,6 @@
 - Possible use: Add representation-space OOD diagnostics and retrieval baselines to VA's CFD surrogate evaluation templates.
 - Maturity: paper-only
 - Priority: High
-
 
 ## Operator Learning for Reconstructing Flow Fields from Sparse Measurements
 

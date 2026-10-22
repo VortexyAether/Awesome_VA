@@ -62,7 +62,6 @@
 - Maturity: paper + anonymous code
 - Priority: High
 
-
 ## RealCADBench — executability, IoU, and Judge disagree
 
 - Link: https://arxiv.org/abs/2609.03773
@@ -111,22 +110,6 @@
 - Maturity: paper + licensed early repo
 - Priority: High
 
-## ExpConCAD — fill missing spatial slots, then emit executable CadQuery
-
-- Link: https://arxiv.org/abs/2608.24760
-- Code: https://github.com/Hotjiashell/ExpConCAD
-- Type: Paper + unlicensed text-to-CAD
-- Keywords: text-to-CAD, CadQuery, spatial constraints, Inv., experience retrieval
-- One-line summary: Recovers construction structure and constraint scopes, retrieves similar-scope completion experience, then emits executable CadQuery instead of guessing omitted hole locations.
-- Why it matters:
-  - Underspecified text is the real CAD brief. Render SR / Chamfer is not a commit unit.
-  - abs 2026-08-25; Liu/Tang/Huang/Lei/Ng. Issue Board HTML Text2CAD-Hard: VLM **6.54**, m.r-IoU **0.331**, mean CD **49.759**, **Inv. 0.50** vs CadFusion Inv. **14.00**.
-  - GitHub `Hotjiashell/ExpConCAD` ★**0**, SPDX unset, pushed 2026-08-25.
-- Caveat: ★0 unlicensed → Save/Test withheld. CadQuery execute ≠ OCCT/STEP Valid%. Not Fusion/OCC MCP.
-- Possible use: Cite next to Procedura mate/compile — demand filled constraints + executable code, then a kernel Valid% separately.
-- Maturity: paper + unlicensed early repo
-- Priority: High
-
 ## Procedura — admit a part only after compile, mate, and connectivity
 
 - Link: https://arxiv.org/abs/2608.26238
@@ -143,7 +126,6 @@
 - Possible use: Smoke-test mate/compile on a hard-surface part; keep kernel Valid% as a second gate.
 - Maturity: paper + live MIT repo
 - Priority: High
-
 
 ## HiFi-BRep — high-fidelity latent representation for robust B-Rep generation
 
@@ -176,7 +158,6 @@
 - Possible use: Require B-Rep validity + DFM + parametric family + FEA/joint checks in FreeCAD/CadQuery agent harness scorecards; do not green-light on mesh dump or single Valid% alone.
 - Maturity: paper; public code TBD
 - Priority: High
-
 
 ## Test-time CAD consensus selection — verifier-free geometric agreement
 
@@ -534,7 +515,6 @@
   - Uses engineering context in DSM partitioning instead of treating modularization as only graph optimization.
   - Relevant to complex product/system architecture, CAD assembly planning, and design-automation workflows.
   - Useful weekly-synthesis candidate for “LLMs as context-aware engineering-design heuristics.”
-
 
 ## mcp-freecad
 

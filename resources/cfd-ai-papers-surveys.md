@@ -1,21 +1,5 @@
 # CFD-AI Papers & Surveys
 
-## EFR-OpInf — online LES-style filter is the long-horizon contract; L2 regularization is not
-
-- Link: https://arxiv.org/abs/2609.14812
-- Code: https://github.com/irmoore/EFR_Opinf
-- Type: Paper / OpInf ROM with online evolve–filter–relax (math.NA + physics.flu-dyn; no SPDX)
-- Keywords: OpInf, EFR, ROM, LES filter, rollout, channel flow
-- One-line summary: Adds an online evolve–filter–relax spatial filter, borrowed from LES, so Operator Inference stays bounded past the training horizon instead of relying on L2 regularization.
-- Why it matters:
-  - Matching training rel L2 is not a test-window license. Strong regularization can survive validation and still blow up on test.
-  - abs 2026-09-13; Moore/Tsai/Gruber/Farcaş/Wentland/Tezaur/Iliescu.
-  - Issue Board HTML §4 3D MCF Re=**5000**: train **6–8%**, val **8–12%**, EFR test **9.5–14.6%** on [3000,3100]. Weak/strong L2 blow at **t≈3042 / 3082**. CDR EFR rel L2 **≤10^{-4}**. `irmoore/EFR_Opinf` ★**0**, no SPDX, pushed 2026-09-07.
-- Caveat: ★0 + no license → Test withheld. Over-dissipative filters freeze KE. Not industrial CAD coupling.
-- Possible use: Cite when an OpInf/ROM quotes training rel L2 — demand the test-window bound vs L2 blow-up, plus KE under filter strength.
-- Maturity: paper + unlicensed early repo
-- Priority: High
-
 ## Enstrophy-stable NS — 2D under-resolved meshes need an enstrophy law, not more viscosity knobs
 
 - Link: https://arxiv.org/abs/2609.15520
@@ -46,22 +30,6 @@
 - Caveat: Lubrication cavitation, not external aerodynamics. ★0.
 - Possible use: Cite when a cavitation card quotes pressure-profile closeness — demand exact complementarity and that the augmentation parameter drops out.
 - Maturity: paper + licensed early repo
-- Priority: High
-
-## Aircraft surface ROM — in-domain LVAE MSE is not a 3D license; POD wins the zero-shot lift-drag gate
-
-- Link: https://arxiv.org/abs/2609.12185
-- Dataset: https://github.com/cashend/OptiWing3D
-- Type: Paper / 2D→3D surface-field transfer (physics.flu-dyn; CC BY-NC-SA)
-- Keywords: LVAE, POD, surface pressure, zero-shot transfer, BWB, lift-drag
-- One-line summary: Learns compact 2D airfoil surface representations, then shows linear POD — not the better in-domain LVAE — transfers to 3D extruded wings and BWB when the gate is lift and drag.
-- Why it matters:
-  - Reconstruction MSE on the training geometry family is not a 3D force-coefficient license.
-  - abs 2026-09-10; VanGessel/Diniz/Fuge. 2D latent **28–41**. Dataset1 LVAE MSE **3.01e-5** vs POD **8.53e-4** @dim 28.
-  - Zero-shot POD Cl/Cd: extruded wing **0.1% / 0.7%**, BWB **0.3% / 0.7%**. Five BWB fine-tunes cut MSE **5×** vs zero-shot and **70×** vs scratch. `cashend/OptiWing3D` ★**0**, no SPDX, pushed 2026-01-07.
-- Caveat: Surface pressure, not volume CFD. Unsteady/separation generalization not claimed. ★0 + no license → Test withheld. CC BY-NC-SA.
-- Possible use: Cite when a 2D surface autoencoder quotes MSE — demand zero-shot 3D Cl/Cd vs POD.
-- Maturity: paper + unlicensed early dataset
 - Priority: High
 
 ## CLS geometric reinit — volume loss is the reinitialization contract, not a PDE residual trophy
@@ -411,22 +379,6 @@
 - Maturity: paper-only
 - Priority: High
 
-## JICF chapter — LOSO splits by QoI
-
-- Link: https://arxiv.org/abs/2608.26064
-- Code: https://github.com/KjayJunIOR/parametric-sindy-jax-gridsearch
-- Type: Book chapter + unlicensed JAX SINDy (physics.flu-dyn)
-- Keywords: jet-in-cross-flow, LOSO, QoI, SINDy, MLP, ROM
-- One-line summary: Maps injector spacing to unburnt H₂, wall heat, and bulk temperature, then shows leave-one-sample-out error is QoI-dependent; parametric SINDy is a compact field ROM, not a better bulk RMSE.
-- Why it matters:
-  - Decision QoI is not field RMSE. Offline response surfaces are not dynamic ROMs.
-  - API 2026-08-26; Eduku/Popov/Jacobs. 18 pages. Non-monotonic spacing; favorable region near 8D.
-  - Issue Board HTML: LOSO bulk T **1.46%** (all <4%), wall heat **27.2%**, H₂ **21.7%**. SINDy Reynolds-stress nRMSE **+6.7%** vs POD. GitHub ★0, SPDX NOASSERTION, pushed 2026-08-26.
-- Caveat: Small-sample hydrogen JICF. Unlicensed → Test withheld. Do not transfer to exterior RANS.
-- Possible use: Cite when a CFD-ML pitch quotes one QoI — demand the holdout column for the decision quantity.
-- Maturity: paper + unlicensed early repo
-- Priority: High
-
 ## When a neural surrogate cannot accelerate a solver
 
 - Link: https://arxiv.org/abs/2608.23075
@@ -467,21 +419,6 @@
 - Caveat: 1D/standard shock benches. No engineering geometry gate.
 - Possible use: Cite when a shock PINN uses a fixed relaxation penalty.
 - Maturity: paper-only
-- Priority: High
-
-## Spinning quadrotor — hover thrust from passive wings
-
-- Link: https://arxiv.org/abs/2608.23163
-- Code: https://github.com/pyromania99/spinning-quadrotor-hover
-- Type: Paper + unlicensed UAV hardware/code (cs.RO)
-- Keywords: quadrotor, hover, passive lift, yaw, Urban_Flighter
-- One-line summary: Holds a sustained yaw in hover so passive lifting surfaces produce thrust, cutting required motor thrust 22% in preliminary hardware tests.
-- Why it matters:
-  - Downstream hover QoI plus hardware beat field RMSE as the flight-efficiency receipt.
-  - API 2026-08-24; Parkala/Kandath. ICUAS 2026 DOI 10.1109/ICUAS69441.2026.11598692. GitHub ★0, license unset, pushed 2026-06-09.
-- Caveat: ★0 unlicensed. Spinning quadrotor ≠ default Urban_Flighter kinematics. Do not transfer −22%.
-- Possible use: Inspect after license clarification; treat as a QoI-ladder example, not a kinematics transfer.
-- Maturity: paper + unlicensed early repo
 - Priority: High
 
 ## Low-fidelity aerofoil opt for curvilinear / cyclorotor kinematics
@@ -648,22 +585,6 @@ Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine L
 - Maturity: paper-only
 - Priority: High
 
-## Conservative discrete FV structure vs learned rollout (1D DDP)
-
-- Link: https://arxiv.org/abs/2606.01366
-- Code: https://github.com/Airscker/DDP-benchmark
-- Type: Paper + early structure-preserving benchmark
-- Keywords: conservative finite volume, autoregressive rollout, drift-diffusion-Poisson, positivity, 1-step vs long horizon
-- One-line summary: Shows that a classical conservative finite-volume core, not a learned next-state head, is what keeps long autoregressive rollouts stable on a 1D drift–diffusion–Poisson transport bench.
-- Why it matters:
-  - Headline rollout MSE **\(7.35\times10^{-9}\)** vs unconstrained **42.3**; Poisson recompute / charge projection / 4-step rollout training all stay \(O(10^1)\).
-  - Wins rollout MSE on **60/64** configs but only **19/64** one-step MSE — 1-step leaderboards invert the engineering ranking.
-  - README matches the paper; GitHub API description is stale/unrelated and should be ignored.
-- Caveat: 1D plasma-transport prototype (Dirichlet potential, zero-flux walls; no Bohm/sheath). ★0 and license unset at 2026-08-18 → Cite/Test, not product Save.
-- Possible use: Cite beside HERO / Diagnostics-for-Physics when refusing 1-step Rel \(L^2\) as DONE for conservation problems.
-- Maturity: paper + immature public repo
-- Priority: High
-
 ## Julia for CFD — ecosystem, performance, and composability survey
 
 - Link: https://arxiv.org/abs/2608.12801
@@ -707,7 +628,6 @@ Selected broad survey papers and discovery maps for CFD-AI, Scientific Machine L
 - Possible use: Steal FV residual + data-guidance recipe for Urban/SWE PINN trust reviews; reject residual-only green lights on conservation problems.
 - Maturity: paper + open code
 - Priority: High
-
 
 ## Efficient Weak-Entropy PINN for hyperbolic conservation laws
 
